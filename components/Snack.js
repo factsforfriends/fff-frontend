@@ -1,9 +1,11 @@
 import Link from "next/link";
 
+import Indicators, {Fresh, Trending} from "./Indicators"
+
 import {URLtoDomain} from './functions';
 import {splitAndReassemble} from './functions';
 
-const Snack = ({ snack }) => {
+const Snack = ({ snack, fullWidth = false }) => {
     // Map snack to data model
     const { Category, Snack, URL, Tags, Medium, Location, Headline, ID } = snack;
 
@@ -13,10 +15,17 @@ const Snack = ({ snack }) => {
     // Create a string from category names, separated by bullet
     const Categories = splitAndReassemble(Category, " ", " \u2022 ")
 
+    //Todo: Logic to decide on a indicator
+    const Indicator = null;
+
+    // Todo: Handle full-width view mode
+
     return(
-      <div className="flex-shrink bg-white p-6 my-1 mx-1 rounded max-w-xs text-sm border-2 border-gray-700 break-words">
-        <div className="text-xs tracking-wide uppercase text-gray-800">
-          { Categories }
+      <div className={"flex-shrink bg-white p-6 my-1 mx-1 rounded text-sm border-2 border-gray-700 break-words " + (fullWidth ? 'max-w-2xl' : 'max-w-xs')}>
+        <div className="flex flex-wrap justify-between items-center text-xs">
+          <div className="uppercase tracking-wide text-gray-800">
+            { Categories }
+          </div>
         </div>
         <h4 className="font-semibold text-lg mb-2 mt-1 text-left tracking-wide">{ Headline }</h4>
         { Snack }
@@ -38,12 +47,12 @@ const Snack = ({ snack }) => {
             </Link>
           </div>
           <div className="flex items-center">
-            <button className="bg-blue-300 hover:bg-blue-400 py-2 px-3 rounded-l inline-flex items-center">
+            <button className={"bg-blue-300 hover:bg-blue-400 py-2 px-3 rounded-l inline-flex items-center " + (fullWidth ? 'hidden': '')}>
               <svg className="h-4 w-4 mr-1 fill-current text-gray-800" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                 <path d="M10.001 7.8a2.2 2.2 0 100 4.402A2.2 2.2 0 0010 7.8zm-7 0a2.2 2.2 0 100 4.402A2.2 2.2 0 003 7.8zm14 0a2.2 2.2 0 100 4.402A2.2 2.2 0 0017 7.8z"/>
               </svg>
             </button>
-            <button className="bg-green-300 hover:bg-green-400 py-2 px-3 rounded-r inline-flex items-center">
+            <button className={"bg-green-300 hover:bg-green-400 py-2 px-3 inline-flex items-center " + (fullWidth ? 'rounded' : 'rounded-r')}>
               <svg className="h-4 w-4 mr-1 fill-current text-gray-800" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                 <path d="M15 13.442c-.633 0-1.204.246-1.637.642l-5.938-3.463c.046-.188.075-.384.075-.584s-.029-.395-.075-.583L13.3 6.025A2.48 2.48 0 0015 6.7c1.379 0 2.5-1.121 2.5-2.5S16.379 1.7 15 1.7s-2.5 1.121-2.5 2.5c0 .2.029.396.075.583L6.7 8.212A2.485 2.485 0 005 7.537c-1.379 0-2.5 1.121-2.5 2.5s1.121 2.5 2.5 2.5a2.48 2.48 0 001.7-.675l5.938 3.463a2.339 2.339 0 00-.067.546A2.428 2.428 0 1015 13.442z"/>
               </svg>
