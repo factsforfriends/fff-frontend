@@ -13,18 +13,13 @@ const Index = ({ snacks }) => {
   // Handle search
   const [searchTerm, setSearchTerm] = useState("");
 
-  // Get categories with available Snacks (will be replace by API call)
-  const categoriesWithSnacks = ['Alltag', 'Politik', 'Pandemie', 'Krankheit', 'Medikamente'];
-
   return(
     <>
       <Layout>
         <Head>
           <title>Facts for Friends</title>
         </Head>
-        <Navbar
-          categories={categoriesWithSnacks}
-        />
+        <Navbar/>
         <SearchForm 
           searchTerm={searchTerm}
           onChange={event => setSearchTerm(event.target.value)}

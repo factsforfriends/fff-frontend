@@ -1,9 +1,21 @@
 import React, { useState } from "react";
+import sortBy from 'lodash/sortBy'
 
-const Navbar = ( {categories} ) => {
+const Navbar = ( ) => {
     // Handle toggle category button
     const [showCategories, setShowCateogies] = useState(false);
     const toggleCategories = () => setShowCateogies(!showCategories);
+
+    // Get categories with available Snacks (will be replace by API call)
+    const categories = [
+      {'id': 1, 'name': 'Alltag'}, 
+      {'id': 2, 'name': 'Pandemie'}, 
+      {'id': 3, 'name': 'Krankheit'},
+      {'id': 4, 'name': 'Ansteckung'},
+      {'id': 5, 'name': 'Ausmass'},
+      {'id': 6, 'name': 'Symptome'},
+      {'id': 7, 'name': 'Politik'}
+    ];
 
     return(
         <div className="bg-gray-300 text-gray-800">
@@ -27,8 +39,8 @@ const Navbar = ( {categories} ) => {
             </div>
           </div>
           <div className={"flex items-center pb-3 text-sm " + (showCategories ? '' : 'hidden')}>
-            {categories.map(category => (
-              <a href="#" className="ml-4 hover:text-black">{ category }</a>
+            {sortBy(categories, ['name']).map(category => (
+              <a href="#" className="ml-4 hover:text-black">{ category.name }</a>
             ))}
           </div>
         </div>
