@@ -1,30 +1,30 @@
 import React, { useState } from "react";
+import Head from 'next/head'
 import fetch from "isomorphic-unfetch";
-import some from "lodash/some";
 
 import { DATA_URL } from "../constants/urls";
 
 import Layout from '../components/Layout';
+import Navbar from '../components/Navbar';
 import SnackList from "../components/SnackList";
 import SearchForm from "../components/SearchForm";
 
 const Index = ({ snacks }) => {
-
   // Handle search
   const [searchTerm, setSearchTerm] = useState("");
-  
 
-  // Get categories with available Snacks
-  const categoriesWithSnacks = [];
-  snacks.map(snack => {
-    if (!some(categoriesWithSnacks, ["Category", snack.Category])) {
-      categoriesWithSnacks.push(snack);
-    }
-  });
+  // Get categories with available Snacks (will be replace by API call)
+  const categoriesWithSnacks = ['Alltag', 'Politik', 'Pandemie', 'Krankheit', 'Medikamente'];
 
   return(
     <>
       <Layout>
+        <Head>
+          <title>Facts for Friends</title>
+        </Head>
+        <Navbar
+          categories={categoriesWithSnacks}
+        />
         <SearchForm 
           searchTerm={searchTerm}
           onChange={event => setSearchTerm(event.target.value)}
