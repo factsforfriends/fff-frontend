@@ -1,0 +1,55 @@
+version: '2.1'
+services:
+  caddy:
+    image: lucaslorentz/caddy-docker-proxy
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /f3/caddy:/data
+
+  f3frontend:
+    ports:
+            - 127.0.0.1:3000:3000
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file:
+      - .env
+    labels:
+      caddy: "${F3_FRONTEND_DOMAIN}"
+      caddy.reverse_proxy: "{{upstreams 3000}}"
+      caddy.tls: "${F3_TLS_MAIL}"
+
+  strapi:
+    image: strapi/strapi
+    env_file:
+      - .env
+    environment:
+      DATABASE_CLIENT: "${DATABASE_CLIENT}"
+      DATABASE_NAME: "${DATABASE_NAME}"
+      DATABASE_HOST: "${DATABASE_HOST}"
+      DATABASE_PORT: "${DATABASE_PORT}"
+      DATABASE_USERNAME: "${DATABASE_USERNAME}"
+      DATABASE_PASSWORD: "${DATABASE_PASSWORD}"
+    volumes:
+      - ./app:/srv/app
+    ports:
+      - 127.0.0.1:1337:1337
+    labels:
+      caddy: "${F3_CMS_DOMAIN}"
+      caddy.reverse_proxy: "{{upstreams 1337}}"
+      caddy.tls: "${F3_TLS_MAIL}"
+
+  mongo:
+    image: mongo
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: "${MONGO_INITDB_ROOT_USERNAME}"
+      MONGO_INITDB_ROOT_PASSWORD: "${MONGO_INITDB_ROOT_PASSWORD}"
+    env_file:
+      - .env
+    volumes:
+      - ./data/db:/data/db
+    ports:
+            - 127.0.0.1:27017:27017
