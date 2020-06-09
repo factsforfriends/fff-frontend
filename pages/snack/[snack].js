@@ -11,7 +11,7 @@ import Navbar from '../../components/Navbar'
 import Snack from "../../components/Snack"
 import SnackList from "../../components/SnackList"
 
-export default function SnackView({requestedSnack}) {
+export default function SnackView({snack}) {
   const router = useRouter()
 
   // If the page is not generated yet, this will be displayed
@@ -32,12 +32,12 @@ export default function SnackView({requestedSnack}) {
     <>
       <Layout>
         <Head>
-          <title>{requestedSnack.Headline} - Facts for Friends</title>
+          <title>{snack.headline} - Facts for Friends</title>
         </Head>
         <Navbar/>
         <div className="flex flex-wrap justify-center -mx-1 mt-2 overflow-hidden text-justify font-sans">
           <Snack
-              snack={requestedSnack}
+              snackData={snack}
               fullWidth={true}
           />
         </div>
@@ -50,16 +50,7 @@ export default function SnackView({requestedSnack}) {
 }
 
 export async function getStaticPaths() {
-  const fetchSnacks = await fetch(DATA_URL);
-  const snacks = await fetchSnacks.json();
-
-  const paths = snacks.map(snack => {
-    return {
-      params: {
-        snack: snack.ID.toString()
-      }
-    }
-  })
+  const paths = []
 
   return {
     paths,
@@ -68,14 +59,12 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const fetchSnacks = await fetch(DATA_URL);
-  const snacks = await fetchSnacks.json();
-
-  const requestedSnack = find(snacks, ["ID", toInteger(params.snack)]);
+  const snackRaw = await fetch(`https://cms.edc.li/facts/${params['snack']}`);
+  const snack = await snackRaw.json();
 
   return {
     props: {
-      requestedSnack
+      snack
     }
   }
 }

@@ -34,8 +34,11 @@ const Index = ({ snacks }) => {
 }
 
 Index.getInitialProps = async function() {
-  const fetchSnacks = await fetch(DATA_URL);
-  const snacks = await fetchSnacks.json();
+  // const fetchSnacks = await fetch(DATA_URL);
+  // const snacks = await fetchSnacks.json();
+
+  const snacksRaw = await fetch("https://cms.edc.li/facts");
+  const snacks = await snacksRaw.json();
 
   return {
     snacks

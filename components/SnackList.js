@@ -7,15 +7,15 @@ const SnackList = ({ snacks, searchTerm }) => {
           .filter(snack => {
             if (
               !searchTerm ||
-              snack.Category.toLowerCase().includes(searchTerm.toLowerCase()) ||
-              snack.Tags.toLowerCase().includes(searchTerm.toLowerCase()) ||
-              snack.Location.toLowerCase().includes(searchTerm.toLowerCase())
+              snack.category.toLowerCase().includes(searchTerm.toLowerCase()) ||
+              snack.tags.toLowerCase().includes(searchTerm.toLowerCase()) ||
+              snack.location.toLowerCase().includes(searchTerm.toLowerCase())
             )
             return snack;
           })
           .map(snack => (
             <Snack
-              snack={snack}
+              snackData={snack}
             />
           ))
         }
