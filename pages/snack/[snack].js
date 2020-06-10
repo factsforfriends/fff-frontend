@@ -50,7 +50,16 @@ export default function SnackView({snack}) {
 }
 
 export async function getStaticPaths() {
-  const paths = []
+  const fetchSnacks = await fetch(`https://cms.factsforfriends.de/facts`);
+  const snacks = await fetchSnacks.json();
+
+  const paths = snacks.map(snack => {
+    return {
+      params: {
+        snack: snack.id.toString()
+      }
+    }
+  })
 
   return {
     paths,
