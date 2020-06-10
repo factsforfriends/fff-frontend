@@ -20,3 +20,9 @@ to start it
 ```bash
 docker-compose up -d
 ```
+
+to only start the frontend
+```bash
+npm i     # install all dependencies first
+npm run dev
+```
