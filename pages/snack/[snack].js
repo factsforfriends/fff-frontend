@@ -59,7 +59,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const snackRaw = await fetch(`https://cms.edc.li/facts/${params['snack']}`);
+  const snackRaw = await fetch(`https://cms.factsforfriends.de/facts/${params['snack']}`);
   const snack = await snackRaw.json();
 
   return {
