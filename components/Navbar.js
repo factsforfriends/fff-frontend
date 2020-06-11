@@ -14,7 +14,7 @@ const Navbar = ( ) => {
       {'id': 2, 'name': 'Pandemie'}, 
       {'id': 3, 'name': 'Krankheit'},
       {'id': 4, 'name': 'Ansteckung'},
-      {'id': 5, 'name': 'Ausmass'},
+      {'id': 5, 'name': 'Ausmaß'},
       {'id': 6, 'name': 'Symptome'},
       {'id': 7, 'name': 'Politik'}
     ];
@@ -46,7 +46,9 @@ const Navbar = ( ) => {
           </div>
           <div className={"flex items-center pb-3 text-sm " + (showCategories ? '' : 'hidden')}>
             {sortBy(categories, ['name']).map(category => (
-              <a href="#" className="ml-4 hover:text-black">{ category.name }</a>
+              <Link href="/category/[category]" as={`/category/${category.name}`}>
+                <a className="ml-4 hover:text-black">{ category.name }</a>
+              </Link>
             ))}
           </div>
         </div>

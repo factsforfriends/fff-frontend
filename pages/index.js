@@ -9,7 +9,7 @@ import Navbar from '../components/Navbar';
 import SnackList from "../components/SnackList";
 import SearchForm from "../components/SearchForm";
 
-const Index = ({ snacks }) => {
+export default function Index({ snacks }) {
   // Handle search
   const [searchTerm, setSearchTerm] = useState("");
 
@@ -33,16 +33,11 @@ const Index = ({ snacks }) => {
   );
 }
 
-Index.getInitialProps = async function() {
-  // const fetchSnacks = await fetch(DATA_URL);
-  // const snacks = await fetchSnacks.json();
-
-  const snacksRaw = await fetch(BACKEND_URL + "/facts");
-  const snacks = await snacksRaw.json();
+export async function getServerSideProps(context) {
+  const snacksRaw = await fetch(BACKEND_URL + '/facts')
+  const snacks = await snacksRaw.json()
 
   return {
-    snacks
-  };
-};
-
-export default Index;
+    props: { snacks },
+  }
+}
