@@ -1,10 +1,8 @@
 import { useRouter } from 'next/router'
 import Head from 'next/head'
 import fetch from "isomorphic-unfetch"
-import find from "lodash/find"
-import toInteger from "lodash/toInteger"
 
-import { DATA_URL } from "../../constants/urls"
+import { BACKEND_URL } from "../../constants/urls"
 
 import Layout from '../../components/Layout'
 import Navbar from '../../components/Navbar'
@@ -50,7 +48,7 @@ export default function SnackView({snack}) {
 }
 
 export async function getStaticPaths() {
-  const fetchSnacks = await fetch(`https://cms.factsforfriends.de/facts`);
+  const fetchSnacks = await fetch(BACKEND_URL + '/facts');
   const snacks = await fetchSnacks.json();
 
   const paths = snacks.map(snack => {
@@ -68,7 +66,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const snackRaw = await fetch(`https://cms.factsforfriends.de/facts/${params['snack']}`);
+  const snackRaw = await fetch(BACKEND_URL+ '/facts/' + params['snack']);
   const snack = await snackRaw.json();
 
   return {

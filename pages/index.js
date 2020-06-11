@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Head from 'next/head'
 import fetch from "isomorphic-unfetch";
 
-import { DATA_URL } from "../constants/urls";
+import { BACKEND_URL } from "../constants/urls";
 
 import Layout from '../components/Layout';
 import Navbar from '../components/Navbar';
@@ -26,7 +26,7 @@ const Index = ({ snacks }) => {
         />
         <SnackList
           snacks={snacks}
-          searchTerm={searchTerm}
+          searchTerm={searchTerm.trim()}
         />
       </Layout>
     </>
@@ -37,7 +37,7 @@ Index.getInitialProps = async function() {
   // const fetchSnacks = await fetch(DATA_URL);
   // const snacks = await fetchSnacks.json();
 
-  const snacksRaw = await fetch("https://cms.factsforfriends.de/facts");
+  const snacksRaw = await fetch(BACKEND_URL + "/facts");
   const snacks = await snacksRaw.json();
 
   return {
