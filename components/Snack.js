@@ -7,7 +7,6 @@ import {splitAndReassemble} from './functions';
 
 const Snack = ({ snackData, fullWidth = false }) => {
     // Map snack to data model
-    console.log(snackData)
     const { category, snack, url, tags, medium, location, headline, id, sharepic, sharepic_text } = snackData;
 
     // Shorten URL to domain
