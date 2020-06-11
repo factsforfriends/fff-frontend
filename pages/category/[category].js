@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router'
 import React, { useState } from "react";
 import Head from 'next/head'
 import fetch from "isomorphic-unfetch";
@@ -10,6 +11,9 @@ import SnackList from "../../components/SnackList";
 import SearchForm from "../../components/SearchForm";
 
 export default function categoryView({snacks}) {
+    const router = useRouter()
+    const { category } = router.query
+
     // Handle search
     const [searchTerm, setSearchTerm] = useState("");
 
@@ -17,7 +21,7 @@ export default function categoryView({snacks}) {
       <>
         <Layout>
           <Head>
-            <title>Facts for Friends</title>
+            <title>{category} | Facts for Friends</title>
           </Head>
           <Navbar/>
           <SearchForm 
