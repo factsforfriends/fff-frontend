@@ -33,11 +33,13 @@ export default function SnackView({snack}) {
           <title>{snack.headline} - Facts for Friends</title>
         </Head>
         <Navbar/>
-        <div className="flex flex-wrap justify-center -mx-1 mt-2 overflow-hidden text-justify font-sans">
-          <Snack
-              snackData={snack}
-              fullWidth={true}
-          />
+        <div class="container px-10 pt-6 mx-auto">
+          <div class="flex flex-wrap -m-1 justify-center">
+            <Snack
+                snackData={snack}
+                fullWidth={true}
+            />
+          </div>
         </div>
         <div className="flex flex-wrap justify-center max-w-2xl">
           <h4 className="font-semibold text-lg mb-2 mt-2 text-left tracking-wide">Ähnliche Snacks</h4>
