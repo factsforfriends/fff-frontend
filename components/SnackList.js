@@ -3,8 +3,8 @@ import Snack from "./Snack";
 const SnackList = ({ snacks, searchTerm }) => {
     return(
         <section>
-          <div class="container px-10 pt-6 mx-auto">
-            <div class="flex flex-wrap -m-1">
+          <div className="container px-10 pt-6 mx-auto">
+            <div className="flex flex-wrap -m-1">
               {snacks
                 .filter(snack => {
                   if (
@@ -17,6 +17,7 @@ const SnackList = ({ snacks, searchTerm }) => {
                 })
                 .map(snack => (
                   <Snack
+                    key={snack.id}
                     snackData={snack}
                     fullWidth={false}
                   />

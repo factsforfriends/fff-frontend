@@ -46,7 +46,7 @@ const Navbar = ( ) => {
           </div>
           <div className={"flex items-center pb-3 text-sm " + (showCategories ? '' : 'hidden')}>
             {sortBy(categories, ['name']).map(category => (
-              <Link href="/category/[category]" as={`/category/${category.name}`}>
+              <Link key={category.name} href="/category/[category]" as={`/category/${category.name}`}>
                 <a className="ml-4 hover:text-black">{ category.name }</a>
               </Link>
             ))}
