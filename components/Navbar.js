@@ -22,13 +22,13 @@ const Navbar = ( ) => {
     return(
         <div className="bg-gray-300 text-gray-800">
           <div className="flex items-center justify-between px-4 py-3">
-            <div className="flex items-center text-sm">
+            {/* <div className="flex items-center text-sm">
               <button onClick={toggleCategories}>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" className="h-6 w-6 fill-current text-gray-800">
                   <path d="M14.4 9H8.6c-.552 0-.6.447-.6 1s.048 1 .6 1h5.8c.552 0 .6-.447.6-1s-.048-1-.6-1zm2 5H8.6c-.552 0-.6.447-.6 1s.048 1 .6 1h7.8c.552 0 .6-.447.6-1s-.048-1-.6-1zM8.6 6h7.8c.552 0 .6-.447.6-1s-.048-1-.6-1H8.6c-.552 0-.6.447-.6 1s.048 1 .6 1zM5.4 9H3.6c-.552 0-.6.447-.6 1s.048 1 .6 1h1.8c.552 0 .6-.447.6-1s-.048-1-.6-1zm0 5H3.6c-.552 0-.6.447-.6 1s.048 1 .6 1h1.8c.552 0 .6-.447.6-1s-.048-1-.6-1zm0-10H3.6c-.552 0-.6.447-.6 1s.048 1 .6 1h1.8c.552 0 .6-.447.6-1s-.048-1-.6-1z"/>
                 </svg>
               </button>
-            </div>
+            </div> */}
             <div className="flex items-center">
               <Link as={`/`} href={`/`}>
                 <a>
@@ -40,17 +40,20 @@ const Navbar = ( ) => {
               </Link>
             </div>
             <div className="text-sm">
-              <span>Fact Aid</span>
+              <Link className="ml-4" as={'/about'} href={'/'}>
+                Über Uns
+              </Link>
+              <span className="ml-4">Fact Aid</span>
               <span className="ml-4">Mitmachen</span>
             </div>
           </div>
-          <div className={"flex items-center pb-3 text-sm " + (showCategories ? '' : 'hidden')}>
+          {/* <div className={"flex items-center pb-3 text-sm " + (showCategories ? '' : 'hidden')}>
             {sortBy(categories, ['name']).map(category => (
               <Link key={category.name} href="/category/[category]" as={`/category/${category.name}`}>
                 <a className="ml-4 hover:text-black">{ category.name }</a>
               </Link>
             ))}
-          </div>
+          </div> */}
         </div>
     )
 }

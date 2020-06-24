@@ -3,9 +3,9 @@ const Footer = () => {
         <div className="flex justify-around bg-gray-300 pt-2 min-w-full text-sm">
             <div className="m-6">
               <ul>
-                <li className="font-semibold mb-1">FactsForFriends GbR</li>
-                <li>Musterstraße 123</li>
-                <li>12345 Musterstadt</li>
+                <li className="font-semibold mb-1">Facts For Friends GbR</li>
+                {/* <li>Musterstraße 123</li> */}
+                <li>21149 Hamburg</li>
               </ul>
             </div>
             <div className="m-6">
