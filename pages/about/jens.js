@@ -16,7 +16,7 @@ const AboutUs = () => {
             <div className="max-w-screen-lg">
                 <div className="flex flex-row p-4">
                     <div className="flex flex-1 flex-col items-center justify-center p-4">
-                        <img height={imageDimension} width={imageDimension} className="border"></img>
+                        <img src="https://cms.factsforfriends.de/uploads/Francisco_Kiss_edited_Kopie_dc78d0aa26.png" height={imageDimension} width={imageDimension} className="border"></img>
                         <b className="pt-2">Jens Preußner</b>
                         <i>Platform Development</i>
                     </div>
