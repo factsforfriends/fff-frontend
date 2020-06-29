@@ -30,8 +30,8 @@ Die Vision ist eine benutzerfreundliche Plattform mit einer hohen Reichweite, di
                 <b>Erik Langenhan</b>
                 <i>Platform Development</i>
               </a>
-              <a src="https://cms.factsforfriends.de/uploads/Francisco_Kiss_edited_Kopie_dc78d0aa26.png" href="/about/jens" className="flex flex-col items-center">
-                <img height={imageDimension} width={imageDimension} className="border"></img>
+              <a href="/about/jens" className="flex flex-col items-center">
+                <img src="https://cms.factsforfriends.de/uploads/Francisco_Kiss_edited_Kopie_dc78d0aa26.png" height={imageDimension} width={imageDimension} className="border"></img>
                 <b>Jens Preußner</b>
                 <i>Platform Development</i>
               </a>
