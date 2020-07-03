@@ -61,7 +61,7 @@ Die Vision ist eine benutzerfreundliche Plattform mit einer hohen Reichweite, di
                 <i>Beratung & Strategie</i>
               </a>
               <a href="/about/lisa" className="flex flex-col items-center">
-                <img height={imageDimension} width={imageDimension} className="border"></img>
+                <img src="https://cms.factsforfriends.de/uploads/about_lisa_300x300_0ac6dc3772.png" height={imageDimension} width={imageDimension} className="border"></img>
                 <b>Lisa Merten</b>
                 <i>Beratung & Strategie</i>
               </a>
