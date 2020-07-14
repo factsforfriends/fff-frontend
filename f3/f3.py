@@ -4,7 +4,6 @@ import requests
 
 app = flask.Flask(__name__)
 
-
 @app.route("/")
 def home():
    search_query_param = flask.request.args.get("q")
@@ -72,6 +71,9 @@ def about(name):
 @app.errorhandler(404)
 def page_not_found(e):
     return flask.render_template('error/404.html'), 404
+
+def create_app():
+   app.run(debug=False)
 
 if __name__ == "__main__":
    app.run(debug=True)
