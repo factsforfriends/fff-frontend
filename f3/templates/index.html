@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% if not search_query %}
+
+{% include "landingpage.html" %}
+
+{% else %}
+
+{% include "searchresult.html" %}
+
+{% endif %}
+
+{% endblock %}

@@ -1,13 +1,17 @@
-FROM node:10
+FROM python:3.8
 
-WORKDIR /usr/src/app
+ENV FLASK_APP=f3/f3.py
+ENV FLASK_ENV=development
 
-COPY package*.json ./
+RUN mkdir /f3 
+COPY /f3 /f3
+COPY pyproject.toml /f3 
 
-RUN npm install
+WORKDIR /f3
+ENV PYTHONPATH=${PYTHONPATH}:${PWD} 
 
-COPY . .
+RUN pip3 install poetry
+RUN poetry config virtualenvs.create false
+RUN poetry install --no-dev
 
-RUN npm run build
-
-CMD [ "npm", "start" ]
+CMD "/usr/local/bin/flask run --host=0.0.0.0"
