@@ -51,12 +51,13 @@ def snack(snack_id):
       
    fact["tags"] = fact["tags"].split(" ")
    fact["categories"] = fact["category"].split(" ")
-   #fact["domain"] = urlparse(fact["url"]).netloc
+   fact["domain"] = fact["url"].split('/')[2].replace("www.", "")
 
-   date_time_str = fact["updatedAt"]
+   date_time_str = fact["createdAt"]
    date_parsed = datetime.strptime(date_time_str, '%Y-%m-%dT%H:%M:%S.%fZ')
-   date_formatted = date_parsed.strftime("%d.%m.%Y %H:%M")
+   date_formatted = date_parsed.strftime("%d.%m.%Y")
    fact["date"] = date_formatted
+   fact["snack"] = fact["snack"].replace('\n',' ')
 
    return flask.render_template("snack_detail.html", title="FactsForFriends", fact=fact)
 
