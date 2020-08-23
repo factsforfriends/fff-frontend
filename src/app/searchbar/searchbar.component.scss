@@ -1,0 +1,36 @@
+input {
+    background-color: #F1F4F8;
+    padding: 7px 15px 7px 40px;
+    transition: box-shadow 0.3s ease-in-out;
+
+    &:focus {
+        outline: none;
+        box-shadow: 0 1px 10px rgba(0, 0, 0, 0.01), 0 1px 10px rgba(0, 0, 0, 0.2);
+    }
+}
+
+.searchicon {
+    position: absolute;
+    left: 10px;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+}
+
+.suggestions {
+    position: absolute;
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.01), 0 1px 10px rgba(0, 0, 0, 0.2);
+
+    .suggestion {
+        &:hover {
+            cursor: pointer;
+            background-color: #F1F4F8;
+        }
+
+        .metadata {
+            color: #9EADB7;
+            font-size: 0.8em;
+        }
+    }
+}
+

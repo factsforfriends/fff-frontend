@@ -1,0 +1,34 @@
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { HttpClientModule } from '@angular/common/http';
+import { NavbarComponent } from './navbar/navbar.component';
+import { BrowseComponent } from './browse/browse.component';
+import { FooterComponent } from './footer/footer.component';
+import { CategoryBarComponent } from './category-bar/category-bar.component';
+import { ArticleCardComponent } from './article-card/article-card.component';
+import { SearchbarComponent } from './searchbar/searchbar.component';
+import { DataService } from './data.service';
+
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    NavbarComponent,
+    BrowseComponent,
+    FooterComponent,
+    CategoryBarComponent,
+    ArticleCardComponent,
+    SearchbarComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule
+  ],
+  providers: [DataService],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }

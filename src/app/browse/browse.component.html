@@ -1,0 +1,23 @@
+<div class="categories bg-white p-2 m-4 rounded-lg">
+    <h2 class="p-2">Categories</h2>
+    <ul>
+        <li class="category rounded-lg" *ngFor="let category of ['Alle', 'Politik', 'Gesundheit']">
+            <i class="category-icon rounded-lg"></i>
+            <span>
+                {{category}}
+            </span>
+        </li>
+    </ul>
+</div>
+<div class="articles pt-24">
+    <div class="article p-4" *ngFor="let fact of facts | async; let i = index" [attr.data-index]="i">
+        <app-article-card
+            title="{{fact.headline}}" 
+            text="{{fact.snack}}"
+            date="{{fact.createdAt}}"
+            category="{{fact.category}}"
+            url="{{fact.url}}"
+            index="{{i}}"
+        ></app-article-card>
+    </div>
+</div>

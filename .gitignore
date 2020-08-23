@@ -1,47 +1,46 @@
-.env
-.data
-.strapi
-.caddy
+# See http://help.github.com/ignore-files/ for more about ignoring files.
 
-*.pyc
+# compiled output
+/dist
+/tmp
+/out-tsc
+# Only exists if Bazel was run
+/bazel-out
 
-# Packages
-*.egg
-!/tests/**/*.egg
-/*.egg-info
-/dist/*
-build
-_build
-.cache
-*.so
+# dependencies
+/node_modules
 
-# Installer logs
-pip-log.txt
+# profiling files
+chrome-profiler-events*.json
+speed-measure-plugin*.json
 
-# Unit test / coverage reports
-.coverage
-.tox
-.pytest_cache
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
 
-.DS_Store
-.idea/*
-.python-version
+# IDE - VSCode
 .vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/*
 
-/test.py
-/test_*.*
+# misc
+/.sass-cache
+/connect.lock
+/coverage
+/libpeerconnection.log
+npm-debug.log
+yarn-error.log
+testem.log
+/typings
 
-/setup.cfg
-MANIFEST.in
-/setup.py
-/docs/site/*
-/tests/fixtures/simple_project/setup.py
-/tests/fixtures/project_with_extras/setup.py
-.mypy_cache
-
-venv/
-.venv
-/releases/*
-pip-wheel-metadata
-/poetry.toml
-
+# System Files
+.DS_Store
+Thumbs.db

@@ -1,28 +1,27 @@
-# Deployment
+# Factsforfriends
 
-create a file .env with the following contents and modify:
-```bash
-DATABASE_CLIENT=mongo
-DATABASE_NAME=strapi
-DATABASE_HOST=mongo
-DATABASE_PORT=27017
-DATABASE_USERNAME=strapi
-DATABASE_PASSWORD=CHANGEME
-MONGO_INITDB_ROOT_USERNAME=strapi
-MONGO_INITDB_ROOT_PASSWORD=CHANGEME
-F3_TLS_MAIL=mail@example.org
-F3_CMS_DOMAIN=cms.example.org
-F3_FRONTEND_DOMAIN=frontend.example.org
-NEXT_TELEMETRY_DISABLED=1
-```
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.7.
 
-to start it
-```bash
-docker-compose up -d
-```
+## Development server
 
-to only start the frontend
-```bash
-npm i     # install all dependencies first
-npm run dev
-```
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+## Code scaffolding
+
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+
+## Build
+
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+
+## Running unit tests
+
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+
+## Running end-to-end tests
+
+Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+
+## Further help
+
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).

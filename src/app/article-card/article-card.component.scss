@@ -1,0 +1,27 @@
+.metadata {
+    color: #9EADB7;
+    font-size: 0.8em;
+}
+
+.card {
+    display: flex;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+
+    .header {
+        display: flex;
+        flex-direction: row;
+
+        .headline {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    .content {
+
+    }
+}
