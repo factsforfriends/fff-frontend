@@ -36,37 +36,3 @@
         min-width: 400px;
     }
 }
-
-.categories {
-    $navbar_height: 92px;
-
-    @media only screen and (min-width: 992px) {
-        position: fixed;
-        left: 0;
-        top: $navbar_height;
-        width: 220px;
-        height: calc(100vh - #{$navbar_height} - 45px);
-    }
-
-    .category {
-        position: relative;
-        padding: 20px 20px 20px 60px;
-
-        &:hover {
-            cursor: pointer;
-            background-color: #EBEEF350;
-        }
-    }
-
-    .category-icon {
-        position: absolute;
-        left: 10px;
-        top: 0;
-        bottom: 0;
-        margin: auto;
-        background-color: #F1F4F8;
-        height: 40px;
-        width: 40px;
-    }
-    
-}

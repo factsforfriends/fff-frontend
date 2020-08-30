@@ -15,4 +15,8 @@ export class DataService {
   public search(query: string, limit?: number) {
     return this.httpClient.get(`https://cms.factsforfriends.de/facts?_q=${query}&_limit=${limit}`)
   }
+
+  public getFact(id) {
+    return this.httpClient.get(`https://cms.factsforfriends.de/facts/${id}`)
+  }
 }

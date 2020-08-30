@@ -1,1 +1,9 @@
-<p>category-bar works!</p>
+<h2 class="p-2">Categories</h2>
+<ul>
+  <li class="category rounded-lg" *ngFor="let category of ['Alle', 'Politik', 'Gesundheit']">
+    <i class="category-icon rounded-lg"></i>
+    <span>
+      {{category}}
+    </span>
+  </li>
+</ul>

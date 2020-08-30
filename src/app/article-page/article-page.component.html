@@ -1,16 +1,15 @@
 <div class="outer">
     <div class="inner">
         <app-category-bar class="bg-white p-2 m-4 rounded-lg"></app-category-bar>
-
-        <div class="articles pt-24">
-            <div class="article p-4" *ngFor="let fact of facts | async; let i = index" [attr.data-index]="i">
+        <div *ngIf="fact" class="articles pt-24">
+            <div class="article p-4">
                 <app-article-card
                     title="{{fact.headline}}" 
                     text="{{fact.snack}}"
                     date="{{fact.createdAt}}"
                     category="{{fact.category}}"
                     url="{{fact.url}}"
-                    index="{{i}}"
+                    index="0"
                 ></app-article-card>
             </div>
         </div>

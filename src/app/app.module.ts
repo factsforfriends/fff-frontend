@@ -11,6 +11,8 @@ import { CategoryBarComponent } from './category-bar/category-bar.component';
 import { ArticleCardComponent } from './article-card/article-card.component';
 import { SearchbarComponent } from './searchbar/searchbar.component';
 import { DataService } from './data.service';
+import { ArticlePageComponent } from './article-page/article-page.component';
+import { ShareMenuComponent } from './share-menu/share-menu.component';
 
 
 @NgModule({
@@ -21,7 +23,9 @@ import { DataService } from './data.service';
     FooterComponent,
     CategoryBarComponent,
     ArticleCardComponent,
-    SearchbarComponent
+    SearchbarComponent,
+    ArticlePageComponent,
+    ShareMenuComponent
   ],
   imports: [
     BrowserModule,
