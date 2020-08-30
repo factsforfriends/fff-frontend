@@ -7,17 +7,35 @@ import { DataService } from '../data.service';
   styleUrls: ['./searchbar.component.scss']
 })
 export class SearchbarComponent implements OnInit {
-  suggestions;
-  searchterm = "";
+  suggestions = []
+  searchterm = ""
+  searchTimeout
 
   constructor(private dataService: DataService) { }
 
   ngOnInit(): void {
-    this.suggestions = this.dataService.getSuggestions()
+    
   }
 
   onKey(evt) {
     this.searchterm = evt.target.value
+
+    clearTimeout(this.searchTimeout)
+    this.searchTimeout = setTimeout(
+      () => {
+        this.triggerSearch()
+      },
+      500
+    )
+  }
+
+  triggerSearch() {
+    this.dataService.search(this.searchterm, 3).subscribe(
+      (data: Array<any>) => {
+        console.log(data)
+        this.suggestions = data
+      }
+    )
   }
 
 }

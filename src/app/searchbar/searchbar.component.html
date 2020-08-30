@@ -10,7 +10,7 @@
 </form>
 
 <div *ngIf="searchterm" class="suggestions bg-white w-full rounded-lg mt-2">
-  <div class="p-4 flex flex-row suggestion" *ngFor="let suggestion of suggestions | async">
+  <div class="p-4 flex flex-row suggestion" *ngFor="let suggestion of suggestions">
     <img height="70px" width="100px" class="rounded-lg" src="https://picsum.photos/100/70" />
     <div class="pl-4 flex flex-col">
       <span>

@@ -1,3 +1,13 @@
+.outer {
+    display: flex;
+    justify-content: center;
+
+    .inner {
+        max-width: 1200px;
+
+    }
+}
+
 .articles {
     display: flex;
     flex-direction: row;
@@ -28,13 +38,14 @@
 }
 
 .categories {
+    $navbar_height: 92px;
 
     @media only screen and (min-width: 992px) {
         position: fixed;
         left: 0;
-        top: 100px;
-        width: 180px;
-        height: 80vh;
+        top: $navbar_height;
+        width: 220px;
+        height: calc(100vh - #{$navbar_height} - 45px);
     }
 
     .category {

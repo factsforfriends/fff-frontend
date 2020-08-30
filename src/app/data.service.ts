@@ -12,7 +12,7 @@ export class DataService {
     return this.httpClient.get("https://cms.factsforfriends.de/facts");
   }
 
-  public getSuggestions(){
-    return this.httpClient.get("https://cms.factsforfriends.de/facts?_limit=3");
+  public search(query: string, limit?: number) {
+    return this.httpClient.get(`https://cms.factsforfriends.de/facts?_q=${query}&_limit=${limit}`)
   }
 }

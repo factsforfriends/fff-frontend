@@ -5,6 +5,10 @@
 
 .card {
     display: flex;
+    
+    .image-big {
+        margin: auto;
+    }
 }
 
 .wrapper {
@@ -23,5 +27,12 @@
 
     .content {
 
+    }
+}
+
+.action {
+    &:hover {
+        cursor: pointer;
+        background-color: #00000010;
     }
 }

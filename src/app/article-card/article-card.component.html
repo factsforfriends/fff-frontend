@@ -1,5 +1,5 @@
 <div class="bg-white m-1 p-3 rounded-lg card">
-    <img *ngIf="index == 0" class="rounded-lg image-big" src="https://picsum.photos/250/150" />
+    <img *ngIf="index == 0" class="rounded-lg image-big" src="https://picsum.photos/300/200" />
     <div class="wrapper p-4">
         <div class="header">
             <img *ngIf="index != 0" class="rounded-lg image-small mr-2" src="https://picsum.photos/150/100" />
@@ -10,7 +10,7 @@
         </div>
         <div class="content mt-4">{{text}}</div>
         <div class="actions mt-4 flex">
-            <a class="flex p-2 action">
+            <a class="flex p-2 action rounded-lg">
                 <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
                 width="24" height="24"
                 viewBox="0 0 30 30"
@@ -19,7 +19,7 @@
                     Share
                 </span>
             </a>
-            <a href="{{url}}" target="_blank" class="flex p-2 action">
+            <a href="{{url}}" target="_blank" class="flex ml-2 p-2 action rounded-lg">
                 <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
                 width="24" height="24"
                 viewBox="0 0 30 30"
