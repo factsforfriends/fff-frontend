@@ -12,13 +12,15 @@
                 <div class="metadata">{{date | date}} | {{category}}</div>
             </div>
         </div>
-        <div #textElement routerLink="/fact/{{id}}" class="content mt-4">
+        <div #textElement routerLink="/fact/{{id}}" class="mt-4" [class.truncateText]="compact">
             {{text}}
-            <span *ngIf="isOverflown" class="read-more">
-                <span style="color:black; left: 0">...</span>
-                mehr lesen
-            </span>
         </div>
+        <span *ngIf="isOverflown && compact" class="read-more">
+            mehr lesen
+            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+              </svg>
+        </span>
         <div class="actions mt-4 flex">
             <a (click)="share()" class="flex p-2 action highlight rounded-lg items-center">
                 <svg width="1.2em" height="1.2em" viewBox="0 0 16 16" class="bi bi-share-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">

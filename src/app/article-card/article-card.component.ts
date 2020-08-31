@@ -17,6 +17,8 @@ export class ArticleCardComponent implements OnInit, AfterViewInit {
   @Input() index;
   @Input() id;
 
+  @Input() compact: boolean = false;
+
   isOverflown: boolean = false
 
   constructor(private matDialog: MatDialog) { }
