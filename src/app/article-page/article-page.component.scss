@@ -1,0 +1,14 @@
+.articles {
+    @media only screen and (min-width: 992px) {
+        margin-left: 230px;
+    }
+}
+
+.backButton {
+    transition: background-color 0.5s ease;
+
+    &:hover {
+        cursor: pointer;
+        background-color: rgba(255, 255, 255, 0.3);
+    }
+}

@@ -1,3 +1,5 @@
+@import "../../variables.scss";
+
 :host {
     $navbar_height: 92px;
 
@@ -28,6 +30,24 @@
         background-color: #F1F4F8;
         height: 40px;
         width: 40px;
+
+        display: grid; 
+        place-items: center; 
+
+        svg {
+            color: #90A1AD;
+            height: 1.5em;
+            width: 1.5em;
+        }
+    }
+
+    .highlighted {
+        .category-icon {
+            background-color: $highlight_color;
+            svg {
+                color: white;
+            }
+        }
     }
     
 }

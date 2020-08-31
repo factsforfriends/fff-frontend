@@ -1,3 +1,5 @@
+@import "../../variables.scss";
+
 .metadata {
     color: #9EADB7;
     font-size: 0.8em;
@@ -35,4 +37,8 @@
         cursor: pointer;
         background-color: #00000010;
     }
+}
+
+.highlight {
+    color: $highlight_color;
 }

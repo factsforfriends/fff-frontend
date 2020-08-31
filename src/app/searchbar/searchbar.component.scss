@@ -1,3 +1,5 @@
+@import "../../variables.scss";
+
 input {
     background-color: #F1F4F8;
     padding: 7px 15px 7px 40px;
@@ -15,6 +17,31 @@ input {
     top: 0;
     bottom: 0;
     margin: auto 0;
+    color: $highlight_color;
+}
+
+.clearbutton {
+    transition: background-color 0.5s ease;
+    &:hover {
+        background-color: rgba(255, 255, 255, 0.6);
+    }
+
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    padding: 10px 17px;
+
+    svg {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        color: $highlight_color;
+    }
 }
 
 .suggestions {
