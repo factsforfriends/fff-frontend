@@ -3,7 +3,9 @@
     justify-content: center;
 
     .inner {
-        // max-width: 1200px;
+        @media only screen and (max-width: 992px) {
+            width: 100%;
+        }
 
     }
 }
@@ -17,6 +19,7 @@
 
     @media only screen and (min-width: 992px) {
         margin-left: 230px;
+        padding-top: 6em;
     }
     
     .article {

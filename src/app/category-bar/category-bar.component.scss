@@ -11,25 +11,37 @@
         height: calc(100vh - #{$navbar_height} - 45px);
     }
 
+    @media only screen and (max-width: 992px) {
+        margin-top: 80px;
+        display: inline-block;
+        width: auto;
+        background-color: initial;
+
+        h2 {
+            display: none;
+        }
+
+        ul {
+            display: flex;
+        }
+    }
+
     .category {
-        position: relative;
-        padding: 20px 20px 20px 60px;
+        display: flex;
+        align-items: center;
+        padding: 10px 15px;
 
         &:hover {
             cursor: pointer;
-            background-color: #EBEEF350;
+            background-color: #00000008;
         }
     }
 
     .category-icon {
-        position: absolute;
-        left: 10px;
-        top: 0;
-        bottom: 0;
-        margin: auto;
         background-color: #F1F4F8;
         height: 40px;
         width: 40px;
+        margin-right: 10px;
 
         display: grid; 
         place-items: center; 

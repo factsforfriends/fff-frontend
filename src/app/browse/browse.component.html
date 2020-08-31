@@ -2,7 +2,7 @@
     <div class="inner">
         <app-category-bar class="bg-white p-2 m-4 rounded-lg"></app-category-bar>
 
-        <div class="articles pt-24">
+        <div class="articles">
             <div class="article p-4" *ngFor="let fact of facts | async; let i = index" [attr.data-index]="i">
                 <app-article-card
                     title="{{fact.headline}}" 
@@ -10,6 +10,7 @@
                     date="{{fact.createdAt}}"
                     category="{{fact.category}}"
                     url="{{fact.url}}"
+                    id="{{fact.id}}"
                     index="{{i}}"
                 ></app-article-card>
             </div>

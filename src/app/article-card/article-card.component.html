@@ -1,14 +1,14 @@
 <div class="bg-white m-1 p-3 rounded-lg card">
-    <img *ngIf="index == 0" class="rounded-lg image-big" src="https://picsum.photos/300/200" />
+    <img routerLink="/fact/{{id}}" *ngIf="index == 0" class="rounded-lg image-big" src="https://picsum.photos/300/200" />
     <div class="wrapper p-4">
-        <div class="header">
+        <div routerLink="/fact/{{id}}" class="header">
             <img *ngIf="index != 0" class="rounded-lg image-small mr-2" src="https://picsum.photos/150/100" />
             <div class="headline">
                 <h2 class="text-xl font-medium">{{title}}</h2>
                 <div class="metadata">{{date | date}} | {{category}}</div>
             </div>
         </div>
-        <div class="content mt-4">{{text}}</div>
+        <div routerLink="/fact/{{id}}" class="content mt-4">{{text}}</div>
         <div class="actions mt-4 flex">
             <a (click)="share()" class="flex p-2 action highlight rounded-lg items-center">
                 <svg width="1.2em" height="1.2em" viewBox="0 0 16 16" class="bi bi-share-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">

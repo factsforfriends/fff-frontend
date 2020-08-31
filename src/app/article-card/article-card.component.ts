@@ -14,6 +14,7 @@ export class ArticleCardComponent implements OnInit {
   @Input() date;
   @Input() category;
   @Input() index;
+  @Input() id;
 
   constructor(private matDialog: MatDialog) { }
 
