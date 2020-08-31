@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialogRef } from '@angular/material/dialog';
+import {MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { Inject } from '@angular/core';
 
 @Component({
   selector: 'app-share-menu',
@@ -7,9 +10,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ShareMenuComponent implements OnInit {
 
-  constructor() { }
+  constructor(public dialogRef: MatDialogRef<ShareMenuComponent>, @Inject(MAT_DIALOG_DATA) public data: any) { }
 
   ngOnInit(): void {
+
+  }
+
+  close() {
   }
 
 }

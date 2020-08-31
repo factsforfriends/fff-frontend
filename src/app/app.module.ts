@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {MatDialogModule, MAT_DIALOG_DEFAULT_OPTIONS} from '@angular/material/dialog';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -30,9 +32,16 @@ import { ShareMenuComponent } from './share-menu/share-menu.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    MatDialogModule,
+    BrowserAnimationsModule
   ],
-  providers: [DataService],
+  entryComponents: [
+    ShareMenuComponent
+  ],
+  providers: [
+    DataService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

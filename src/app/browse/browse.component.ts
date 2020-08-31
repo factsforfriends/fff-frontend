@@ -23,6 +23,10 @@ export class BrowseComponent implements OnInit {
         }
       }
     )
+
+    if (!this.route.snapshot.queryParamMap.get("c")) {
+      this.facts = this.dataService.getData()
+    }
   }
 
 }

@@ -8,12 +8,12 @@ export class DataService {
 
   constructor(private httpClient: HttpClient) { }
 
-  public getData(category?: string){
+  public getData(category = ""){
     return this.httpClient.get(`https://cms.factsforfriends.de/facts?category_contains=${category.toLowerCase()}`)
   }
 
-  public search(query: string, category?: string, limit?: number) {
-    // connect query with category does not work with strapi.io at the moment, future version of strapi will support this
+  public search(query: string, category = "", limit?: number) {
+    // connect query with category using AND does not work with strapi.io at the moment, future version of strapi will support this
     return this.httpClient.get(`https://cms.factsforfriends.de/facts?_q=${query}&category_contains=${category.toLowerCase()}&_limit=${limit}`)
   }
 

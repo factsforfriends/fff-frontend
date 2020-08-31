@@ -1,4 +1,6 @@
-import { Component, OnInit, Input, Output } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { ShareMenuComponent } from '../share-menu/share-menu.component';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-article-card',
@@ -13,17 +15,17 @@ export class ArticleCardComponent implements OnInit {
   @Input() category;
   @Input() index;
 
-  constructor() { }
+  constructor(private matDialog: MatDialog) { }
 
   ngOnInit(): void {
   }
 
   share(): void {
-    // if mobile
-    // => trigger native share menu
-
-    // else
-    // => open modal for desktop use
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig["data"] = {
+      url: this.url
+    }
+    const dialogRef = this.matDialog.open(ShareMenuComponent, dialogConfig);
   }
 
 }
