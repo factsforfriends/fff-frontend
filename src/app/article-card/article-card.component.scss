@@ -7,9 +7,20 @@
 
 .card {
     display: flex;
+
+    img {
+        max-width: initial;
+    }
     
     .image-big {
         margin: auto;
+        width: 300px;
+        height: 200px;
+    }
+
+    .image-small {
+        width: 150px;
+        height: 100px;
     }
 }
 
@@ -24,11 +35,26 @@
         .headline {
             display: flex;
             flex-direction: column;
+            margin-left: 10px;
         }
     }
 
     .content {
+        height: 72px;
+        overflow: hidden;
+        position: relative;
 
+        .read-more {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            background-color: white;
+            color: $highlight_color;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
     }
 }
 
