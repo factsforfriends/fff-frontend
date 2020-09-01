@@ -1,2 +1,10 @@
-<app-navbar></app-navbar>
-<router-outlet></router-outlet>
+<!--
+<router-outlet></router-outlet>-->
+
+<div class="flex flex-col h-screen">
+    <app-navbar></app-navbar>
+    <main class="flex-1 overflow-y-auto p-5">
+        <router-outlet></router-outlet>
+    </main>
+    <footer></footer>
+</div>

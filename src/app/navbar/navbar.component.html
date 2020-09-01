@@ -1,26 +1,19 @@
-<div class="fixed w-screen p-4 top-0">
-    <div class="navbar bg-white p-4 rounded-lg">
-        <a href="/" class="logo">
-            <svg class="h-8 w-8 fill-current text-gray-800 inline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 66.14 95.2">
-                <defs>
-                    <style></style>
-                </defs>
-                <g id="Layer_2" data-name="Layer 2">
-                    <g id="Layer_1-2" data-name="Layer 1">
-                        <g id="Layer_1-2-2" data-name="Layer 1-2">
-                            <ellipse cx="33.1" cy="91.76" rx="4.15" ry="2.44" strokemiterlimit="10" strokewidth="2" stroke="#3a3a3a" fill="#c1c1c1"></ellipse>
-                            <path d="M34 1h-1.84C5.88 2.09-8.65 31.39 8.27 51.39c16.5 15.35 9.56 8.53 15.58 28.36h18.39c6-19.81-.9-13.09 15.6-28.36C74.82 31.44 60.26 2.14 34 1z" fill="none" strokemiterlimit="10" strokewidth="2" stroke="#3a3a3a"></path>
-                            <path d="M30.88 78.6Q29.41 60.06 28 41.49c-1.47-18.56-11.73-7.71-.29-12.08s4.07 12.08 4.07 12.08H34"></path>
-                            <path d="M35.83 79q1.08-18.76 2.11-37.54c1.05-18.77 11.73-7.71.3-12.08s-4.15 12.08-4.15 12.08h-2.36"></path>
-                            <circle cx="26.53" cy="24.02" r="3.45"></circle>
-                            <circle cx="39.89" cy="24.02" r="3.45"></circle>
-                            <path d="M42.48 79H23.71L26 88.57h0c.53 2.05 3.53 3.63 7.16 3.63s7-1.7 7.22-4z" fill="#efefed" strokemiterlimit="10" strokewidth="2" stroke="#3a3a3a"></path>
-                        </g>
-                    </g>
+<div class="w-screen pt-4 px-4">
+    <div class="flex items-center bg-white px-2 md:px-4 rounded-lg justify-center w-full">
+        <div class="flex items-center md:absolute md:left-0 md:pl-8">
+            <svg class="h-8 w-8 stroke-current fill-current hover:text-green-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 217 282" width="60" height="60">
+                <g stroke="currentColor" fill="none" stroke-width="8">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M98 142c1-5 4-24-3-30-5-3-13-2-17 2-6 7-2 25 5 34 8 12 16 13 22 13s15 1 24-11c7-12 9-31 1-38-4-4-12-3-15 1a7 7 0 00-1 1c-6 9 0 28 0 28 3 10 5 13 4 16s-12 3-14 3c-3 0-4 0-7-2s0-9 1-17z"/>
+                    <path d="M189 93v-1c0-32-37-73-83-73-47 0-83 41-84 73v1c0 21 15 44 20 52l1 2c10 17 23 35 26 51l4 23 2 8c2 5 9 8 9 8 4 2 8 2 12 2h20a26 26 0 004 0 20 20 0 009-3c2 0 6-3 7-7l2-8 4-23c3-16 16-34 26-51l1-2c6-8 20-31 20-52z"/>
+                    <circle cx="126.4" cy="86.5" r="10.9"/>
+                    <circle cx="85.2" cy="86.5" r="10.9"/>
                 </g>
+                <g fill="currentColor"><path d="M94 249a2 2 0 012-2h21c3 1 1 3 1 4s-3 3-8 3h-8c-4 0-8-2-8-3z"/></g>
             </svg>
-            <span class="fill"><strong>Facts</strong>for<strong>Friends</strong></span>
-        </a>
-        <app-searchbar class="center max-w-lg"></app-searchbar>
+            <span class="hidden md:block"><strong>Facts</strong>For<strong>Friends</strong></span>
+        </div>
+        <div class="flex-grow md:flex-none md:w-1/2 py-2">
+            <app-searchbar></app-searchbar>
+        </div>
     </div>
 </div>

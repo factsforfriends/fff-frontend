@@ -1,20 +1,17 @@
-<div class="outer">
-    <div class="inner">
-        <app-category-bar class="bg-white p-2 m-4 rounded-lg"></app-category-bar>
-
-        <div class="articles">
-            <div class="article p-4" *ngFor="let fact of facts | async; let i = index" [attr.data-index]="i">
-                <app-article-card
-                    title="{{fact.headline}}" 
-                    text="{{fact.snack}}"
-                    date="{{fact.createdAt}}"
-                    category="{{fact.category}}"
-                    url="{{fact.url}}"
-                    id="{{fact.id}}"
-                    index="{{i}}"
-                    compact="true"
-                ></app-article-card>
-            </div>
+<div>
+    <app-category-bar class="bg-white p-2 m-4 rounded-lg"></app-category-bar>
+    <div class="articles">
+        <div class="article p-4" *ngFor="let fact of facts | async; let i = index" [attr.data-index]="i">
+            <app-article-card
+                title="{{fact.headline}}" 
+                text="{{fact.snack}}"
+                date="{{fact.createdAt}}"
+                category="{{fact.category}}"
+                url="{{fact.url}}"
+                id="{{fact.id}}"
+                index="{{i}}"
+                compact="true"
+            ></app-article-card>
         </div>
     </div>
 </div>
