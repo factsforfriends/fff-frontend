@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { DataService } from '../data.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-searchbar',
@@ -17,28 +17,44 @@ export class SearchbarComponent implements OnInit {
   searchbarHasFocus: boolean = false
   selectedCategory = ""
 
-  constructor(private dataService: DataService, private route: ActivatedRoute) { }
+  constructor(private dataService: DataService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
     this.route.queryParamMap.subscribe(
       queryParams => {
-        if (this.selectedCategory != queryParams.get("c")) {
-          this.selectedCategory = queryParams.get("c")
+        const q = queryParams.get("q")
+        const c = queryParams.get("c")
+        this.searchterm = q
+        this.selectedCategory = c
+
+        if (q == "") {
+          this.clear()
         }
       }
     )
   }
 
   onKey(evt) {
-    this.searchterm = evt.target.value
+    if (evt.code === "Enter") {
+      this.router.navigate(
+        [], 
+        {
+          relativeTo: this.route,
+          queryParams: {"q": this.searchterm}, 
+          queryParamsHandling: 'merge', // remove to replace all query params by provided
+        })
+      this.hideSuggestions()
+    } else {
+      this.searchterm = evt.target.value
+      clearTimeout(this.searchTimeout)
+      this.searchTimeout = setTimeout(
+        () => {
+          this.triggerSearch()
+        },
+        500
+      )
+    }
 
-    clearTimeout(this.searchTimeout)
-    this.searchTimeout = setTimeout(
-      () => {
-        this.triggerSearch()
-      },
-      500
-    )
   }
 
   triggerSearch() {
@@ -52,6 +68,15 @@ export class SearchbarComponent implements OnInit {
   clear() {
     this.searchterm = ""
     this.searchinput.nativeElement.value = ""
+
+    this.router.navigate(
+      [], 
+      {
+        relativeTo: this.route,
+        queryParams: {"q": ""}, 
+        queryParamsHandling: 'merge',
+      })
+
     this.hideSuggestions()
   }
 
@@ -65,6 +90,7 @@ export class SearchbarComponent implements OnInit {
 
   hideSuggestions(): void {
     this.searchbarHasFocus = false
+    this.searchinput.nativeElement.blur()
   }
  
 }

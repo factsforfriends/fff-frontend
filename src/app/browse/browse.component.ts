@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-browse',
@@ -10,23 +10,45 @@ import { ActivatedRoute } from '@angular/router';
 export class BrowseComponent implements OnInit {
   facts;
   selectedCategory;
+  searchterm;
 
-  constructor(private dataService: DataService, private route: ActivatedRoute) { }
+  constructor(private dataService: DataService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
     this.route.queryParamMap.subscribe(
       queryParams => {
-        if (this.selectedCategory != queryParams.get("c")) {
-          this.selectedCategory = queryParams.get("c")
-          
-          this.facts = this.dataService.getData(this.selectedCategory)
+        const q = queryParams.get("q")
+        const c = queryParams.get("c")
+
+        if (q != this.searchterm || c != this.selectedCategory) {
+          this.searchterm = q
+          this.selectedCategory = c
+          this.fetch(q, c)
         }
       }
     )
 
-    if (!this.route.snapshot.queryParamMap.get("c")) {
-      this.facts = this.dataService.getData()
+    const q = this.route.snapshot.queryParamMap.get("q")
+    const c = this.route.snapshot.queryParamMap.get("c")
+    this.fetch(q, c)
+  }
+
+  fetch(q: string, c: string) {
+    if (q) {
+      this.facts = this.dataService.search(q, c)
+    } else {
+      this.facts = this.dataService.getData(c)
     }
+  }
+
+  clearSearch() {
+    this.router.navigate(
+      [], 
+      {
+        relativeTo: this.route,
+        queryParams: {"q": ""}, 
+        queryParamsHandling: 'merge',
+      })
   }
 
 }

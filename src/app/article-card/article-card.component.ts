@@ -27,7 +27,10 @@ export class ArticleCardComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    this.isOverflown = this.checkIfOverflown(this.textElement.nativeElement)
+    // set timeout to circumvent error: Expression has changed after it was checked
+    setTimeout(() => {
+      this.isOverflown = this.checkIfOverflown(this.textElement.nativeElement)
+    }, 0)
   }
 
   share(): void {

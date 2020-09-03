@@ -1,12 +1,12 @@
-<div class="bg-white m-1 p-3 rounded-lg card">
-    <span *ngIf="index == 0" class="image-big">
+<div class="bg-white m-1 p-3 rounded-lg card h-full">
+    <!-- <span *ngIf="index == 0" class="image-big">
         <img routerLink="/fact/{{id}}" class="rounded-lg" src="https://picsum.photos/300/200" />
-    </span>
+    </span> -->
     <div class="wrapper p-4">
-        <div routerLink="/fact/{{id}}" class="header">
-            <span *ngIf="index != 0" class="image-small">
+        <div routerLink="/fact/{{id}}" class="header flex-grow">
+            <!-- <span *ngIf="index != 0" class="image-small">
                 <img class="rounded-lg mr-2" src="https://picsum.photos/150/100" />
-            </span>
+            </span> -->
             <div class="headline">
                 <h2 class="text-xl font-medium">{{title}}</h2>
                 <div class="metadata">{{date | date}} | {{category}}</div>

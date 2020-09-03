@@ -16,7 +16,7 @@ export class DataService {
   public search(query: string, category?: string, limit?: number) {
     if (!category) category = ""
     // connect query with category using AND does not work with strapi.io at the moment, future version of strapi will support this
-    return this.httpClient.get(`https://cms.factsforfriends.de/facts?_q=${query}&category_contains=${category.toLowerCase()}&_limit=${limit}`)
+    return this.httpClient.get(`https://cms.factsforfriends.de/facts?_q=${query}&category_contains=${category.toLowerCase()}&_limit=${limit ? String(limit) : ""}`)
   }
 
   public getFact(id: string) {
