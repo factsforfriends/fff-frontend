@@ -1,17 +1,11 @@
-FROM python:3.8
+FROM node as build
+WORKDIR /app
+COPY package*.json /app/
+RUN npm install
+COPY . /app
+ARG configuration=production
+RUN npm run build -- --outputPath=./dist/out --configuration $configuration
 
-ENV FLASK_APP=f3/f3.py
-ENV FLASK_ENV=development
-
-RUN mkdir /f3 
-COPY /f3 /f3
-COPY pyproject.toml /f3 
-
-WORKDIR /f3
-ENV PYTHONPATH=${PYTHONPATH}:${PWD} 
-
-RUN pip3 install poetry
-RUN poetry config virtualenvs.create false
-RUN poetry install --no-dev
-
-CMD "/usr/local/bin/flask run --host=0.0.0.0"
+FROM nginx
+COPY --from=build /app/dist/out/ /usr/share/nginx/html
+COPY /nginx.conf /etc/nginx/conf.d/default.conf
