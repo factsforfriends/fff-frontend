@@ -7,21 +7,10 @@
     height: 60px;
 }
 
-.center {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 50%;
-    margin: 0 auto;
-    transform: translateY(-50%);
-}
-
 .logo {
-    position: absolute;
     left: 30px;
     top: 50%;
     margin: 0 auto;
-    transform: translateY(-50%);
     display: flex;
     flex-direction: row;
 
@@ -29,5 +18,41 @@
         display: flex;
         align-items: center;
         margin-left: 5px;
+    }
+}
+
+@media only screen and (max-width: 991px) {
+    .logo-text {
+        display: none !important;
+    }
+
+    .navbar {
+        display: flex;
+        align-items: center;
+
+        .logo {
+            margin-right: 10px;
+        }
+
+        app-searchbar {
+            flex: 1;
+            max-width: initial;
+        }
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .center {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 50%;
+        margin: 0 auto;
+        transform: translateY(-50%);
+    }
+
+    .logo {
+        position: absolute;
+        transform: translateY(-50%);
     }
 }

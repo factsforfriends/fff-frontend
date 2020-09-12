@@ -2,9 +2,18 @@
 @import "../../mixins.scss";
 
 .articles {
+    @media only screen and (max-width: 640px) {
+        justify-content: center;
+
+        .article {
+            padding: 0;
+        }
+    }
+
     @media only screen and (min-width: 992px) {
         margin-left: 230px;
     }
+
 }
 
 .backButton {

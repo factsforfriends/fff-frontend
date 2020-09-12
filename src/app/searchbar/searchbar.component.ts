@@ -36,14 +36,7 @@ export class SearchbarComponent implements OnInit {
 
   onKey(evt) {
     if (evt.code === "Enter") {
-      this.router.navigate(
-        [], 
-        {
-          relativeTo: this.route,
-          queryParams: {"q": this.searchterm}, 
-          queryParamsHandling: 'merge', // remove to replace all query params by provided
-        })
-      this.hideSuggestions()
+      this.goToSearchResults()
     } else {
       this.searchterm = evt.target.value
       clearTimeout(this.searchTimeout)
@@ -55,6 +48,17 @@ export class SearchbarComponent implements OnInit {
       )
     }
 
+  }
+
+  goToSearchResults() {
+    this.router.navigate(
+      [], 
+      {
+        relativeTo: this.route,
+        queryParams: {"q": this.searchterm}, 
+        queryParamsHandling: 'merge', // remove to replace all query params by provided
+      })
+    this.hideSuggestions()
   }
 
   triggerSearch() {

@@ -20,6 +20,10 @@ input {
     color: $highlight_color;
 }
 
+.searchresult-button {
+    color: $highlight_color;
+}
+
 .clearbutton {
     transition: background-color 0.5s ease;
     &:hover {
@@ -48,6 +52,12 @@ input {
     position: absolute;
     box-shadow: 0 1px 10px rgba(0, 0, 0, 0.01), 0 1px 10px rgba(0, 0, 0, 0.2);
 
+    @media only screen and (max-width: 991px) {
+        right: 0;
+        width: calc(100% - 20px);
+        margin: 10px;
+    }
+
     .suggestion {
         &:hover {
             cursor: pointer;
@@ -67,5 +77,10 @@ input {
     height: 100vh;
     background-color: rgba(255, 255, 255, 0.3);
     backdrop-filter: blur(1px);
+
+    @media only screen and (max-width: 991px) {
+        top: 0 !important;
+        left: 0 !important;
+    }
 }
 

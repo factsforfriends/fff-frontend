@@ -23,6 +23,11 @@
       </span>
     </div>
   </a>
+  <a (click)="goToSearchResults()" class="p-4 flex flex-row suggestion">
+    <div class="pl-4 flex flex-col searchresult-button">
+      Alle Suchergebnisse anzeigen
+    </div>
+  </a>
 </div>
 
 <div #backgroundOverlay [hidden]="!searchbarHasFocus" (click)="hideSuggestions()" class="background-overlay z-10"></div>
