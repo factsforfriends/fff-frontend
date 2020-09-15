@@ -1,0 +1,36 @@
+@import "../../variables.scss";
+
+.content {
+    min-width: 550px;
+}
+
+.close-button {
+    right: 20px;
+    color: $sharesheet_color;
+    z-index: 10;
+}
+
+.share a img {
+    height: 40px;
+}
+
+input {
+    background-color: $searchbar_background;
+    padding: 7px 15px;
+    color: $sharesheet_color;
+}
+
+.copy-link {
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $highlight_color;
+}
+
+.close-button, .copy-link, .share a {
+    &:hover {
+        background-color: rgba(0,0,0,0.05);
+        cursor: pointer;
+    }
+}

@@ -24,6 +24,7 @@ export class ArticleCardComponent implements OnInit, AfterViewInit {
   constructor(private matDialog: MatDialog) { }
 
   ngOnInit(): void {
+    this.share();
   }
 
   ngAfterViewInit(): void {

@@ -9,10 +9,15 @@ import { Inject } from '@angular/core';
   styleUrls: ['./share-menu.component.scss']
 })
 export class ShareMenuComponent implements OnInit {
+  clipboard_copied: boolean = false
 
   constructor(public dialogRef: MatDialogRef<ShareMenuComponent>, @Inject(MAT_DIALOG_DATA) public data: any) { }
 
   ngOnInit(): void {
+
+  }
+
+  share_facebook() {
 
   }
 
@@ -46,9 +51,12 @@ export class ShareMenuComponent implements OnInit {
       return;
     }
     navigator.clipboard.writeText(text);
+
+    this.clipboard_copied = true
   }
 
   close() {
+    this.dialogRef.close();
   }
 
 }
