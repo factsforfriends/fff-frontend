@@ -1,9 +1,11 @@
 <h2 class="p-2">Categories</h2>
-<ul>
-  <li (click)="selectCategory('')" class="category rounded-lg" [class.highlighted]="!selectedCategory || selectedCategory == ''">
+<ul class="flex-1">
+  <li (click)="selectCategory('')" class="category rounded-lg"
+    [class.highlighted]="!selectedCategory || selectedCategory == ''">
     <i class="category-icon rounded-lg">
       <svg viewBox="0 0 16 16" class="bi bi-grid" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-        <path fill-rule="evenodd" d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5v-3zM2.5 2a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zM1 10.5A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3z"/>
+        <path fill-rule="evenodd"
+          d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5v-3zM2.5 2a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zM1 10.5A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3z" />
       </svg>
     </i>
     <span class="select-none">
@@ -11,10 +13,12 @@
     </span>
   </li>
 
-  <li (click)="selectCategory('Politik')" class="category rounded-lg" [class.highlighted]="selectedCategory == 'Politik'">
+  <li (click)="selectCategory('Politik')" class="category rounded-lg"
+    [class.highlighted]="selectedCategory == 'Politik'">
     <i class="category-icon rounded-lg">
       <svg viewBox="0 0 16 16" class="bi bi-pentagon" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-        <path fill-rule="evenodd" d="M8 1.288l-6.842 5.56L3.733 15h8.534l2.575-8.153L8 1.288zM16 6.5L8 0 0 6.5 3 16h10l3-9.5z"/>
+        <path fill-rule="evenodd"
+          d="M8 1.288l-6.842 5.56L3.733 15h8.534l2.575-8.153L8 1.288zM16 6.5L8 0 0 6.5 3 16h10l3-9.5z" />
       </svg>
     </i>
     <span class="select-none">
@@ -22,10 +26,12 @@
     </span>
   </li>
 
-  <li (click)="selectCategory('Gesundheit')" class="category rounded-lg" [class.highlighted]="selectedCategory == 'Gesundheit'">
+  <li (click)="selectCategory('Gesundheit')" class="category rounded-lg"
+    [class.highlighted]="selectedCategory == 'Gesundheit'">
     <i class="category-icon rounded-lg">
       <svg viewBox="0 0 16 16" class="bi bi-heart" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-        <path fill-rule="evenodd" d="M8 2.748l-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"/>
+        <path fill-rule="evenodd"
+          d="M8 2.748l-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z" />
       </svg>
     </i>
     <span class="select-none">
@@ -33,3 +39,21 @@
     </span>
   </li>
 </ul>
+
+<div class="social-media flex">
+  <a target="_blank" href="https://www.facebook.com/factsforfriends.de" class="p-4 rounded cursor-pointer">
+    <img src="/assets/facebook.svg" />
+  </a>
+
+  <a target="_blank" href="https://www.instagram.com/factsforfriends.de/" class="p-4 rounded cursor-pointer">
+    <img src="/assets/instagram.svg" />
+  </a>
+
+  <a target="_blank" href="https://www.linkedin.com/company/facts-for-friends" class="p-4 rounded cursor-pointer">
+    <img src="/assets/linkedin.svg" />
+  </a>
+
+  <a target="_blank" href="https://twitter.com/facts4friends" class="p-4 rounded cursor-pointer">
+    <img src="/assets/twitter.svg" />
+  </a>
+</div>

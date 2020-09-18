@@ -2,6 +2,9 @@
 
 :host {
     $navbar_height: 92px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
 
     @media only screen and (min-width: 992px) {
         position: fixed;
@@ -9,6 +12,16 @@
         top: $navbar_height;
         width: 220px;
         height: calc(100vh - #{$navbar_height} - 45px);
+
+        .social-media a {
+            display: block;
+
+            img {
+                height: 20px;
+                display: grid;
+                justify-content: space-around;
+            }
+        }
     }
 
     @media only screen and (max-width: 992px) {
@@ -23,6 +36,10 @@
 
         ul {
             display: flex;
+        }
+
+        .social-media {
+            display: none;
         }
     }
 

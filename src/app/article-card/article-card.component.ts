@@ -9,13 +9,13 @@ import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 })
 export class ArticleCardComponent implements OnInit, AfterViewInit {
   @ViewChild('textElement') textElement: ElementRef
-  @Input() title;
-  @Input() text;
-  @Input() url;
-  @Input() date;
-  @Input() category;
-  @Input() index;
-  @Input() id;
+  @Input() title: string;
+  @Input() text: string;
+  @Input() url: string;
+  @Input() date: string;
+  @Input() category: string;
+  @Input() index: number;
+  @Input() id: string;
 
   @Input() compact: boolean = false;
 
