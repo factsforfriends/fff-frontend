@@ -60,12 +60,15 @@ export class BrowseComponent implements OnInit {
   async loadMore() {
     let newFacts: Array < Fact > 
     if(this.searchterm && this.searchterm != "") {
-      newFacts = await this.dataService.search(this.searchterm, this.selectedCategory, this.limit + 10).toPromise()
+      newFacts = await this.dataService.search(this.searchterm, this.selectedCategory, 10, this.limit + 1).toPromise()
     } else {
-      newFacts = await this.dataService.getData(this.selectedCategory, this.limit, this.limit + 10).toPromise()
+      newFacts = await this.dataService.getData(this.selectedCategory, 10, this.limit + 1).toPromise()
     }
+    console.log(newFacts)
     this.limit = this.limit + 10
     this.facts = this.facts.concat(newFacts)
+
+    console.log(this.limit, this.totalCount)
   }
 
   clearSearch() {
