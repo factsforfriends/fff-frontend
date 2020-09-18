@@ -16,6 +16,7 @@ export class SearchbarComponent implements OnInit {
   searchTimeout
   searchbarHasFocus: boolean = false
   selectedCategory = ""
+  searchCount: number
 
   constructor(private dataService: DataService, private route: ActivatedRoute, private router: Router) { }
 
@@ -66,6 +67,9 @@ export class SearchbarComponent implements OnInit {
       (data: Array<any>) => {
         this.suggestions = data
       }
+    )
+    this.dataService.getSearchCount(this.searchterm, this.selectedCategory).subscribe(
+      (count: number) => this.searchCount = count
     )
   }
 

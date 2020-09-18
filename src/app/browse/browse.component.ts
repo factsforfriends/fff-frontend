@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Fact } from '../model/fact.model'
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-browse',
@@ -8,9 +10,11 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./browse.component.scss']
 })
 export class BrowseComponent implements OnInit {
-  facts;
-  selectedCategory;
-  searchterm;
+  facts: Array < Fact >
+  selectedCategory
+  searchterm
+  limit: number
+  totalCount: number
 
   constructor(private dataService: DataService, private route: ActivatedRoute, private router: Router) { }
 
@@ -33,12 +37,35 @@ export class BrowseComponent implements OnInit {
     this.fetch(q, c)
   }
 
-  fetch(q: string, c: string) {
+  async fetch(q: string, c: string) {
     if (q) {
-      this.facts = this.dataService.search(q, c)
+      const limit = 10
+      this.dataService.getSearchCount(q, c).subscribe(
+        (count: number) => this.totalCount = count
+      )
+      this.facts = await this.dataService.search(q, c, limit).toPromise()
+      this.limit = limit
     } else {
-      this.facts = this.dataService.getData(c)
+      const limit = 9
+      this.dataService.getFactCount(c).subscribe(
+        (count: number) => this.totalCount = count
+      )
+      this.facts = await this.dataService.getData(c, limit).toPromise()
+      this.limit = limit
     }
+
+    console.log(this.limit, this.totalCount)
+  }
+
+  async loadMore() {
+    let newFacts: Array < Fact > 
+    if(this.searchterm && this.searchterm != "") {
+      newFacts = await this.dataService.search(this.searchterm, this.selectedCategory, this.limit + 10).toPromise()
+    } else {
+      newFacts = await this.dataService.getData(this.selectedCategory, this.limit, this.limit + 10).toPromise()
+    }
+    this.limit = this.limit + 10
+    this.facts = this.facts.concat(newFacts)
   }
 
   clearSearch() {

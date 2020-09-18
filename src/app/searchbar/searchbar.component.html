@@ -16,16 +16,16 @@
     <img height="70px" width="100px" class="rounded-lg" src="https://picsum.photos/100/70" />
     <div class="pl-4 flex flex-col">
       <span>
-        {{suggestion.headline}}
+        {{suggestion.title}}
       </span>
       <span class="metadata">
-        {{suggestion.createdAt | date}} | {{suggestion.category}}
+        {{suggestion.date | date}} | {{suggestion.category}}
       </span>
     </div>
   </a>
   <a (click)="goToSearchResults()" class="p-4 flex flex-row justify-center suggestion">
     <div class="pl-4 flex flex-col searchresult-button">
-      Alle Suchergebnisse anzeigen
+      Alle {{searchCount}} Suchergebnisse anzeigen
     </div>
   </a>
 </div>

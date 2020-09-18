@@ -56,3 +56,10 @@
         background-color: rgba(255, 255, 255, 0.3);
     }
 }
+
+.load-more a {
+    color: $highlight_color;
+    &:hover {
+        background-color: rgba(255, 255, 255, 0.3);
+    }
+}
