@@ -6,6 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
+
 import { NavbarComponent } from './navbar/navbar.component';
 import { BrowseComponent } from './browse/browse.component';
 import { FooterComponent } from './footer/footer.component';
@@ -27,7 +28,7 @@ import { ShareMenuComponent } from './share-menu/share-menu.component';
     ArticleCardComponent,
     SearchbarComponent,
     ArticlePageComponent,
-    ShareMenuComponent
+    ShareMenuComponent,
   ],
   imports: [
     BrowserModule,

@@ -11,10 +11,11 @@ import { Observable } from 'rxjs';
 })
 export class BrowseComponent implements OnInit {
   facts: Array < Fact >
-  selectedCategory
-  searchterm
+  selectedCategory: string
+  searchterm: string
   limit: number
   totalCount: number
+  data = new Date()
 
   constructor(private dataService: DataService, private route: ActivatedRoute, private router: Router) { }
 
@@ -58,14 +59,15 @@ export class BrowseComponent implements OnInit {
   }
 
   async loadMore() {
+    const moreItems = 10
     let newFacts: Array < Fact > 
     if(this.searchterm && this.searchterm != "") {
-      newFacts = await this.dataService.search(this.searchterm, this.selectedCategory, 10, this.limit + 1).toPromise()
+      newFacts = await this.dataService.search(this.searchterm, this.selectedCategory, moreItems, this.limit + 1).toPromise()
     } else {
-      newFacts = await this.dataService.getData(this.selectedCategory, 10, this.limit + 1).toPromise()
+      newFacts = await this.dataService.getData(this.selectedCategory, moreItems, this.limit + 1).toPromise()
     }
     console.log(newFacts)
-    this.limit = this.limit + 10
+    this.limit = this.limit + moreItems
     this.facts = this.facts.concat(newFacts)
 
     console.log(this.limit, this.totalCount)

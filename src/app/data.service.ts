@@ -10,6 +10,7 @@ import {
 import {
   Fact
 } from './model/fact.model';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -39,7 +40,7 @@ export class DataService {
   }
 
   public getFact(id: string) {
-    return this.httpClient.get(`https://cms.factsforfriends.de/facts/${id}`).pipe(map(this.parseSnacks))
+    return this.httpClient.get(`https://cms.factsforfriends.de/facts/${id}`)
   }
 
   private parseSnacks(data: Array < any > ) {
@@ -57,4 +58,17 @@ export class DataService {
     });
     return facts
   }
+
+  private parseSnack(el: any) {
+    const fact: Fact = {
+      id: el['id'],
+      title: el['headline'],
+      text: el['snack'],
+      url: el['url'],
+      date: el['createdAt'],
+      category: el['category']
+    }
+    return fact
+  }
+
 }
