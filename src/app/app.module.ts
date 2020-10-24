@@ -16,6 +16,7 @@ import { SearchbarComponent } from './searchbar/searchbar.component';
 import { DataService } from './data.service';
 import { ArticlePageComponent } from './article-page/article-page.component';
 import { ShareMenuComponent } from './share-menu/share-menu.component';
+import { PrivacyPolicyPageComponent } from './privacy-policy-page/privacy-policy-page.component';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { ShareMenuComponent } from './share-menu/share-menu.component';
     SearchbarComponent,
     ArticlePageComponent,
     ShareMenuComponent,
+    PrivacyPolicyPageComponent,
   ],
   imports: [
     BrowserModule,
