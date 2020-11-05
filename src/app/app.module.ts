@@ -17,6 +17,7 @@ import { DataService } from './data.service';
 import { ArticlePageComponent } from './article-page/article-page.component';
 import { ShareMenuComponent } from './share-menu/share-menu.component';
 import { PrivacyPolicyPageComponent } from './privacy-policy-page/privacy-policy-page.component';
+import { ImprintPageComponent } from './imprint-page/imprint-page.component';
 
 
 @NgModule({
@@ -31,6 +32,7 @@ import { PrivacyPolicyPageComponent } from './privacy-policy-page/privacy-policy
     ArticlePageComponent,
     ShareMenuComponent,
     PrivacyPolicyPageComponent,
+    ImprintPageComponent,
   ],
   imports: [
     BrowserModule,
