@@ -18,9 +18,7 @@ import { ArticlePageComponent } from './article-page/article-page.component';
 import { ShareMenuComponent } from './share-menu/share-menu.component';
 import { PrivacyPolicyPageComponent } from './privacy-policy-page/privacy-policy-page.component';
 import { ImprintPageComponent } from './imprint-page/imprint-page.component';
-import { TeamPageComponent } from './team-page/team-page.component';
-import { MissionPageComponent } from './mission-page/mission-page.component';
-import { FakeNewsPageComponent } from './fake-news-page/fake-news-page.component';
+import { ContentPageComponent } from './content-page/content-page.component';
 
 
 @NgModule({
@@ -36,9 +34,7 @@ import { FakeNewsPageComponent } from './fake-news-page/fake-news-page.component
     ShareMenuComponent,
     PrivacyPolicyPageComponent,
     ImprintPageComponent,
-    TeamPageComponent,
-    MissionPageComponent,
-    FakeNewsPageComponent,
+    ContentPageComponent
   ],
   imports: [
     BrowserModule,
