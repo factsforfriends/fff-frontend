@@ -1,40 +1,23 @@
-<div class="outer">
-    <div class="inner">
-        <app-category-bar class="bg-white p-2 m-4 rounded-lg"></app-category-bar>
-
-        <div class="articles">
-            <div *ngIf="searchterm && searchterm != ''" class="m-3 w-full flex">
-                <a (click)="clearSearch()" class="ml-2 backButton p-2 flex flex-start items-center rounded-lg">
-                    <svg width="1.2em" height="1.2em" viewBox="0 0 16 16" class="bi bi-arrow-left" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
-                    </svg>
-                    Zurück
-                </a>
-            </div>
-
-            <div class="article px-1 py-2 sm:px-0 md:px-4 md:py-4" *ngFor="let fact of facts; let i = index" [attr.data-index]="i">
-                <app-article-card
-                    title="{{fact.title}}" 
-                    text="{{fact.text}}"
-                    date="{{fact.date}}"
-                    category="{{fact.category}}"
-                    url="{{fact.url}}"
-                    id="{{fact.id}}"
-                    index="{{i}}"
-                    compact="true"
-                ></app-article-card>
-            </div>
-
-            <div *ngIf="limit < totalCount" class="load-more flex justify-center w-full m-4">
-                <a (click)="loadMore()" class="flex justify-center items-center cursor-pointer p-2 rounded">
-                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-bar-down" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" d="M1 3.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5zM8 6a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 0 1 .708-.708L7.5 12.293V6.5A.5.5 0 0 1 8 6z"/>
-                    </svg>
-                    <span class="ml-2">
-                        Load more
-                    </span>
-                </a>
-            </div>
-        </div>
+<div class="flex flex-col lg:flex-row justify-center lg:justify-start">
+    <app-category-bar class="pt-20 md:pt-24 lg:h-screen lg:sticky lg:top-0 md:px-4 lg:pr-0 lg:pb-8"></app-category-bar>
+    <div class="mt-4 lg:mt-24 lg:w-full md:mx-4 bg-green-100">
+        Body <br><br><br><br>
+    That <br><br><br><br>
+    Scrolls <br><br><br><br><br><br>
+    Body <br><br><br><br>
+    That <br><br><br><br>
+    Scrolls <br><br><br><br><br><br>
+    Body <br><br><br><br>
+    That <br><br><br><br>
+    Scrolls <br><br><br><br><br><br>
+    Body <br><br><br><br>
+    That <br><br><br><br>
+    Scrolls <br><br><br><br><br><br>
+    Body <br><br><br><br>
+    That <br><br><br><br>
+    Scrolls <br><br><br><br><br><br>
+    Body <br><br><br><br>
+    That <br><br><br><br>
+    Scrolls <br><br><br><br><br><br>
     </div>
 </div>
