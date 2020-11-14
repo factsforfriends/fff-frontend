@@ -3,74 +3,14 @@
 
 .metadata {
     color: #9EADB7;
-    font-size: 0.8em;
 }
 
-.card {
-    display: flex;
-
-    img {
-        max-width: initial;
-    }
-    
-    .image-big {
-        margin: auto;
-        width: 300px;
-        height: 200px;
-    }
-
-    .image-small {
-        width: 150px;
-        height: 100px;
-    }
-}
-
-.wrapper {
-    display: flex;
-    flex-direction: column;
-
-    .header {
-        display: flex;
-        flex-direction: row;
-
-        .headline {
-            display: flex;
-            flex-direction: column;
-            margin-left: 10px;
-        }
-    }
-
-    .truncateText {
-        // @include multiLineEllipsis($lineHeight: 1.2em, $lineCount: 3, $bgColor: white); 
-
-        display: block;
-        display: -webkit-box;
-        line-height: 1.4;
-        -webkit-line-clamp: 3;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-
-    .read-more {
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-        color: $highlight_color;
-
-        &:hover {
-            cursor: pointer;
-        }
-    }
-}
-
-.action {
-    &:hover {
-        cursor: pointer;
-        background-color: #00000010;
-    }
-}
-
-.highlight {
-    color: $highlight_color;
+.truncateText {
+    // @include multiLineEllipsis($lineHeight: 1.2em, $lineCount: 3, $bgColor: white); 
+    display: -webkit-box;
+    line-height: 1.4;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }

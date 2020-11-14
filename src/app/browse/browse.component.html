@@ -1,7 +1,7 @@
 <div class="flex flex-col lg:flex-row justify-center lg:justify-start">
     <app-category-bar class="pt-20 md:pt-24 lg:h-screen lg:sticky lg:top-0 md:px-4 lg:pr-0 lg:pb-8"></app-category-bar>
-    <div class="grid gap-4 grid-cols-1 lg:grid-cols-2 mt-4 lg:mt-24 lg:w-full md:mx-4">
-        <div class="p-4 bg-white rounded-lg" *ngFor="let fact of facts; let i = index" [attr.data-index]="i">
+    <div class="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 mt-4 lg:mt-24 lg:w-full md:mx-4 pb-4">
+        <div class="p-6 bg-white rounded-lg" [ngClass]="{'md:col-span-2 lg:col-span-1 xl:col-span-2': i == 0}" *ngFor="let fact of facts; let i = index" [attr.data-index]="i">
             <app-article-card
                     title="{{fact.title}}" 
                     text="{{fact.text}}"
