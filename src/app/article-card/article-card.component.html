@@ -1,29 +1,35 @@
-<div class="relative h-full">
-    <div class="flex items-start mb-12">
-        <img routerLink="/fact/{{id}}" class="w-48 md:w-32 lg:w-48 h-full object-cover rounded-lg" src="https://picsum.photos/300/200" />
-        <div class="flex flex-col justify-between ml-2">
-            <h2 class="text-xl font-medium">{{title}}</h2>
+<div class="flex flex-col h-full relative">
+    <div class="flex flex-col md:flex-row">
+        <img routerLink="/fact/{{id}}" class="h-48 object-cover md:w-48 md:h-32 rounded-lg" [ngClass]="{'xl:w-32 xl:h-24': index != 0}" src="https://picsum.photos/300/200" />
+        <div class="flex flex-col justify-between mt-4 md:mt-0 md:ml-4">
+            <h2 class="text-lg lg:text-xl font-medium">{{title}}</h2>
             <div class="text-xs metadata">{{date | date}} | {{category}}</div>
-            <div class="mt-2 text-base" [class.truncateText]="compact">
+            <div class="mt-4 text-sm" [ngClass]="{'truncate-lines': compact, 'xl:hidden': index != 0}">
                 {{text}}
             </div>
         </div>
     </div>
-    <div class="flex absolute bottom-0">
-        <a (click)="share()" class="flex p-2 rounded-lg items-center">
-            <svg width="1.2em" height="1.2em" viewBox="0 0 16 16" class="bi bi-share-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+    <div class="mt-2 text-sm hidden truncate-lines" [ngClass]="{'xl:block': index != 0}">
+        {{text}}
+    </div>
+    <span class="text-right mt-2 mb-5 text-xs font-bold highlight">
+        mehr lesen
+    </span>
+    <div class="flex flex-wrap absolute bottom-0">
+        <a (click)="share()" class="flex p-2 rounded-lg items-center highlight action">
+            <svg class="h-5 w-5" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" d="M11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.499 2.499 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5z"/>
             </svg>
-            <span class="ml-2 select-none">
+            <span class="ml-2 text-sm select-none">
                 Share
             </span>
         </a>
-        <a href="{{url}}" target="_blank" class="flex ml-2 p-2 action rounded-lg items-center">
-            <svg width="1.2em" height="1.2em" viewBox="0 0 16 16" class="bi bi-box-arrow-up-right" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <a href="{{url}}" target="_blank" class="flex ml-2 p-2 rounded-lg items-center metadata action">
+            <svg class="h-5 w-5" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
                 <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
             </svg>
-            <span class="ml-2 select-none">
+            <span class="ml-2 text-sm select-none">
                 Source
             </span>
         </a>
