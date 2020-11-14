@@ -1,27 +1,29 @@
-<div class="flex flex-col h-full relative">
-    <div class="flex flex-col md:flex-row">
-        <img routerLink="/fact/{{id}}" class="h-48 object-cover md:w-48 md:h-32 rounded-lg" [ngClass]="{'xl:w-32 xl:h-24': index != 0}" src="https://picsum.photos/300/200" />
-        <div class="flex flex-col justify-between mt-4 md:mt-0 md:ml-4">
-            <h2 class="text-lg lg:text-xl font-medium">{{title}}</h2>
-            <div class="text-xs metadata">{{date | date}} | {{category}}</div>
-            <div class="mt-4 text-sm" [ngClass]="{'truncate-lines': compact, 'xl:hidden': index != 0}">
-                {{text}}
+<div class="flex flex-col justify-between h-full">
+    <div class="flex flex-col" [ngClass]="{'cursor-pointer': compact}" routerLink='/fact/{{id}}'>
+        <div class="flex flex-col md:flex-row">
+            <img class="h-48 object-cover md:w-48 md:h-32 rounded-lg" [ngClass]="{'xl:w-32 xl:h-24': index != 0}" src="https://picsum.photos/300/200" />
+            <div class="flex flex-col justify-between mt-4 md:mt-0 md:ml-4">
+                <h2 class="text-lg lg:text-xl font-medium">{{title}}</h2>
+                <div class="text-xs metadata">{{date | date}} | {{category}}</div>
+                <div class="mt-4 text-sm" [ngClass]="{'truncate-lines': compact, 'xl:hidden': index != 0}">
+                    {{text}}
+                </div>
             </div>
         </div>
+        <div class="mt-2 text-sm hidden truncate-lines" [ngClass]="{'xl:block': index != 0}">
+            {{text}}
+        </div>
+        <span *ngIf="compact" class="text-right mt-2 text-xs font-bold highlight">
+            mehr lesen
+        </span>
     </div>
-    <div class="mt-2 text-sm hidden truncate-lines" [ngClass]="{'xl:block': index != 0}">
-        {{text}}
-    </div>
-    <span class="text-right mt-2 mb-5 text-xs font-bold highlight">
-        mehr lesen
-    </span>
-    <div class="flex flex-wrap absolute bottom-0">
+    <div class="flex flex-wrap" [ngClass]="{'pt-2': compact===false}">
         <a (click)="share()" class="flex p-2 rounded-lg items-center highlight action">
             <svg class="h-5 w-5" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" d="M11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.499 2.499 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5z"/>
             </svg>
             <span class="ml-2 text-sm select-none">
-                Share
+                Teilen
             </span>
         </a>
         <a href="{{url}}" target="_blank" class="flex ml-2 p-2 rounded-lg items-center metadata action">
@@ -30,7 +32,7 @@
                 <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
             </svg>
             <span class="ml-2 text-sm select-none">
-                Source
+                Quelle
             </span>
         </a>
     </div>
