@@ -1,10 +1,10 @@
 <div class="flex lg:flex-col items-center lg:items-start lg:h-full lg:relative lg:mb-4 lg:w-56 p-2 rounded-lg bg-white">
-  <div class="p-2 arrow rounded-lg category lg:hidden">
+  <div class="p-2 arrow rounded-lg category hidden">
       <svg viewBox="0 0 16 16" class="h-5 w-5" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
           <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
       </svg>
   </div>
-  <div class="flex lg:flex-col justify-around items-center lg:items-start w-full">
+  <div class="flex lg:flex-col justify-around items-center lg:items-start w-full overflow-x-auto">
       <h2 class="hidden lg:block p-2 font-semibold">Kategorien</h2>
       <div class="flex items-center lg:w-full p-2 rounded-lg category cursor-pointer" (click)="selectCategory('')" [class.highlighted]="!selectedCategory || selectedCategory == ''">
           <div class="p-2 bg-gray-100 rounded-lg category-icon">
@@ -40,7 +40,7 @@
           </span>
       </div>
   </div>
-  <div class="p-2 arrow rounded-lg category lg:hidden">
+  <div class="p-2 arrow rounded-lg category hidden">
       <svg class="h-5 w-5" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
           <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
       </svg>
