@@ -9,6 +9,10 @@
     color: $highlight_color;
 }
 
+.secondary {
+    color: $secondary_color;
+}
+
 .action {
     &:hover {
         cursor: pointer;
@@ -16,11 +20,12 @@
     }
 }
 
-/* https://github.com/tailwindlabs/tailwindcss/discussions/1826 */
-.truncate-lines {
-    max-height: 5.4em; /* double the size of line-height */
-    line-height: 1.4em;
-    text-overflow: ellipsis;
-    word-wrap: break-word;
+.truncateText {
+    // @include multiLineEllipsis($lineHeight: 1.2em, $lineCount: 3, $bgColor: white); 
+    display: -webkit-box;
+    line-height: 1.4;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
     overflow: hidden;
-  }
+    text-overflow: ellipsis;
+}
