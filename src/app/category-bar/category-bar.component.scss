@@ -1,82 +1,20 @@
 @import "../../variables.scss";
 
-:host {
-    $navbar_height: 92px;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-
-    @media only screen and (min-width: 992px) {
-        position: fixed;
-        left: 0;
-        top: $navbar_height;
-        width: 220px;
-        height: calc(100vh - #{$navbar_height} - 45px);
-
-        .social-media a {
-            display: block;
-
-            img {
-                height: 20px;
-                display: grid;
-                justify-content: space-around;
-            }
-        }
-    }
-
-    @media only screen and (max-width: 992px) {
-        margin-top: 80px;
-        display: inline-block;
-        width: auto;
-        background-color: initial;
-
-        h2 {
-            display: none;
-        }
-
-        ul {
-            display: flex;
-        }
-
-        .social-media {
-            display: none;
-        }
-    }
-
-    .category {
-        display: flex;
-        align-items: center;
-        padding: 10px 15px;
-
-        &:hover {
-            cursor: pointer;
-            background-color: #00000008;
-        }
-    }
-
+.highlighted {
     .category-icon {
-        background-color: #F1F4F8;
-        height: 40px;
-        width: 40px;
-        margin-right: 10px;
-
-        display: grid; 
-        place-items: center; 
-
+        background-color: $highlight_color;
         svg {
-            color: #90A1AD;
-            height: 1.5em;
-            width: 1.5em;
+            color: white;
         }
     }
+}
 
-    .highlighted {
-        .category-icon {
-            background-color: $highlight_color;
-            svg {
-                color: white;
-            }
-        }
+.category {
+    &:hover {
+        background-color: #00000008;
     }
-    
+}
+
+.arrow {
+    color: $highlight_color;
 }

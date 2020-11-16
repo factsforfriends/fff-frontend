@@ -1,62 +1,6 @@
 @import "../../variables.scss";
 @import "../../mixins.scss";
 
-.outer {
-    display: flex;
-    justify-content: center;
-
-    .inner {
-        @media only screen and (max-width: 992px) {
-            width: 100%;
-            overflow: hidden;
-        }
-
-    }
-}
-
-.articles {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    max-width: 992px;
-    margin: auto;
-
-    @media only screen and (min-width: 992px) {
-        margin-left: 230px;
-        padding-top: 6em;
-    }
-    
-    .article {
-        &:first-child {
-            width: 100%;
-            max-width: initial;
-        }
-
-        @media only screen and (max-width: 1222px) {
-            width: 100%;
-        }
-
-        @media only screen and (min-width: 1222px) {
-            max-width: 496px;
-        }
-
-        @media only screen and (min-width: 420px) {
-            min-width: 400px;
-        }
-
-    }
-}
-
-.backButton {
-    transition: background-color 0.5s ease;
-    color: $highlight_color;
-
-    &:hover {
-        cursor: pointer;
-        background-color: rgba(255, 255, 255, 0.3);
-    }
-}
-
 .load-more a {
     color: $highlight_color;
     &:hover {

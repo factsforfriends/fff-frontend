@@ -1,44 +1,40 @@
-<div class="bg-white lg:m-1 p-3 rounded-lg card h-full">
-    <!-- <span *ngIf="index == 0" class="image-big">
-        <img routerLink="/fact/{{id}}" class="rounded-lg" src="https://picsum.photos/300/200" />
-    </span> -->
-    <div class="wrapper p-4">
-        <div routerLink="/fact/{{id}}" class="header flex-grow">
-            <!-- <span *ngIf="index != 0" class="image-small">
-                <img class="rounded-lg mr-2" src="https://picsum.photos/150/100" />
-            </span> -->
-            <div class="headline">
-                <h2 class="text-xl font-medium">{{title}}</h2>
-                <div class="metadata">{{date | date}} | {{category}}</div>
+<div class="flex flex-col md:flex-row h-full">
+    <img class="h-48 object-cover rounded-lg" [ngClass]="{'xl:w-auto xl:h-56': index==0, 'xl:hidden': index != 0, 'cursor-pointer': compact}" src="https://picsum.photos/300/200" routerLink='/fact/{{id}}' />
+    <div class="flex flex-col justify-between">
+        <div class="flex flex-col" [ngClass]="{'cursor-pointer': compact}" routerLink='/fact/{{id}}'>
+            <div class="flex flex-col md:flex-row">
+                <img class="hidden md:w-48 md:h-32 rounded-lg" [ngClass]="{'xl:block': index != 0}" src="https://picsum.photos/300/200" />
+                <div class="flex flex-col justify-between mt-4 md:mt-0 md:ml-4">
+                    <h2 class="text-lg lg:text-xl font-medium">{{title}}</h2>
+                    <div class="text-xs metadata">{{date | date}} | {{category}}</div>
+                </div>
             </div>
+            <div class="mt-4 md:ml-4 text-sm" [ngClass]="{'truncateText': compact, 'xl:ml-0': index != 0}">
+                {{text}}
+            </div>
+            <span *ngIf="compact" class="text-right mt-2 text-xs font-bold text-gray-700">
+                mehr lesen
+            </span>
         </div>
-        <div #textElement routerLink="/fact/{{id}}" class="mt-4" [class.truncateText]="compact">
-            {{text}}
-        </div>
-        <span *ngIf="isOverflown && compact" class="read-more">
-            mehr lesen
-            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
-              </svg>
-        </span>
-        <div class="actions mt-4 flex">
-            <a (click)="share()" class="flex p-2 action highlight rounded-lg items-center">
-                <svg width="1.2em" height="1.2em" viewBox="0 0 16 16" class="bi bi-share-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <div class="flex flex-wrap md:ml-4" [ngClass]="{'xl:ml-0': index != 0, 'mt-2': compact===false}">
+            <a (click)="share()" class="flex p-2 rounded-lg items-center secondary action">
+                <svg class="h-5 w-5" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" d="M11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.499 2.499 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5z"/>
                 </svg>
-                <span class="ml-2 select-none">
-                    Share
+                <span class="ml-2 text-sm select-none">
+                    Teilen
                 </span>
             </a>
-            <a href="{{url}}" target="_blank" class="flex ml-2 p-2 action rounded-lg items-center">
-                <svg width="1.2em" height="1.2em" viewBox="0 0 16 16" class="bi bi-box-arrow-up-right" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <a href="{{url}}" target="_blank" class="flex ml-2 p-2 rounded-lg items-center metadata action">
+                <svg class="h-5 w-5" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
                     <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
                 </svg>
-                <span class="ml-2 select-none">
-                    Source
+                <span class="ml-2 text-sm select-none">
+                    Quelle
                 </span>
             </a>
         </div>
     </div>
 </div>
+
