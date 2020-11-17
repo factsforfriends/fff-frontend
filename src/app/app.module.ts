@@ -18,6 +18,7 @@ import { ShareMenuComponent } from './share-menu/share-menu.component';
 import { PrivacyPolicyPageComponent } from './privacy-policy-page/privacy-policy-page.component';
 import { ImprintPageComponent } from './imprint-page/imprint-page.component';
 import { ContentPageComponent } from './content-page/content-page.component';
+import { BackButtonComponent } from './back-button/back-button.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { ContentPageComponent } from './content-page/content-page.component';
     ShareMenuComponent,
     PrivacyPolicyPageComponent,
     ImprintPageComponent,
-    ContentPageComponent
+    ContentPageComponent,
+    BackButtonComponent
   ],
   imports: [
     BrowserModule,
