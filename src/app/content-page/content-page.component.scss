@@ -1,13 +1,8 @@
 @import "../../variables.scss";
 @import "../../mixins.scss";
 
-.anchor {
-    color: $highlight_color;
-}
-
 .backButton {
     transition: background-color 0.5s ease;
-    color: $highlight_color;
 
     &:hover {
         cursor: pointer;

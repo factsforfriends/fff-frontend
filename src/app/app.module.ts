@@ -9,7 +9,6 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { NavbarComponent } from './navbar/navbar.component';
 import { BrowseComponent } from './browse/browse.component';
-import { FooterComponent } from './footer/footer.component';
 import { CategoryBarComponent } from './category-bar/category-bar.component';
 import { ArticleCardComponent } from './article-card/article-card.component';
 import { SearchbarComponent } from './searchbar/searchbar.component';
@@ -26,7 +25,6 @@ import { ContentPageComponent } from './content-page/content-page.component';
     AppComponent,
     NavbarComponent,
     BrowseComponent,
-    FooterComponent,
     CategoryBarComponent,
     ArticleCardComponent,
     SearchbarComponent,

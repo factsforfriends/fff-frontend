@@ -1,7 +1,7 @@
 <div class="flex pt-20 md:pt-24 md:px-4 justify-center">
     <div class="max-w-4xl mb-4">
         <div class="flex mb-4">
-            <a routerLink="/" class="flex flex-start p-2 ml-2 items-center rounded-lg backButton">
+            <a routerLink="/" class="flex flex-start p-2 ml-2 items-center rounded-lg text-highlight backButton">
                 <svg class="h-6 w-6" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
                 </svg>
@@ -10,12 +10,13 @@
         </div>
         <div class="mx-1 md:mx-0 p-4 bg-white rounded-lg text-sm text-justify">
             <div class="flex flex-col lg:flex-row lg:justify-evenly p-4 mb-8">
-                <a routerLink="." fragment="fakenews" class="anchor font-bold">Was sind Fake News?</a>
-                <a routerLink="." fragment="factsforfriends" class="anchor font-bold">Warum Facts for Friends?</a>
-                <a routerLink="." fragment="mission" class="anchor font-bold">Wie arbeiten wir?</a>
-                <a routerLink="." fragment="team" class="anchor font-bold">Wer steckt hinter Facts for Friends?</a>
+                <a routerLink="/about" fragment="fakenews" class="text-highlight font-bold">Was sind Fake News?</a>
+                <a routerLink="/about" fragment="factsforfriends" class="text-highlight font-bold">Warum Facts for Friends?</a>
+                <a routerLink="/about" fragment="mission" class="text-highlight font-bold">Wie arbeiten wir?</a>
+                <a routerLink="/about" fragment="team" class="text-highlight font-bold">Wer steckt hinter Facts for Friends?</a>
             </div>
-            <div id="fakenews" class="grid grid-cols-1 md:grid-cols-2">
+            <div class="grid grid-cols-1 md:grid-cols-2 relative">
+                <div class="absolute right-0 -mt-24"><a id="fakenews">&nbsp;</a></div>
                 <div>
                     <h2 class="text-xl font-bold">Was sind Fake News?</h2>
                     <p class="mt-2">
@@ -29,11 +30,12 @@
                     <img class="h-56 w-full object-contain md:w-auto md:h-auto" src="assets/illustrations/fake-newspaper.png" />
                 </div>
             </div>
-            <div id="factsforfriends" class="grid grid-cols-1 md:grid-cols-2 mt-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 mt-8 relative">
+                <div class="absolute right-0 -mt-24"><a id="factsforfriends">&nbsp;</a></div>
                 <div class="order-first md:order-none">
                     <img class="h-56 w-full object-contain md:w-auto md:h-auto" src="assets/illustrations/fake-pad.png" />
                 </div>
-                <div class="">
+                <div>
                     <h4 class="text-xl font-bold">Warum Facts for Friends?</h4>
                     <p class="mt-2">
                         Die Vision von Facts for Friends ist es Bürger*Innen ein Werkzeug zur eigenständigen und effektiven Bekämpfung von Fake News in ihrem digitalen Umfeld zu liefern, und dadurch eine informierte und engagierte Gesellschaft zu fördern. 
@@ -58,7 +60,8 @@
                 </ul>
                 </div>
             </div>
-            <div id="mission" class="grid grid-cols-1 md:grid-cols-2 mt-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 mt-8 relative">
+                <div class="absolute right-0 -mt-24"><a id="mission">&nbsp;</a></div>
                 <div>
                     <h2 class="text-xl font-bold w-full">Wie arbeiten wir?</h2>
                     <p class="mt-2">
@@ -83,7 +86,8 @@
                     </div>
                 </div>
             </div>
-            <div id="team" class="grid grid-cols-1 md:grid-cols-2 mt-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 mt-8 relative">
+                <div class="absolute right-0 -mt-24"><a id="team">&nbsp;</a></div>
                 <div>
                     <img class="h-56 w-full object-contain md:w-auto md:h-auto" src="assets/illustrations/fff-team.png" />
                 </div>
@@ -92,16 +96,6 @@
                     <p class="mt-2">
                         Unser Team besteht aktuell aus zwei Gründerinnen, Journalist*innen und Entwickler*innen. Die Idee Facts for Friends wurde ursprünglich im Rahmen des #WirVsVirus Hackathons der Bundesregierung entwickelt und mithilfe des #WirVsVirus Solution Enablers umgesetzt.
                     </p>
-                    <h4 class="mt-4 font-bold">Wir werden unterstützt von:</h4>
-                </div>
-                <div class="md:col-span-2">
-                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-                        <img src="assets/logos/CORRECTIV-logo.png" class="w-64"/>
-                        <img src="assets/logos/CORRECTIV-logo.png" class="w-64"/>
-                        <img src="assets/logos/CORRECTIV-logo.png" class="w-64"/>
-                        <img src="assets/logos/CORRECTIV-logo.png" class="w-64"/>
-                        <img src="assets/logos/CORRECTIV-logo.png" class="w-64"/>
-                    </div>
                 </div>
             </div>
         </div>

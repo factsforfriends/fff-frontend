@@ -72,15 +72,7 @@ input {
 }
 
 .background-overlay {
-    position: absolute;
-    width: 100vw;
-    height: 100vh;
     background-color: rgba(255, 255, 255, 0.3);
     backdrop-filter: blur(1px);
-
-    @media only screen and (max-width: 991px) {
-        top: 0 !important;
-        left: 0 !important;
-    }
 }
 
