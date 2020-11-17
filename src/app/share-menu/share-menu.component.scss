@@ -10,10 +10,6 @@
     z-index: 10;
 }
 
-.share a img {
-    height: 40px;
-}
-
 input {
     background-color: $searchbar_background;
     padding: 7px 15px;
@@ -25,7 +21,6 @@ input {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: $highlight_color;
 }
 
 .close-button, .copy-link, .share a {

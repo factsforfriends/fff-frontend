@@ -18,7 +18,6 @@ export class ShareMenuComponent implements OnInit {
   }
 
   share_facebook() {
-
   }
 
   fallbackCopyTextToClipboard(text) {
