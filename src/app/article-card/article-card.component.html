@@ -6,7 +6,7 @@
                 <img class="hidden md:w-48 md:h-32 rounded-lg" [ngClass]="{'xl:block': index != 0}" src="https://picsum.photos/300/200" />
                 <div class="flex flex-col justify-between mt-4 md:mt-0 md:ml-4">
                     <h2 class="text-lg lg:text-xl font-medium">{{title}}</h2>
-                    <div class="text-xs metadata">{{date | date}} | {{category}}</div>
+                    <div class="text-xs metadata">{{date | date:'d. MMMM'}} | {{category}}</div>
                 </div>
             </div>
             <div class="mt-4 md:ml-4 text-sm" [ngClass]="{'truncateText': compact, 'xl:ml-0': index != 0}">

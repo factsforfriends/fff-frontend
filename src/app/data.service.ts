@@ -21,7 +21,7 @@ export class DataService {
 
   public getData(category ? : string, limit ? : number, start ? : number) {
     if (!category) category = ""
-    return this.httpClient.get(`https://cms.factsforfriends.de/facts?_sort=createdAt:DESC&_limit=${limit ? String(limit) : ""}&_start=${start ? String(start) : ""}&category_contains=${category.toLowerCase()}`).pipe(map(this.parseSnacks))
+    return this.httpClient.get(`https://cms.factsforfriends.de/facts?_sort=date:DESC&_limit=${limit ? String(limit) : ""}&_start=${start ? String(start) : ""}&category_contains=${category.toLowerCase()}`).pipe(map(this.parseSnacks))
   }
 
   public getFactCount(category ? : string) {
@@ -36,7 +36,7 @@ export class DataService {
 
   public search(query: string, category ? : string, limit ? : number, start ? : number) {
     if (!category) category = ""
-    return this.httpClient.get(`https://cms.factsforfriends.de/facts?_q=${query}&_sort=createdAt:DESC&category_contains=${category.toLowerCase()}&_limit=${limit ? String(limit) : ""}&_start=${start ? String(start) : ""}`).pipe(map(this.parseSnacks))
+    return this.httpClient.get(`https://cms.factsforfriends.de/facts?_q=${query}&_sort=date:DESC&category_contains=${category.toLowerCase()}&_limit=${limit ? String(limit) : ""}&_start=${start ? String(start) : ""}`).pipe(map(this.parseSnacks))
   }
 
   public getFact(id: string) {
@@ -51,7 +51,7 @@ export class DataService {
         title: el['headline'],
         text: el['snack'],
         url: el['url'],
-        date: el['createdAt'],
+        date: el['date'],
         category: el['category']
       }
       facts.push(fact)
@@ -65,7 +65,7 @@ export class DataService {
       title: el['headline'],
       text: el['snack'],
       url: el['url'],
-      date: el['createdAt'],
+      date: el['date'],
       category: el['category']
     }
     return fact
