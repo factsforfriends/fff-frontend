@@ -1,7 +1,7 @@
 <div class="flex pt-20 md:pt-24 md:px-4 justify-center">
     <div class="max-w-4xl mb-4">
         <app-back-button class="flex mb-4"></app-back-button>
-        <div class="mx-1 md:mx-0 p-4 bg-white rounded-lg text-sm text-justify">
+        <div class="mx-1 md:mx-0 p-4 bg-white rounded-lg text-md text-justify">
             <div class="flex flex-col lg:flex-row lg:justify-evenly p-4 mb-8">
                 <a routerLink="/about" fragment="fakenews" class="text-highlight font-bold">Was sind Fake News?</a>
                 <a routerLink="/about" fragment="factsforfriends" class="text-highlight font-bold">Warum Facts for Friends?</a>
@@ -11,7 +11,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 relative">
                 <div class="absolute right-0 -mt-24"><a id="fakenews">&nbsp;</a></div>
                 <div>
-                    <h2 class="text-xl font-bold">Was sind Fake News?</h2>
+                    <h2 class="text-2xl font-bold text-gray-800">Was sind Fake News?</h2>
                     <p class="mt-2">
                         In der heutigen (digitalen) Zeit werden Menschen immer häufiger mit Falschmeldungen und irrtümlich als Fakt dargestellten Nachrichten - sogenannten Fake News - konfrontiert. Dieser Begriff ist heutzutage jedoch stark politisiert und wird oft falsch benutzt. Daher muss er zunächst klar definiert werden. 
                     </p>
@@ -29,34 +29,59 @@
                     <img class="h-56 w-full object-contain md:w-auto md:h-auto" src="assets/illustrations/fake-pad.png" />
                 </div>
                 <div>
-                    <h4 class="text-xl font-bold">Warum Facts for Friends?</h4>
+                    <h4 class="text-2xl font-bold text-gray-800">Warum Facts for Friends?</h4>
                     <p class="mt-2">
                         Die Vision von Facts for Friends ist es Bürger*Innen ein Werkzeug zur eigenständigen und effektiven Bekämpfung von Fake News in ihrem digitalen Umfeld zu liefern, und dadurch eine informierte und engagierte Gesellschaft zu fördern. 
                     </p>
                     <p class="mt-2">
                         Was aktuell im Fact-Checking System fehlt, ist eine Brücke oder eine Art Übersetzer zwischen bestehenden Faktencheckern und den Sozialen Medien. Dort setzt Facts for Friends an. Wir sehen uns als eine Brücke zwischen den bereits etablierten Fact-Checking-Organisationen und den Sozialen Medien. Wir sammeln, kürzen und vereinfachen die oft langen und komplizierten Faktenchecks von etablierten Faktencheckern und machen daraus sogenannte „Fact Snacks”. Das sind prägnante Klar- und Richtigstellungen zu kursierenden Fake News, die sofort als Text oder SharePic in allen Sozialen Medien und Messenger Diensten geteilt werden können. Wir ergänzen somit bestehende Fakt-Checking Angebote und sorgen dafür, dass Fact-Checking dort ankommt, wo es am dringendsten gebraucht wird.
                     </p>
-                    <h5 class="mt-4 font-bold">Vorteile</h5>
-                    <ul class="mt-2 px-8 list-decimal">
-                        <li>
-                            <p class="font-bold">Zentral & Teilbar</p>
-                            <p>Facts for Friends ist eine zentrale Plattform, die Faktenchecks von allen glaubwürdigen Quellen sammelt und von der Richtigstellungen leicht in jedem Sozialen Netzwerk oder Messenger geteilt werden können. </p>
-                        </li>
-                        <li>
-                            <p class="font-bold">Simple & "Snackable"</p>
-                            <p>Die FactSnacks sind buchstäblich „Snacks”, da Informationen zusammengefasst und vereinfacht werden.</p>
-                        </li>
-                        <li>
-                            <p class="font-bold">Suchfunktion</p>
-                            <p>Und die integrierte Suchfunktion ermöglicht es den Benutzern, den richtigen FactSnack innerhalb von Sekunden zu finden.</p>
-                        </li>
-                </ul>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2">
+                <div class="md:col-span-2">
+                    <h5 class="mt-4 font-bold text-lg text-gray-800">Vorteile von Facts for Friends</h5>
+                    <div class="mt-2 px-8">
+                        <div class="flex items-center">
+                            <div class="flex-shrink-0">
+                                <svg class="h-16 w-16 text-highlight fill-current" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+                                </svg>
+                            </div>
+                            <div class="ml-4">
+                                <p class="font-bold text-gray-800">Zentral & Teilbar</p>
+                                <p>Facts for Friends ist eine zentrale Plattform, die Faktenchecks von allen glaubwürdigen Quellen sammelt und von der Richtigstellungen leicht in jedem Sozialen Netzwerk oder Messenger geteilt werden können. </p>
+                            </div>
+                        </div>
+                        <div class="flex items-center mt-2">
+                            <div class="flex-shrink-0">
+                                <svg class="h-16 w-16 text-highlight fill-current" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+                                </svg>
+                            </div>
+                            <div class="ml-4">
+                                <p class="font-bold text-gray-800">Simple & "Snackable"</p>
+                                <p>Die FactSnacks sind buchstäblich „Snacks”, da Informationen zusammengefasst und vereinfacht werden.</p>    
+                            </div>
+                        </div>
+                        <div class="flex items-center mt-2">
+                            <div class="flex-shrink-0">
+                                <svg class="h-16 w-16 text-highlight fill-current" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+                                </svg>
+                            </div>
+                            <div class="ml-4">
+                                <p class="font-bold text-gray-800">Suchfunktion</p>
+                                <p>Und die integrierte Suchfunktion ermöglicht es den Benutzern, den richtigen FactSnack innerhalb von Sekunden zu finden.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 mt-8 relative">
                 <div class="absolute right-0 -mt-24"><a id="mission">&nbsp;</a></div>
                 <div>
-                    <h2 class="text-xl font-bold w-full">Wie arbeiten wir?</h2>
+                    <h2 class="text-2xl font-bold text-gray-800">Wie arbeiten wir?</h2>
                     <p class="mt-2">
                         Wir arbeiten Hand-in-Hand mit etablierten deutschen Faktencheckern zusammen. Das heißt, wir sind keine Konkurrenz, sondern Ergänzung und Multiplikator. 
                     </p>
@@ -85,7 +110,7 @@
                     <img class="h-56 w-full object-contain md:w-auto md:h-auto" src="assets/illustrations/fff-team.png" />
                 </div>
                 <div>
-                    <h2 class="text-xl font-bold w-full">Wer steckt hinter Facts for Friends?</h2>
+                    <h2 class="text-2xl font-bold text-gray-800">Wer steckt hinter Facts for Friends?</h2>
                     <p class="mt-2">
                         Unser Team besteht aktuell aus zwei Gründerinnen, Journalist*innen und Entwickler*innen. Die Idee Facts for Friends wurde ursprünglich im Rahmen des #WirVsVirus Hackathons der Bundesregierung entwickelt und mithilfe des #WirVsVirus Solution Enablers umgesetzt.
                     </p>

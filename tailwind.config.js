@@ -12,7 +12,8 @@ module.exports = {
                 lighter: lighten('#0B6B64', 0.25)
               },
               secondary: '#0E8980',
-              tertiary: '#00BCAD'
+              tertiary: '#00BCAD',
+              fffred: '#b91349'
           }
       }
       
