@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {MatDialogModule, MAT_DIALOG_DEFAULT_OPTIONS} from '@angular/material/dialog';
+import { MatDialogModule, MAT_DIALOG_DEFAULT_OPTIONS} from '@angular/material/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -19,7 +19,6 @@ import { PrivacyPolicyPageComponent } from './privacy-policy-page/privacy-policy
 import { ImprintPageComponent } from './imprint-page/imprint-page.component';
 import { ContentPageComponent } from './content-page/content-page.component';
 import { BackButtonComponent } from './back-button/back-button.component';
-
 
 @NgModule({
   declarations: [
