@@ -10,14 +10,35 @@ import { Inject } from '@angular/core';
 })
 export class ShareMenuComponent implements OnInit {
   clipboard_copied: boolean = false
+  title:string = ''
+  url:string
 
-  constructor(public dialogRef: MatDialogRef<ShareMenuComponent>, @Inject(MAT_DIALOG_DATA) public data: any) { }
+  constructor(
+    public dialogRef: MatDialogRef<ShareMenuComponent>, @Inject(MAT_DIALOG_DATA) public data: any) {
+      this.title = data.title;
+      this.url = 'https://factsforfriends.de/fact/' + data.id;
+    }
 
   ngOnInit(): void {
 
   }
 
-  share_facebook() {
+  getFacebookUrl() {
+    // https://stackoverflow.com/questions/20956229/has-facebook-sharer-php-changed-to-no-longer-accept-detailed-parameters
+    return "https://www.facebook.com/sharer/sharer.php?u="+this.url+"&title="+this.title
+  }
+
+  getWhatsAppUrl() {
+    return "https://api.whatsapp.com/send?text="+this.title+" "+this.url
+  }
+
+  getLinkedInUrl() {
+    // https://stackoverflow.com/questions/33426752/linkedin-share-post-url/61583095#61583095
+    return "https://www.linkedin.com/sharing/share-offsite/?url="+this.url
+  }
+
+  getTwitterUrl() {
+    return "https://twitter.com/intent/tweet?source=tweetbutton&text="+this.title+"&url="+this.url
   }
 
   fallbackCopyTextToClipboard(text) {

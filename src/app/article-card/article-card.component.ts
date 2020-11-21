@@ -39,13 +39,15 @@ export class ArticleCardComponent implements OnInit, AfterViewInit {
       navigator.share({
           title: this.title,
           text: this.text,
-          url: 'https://factsforfriends.de/snack/' + this.id
+          url: 'https://factsforfriends.de/fact/' + this.id
         }).then(() => console.log('Successful share'))
         .catch(error => console.log('Error sharing:', error));
     } else {
       const dialogConfig = new MatDialogConfig();
+      
       dialogConfig["data"] = {
-        url: this.url
+        id: this.id,
+        title: this.title
       }
       const dialogRef = this.matDialog.open(ShareMenuComponent, dialogConfig);
     }
