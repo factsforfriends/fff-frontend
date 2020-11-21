@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
+import { Title, Meta } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-category-bar',
@@ -9,7 +10,7 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 export class CategoryBarComponent implements OnInit {
   selectedCategory = ""
 
-  constructor(private router: Router, private route: ActivatedRoute) { }
+  constructor(private titleService: Title, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.route.queryParamMap.subscribe(
@@ -28,6 +29,12 @@ export class CategoryBarComponent implements OnInit {
         queryParams: queryParams, 
         queryParamsHandling: 'merge'
       });
+
+      if (category != '') {
+        this.titleService.setTitle(category + ' | Facts for Friends')
+      } else {
+        this.titleService.setTitle('Facts for Friends')
+      }
   }
 
 }
