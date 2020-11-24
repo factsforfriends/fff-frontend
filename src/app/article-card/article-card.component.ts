@@ -16,6 +16,7 @@ export class ArticleCardComponent implements OnInit, AfterViewInit {
   @Input() category: string;
   @Input() index: number;
   @Input() id: string;
+  @Input() image_url: string;
 
   @Input() compact: boolean = false;
 

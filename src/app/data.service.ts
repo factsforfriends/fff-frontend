@@ -54,6 +54,13 @@ export class DataService {
         date: el['date'],
         category: el['category']
       }
+      // Gracefully set image_url
+      if (el.hasOwnProperty('image_url')) {
+        fact['image_url'] = el['image_url']
+      } else {
+        // Fallback to random image
+        fact['image_url'] = 'https://picsum.photos/400/300'
+      }
       facts.push(fact)
     });
     return facts
