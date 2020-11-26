@@ -15,7 +15,7 @@ export class AppComponent implements OnInit {
   constructor(public router: Router, private metaTagService: Meta){   
     this.router.events.subscribe(event => {
        if(event instanceof NavigationEnd){
-           gtag('config', 'UA-63444256-1', 
+           gtag('config', 'G-57W7LJ8L20', 
                  {
                    'page_path': event.urlAfterRedirects
                  }
