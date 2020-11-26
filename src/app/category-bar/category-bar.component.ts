@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
-import { Title, Meta } from '@angular/platform-browser';
+import { Title } from '@angular/platform-browser';
+
+import { AnalyticsService } from '../analytics.service';
 
 @Component({
   selector: 'app-category-bar',
@@ -10,7 +12,7 @@ import { Title, Meta } from '@angular/platform-browser';
 export class CategoryBarComponent implements OnInit {
   selectedCategory = ""
 
-  constructor(private titleService: Title, private router: Router, private route: ActivatedRoute) { }
+  constructor(private titleService: Title, private analyticsService: AnalyticsService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.route.queryParamMap.subscribe(
@@ -22,6 +24,9 @@ export class CategoryBarComponent implements OnInit {
 
   selectCategory(category): void {
     const queryParams: Params = { c: category };
+
+    // track click / change of categories
+    this.analyticsService.eventEmitter('select_content', 'CategoryBar', queryParams.c)
 
     this.router.navigate(
       [], {
