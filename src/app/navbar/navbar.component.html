@@ -23,45 +23,47 @@
 </div>
 <div class="relative">
     <div class="inset-y-0 right-0 z-40 fixed flex justify-between mt-0 md:mb-1 md:mt-4 md:mr-4 md:rounded-lg text-white bg-highlight" [ngClass]="{'hidden': MenuOpen === false}">
-        <div class="flex flex-col relative">
-            <div class="flex flex-row-reverse p-4">
-                <svg (click)="closeMenu()" class="h-8 w-8 fill-current cursor-pointer" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
-                </svg>
+        <div class="flex flex-col justify-between">
+            <div>
+                <div class="flex flex-row-reverse p-4">
+                    <svg (click)="closeMenu()" class="h-8 w-8 fill-current cursor-pointer" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                    </svg>
+                </div>
+                <div class="mt-0 md:mt-8 font-light">
+                    <div class="p-2 cursor-pointer font-semibold hover:bg-highlight-lighter" (click)="closeMenu()" routerLink='/'>
+                        <span class="pl-4 pr-8">Facts for Friends</span>
+                    </div>
+                    <div class="p-2 cursor-pointer hover:bg-highlight-lighter" (click)="closeMenu()" routerLink='/about' fragment="fakenews">
+                        <span class="pl-4 pr-8">Was sind Fake News?</span>
+                    </div>
+                    <div class="p-2 cursor-pointer hover:bg-highlight-lighter" (click)="closeMenu()" routerLink='/about' fragment="factsforfriends">
+                        <span class="pl-4 pr-8">Warum Facts for Friends?</span>
+                    </div>
+                    <div class="p-2 cursor-pointer hover:bg-highlight-lighter" (click)="closeMenu()" routerLink='/about' fragment="mission">
+                        <span class="pl-4 pr-8">Wie arbeiten wir?</span>
+                    </div>
+                    <div class="p-2 cursor-pointer hover:bg-highlight-lighter" (click)="closeMenu()" routerLink='/about' fragment="team">
+                        <span class="pl-4 pr-8">Wer steckt dahinter?</span>
+                    </div>
+                    <div class="mt-12 p-2 cursor-pointer hover:bg-highlight-lighter">
+                        <a class="flex items-center" href="/assets/documents/Pressematerial_The-Story-of-Facts-for-Friends.pdf" target="_blank">
+                            <span class="pl-4 pr-2">Pressematerialien</span>
+                            <svg class="h-4 w-4 fill-current" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+                                <path fill-rule="evenodd" d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="p-2 cursor-pointer hover:bg-highlight-lighter" (click)="closeMenu()" routerLink='/privacy-policy'>
+                        <span class="pl-4 pr-8">Datenschutz</span>
+                    </div>
+                    <div class="p-2 cursor-pointer hover:bg-highlight-lighter" (click)="closeMenu()" routerLink='/imprint'>
+                        <span class="pl-4 pr-8">Impressum</span>
+                    </div>
+                </div>
             </div>
-            <div class="mt-8 font-light">
-                <div class="p-2 cursor-pointer font-semibold hover:bg-highlight-lighter" (click)="closeMenu()" routerLink='/'>
-                    <span class="pl-4 pr-8">Facts for Friends</span>
-                </div>
-                <div class="p-2 cursor-pointer hover:bg-highlight-lighter" (click)="closeMenu()" routerLink='/about' fragment="fakenews">
-                    <span class="pl-4 pr-8">Was sind Fake News?</span>
-                </div>
-                <div class="p-2 cursor-pointer hover:bg-highlight-lighter" (click)="closeMenu()" routerLink='/about' fragment="factsforfriends">
-                    <span class="pl-4 pr-8">Warum Facts for Friends?</span>
-                </div>
-                <div class="p-2 cursor-pointer hover:bg-highlight-lighter" (click)="closeMenu()" routerLink='/about' fragment="mission">
-                    <span class="pl-4 pr-8">Wie arbeiten wir?</span>
-                </div>
-                <div class="p-2 cursor-pointer hover:bg-highlight-lighter" (click)="closeMenu()" routerLink='/about' fragment="team">
-                    <span class="pl-4 pr-8">Wer steckt dahinter?</span>
-                </div>
-                <div class="mt-12 p-2 cursor-pointer hover:bg-highlight-lighter">
-                    <a class="flex items-center" href="/assets/documents/Pressematerial_The-Story-of-Facts-for-Friends.pdf" target="_blank">
-                        <span class="pl-4 pr-2">Pressematerialien</span>
-                        <svg class="h-4 w-4 fill-current" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
-                            <path fill-rule="evenodd" d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
-                        </svg>
-                    </a>
-                </div>
-                <div class="p-2 cursor-pointer hover:bg-highlight-lighter" (click)="closeMenu()" routerLink='/privacy-policy'>
-                    <span class="pl-4 pr-8">Datenschutz</span>
-                </div>
-                <div class="p-2 cursor-pointer hover:bg-highlight-lighter" (click)="closeMenu()" routerLink='/imprint'>
-                    <span class="pl-4 pr-8">Impressum</span>
-                </div>
-            </div>
-            <div class="flex flex-row justify-between absolute bottom-0 right-0 w-full lg:hidden p-4">
+            <div class="flex flex-row justify-between w-full lg:hidden p-4">
                 <a target="_blank" href="https://www.facebook.com/factsforfriends.de" class="p-4 rounded cursor-pointer">
                     <svg class="h-4 w-4 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 310 310">
                         <path d="M82 165h34v140c0 3 2 5 5 5h57c3 0 5-2 5-5V166h39c3 0 5-2 5-5l6-51a5 5 0 00-5-6h-45V72c0-10 6-15 16-15h29c3 0 5-2 5-5V5c0-3-2-5-5-5h-42c-7 0-32 1-51 19a53 53 0 00-18 48v37H82c-3 0-5 2-5 5v51c0 3 2 5 5 5z"/>
