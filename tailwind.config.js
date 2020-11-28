@@ -14,6 +14,9 @@ module.exports = {
               secondary: '#0E8980',
               tertiary: '#00BCAD',
               fffred: '#b91349'
+          },
+          fontSize: {
+            'xxs': '.6rem',
           }
       }
       
