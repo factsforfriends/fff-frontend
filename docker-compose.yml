@@ -1,29 +1,59 @@
-version: '2.1'
+version: "3.8"
 services:
   caddy:
-    image: lucaslorentz/caddy-docker-proxy
+    image: lucaslorentz/caddy-docker-proxy:ci-alpine
+    restart: unless-stopped
     ports:
       - 80:80
       - 443:443
+    networks:
+      - caddy
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-      - ./caddy:/data
-
-  f3frontend:
-    ports:
-            - 127.0.0.1:5000:5000
-    build:
-      context: .
-      dockerfile: Dockerfile
-    env_file:
-      - .env
+      - caddy_data:/data
+    labels:
+      caddy.email: "factsforfriends@gmail.com"
+  redirect:
+    image: schmunk42/nginx-redirect
+    networks:
+      - caddy
+    environment:
+      - SERVER_REDIRECT=news.factsforfriends.de
+      - SERVER_REDIRECT_PATH=/launch
+      - SERVER_REDIRECT_SCHEME=https
+    # optionally define the http code to use for redirection
+    # allowed Codes are: 301, 302, 303, 307, 308, default is 301
+    #- SERVER_REDIRECT_CODE=301
+    # optionally define the http code to redirect POST requests
+    # if not set or not in allowed Codes, SERVER_REDIRECT_CODE will be used
+    #- SERVER_REDIRECT_POST_CODE=
+    # optionally define the http code to redirect PUT, PATCH and DELETE requests
+    # if not set or not in allowed Codes, SERVER_REDIRECT_CODE will be used
+    #- SERVER_REDIRECT_PUT_PATCH_DELETE_CODE=
+    # optionally define the location for the nginx access log
+    # if not set /dev/stdout is used
+    #- SERVER_ACCESS_LOG=/dev/null
+    # optionally define the location for the nginx error log
+    # if not set /dev/stderr is used
+    #- SERVER_ERROR_LOG=/dev/null
     labels:
       caddy: factsforfriends.de www.factsforfriends.de
-      caddy.reverse_proxy: "{{upstreams 5000}}"
-      caddy.tls: "${F3_TLS_MAIL}"
-
+      caddy.reverse_proxy: "{{upstreams http 80}}"
+  angular:
+    image: elangenhan/f3angular:dev
+    restart: unless-stopped
+    networks:
+      - caddy
+    labels:
+      caddy: dev.factsforfriends.de
+      caddy.reverse_proxy: "{{upstreams http 80}}"
   strapi:
     image: strapi/strapi
+    restart: unless-stopped
+    networks:
+      - caddy
+    depends_on:
+      - mongo
     env_file:
       - .env
     environment:
@@ -38,12 +68,13 @@ services:
     ports:
       - 127.0.0.1:1337:1337
     labels:
-      caddy: "${F3_CMS_DOMAIN}"
-      caddy.reverse_proxy: "{{upstreams 1337}}"
-      caddy.tls: "${F3_TLS_MAIL}"
-
+      caddy: cms.factsforfriends.de
+      caddy.reverse_proxy: "{{upstreams http 1337}}"
   mongo:
     image: mongo
+    restart: unless-stopped
+    networks:
+      - caddy
     environment:
       MONGO_INITDB_ROOT_USERNAME: "${MONGO_INITDB_ROOT_USERNAME}"
       MONGO_INITDB_ROOT_PASSWORD: "${MONGO_INITDB_ROOT_PASSWORD}"
@@ -52,4 +83,8 @@ services:
     volumes:
       - ./data/db:/data/db
     ports:
-            - 127.0.0.1:27017:27017
+      - 127.0.0.1:27017:27017
+networks:
+   caddy:
+volumes:
+  caddy_data: {}
