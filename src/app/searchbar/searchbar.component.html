@@ -19,8 +19,8 @@
 
 <div *ngIf="searchterm" [hidden]="!searchbarHasFocus" class="absolute bg-white w-full rounded-lg mt-2 z-20">
   <a routerLink="/fact/{{suggestion.id}}" (click)="hideSuggestions()" class="p-4 flex flex-row suggestion" *ngFor="let suggestion of suggestions">
-    <img height="70px" width="100px" class="rounded-lg" src="https://picsum.photos/100/70" />
-    <div class="pl-4 flex flex-col">
+    <img class="w-16 h-12 md:w-24 md:h-16 rounded-lg" src="{{ suggestion.image_url }}" />
+    <div class="pl-2 md:pl-4 flex flex-col">
       <span>
         {{suggestion.title}}
       </span>
