@@ -13,39 +13,13 @@ services:
       - caddy_data:/data
     labels:
       caddy.email: "factsforfriends@gmail.com"
-  redirect:
-    image: schmunk42/nginx-redirect
-    networks:
-      - caddy
-    environment:
-      - SERVER_REDIRECT=news.factsforfriends.de
-      - SERVER_REDIRECT_PATH=/launch
-      - SERVER_REDIRECT_SCHEME=https
-    # optionally define the http code to use for redirection
-    # allowed Codes are: 301, 302, 303, 307, 308, default is 301
-    #- SERVER_REDIRECT_CODE=301
-    # optionally define the http code to redirect POST requests
-    # if not set or not in allowed Codes, SERVER_REDIRECT_CODE will be used
-    #- SERVER_REDIRECT_POST_CODE=
-    # optionally define the http code to redirect PUT, PATCH and DELETE requests
-    # if not set or not in allowed Codes, SERVER_REDIRECT_CODE will be used
-    #- SERVER_REDIRECT_PUT_PATCH_DELETE_CODE=
-    # optionally define the location for the nginx access log
-    # if not set /dev/stdout is used
-    #- SERVER_ACCESS_LOG=/dev/null
-    # optionally define the location for the nginx error log
-    # if not set /dev/stderr is used
-    #- SERVER_ERROR_LOG=/dev/null
-    labels:
-      caddy: factsforfriends.de www.factsforfriends.de
-      caddy.reverse_proxy: "{{upstreams http 80}}"
   angular:
     image: elangenhan/f3angular:dev
     restart: unless-stopped
     networks:
       - caddy
     labels:
-      caddy: dev.factsforfriends.de
+      caddy: factsforfriends.de www.factsforfriends.de
       caddy.reverse_proxy: "{{upstreams http 80}}"
   strapi:
     image: strapi/strapi
