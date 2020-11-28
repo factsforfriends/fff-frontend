@@ -12,4 +12,8 @@ export class BackButtonComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  navigateBack(): void {
+    window.history.back();
+  }
+
 }
