@@ -15,6 +15,9 @@
                         compact="true"
                 ></app-article-card>
             </div>
+            <div *ngIf="totalCount==0">
+                <span>Leider keine Suchergebnisse gefunden.</span>
+            </div>
             <div class="xl:col-span-2">
                 <div *ngIf="limit < totalCount" class="flex justify-center w-full load-more text-highlight m-4">
                     <a (click)="loadMore()" class="flex justify-center items-center cursor-pointer p-2 rounded">
