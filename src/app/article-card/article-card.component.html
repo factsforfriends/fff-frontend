@@ -1,9 +1,15 @@
 <div class="flex flex-col md:flex-row h-full">
-    <img class="h-48 object-cover rounded-lg" [ngClass]="{'xl:w-auto xl:h-56': index==0, 'xl:hidden': index != 0, 'cursor-pointer': compact}" src="{{image_url}}" routerLink='/fact/{{id}}' />
+    <div class="flex flex-col flex-shrink-0" [ngClass]="{'xl:hidden': index != 0}">
+        <img class="h-48 object-cover rounded-lg" [ngClass]="{'xl:w-auto xl:h-56': index==0, 'cursor-pointer': compact}" src="{{image_url}}" routerLink='/fact/{{id}}' />
+        <span class="text-xxs text-right metadata">Symbolbild</span>
+    </div>
     <div class="flex flex-col justify-between">
         <div class="flex flex-col" [ngClass]="{'cursor-pointer': compact}" routerLink='/fact/{{id}}'>
             <div class="flex flex-col md:flex-row">
-                <img class="hidden md:w-48 md:h-32 rounded-lg" [ngClass]="{'xl:block': index != 0}" src="{{image_url}}" />
+                <div class="hidden" [ngClass]="{'xl:flex xl:flex-col xl:flex-shrink-0': index != 0}">
+                    <img class="md:w-48 md:h-32 rounded-lg" src="{{image_url}}" />
+                    <span class="text-xxs metadata">Symbolbild</span>
+                </div>
                 <div class="flex flex-col justify-between mt-4 md:mt-0 md:ml-4">
                     <h2 class="text-lg lg:text-xl font-medium">{{title}}</h2>
                     <div class="text-xs metadata">{{date | date:'d. MMMM'}} | {{category}}</div>
