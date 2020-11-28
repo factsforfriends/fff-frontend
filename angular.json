@@ -10,6 +10,9 @@
           "style": "scss"
         }
       },
+      "i18n": {
+        "sourceLocale": "de"
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -43,6 +46,7 @@
                   "with": "src/environments/environment.prod.ts"
                 }
               ],
+              "localize": ["de"],
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
