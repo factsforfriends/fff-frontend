@@ -21,6 +21,11 @@ import { ImprintPageComponent } from './imprint-page/imprint-page.component';
 import { ContentPageComponent } from './content-page/content-page.component';
 import { BackButtonComponent } from './back-button/back-button.component';
 import { NoResultsPageComponent } from './no-results-page/no-results-page.component';
+import { LOCALE_ID } from '@angular/core';
+import localeDe from '@angular/common/locales/de';
+import localeDeExtra from '@angular/common/locales/extra/de';
+import { registerLocaleData } from '@angular/common';
+registerLocaleData(localeDe, localeDeExtra);
 
 @NgModule({
   declarations: [
@@ -49,6 +54,7 @@ import { NoResultsPageComponent } from './no-results-page/no-results-page.compon
     ShareMenuComponent
   ],
   providers: [
+    { provide: LOCALE_ID, useValue: "de" },
     DataService,
     AnalyticsService
   ],
