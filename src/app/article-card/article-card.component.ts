@@ -37,13 +37,24 @@ export class ArticleCardComponent implements OnInit, AfterViewInit {
     }, 0)
   }
 
+  truncateChar(text: string, limit: number = 280): string {
+    if(!text || text.length <= limit )
+    {
+        return text;
+    }
+
+    let without_html = text.replace(/<(?:.|\n)*?>/gm, '');
+    let short_until = without_html.substring(0, limit).lastIndexOf(" ");
+    return without_html.substring(0, short_until)+ " ..."; 
+  }
+
   share(): void {
     this.analytics.eventEmitter('share', 'FactSnack', this.title)
 
     if (navigator.share) {
       navigator.share({
           title: this.title,
-          text: this.text,
+          text: this.truncateChar(this.title + '\n' + this.text),
           url: 'https://factsforfriends.de/fact/' + this.id
         }).then(() => console.log('Successful share'))
         .catch(error => console.log('Error sharing:', error));
@@ -51,8 +62,9 @@ export class ArticleCardComponent implements OnInit, AfterViewInit {
       const dialogConfig = new MatDialogConfig();
       
       dialogConfig["data"] = {
-        id: this.id,
-        title: this.title
+        url: 'https://factsforfriends.de/fact/' + this.id,
+        title: this.title,
+        text: this.text
       }
       const dialogRef = this.matDialog.open(ShareMenuComponent, dialogConfig);
     }

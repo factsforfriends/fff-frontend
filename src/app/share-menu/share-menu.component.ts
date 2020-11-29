@@ -12,15 +12,28 @@ export class ShareMenuComponent implements OnInit {
   clipboard_copied: boolean = false
   title:string = ''
   url:string
+  text:string
 
   constructor(
     public dialogRef: MatDialogRef<ShareMenuComponent>, @Inject(MAT_DIALOG_DATA) public data: any) {
       this.title = data.title;
-      this.url = 'https://factsforfriends.de/fact/' + data.id;
+      this.text = data.text;
+      this.url = data.url;
     }
 
   ngOnInit(): void {
 
+  }
+
+  truncateChar(text: string, limit: number = 280): string {
+    if(!text || text.length <= limit )
+    {
+        return text;
+    }
+
+    let without_html = text.replace(/<(?:.|\n)*?>/gm, '');
+    let short_until = without_html.substring(0, limit).lastIndexOf(" ");
+    return without_html.substring(0, short_until)+ " ..."; 
   }
 
   getFacebookUrl() {
@@ -29,7 +42,7 @@ export class ShareMenuComponent implements OnInit {
   }
 
   getWhatsAppUrl() {
-    return "https://api.whatsapp.com/send?text="+this.title+" "+this.url
+    return "https://api.whatsapp.com/send?text="+encodeURIComponent(this.truncateChar(this.title+"\n"+this.text)+"\n"+this.url)
   }
 
   getLinkedInUrl() {
@@ -38,7 +51,8 @@ export class ShareMenuComponent implements OnInit {
   }
 
   getTwitterUrl() {
-    return "https://twitter.com/intent/tweet?source=tweetbutton&text="+this.title+"&url="+this.url
+    // truncates the text to 280 characters
+    return "https://twitter.com/intent/tweet?source=tweetbutton&text="+encodeURIComponent(this.truncateChar(this.title+"\n"+this.text, 277-this.url.length))+"&url="+this.url
   }
 
   fallbackCopyTextToClipboard(text) {
