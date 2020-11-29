@@ -20,6 +20,7 @@ import { PrivacyPolicyPageComponent } from './privacy-policy-page/privacy-policy
 import { ImprintPageComponent } from './imprint-page/imprint-page.component';
 import { ContentPageComponent } from './content-page/content-page.component';
 import { BackButtonComponent } from './back-button/back-button.component';
+import { NoResultsPageComponent } from './no-results-page/no-results-page.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { BackButtonComponent } from './back-button/back-button.component';
     PrivacyPolicyPageComponent,
     ImprintPageComponent,
     ContentPageComponent,
-    BackButtonComponent
+    BackButtonComponent,
+    NoResultsPageComponent
   ],
   imports: [
     BrowserModule,

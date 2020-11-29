@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Fact } from '../model/fact.model'
-import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-browse',
