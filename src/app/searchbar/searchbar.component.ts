@@ -53,9 +53,8 @@ export class SearchbarComponent implements OnInit {
 
   goToSearchResults() {
     this.router.navigate(
-      [], 
+      ['/'], 
       {
-        relativeTo: this.route,
         queryParams: {"q": this.searchterm}, 
         queryParamsHandling: 'merge', // remove to replace all query params by provided
       })
