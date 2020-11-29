@@ -1,6 +1,11 @@
 <div class="flex flex-col lg:flex-row justify-center lg:justify-start">
     <app-category-bar class="pt-16 md:pt-24 lg:h-screen lg:sticky lg:top-0 md:px-4 lg:pr-0 lg:pb-8"></app-category-bar>
     <div class="flex justify-center w-full">
+        <app-no-results-page 
+            class="w-full"
+            searchterm="{{searchterm}}"
+            *ngIf="totalCount==0"
+        ></app-no-results-page>
         <div class="grid gap-4 grid-cols-1 xl:grid-cols-2 max-w-6xl mt-1 md:mt-4 lg:mt-24 md:mx-4 pb-4">
             <div class="p-6 bg-white rounded-lg" [ngClass]="{'xl:col-span-2': i == 0}" *ngFor="let fact of facts; let i = index" [attr.data-index]="i">
                 <app-article-card
@@ -14,9 +19,6 @@
                         image_url="{{fact.image_url}}"
                         compact="true"
                 ></app-article-card>
-            </div>
-            <div *ngIf="totalCount==0">
-                <span>Leider keine Suchergebnisse gefunden.</span>
             </div>
             <div class="xl:col-span-2">
                 <div *ngIf="limit < totalCount" class="flex justify-center w-full load-more text-highlight m-4">
