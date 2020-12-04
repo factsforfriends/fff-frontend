@@ -25,6 +25,8 @@ import { LOCALE_ID } from '@angular/core';
 import localeDe from '@angular/common/locales/de';
 import localeDeExtra from '@angular/common/locales/extra/de';
 import { registerLocaleData } from '@angular/common';
+import { BorderButtonComponent } from './border-button/border-button.component';
+import { TypeformFeedbackPageComponent } from './typeform-feedback-page/typeform-feedback-page.component';
 registerLocaleData(localeDe, localeDeExtra);
 
 @NgModule({
@@ -41,7 +43,9 @@ registerLocaleData(localeDe, localeDeExtra);
     ImprintPageComponent,
     ContentPageComponent,
     BackButtonComponent,
-    NoResultsPageComponent
+    NoResultsPageComponent,
+    BorderButtonComponent,
+    TypeformFeedbackPageComponent
   ],
   imports: [
     BrowserModule,
