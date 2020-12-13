@@ -49,8 +49,6 @@ export class ArticleCardComponent implements OnInit, AfterViewInit {
   }
 
   share(): void {
-    this.analytics.eventEmitter('share', 'FactSnack', this.title)
-
     if (navigator.share) {
       navigator.share({
           title: this.title,

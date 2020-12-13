@@ -2,6 +2,8 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { DataService } from '../data.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
+import { AnalyticsService } from '../analytics.service';
+
 @Component({
   selector: 'app-searchbar',
   templateUrl: './searchbar.component.html',
@@ -18,7 +20,7 @@ export class SearchbarComponent implements OnInit {
   selectedCategory = ""
   searchCount: number
 
-  constructor(private dataService: DataService, private route: ActivatedRoute, private router: Router) { }
+  constructor(private dataService: DataService, private analytics: AnalyticsService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
     this.route.queryParamMap.subscribe(
@@ -52,6 +54,7 @@ export class SearchbarComponent implements OnInit {
   }
 
   goToSearchResults() {
+    this.analytics.eventEmitter('search', {'search_term': this.searchterm})
     this.router.navigate(
       ['/'], 
       {

@@ -26,7 +26,7 @@ export class CategoryBarComponent implements OnInit {
     const queryParams: Params = { c: category };
 
     // track click / change of categories
-    this.analyticsService.eventEmitter('select_content', 'CategoryBar', queryParams.c)
+    this.analyticsService.eventEmitter('select_content', {content_type: 'category', item_id: category})
 
     this.router.navigate(
       [], {

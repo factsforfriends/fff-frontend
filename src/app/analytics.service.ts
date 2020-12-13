@@ -12,13 +12,7 @@ export class AnalyticsService {
 
   public eventEmitter( 
     eventAction: string, 
-    eventCategory: string, 
-    eventLabel: string = null,  
-    eventValue: number = null ){ 
-         gtag('event', eventAction, { 
-                 eventCategory: eventCategory, 
-                 eventLabel: eventLabel, 
-                 eventValue: eventValue
-               })
+    eventParams: object){ 
+         gtag('event', eventAction, eventParams)
     }
 }

@@ -3,6 +3,8 @@ import { MatDialogRef } from '@angular/material/dialog';
 import {MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { Inject } from '@angular/core';
 
+import { AnalyticsService } from '../analytics.service';
+
 @Component({
   selector: 'app-share-menu',
   templateUrl: './share-menu.component.html',
@@ -15,6 +17,7 @@ export class ShareMenuComponent implements OnInit {
   text:string
 
   constructor(
+    private analytics: AnalyticsService,
     public dialogRef: MatDialogRef<ShareMenuComponent>, @Inject(MAT_DIALOG_DATA) public data: any) {
       this.title = data.title;
       this.text = data.text;
@@ -55,6 +58,10 @@ export class ShareMenuComponent implements OnInit {
     return "https://twitter.com/intent/tweet?source=tweetbutton&text="+encodeURIComponent(this.truncateChar(this.title+"\n"+this.text, 277-this.url.length))+"&url="+this.url
   }
 
+  emitShareEvent(method) {
+    this.analytics.eventEmitter('share', {method: method, content_type: 'FactSnack', content_id: this.url})
+  }
+
   fallbackCopyTextToClipboard(text) {
     var textArea = document.createElement("textarea");
     textArea.value = text;
@@ -80,6 +87,7 @@ export class ShareMenuComponent implements OnInit {
   }
   
   copyTextToClipboard(text) {
+    this.emitShareEvent('clipboard')
     if (!navigator.clipboard) {
       this.fallbackCopyTextToClipboard(text);
       return;
