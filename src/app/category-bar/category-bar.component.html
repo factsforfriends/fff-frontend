@@ -17,17 +17,6 @@
               Alle
           </span>
       </div>
-      <div class="flex items-center lg:w-full p-2 rounded-lg category cursor-pointer" (click)="selectCategory('Politik')" [class.highlighted]="selectedCategory == 'Politik'">
-          <div class="p-2 bg-gray-100 rounded-lg category-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 fill-current text-gray-600" viewBox="0 0 208 201">
-                <path d="M7 199a3 3 0 01-1 0h0-1a5 5 0 01-2-3 5 5 0 01-1-4l17-50a5 5 0 015-3h18v-27l-10-11a26 26 0 01-6-17l-6-43a18 18 0 018-17L57 5a20 20 0 0110-3 20 20 0 0115 6l60 62a20 20 0 015 13v10h2a14 14 0 0113 13v33h22a5 5 0 015 3l17 50a4 4 0 010 2 5 5 0 01-5 5zm187-10l-13-40h-19v20h7a5 5 0 110 11H35a5 5 0 010-11h7v-20H28l-14 40zm-42-19v-64a3 3 0 00-3-3H87l15 29a18 18 0 012 9 19 19 0 01-19 19 19 19 0 01-7-1l-1-1a20 20 0 01-10-8l-15-26v46zm-94-55a14 14 0 012 2v1h1l15 27a9 9 0 005 4h0a8 8 0 004 1 9 9 0 008-14L70 90h0a5 5 0 01-1-4 5 5 0 013-3 5 5 0 012-1 5 5 0 015 3l3 7h55v-9a9 9 0 00-3-6L74 15a9 9 0 00-6-3 9 9 0 00-6 2L35 33a7 7 0 00-3 7l5 43h0a16 16 0 004 11z"/>
-                <path d="M187 143a3 3 0 00-3-2h-24v-35a12 12 0 00-11-12h-4V83a18 18 0 00-5-12L80 9a18 18 0 00-22-2L29 26a15 15 0 00-7 15l6 43a24 24 0 006 15l10 12v30H24a3 3 0 00-3 2L4 193a3 3 0 002 4 9 9 0 011 0h194a3 3 0 003-3 2 2 0 000-1zM34 83h0l-5-43a9 9 0 014-9l28-19a11 11 0 0115 2l60 62a11 11 0 013 7v11H81l-4-8a3 3 0 00-4-1 3 3 0 00-2 4l24 46a11 11 0 01-5 15 11 11 0 01-9 1h-1a11 11 0 01-6-5l-15-27a27 27 0 00-2-2L39 95a18 18 0 01-5-12zm18 38a11 11 0 011 2l16 26a18 18 0 009 8h0a17 17 0 007 1 18 18 0 0017-17 16 16 0 00-2-8l-16-32h65a5 5 0 015 5v66H50v-54zm-40 70l14-44h18v24h-9a3 3 0 000 7h134a3 3 0 100-7h-9v-24h22l14 44z"/>
-            </svg>
-          </div>
-          <span class="mx-2 select-none">
-              Politik
-          </span>
-      </div>
       <div class="flex items-center lg:w-full p-2 rounded-lg category cursor-pointer" (click)="selectCategory('Gesundheit')" [class.highlighted]="selectedCategory == 'Gesundheit'">
           <div class="p-2 bg-gray-100 rounded-lg category-icon">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 fill-current text-gray-600" viewBox="0 0 202 185">
@@ -37,6 +26,27 @@
           </div>
           <span class="mx-2 select-none">
               Gesundheit
+          </span>
+      </div>
+      <div class="flex items-center lg:w-full p-2 rounded-lg category cursor-pointer" (click)="selectCategory('Politik')" [class.highlighted]="selectedCategory == 'Politik'">
+        <div class="p-2 bg-gray-100 rounded-lg category-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 fill-current text-gray-600" viewBox="0 0 208 201">
+              <path d="M7 199a3 3 0 01-1 0h0-1a5 5 0 01-2-3 5 5 0 01-1-4l17-50a5 5 0 015-3h18v-27l-10-11a26 26 0 01-6-17l-6-43a18 18 0 018-17L57 5a20 20 0 0110-3 20 20 0 0115 6l60 62a20 20 0 015 13v10h2a14 14 0 0113 13v33h22a5 5 0 015 3l17 50a4 4 0 010 2 5 5 0 01-5 5zm187-10l-13-40h-19v20h7a5 5 0 110 11H35a5 5 0 010-11h7v-20H28l-14 40zm-42-19v-64a3 3 0 00-3-3H87l15 29a18 18 0 012 9 19 19 0 01-19 19 19 19 0 01-7-1l-1-1a20 20 0 01-10-8l-15-26v46zm-94-55a14 14 0 012 2v1h1l15 27a9 9 0 005 4h0a8 8 0 004 1 9 9 0 008-14L70 90h0a5 5 0 01-1-4 5 5 0 013-3 5 5 0 012-1 5 5 0 015 3l3 7h55v-9a9 9 0 00-3-6L74 15a9 9 0 00-6-3 9 9 0 00-6 2L35 33a7 7 0 00-3 7l5 43h0a16 16 0 004 11z"/>
+              <path d="M187 143a3 3 0 00-3-2h-24v-35a12 12 0 00-11-12h-4V83a18 18 0 00-5-12L80 9a18 18 0 00-22-2L29 26a15 15 0 00-7 15l6 43a24 24 0 006 15l10 12v30H24a3 3 0 00-3 2L4 193a3 3 0 002 4 9 9 0 011 0h194a3 3 0 003-3 2 2 0 000-1zM34 83h0l-5-43a9 9 0 014-9l28-19a11 11 0 0115 2l60 62a11 11 0 013 7v11H81l-4-8a3 3 0 00-4-1 3 3 0 00-2 4l24 46a11 11 0 01-5 15 11 11 0 01-9 1h-1a11 11 0 01-6-5l-15-27a27 27 0 00-2-2L39 95a18 18 0 01-5-12zm18 38a11 11 0 011 2l16 26a18 18 0 009 8h0a17 17 0 007 1 18 18 0 0017-17 16 16 0 00-2-8l-16-32h65a5 5 0 015 5v66H50v-54zm-40 70l14-44h18v24h-9a3 3 0 000 7h134a3 3 0 100-7h-9v-24h22l14 44z"/>
+          </svg>
+        </div>
+        <span class="mx-2 select-none">
+            Politik
+        </span>
+      </div>
+      <div class="flex items-center lg:w-full p-2 rounded-lg category cursor-pointer" (click)="selectCategory('Wirtschaft')" [class.highlighted]="selectedCategory == 'Wirtschaft'">
+          <div class="p-2 bg-gray-100 rounded-lg category-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 fill-current text-gray-600" viewBox="0 0 220 207">
+                <path d="M17 11c-4 0-7 2-7 6v174c0 4 3 6 7 6h186a7 7 0 000-13H23V17c0-4-3-6-6-6zm130 41c-4 0-7 3-7 7 0 3 4 6 7 6h18l-57 54-21-17c-2-2-4-3-6-2l-4 1-43 39c-3 3-3 7-1 10 3 2 7 3 10 0l39-35 21 17c2 3 7 3 9 1l63-59v19c0 4 3 7 7 7 3 0 6-3 6-7V58c0-3-3-6-6-6z"/>
+            </svg>
+          </div>
+          <span class="mx-2 select-none">
+              Wirtschaft
           </span>
       </div>
       <!--<div class="flex items-center lg:w-full p-2 rounded-lg category cursor-pointer" (click)="selectCategory('Umwelt')" [class.highlighted]="selectedCategory == 'Umwelt'">
