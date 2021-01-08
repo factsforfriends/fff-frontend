@@ -5,20 +5,18 @@ const darken = (clr, val) => Color(clr).darken(val).rgb().string()
 
 module.exports = {
   theme: {
-      extend: {
-          colors: {
-              highlight: {
-                default: '#0B6B64',
-                lighter: lighten('#0B6B64', 0.25)
-              },
-              secondary: '#0E8980',
-              tertiary: '#00BCAD',
-              fffred: '#b91349'
-          },
-          fontSize: {
-            'xxs': '.6rem',
-          }
+    extend: {
+      colors: {
+        highlight: "#0B6B64",
+        'highlight-lighter': lighten('#0B6B64', 0.25),
+        secondary: '#0E8980',
+        tertiary: '#00BCAD',
+        fffred: '#b91349'
+      },
+      fontSize: {
+        'xxs': '.6rem',
       }
-      
+    }
   }
 }
+
