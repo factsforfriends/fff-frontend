@@ -17,7 +17,18 @@
               Alle
           </span>
       </div>
-      <div class="flex items-center lg:w-full p-2 rounded-lg category cursor-pointer" (click)="selectCategory('Gesundheit')" [class.highlighted]="selectedCategory == 'Gesundheit'">
+      <div class="flex items-center lg:w-full p-2 rounded-lg category cursor-pointer" (click)="selectCategory('COVID-19')" [class.highlighted]="selectedCategory == 'COVID-19'">
+        <div class="p-2 bg-gray-100 rounded-lg category-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 fill-current text-gray-600" viewBox="0 0 220 210">
+              <path d="M209 168h-6l-9 10-17-17 20-20a4 4 0 10-6-6l-6 6-11-11-14-14-14-14-14-14-14-13-15-15c-1-2-4-2-6 0l-5 5-13-14h-6l-3 3-43-43a4 4 0 10-6 6l43 43-3 3v6l14 13-5 5c-2 2-2 5 0 6l81 82-6 6a4 4 0 106 6l20-20 17 17-10 9a4 4 0 106 6l25-25v-6zm-52 1l-41-41h27l-1 1a4 4 0 006 6l7-7h4l6 5-4 5a4 4 0 006 6l4-5 8 8-22 22zM70 66l6-6 10 11-5 6-11-11zm14 19l11-11 5-5 9 9-4 4a4 4 0 106 6l4-4 8 7-9 10a4 4 0 106 6l9-10 8 8-4 5a4 4 0 106 5l4-4 8 8h-43L79 90l5-5z"/>
+              <path d="M24 33l-4 2c-2 5-10 20-10 26a14 14 0 0028 0c0-6-8-21-10-26l-4-2zm0 33c-3 0-6-2-6-5l6-15 6 15c0 3-3 5-6 5z"/>
+          </svg>
+        </div>
+        <span class="mx-2 select-none">
+            COVID-19
+        </span>
+      </div>
+      <!--<div class="flex items-center lg:w-full p-2 rounded-lg category cursor-pointer" (click)="selectCategory('Gesundheit')" [class.highlighted]="selectedCategory == 'Gesundheit'">
           <div class="p-2 bg-gray-100 rounded-lg category-icon">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 fill-current text-gray-600" viewBox="0 0 202 185">
                 <path d="M101 185a6 6 0 01-4-2l-79-79a62 62 0 010-87A59 59 0 0159 0a26 26 0 013 0 64 64 0 0139 15 64 64 0 0139-15h3a59 59 0 0141 17 62 62 0 010 87l-79 79a6 6 0 01-4 2zM21 88a50 50 0 006 8l74 74 74-74a48 48 0 006-8h-55a6 6 0 01-5-2l-15-21-19 40a6 6 0 01-5 4 6 6 0 01-5-4L64 80l-3 5a6 6 0 01-5 3H21zm61 1l18-39a6 6 0 015-3 5 5 0 013 1 6 6 0 012 2l19 26h58a49 49 0 00-12-50 46 46 0 00-32-14h-3a52 52 0 00-35 16 6 6 0 01-8 0 52 52 0 00-36-16h-2a46 46 0 00-32 14 49 49 0 00-12 50h37l7-12a6 6 0 015-2 6 6 0 014 0 5 5 0 012 3z"/>
@@ -27,7 +38,7 @@
           <span class="mx-2 select-none">
               Gesundheit
           </span>
-      </div>
+      </div>-->
       <div class="flex items-center lg:w-full p-2 rounded-lg category cursor-pointer" (click)="selectCategory('Politik')" [class.highlighted]="selectedCategory == 'Politik'">
         <div class="p-2 bg-gray-100 rounded-lg category-icon">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 fill-current text-gray-600" viewBox="0 0 208 201">
