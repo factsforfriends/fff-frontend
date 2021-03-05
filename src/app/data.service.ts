@@ -21,7 +21,8 @@ export class DataService {
 
   public getData(category ? : string, limit ? : number, start ? : number) {
     if (!category) category = ""
-    return this.httpClient.get(`https://cms.factsforfriends.de/facts?_sort=date:DESC&_limit=${limit ? String(limit) : ""}&_start=${start ? String(start) : ""}&category_contains=${category.toLowerCase()}`).pipe(map(this.parseSnacks))
+    // return this.httpClient.get(`https://cms.factsforfriends.de/facts?_sort=date:DESC&_limit=${limit ? String(limit) : ""}&_start=${start ? String(start) : ""}&category_contains=${category.toLowerCase()}`).pipe(map(this.parseSnacks))
+    return this.httpClient.get(`https://f3api.edc.li/facts?_sort=date:DESC&per_page=${limit ? String(limit) : ""}&page=${start ? String(start) : ""}&category_contains=${category.toLowerCase()}`).pipe(map(this.parseSnacks))
   }
 
   public getFactCount(category ? : string) {
@@ -36,7 +37,8 @@ export class DataService {
 
   public search(query: string, category ? : string, limit ? : number, start ? : number) {
     if (!category) category = ""
-    return this.httpClient.get(`https://cms.factsforfriends.de/facts?_q=${query}&_sort=date:DESC&category_contains=${category.toLowerCase()}&_limit=${limit ? String(limit) : ""}&_start=${start ? String(start) : ""}`).pipe(map(this.parseSnacks))
+    // return this.httpClient.get(`https://cms.factsforfriends.de/facts?_q=${query}&_sort=date:DESC&category_contains=${category.toLowerCase()}&_limit=${limit ? String(limit) : ""}&_start=${start ? String(start) : ""}`).pipe(map(this.parseSnacks))
+    return this.httpClient.get(`https://f3api.edc.li/facts?_q=${query}&category_contains=${category.toLowerCase()}&per_page=${limit ? String(limit) : ""}&page=${start ? String(start) : ""}`).pipe(map(this.parseSnacks))
   }
 
   public getFact(id: string) {
@@ -44,8 +46,10 @@ export class DataService {
   }
 
   private parseSnacks(data: Array < any > ) {
+    let hits_count = data['found']
     let facts: Array < Fact > = []
-    data.forEach(el => {
+    data['hits'].forEach(el => {
+      el = el['document']
       const fact: Fact = {
         id: el['id'],
         title: el['headline'],
@@ -63,7 +67,7 @@ export class DataService {
       }
       facts.push(fact)
     });
-    return facts
+    return {hits_count, facts}
   }
 
   private parseSnack(el: any) {

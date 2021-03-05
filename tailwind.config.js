@@ -4,6 +4,7 @@ const lighten = (clr, val) => Color(clr).lighten(val).rgb().string()
 const darken = (clr, val) => Color(clr).darken(val).rgb().string()
 
 module.exports = {
+  purge: ["./src/**/*.{html,ts}"],
   theme: {
     extend: {
       colors: {

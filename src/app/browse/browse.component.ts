@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Fact } from '../model/fact.model'
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-browse',
@@ -12,7 +13,9 @@ export class BrowseComponent implements OnInit {
   facts: Array < Fact >
   selectedCategory: string
   searchterm: string
-  limit: number
+  perPage: number = 10
+  hits: number
+  currentPage: number = 1
   totalCount: number
   data = new Date()
 
@@ -39,37 +42,26 @@ export class BrowseComponent implements OnInit {
 
   async fetch(q: string, c: string) {
     if (q) {
-      const limit = 10
-      this.dataService.getSearchCount(q, c).subscribe(
-        (count: number) => this.totalCount = count
-      )
-      this.facts = await this.dataService.search(q, c, limit).toPromise()
-      this.limit = limit
+      const res = await this.dataService.search(q, c, this.perPage).toPromise()
+      this.facts = res['facts']
+      this.hits = res['hits_count']
     } else {
-      const limit = 9
-      this.dataService.getFactCount(c).subscribe(
-        (count: number) => this.totalCount = count
-      )
-      this.facts = await this.dataService.getData(c, limit).toPromise()
-      this.limit = limit
+      const res = await this.dataService.getData(c, this.perPage).toPromise()
+      this.facts = res['facts']
+      this.hits = res['hits_count']
+      this.currentPage += 1
     }
-
-    console.log(this.limit, this.totalCount)
   }
 
   async loadMore() {
-    const moreItems = 10
     let newFacts: Array < Fact > 
     if(this.searchterm && this.searchterm != "") {
-      newFacts = await this.dataService.search(this.searchterm, this.selectedCategory, moreItems, this.limit + 1).toPromise()
+      newFacts = await this.dataService.search(this.searchterm, this.selectedCategory, this.perPage, this.currentPage + 1).pipe(map(res => res['facts'])).toPromise()
     } else {
-      newFacts = await this.dataService.getData(this.selectedCategory, moreItems, this.limit + 1).toPromise()
+      newFacts = await this.dataService.getData(this.selectedCategory, this.perPage, this.currentPage + 1).pipe(map(res => res['facts'])).toPromise()
     }
-    console.log(newFacts)
-    this.limit = this.limit + moreItems
+    this.currentPage += 1
     this.facts = this.facts.concat(newFacts)
-
-    console.log(this.limit, this.totalCount)
   }
 
   clearSearch() {
