@@ -4,6 +4,9 @@ const lighten = (clr, val) => Color(clr).lighten(val).rgb().string()
 const darken = (clr, val) => Color(clr).darken(val).rgb().string()
 
 module.exports = {
+  plugins: [
+    require('@tailwindcss/forms')
+  ],
   theme: {
     extend: {
       colors: {
