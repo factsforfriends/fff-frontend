@@ -1,4 +1,72 @@
-<div class="flex flex-col md:flex-row h-full">
+<div *ngIf="index == 0" class="flex flex-row-reverse bg-white max-w-3xl rounded-border">
+    <!-- <div>
+        <img class="md:w-48 md:h-32 object-cover" src="{{image_url}}" />
+    </div> -->
+    <div class="article-image bg-auto bg-no-repeat bg-center rounded-border-right" style="background-image: url({{image_url}})"></div>
+    <div class="p-4 rounded-lg flex flex-col flex-1">
+        <div>{{title}}</div>
+        <div class="mt-2">
+            <div class="text-xs metadata">{{date | date:'dd.MM.YYYY'}} | 
+                <a href="{{url}}" target="_blank">
+                    Quelle
+                </a>
+            </div>
+        </div>
+        <div class="flex-1 mt-2 text-xs">
+            <div class="" [ngClass]="{'truncateText': compact}">
+                {{text}}
+            </div>
+        </div>
+        <div class="flex justify-between mt-4 text-xs">
+            <span class="tag">#{{category}}</span>
+            <a (click)="share()" class="flex p-2 rounded-lg items-center text-secondary action">
+                <svg class="h-5 w-5" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.499 2.499 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5z"/>
+                </svg>
+                <span class="ml-2 text-sm select-none">
+                    Teilen
+                </span>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="index != 0" class="flex flex-col bg-white max-w-sm rounded-border">
+    <!-- <div>
+        <img class="md:w-48 md:h-32 object-cover" src="{{image_url}}" />
+    </div> -->
+    <div class="article-image bg-auto bg-no-repeat bg-center rounded-border-top" style="background-image: url({{image_url}})"></div>
+    <div class="p-4 rounded-lg flex flex-col flex-1 bg-white rounded-border-top" style="margin-top: -10px">
+        <div>{{title}}</div>
+        <div class="mt-2">
+            <div class="text-xs metadata">{{date | date:'dd.MM.YYYY'}} | 
+                <a href="{{url}}" target="_blank">
+                    Quelle
+                </a>
+            </div>
+        </div>
+        <div class="flex-1 mt-2 text-xs">
+            <div class="" [ngClass]="{'truncateText': compact}">
+                {{text}}
+            </div>
+        </div>
+        <div class="flex justify-between mt-4 text-xs">
+            <span class="tag">#{{category}}</span>
+            <a (click)="share()" class="flex p-2 rounded-lg items-center text-secondary action">
+                <svg class="h-5 w-5" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.499 2.499 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5z"/>
+                </svg>
+                <span class="ml-2 text-sm select-none">
+                    Teilen
+                </span>
+            </a>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- <div class="flex flex-col md:flex-row h-full">
     <div class="flex flex-col flex-shrink-0" [ngClass]="{'xl:hidden': index != 0}">
         <img class="h-48 md:w-56 md:h-40 lg:w-64 lg:h-48 object-cover rounded-lg" [ngClass]="{'xl:w-72 xl:h-56': index==0, 'cursor-pointer': compact}" src="{{image_url}}" routerLink='/fact/{{id}}' />
         <span *ngIf="compact === false" class="text-xxs text-right metadata">Symbolbild</span>
@@ -43,4 +111,4 @@
         </div>
     </div>
 </div>
-
+ -->

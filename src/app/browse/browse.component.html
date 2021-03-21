@@ -6,9 +6,10 @@
             searchterm="{{searchterm}}"
             *ngIf="totalCount==0"
         ></app-no-results-page>
-        <div class="grid gap-4 grid-cols-1 xl:grid-cols-2 max-w-6xl mt-1 md:mt-4 lg:mt-24 md:mx-4 pb-4">
-            <div class="p-6 bg-white rounded-lg" [ngClass]="{'xl:col-span-2': i == 0}" *ngFor="let fact of facts; let i = index" [attr.data-index]="i">
+        <div class="max-w-3xl grid gap-8 grid-cols-1 xl:grid-cols-2 mt-1 md:mt-4 lg:mt-24 md:mx-4 pb-4">
                 <app-article-card
+                    *ngFor="let fact of facts; let i = index" 
+                    [attr.data-index]="i"
                         title="{{fact.title}}" 
                         text="{{fact.text}}"
                         date="{{fact.date}}"
@@ -18,8 +19,8 @@
                         index="{{i}}"
                         image_url="{{fact.image_url}}"
                         compact="true"
+                        [ngClass]="{'col-span-2': i == 0}"
                 ></app-article-card>
-            </div>
             <div class="xl:col-span-2">
                 <div *ngIf="limit < totalCount" class="flex justify-center w-full load-more text-highlight m-4">
                     <a (click)="loadMore()" class="flex justify-center items-center cursor-pointer p-2 rounded">

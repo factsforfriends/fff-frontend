@@ -21,3 +21,35 @@
     overflow: hidden;
     text-overflow: ellipsis;
 }
+
+.article-image {
+    min-height: 180px;
+    min-width: 250px;
+}
+
+.tag {
+    background-color: #ECF9F8;
+    color: #0C8980;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 15px;
+    font-size: 0.8em;
+    font-weight: 600;
+}
+
+$radius: 10px;
+.rounded-border {
+    border-radius: $radius;
+}
+
+.rounded-border-right {
+    border-top-right-radius: $radius;
+    border-bottom-right-radius: $radius;
+}
+
+.rounded-border-top {
+    border-top-left-radius: $radius;
+    border-top-right-radius: $radius;
+}
