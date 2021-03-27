@@ -1,4 +1,4 @@
-<div *ngIf="index == 0" class="flex flex-row-reverse bg-white max-w-3xl rounded-border">
+<div *ngIf="index == 0" class="flex flex-row-reverse bg-white max-w-3xl rounded-border dark:bg-dark-secondary dark:text-white">
     <!-- <div>
         <img class="md:w-48 md:h-32 object-cover" src="{{image_url}}" />
     </div> -->
@@ -7,7 +7,7 @@
         <div>{{title}}</div>
         <div class="mt-2">
             <div class="text-xs metadata">{{date | date:'dd.MM.YYYY'}} | 
-                <a class="source" href="{{url}}" target="_blank">
+                <a class="text-highlight dark:text-dark-primary" href="{{url}}" target="_blank">
                     <svg class="h-4 w-4 inline" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 426.667 426.667" style="margin-top: -1px;">
                         <g>
                             <g>
@@ -30,16 +30,9 @@
                 {{text}}
             </div>
         </div>
-        <div class="flex justify-between mt-4 text-xs">
-            <span class="tag">#{{category}}</span>
-            <a (click)="share()" class="flex p-2 rounded-lg items-center text-secondary action">
-                <svg class="h-5 w-5" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" d="M11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.499 2.499 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5z"/>
-                </svg>
-                <span class="ml-2 text-sm select-none">
-                    Teilen
-                </span>
-            </a>
+        <div class="flex items-center justify-between mt-4 text-xs">
+            <app-tag>#{{category}}</app-tag>
+            <app-sharebutton>Teilen</app-sharebutton>
         </div>
     </div>
 </div>
@@ -49,11 +42,11 @@
         <img class="md:w-48 md:h-32 object-cover" src="{{image_url}}" />
     </div> -->
     <div class="article-image bg-auto bg-no-repeat bg-center rounded-border-top" style="background-image: url({{image_url}})"></div>
-    <div class="p-4 rounded-lg flex flex-col flex-1 bg-white rounded-border-top" style="margin-top: -10px">
+    <div class="p-4 rounded-lg flex flex-col flex-1 bg-white dark:bg-dark-secondary dark:text-white rounded-border-top" style="margin-top: -10px">
         <div>{{title}}</div>
         <div class="mt-2">
             <div class="text-xs metadata">{{date | date:'dd.MM.YYYY'}} | 
-                <a class="source" href="{{url}}" target="_blank">
+                <a class="text-highlight dark:text-dark-primary" href="{{url}}" target="_blank">
                     <svg class="h-5 w-5 inline" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 426.667 426.667" style="margin-top: -1px;">
                         <g>
                             <g>
@@ -76,16 +69,9 @@
                 {{text}}
             </div>
         </div>
-        <div class="flex justify-between mt-4 text-xs">
-            <span class="tag">#{{category}}</span>
-            <a (click)="share()" class="flex p-2 rounded-lg items-center text-secondary action">
-                <svg class="h-5 w-5" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" d="M11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.499 2.499 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5z"/>
-                </svg>
-                <span class="ml-2 text-sm select-none">
-                    Teilen
-                </span>
-            </a>
+        <div class="flex items-center justify-between mt-4 text-xs">
+            <app-tag>#{{category}}</app-tag>
+            <app-sharebutton>Teilen</app-sharebutton>
         </div>
     </div>
 </div>

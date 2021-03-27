@@ -26,6 +26,12 @@ export class AppComponent implements OnInit {
   title = 'factsforfriends';
   
   ngOnInit() {
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark')
+    } else {
+      document.documentElement.classList.remove('dark')
+    }
+
     this.metaTagService.addTags([
       { name: 'description', content: 'Willkommen bei der Fact-Checking Revultion - Kämpfe einfach, schnell und bequem gegen Fake News auf Sozialen Netzwerken' },
       { name: 'robots', content: 'index, follow' },

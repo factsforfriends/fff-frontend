@@ -27,6 +27,10 @@ import localeDeExtra from '@angular/common/locales/extra/de';
 import { registerLocaleData } from '@angular/common';
 import { BorderButtonComponent } from './border-button/border-button.component';
 import { TypeformFeedbackPageComponent } from './typeform-feedback-page/typeform-feedback-page.component';
+import { FooterComponent } from './footer/footer.component';
+import { TagComponent } from './tag/tag.component';
+import { SharebuttonComponent } from './sharebutton/sharebutton.component';
+import { DarkmodetoggleComponent } from './darkmodetoggle/darkmodetoggle.component';
 registerLocaleData(localeDe, localeDeExtra);
 
 @NgModule({
@@ -45,7 +49,11 @@ registerLocaleData(localeDe, localeDeExtra);
     BackButtonComponent,
     NoResultsPageComponent,
     BorderButtonComponent,
-    TypeformFeedbackPageComponent
+    TypeformFeedbackPageComponent,
+    FooterComponent,
+    TagComponent,
+    SharebuttonComponent,
+    DarkmodetoggleComponent
   ],
   imports: [
     BrowserModule,
