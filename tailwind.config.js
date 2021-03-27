@@ -7,6 +7,7 @@ module.exports = {
   plugins: [
     require('@tailwindcss/forms')
   ],
+  purge: ["./src/**/*.{html,ts}"],
   theme: {
     extend: {
       colors: {

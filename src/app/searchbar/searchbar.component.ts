@@ -66,13 +66,14 @@ export class SearchbarComponent implements OnInit {
 
   triggerSearch() {
     this.dataService.search(this.searchterm, this.selectedCategory, 3).subscribe(
-      (data: Array<any>) => {
-        this.suggestions = data
+      (data: any) => {
+        this.suggestions = data['facts']
+        this.searchCount = data['hits_count']
       }
     )
-    this.dataService.getSearchCount(this.searchterm, this.selectedCategory).subscribe(
-      (count: number) => this.searchCount = count
-    )
+    // this.dataService.getSearchCount(this.searchterm, this.selectedCategory).subscribe(
+    //   (count: number) => this.searchCount = count
+    // )
   }
 
   clear() {
