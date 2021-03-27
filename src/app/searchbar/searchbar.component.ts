@@ -93,10 +93,10 @@ export class SearchbarComponent implements OnInit {
 
   onFocus(): void {
     this.searchbarHasFocus = true
-    const searchbar = this.searchbar.nativeElement
-    const overlay = this.backgroundOverlay.nativeElement
-    overlay.style.top = "-" + searchbar.getBoundingClientRect().top + "px"
-    overlay.style.left = "-" + searchbar.getBoundingClientRect().left + "px"
+    // const searchbar = this.searchbar.nativeElement
+    // const overlay = this.backgroundOverlay.nativeElement
+    // overlay.style.top = "-" + searchbar.getBoundingClientRect().top + "px"
+    // overlay.style.left = "-" + searchbar.getBoundingClientRect().left + "px"
   }
 
   hideSuggestions(): void {

@@ -22,7 +22,7 @@ module.exports = {
         'dark-background': '#151717',
         'dark-primary': '#98DFD9',
         'dark-secondary': '#323232',
-        'dark-tertiary': '#A6A6A6'
+        'dark-tertiary': '#A6A6A6',
       },
       fontSize: {
         'xxs': '.6rem',

@@ -1,7 +1,6 @@
 @import "../../variables.scss";
 
 input {
-    background-color: #f1f8f8;
     padding: 7px 15px 7px 40px;
     transition: box-shadow 0.3s ease-in-out;
 
@@ -60,5 +59,7 @@ input {
 .background-overlay {
     background-color: rgba(255, 255, 255, 0.3);
     backdrop-filter: blur(1px);
+    top: 0px;
+    left: 0px;
 }
 

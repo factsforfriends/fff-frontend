@@ -12,4 +12,8 @@ export class SharebuttonComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  share(): void {
+    
+  }
+
 }

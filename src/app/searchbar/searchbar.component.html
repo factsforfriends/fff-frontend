@@ -1,12 +1,12 @@
-<div #searchbar class="flex w-full relative z-20">
-  <div class="relative rounded-md shadow-sm w-full">
+<div #searchbar class="flex w-full relative z-20 inset-x-0 max-w-screen-sm m-auto top-0.5">
+  <div class="relative rounded-lg shadow-sm w-full">
     <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
       <svg class="w-5 h-5 fill-current text-highlight" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
         <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"/>
         <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
       </svg>
     </div>
-    <input #searchinput (focus)="onFocus()" (keyup)="onKey($event)" class="form-input rounded block w-full pl-7 pr-12 sm:leading-5" type="text" name="q" placeholder="Suchen" autocomplete="off">
+    <input #searchinput (focus)="onFocus()" (keyup)="onKey($event)" class="focus:absolute form-input rounded-lg border-2 border-highlight dark:border-dark-primary dark:bg-transparent block w-full pl-7 pr-12 sm:leading-5" type="text" name="q" placeholder="Suchen" autocomplete="off">
     <div class="absolute inset-y-0 right-0 flex items-center">
       <a [hidden]="!searchterm" (click)="clear()" class="clearbutton">
         <svg class="h-6 w-6 fill-current" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
@@ -17,7 +17,7 @@
   </div>
 </div>
 
-<div *ngIf="searchterm" [hidden]="!searchbarHasFocus" class="absolute bg-white w-full rounded-lg mt-2 z-20">
+<div *ngIf="searchterm" [hidden]="!searchbarHasFocus" class="m-auto inset-x-0 max-w-screen-sm absolute bg-white w-full rounded-lg mt-2 z-20">
   <a routerLink="/fact/{{suggestion.id}}" (click)="hideSuggestions()" class="p-4 flex flex-row suggestion" *ngFor="let suggestion of suggestions">
     <img class="hidden md:block w-16 h-12 md:w-24 md:h-16 rounded-lg" src="{{ suggestion.image_url }}" />
     <div class="pl-2 md:pl-4 flex flex-col">
