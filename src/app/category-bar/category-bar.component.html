@@ -1,9 +1,13 @@
-<div class="flex lg:flex-col items-center lg:items-start justify-between lg:h-full lg:relative lg:mb-4 lg:w-56 rounded-lg bg-white">
+<div class="flex lg:flex-col items-center lg:items-start justify-between lg:h-full lg:relative lg:mb-4 lg:w-56 rounded-lg bg-white dark:bg-dark-secondary dark:text-white">
   <div class="flex lg:flex-col justify-around items-center lg:items-start w-full overflow-x-auto p-2">
       <h2 class="hidden lg:block p-2 font-semibold">Kategorien</h2>
-      <div class="flex items-center lg:w-full p-2 rounded-lg category cursor-pointer" (click)="selectCategory('')" [class.highlighted]="!selectedCategory || selectedCategory == ''">
-          <div class="p-2 bg-gray-100 rounded-lg category-icon">
-              <svg viewBox="0 0 16 16" class="h-6 w-6 text-gray-600" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <div class="flex items-center lg:w-full p-2 category cursor-pointer" (click)="selectCategory('')">
+          <div class="p-2 rounded-full text-white" 
+            [class.bg-dark-tertiary]="selectedCategory && selectedCategory != ''" 
+            [class.bg-highlight]="!selectedCategory || selectedCategory == ''" 
+            [class.dark:bg-dark-primary]="selectedCategory == ''"
+            [class.dark:text-dark-background]="selectedCategory == ''">
+              <svg viewBox="0 0 16 16" class="h-6 w-6" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                   <path fill-rule="evenodd"
                     d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5v-3zM2.5 2a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zM1 10.5A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3z" />
                 </svg>
@@ -12,9 +16,13 @@
               Alle
           </span>
       </div>
-      <div class="flex items-center lg:w-full p-2 rounded-lg category cursor-pointer" (click)="selectCategory('COVID-19')" [class.highlighted]="selectedCategory == 'COVID-19'">
-        <div class="p-2 bg-gray-100 rounded-lg category-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 fill-current text-gray-600" viewBox="0 0 220 210">
+      <div class="flex items-center lg:w-full p-2 category cursor-pointer" (click)="selectCategory('COVID-19')">
+        <div class="p-2 rounded-full text-white"
+            [class.bg-dark-tertiary]="selectedCategory != 'COVID-19'" 
+            [class.bg-highlight]="selectedCategory == 'COVID-19'" 
+            [class.dark:bg-dark-primary]="selectedCategory == 'COVID-19'"
+            [class.dark:text-dark-background]="selectedCategory == 'COVID-19'">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 fill-current" viewBox="0 0 220 210">
               <path d="M209 168h-6l-9 10-17-17 20-20a4 4 0 10-6-6l-6 6-11-11-14-14-14-14-14-14-14-13-15-15c-1-2-4-2-6 0l-5 5-13-14h-6l-3 3-43-43a4 4 0 10-6 6l43 43-3 3v6l14 13-5 5c-2 2-2 5 0 6l81 82-6 6a4 4 0 106 6l20-20 17 17-10 9a4 4 0 106 6l25-25v-6zm-52 1l-41-41h27l-1 1a4 4 0 006 6l7-7h4l6 5-4 5a4 4 0 006 6l4-5 8 8-22 22zM70 66l6-6 10 11-5 6-11-11zm14 19l11-11 5-5 9 9-4 4a4 4 0 106 6l4-4 8 7-9 10a4 4 0 106 6l9-10 8 8-4 5a4 4 0 106 5l4-4 8 8h-43L79 90l5-5z"/>
               <path d="M24 33l-4 2c-2 5-10 20-10 26a14 14 0 0028 0c0-6-8-21-10-26l-4-2zm0 33c-3 0-6-2-6-5l6-15 6 15c0 3-3 5-6 5z"/>
           </svg>
@@ -23,20 +31,13 @@
             COVID-19
         </span>
       </div>
-      <!--<div class="flex items-center lg:w-full p-2 rounded-lg category cursor-pointer" (click)="selectCategory('Gesundheit')" [class.highlighted]="selectedCategory == 'Gesundheit'">
-          <div class="p-2 bg-gray-100 rounded-lg category-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 fill-current text-gray-600" viewBox="0 0 202 185">
-                <path d="M101 185a6 6 0 01-4-2l-79-79a62 62 0 010-87A59 59 0 0159 0a26 26 0 013 0 64 64 0 0139 15 64 64 0 0139-15h3a59 59 0 0141 17 62 62 0 010 87l-79 79a6 6 0 01-4 2zM21 88a50 50 0 006 8l74 74 74-74a48 48 0 006-8h-55a6 6 0 01-5-2l-15-21-19 40a6 6 0 01-5 4 6 6 0 01-5-4L64 80l-3 5a6 6 0 01-5 3H21zm61 1l18-39a6 6 0 015-3 5 5 0 013 1 6 6 0 012 2l19 26h58a49 49 0 00-12-50 46 46 0 00-32-14h-3a52 52 0 00-35 16 6 6 0 01-8 0 52 52 0 00-36-16h-2a46 46 0 00-32 14 49 49 0 00-12 50h37l7-12a6 6 0 015-2 6 6 0 014 0 5 5 0 012 3z"/>
-                <path d="M101 183a4 4 0 01-3-1l-79-79a60 60 0 010-84A57 57 0 0159 2a23 23 0 013 0 62 62 0 0138 15l1 1 1-1a62 62 0 0138-15h3a57 57 0 0140 17 60 60 0 010 84l-79 79a4 4 0 01-3 1zM18 88a51 51 0 007 9l76 76 76-76a51 51 0 007-9l1-2h-59a4 4 0 01-4-1l-16-24-20 43a4 4 0 01-4 3 4 4 0 01-4-3L64 76l-5 8a4 4 0 01-3 2H17zm46-24a4 4 0 013 0 4 4 0 011 2l14 27 19-42a4 4 0 014-2 3 3 0 012 0 4 4 0 011 2l20 27h61v-1a51 51 0 00-12-53 48 48 0 00-34-14h-3a54 54 0 00-36 16 4 4 0 01-6 0 54 54 0 00-36-16h-3a48 48 0 00-34 14 51 51 0 00-12 53v1h40l8-13a4 4 0 013-1z"/>
-            </svg>
-          </div>
-          <span class="mx-2 select-none">
-              Gesundheit
-          </span>
-      </div>-->
       <div class="flex items-center lg:w-full p-2 rounded-lg category cursor-pointer" (click)="selectCategory('Gesellschaft')" [class.highlighted]="selectedCategory == 'Gesellschaft'">
-        <div class="p-2 bg-gray-100 rounded-lg category-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 stroke-current stroke-2 text-gray-600" viewBox="0 0 220 160">
+        <div class="p-2 rounded-full text-white"
+            [class.bg-dark-tertiary]="selectedCategory != 'Gesellschaft'" 
+            [class.bg-highlight]="selectedCategory == 'Gesellschaft'" 
+            [class.dark:bg-dark-primary]="selectedCategory == 'Gesellschaft'"
+            [class.dark:text-dark-background]="selectedCategory == 'Gesellschaft'">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 fill-current" viewBox="0 0 220 160">
                 <path sketchjs:uid="1" d="M26 20c-5 0-9 4-9 9s4 9 9 9 9-4 9-9-4-9-9-9zm48 0c-5 0-9 4-9 9s4 9 9 9 9-4 9-9-4-9-9-9zm-48 2c3.9 0 7 3.1 7 7s-3.1 7-7 7-7-3.1-7-7 3.1-7 7-7zm24 0c-6.1 0-11 4.9-11 11s4.9 11 11 11 11-4.9 11-11-4.9-11-11-11zm24 0c3.9 0 7 3.1 7 7s-3.1 7-7 7-7-3.1-7-7 3.1-7 7-7zm-24 2c5 0 9 4 9 9s-4 9-9 9-9-4-9-9 4-9 9-9zM27 43c-5.4 0-10.3 1.2-13.9 3.3C9.4 48.4 7 51.5 7 55v14c0 .5.5 1 1 1h20v9c0 .5.5 1 1 1h42c.5 0 1-.5 1-1v-9h20c.5 0 1-.5 1-1V55c0-3.5-2.4-6.6-6.1-8.7C83.3 44.2 78.4 43 73 43c-8.2 0-15.3 2.8-18.4 7.3a35.53 35.53 0 00-9.2 0C42.3 45.8 35.2 43 27 43zm0 2c7.2 0 13.3 2.4 16.2 5.6-3.2.6-6.1 1.6-8.5 2.9-4 2.2-6.7 5.6-6.7 9.5v5H9V55c0-2.6 1.8-5.1 5.1-7 3.2-1.8 7.8-3 12.9-3zm46 0c5.1 0 9.7 1.2 12.9 3 3.2 1.9 5.1 4.4 5.1 7v13H72v-5c0-3.9-2.7-7.2-6.7-9.5-2.4-1.3-5.3-2.3-8.5-2.9 2.9-3.2 9-5.6 16.2-5.6zm-23 7c5.7 0 10.8 1.3 14.4 3.3C68 57.3 70 60 70 63v15H30V63c0-3 2-5.7 5.6-7.7 3.6-2 8.7-3.3 14.4-3.3z" transform="translate(-5.78 -36.28) scale(2.32558)" />
             </svg>
         </div>
@@ -45,8 +46,12 @@
         </span>
       </div>
       <div class="flex items-center lg:w-full p-2 rounded-lg category cursor-pointer" (click)="selectCategory('Politik')" [class.highlighted]="selectedCategory == 'Politik'">
-        <div class="p-2 bg-gray-100 rounded-lg category-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 fill-current text-gray-600" viewBox="0 0 208 201">
+        <div class="p-2 rounded-full text-white"
+            [class.bg-dark-tertiary]="selectedCategory != 'Politik'" 
+            [class.bg-highlight]="selectedCategory == 'Politik'" 
+            [class.dark:bg-dark-primary]="selectedCategory == 'Politik'"
+            [class.dark:text-dark-background]="selectedCategory == 'Politik'">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 fill-current" viewBox="0 0 208 201">
               <path d="M7 199a3 3 0 01-1 0h0-1a5 5 0 01-2-3 5 5 0 01-1-4l17-50a5 5 0 015-3h18v-27l-10-11a26 26 0 01-6-17l-6-43a18 18 0 018-17L57 5a20 20 0 0110-3 20 20 0 0115 6l60 62a20 20 0 015 13v10h2a14 14 0 0113 13v33h22a5 5 0 015 3l17 50a4 4 0 010 2 5 5 0 01-5 5zm187-10l-13-40h-19v20h7a5 5 0 110 11H35a5 5 0 010-11h7v-20H28l-14 40zm-42-19v-64a3 3 0 00-3-3H87l15 29a18 18 0 012 9 19 19 0 01-19 19 19 19 0 01-7-1l-1-1a20 20 0 01-10-8l-15-26v46zm-94-55a14 14 0 012 2v1h1l15 27a9 9 0 005 4h0a8 8 0 004 1 9 9 0 008-14L70 90h0a5 5 0 01-1-4 5 5 0 013-3 5 5 0 012-1 5 5 0 015 3l3 7h55v-9a9 9 0 00-3-6L74 15a9 9 0 00-6-3 9 9 0 00-6 2L35 33a7 7 0 00-3 7l5 43h0a16 16 0 004 11z"/>
               <path d="M187 143a3 3 0 00-3-2h-24v-35a12 12 0 00-11-12h-4V83a18 18 0 00-5-12L80 9a18 18 0 00-22-2L29 26a15 15 0 00-7 15l6 43a24 24 0 006 15l10 12v30H24a3 3 0 00-3 2L4 193a3 3 0 002 4 9 9 0 011 0h194a3 3 0 003-3 2 2 0 000-1zM34 83h0l-5-43a9 9 0 014-9l28-19a11 11 0 0115 2l60 62a11 11 0 013 7v11H81l-4-8a3 3 0 00-4-1 3 3 0 00-2 4l24 46a11 11 0 01-5 15 11 11 0 01-9 1h-1a11 11 0 01-6-5l-15-27a27 27 0 00-2-2L39 95a18 18 0 01-5-12zm18 38a11 11 0 011 2l16 26a18 18 0 009 8h0a17 17 0 007 1 18 18 0 0017-17 16 16 0 00-2-8l-16-32h65a5 5 0 015 5v66H50v-54zm-40 70l14-44h18v24h-9a3 3 0 000 7h134a3 3 0 100-7h-9v-24h22l14 44z"/>
           </svg>
@@ -56,8 +61,12 @@
         </span>
       </div>
       <div class="flex items-center lg:w-full p-2 rounded-lg category cursor-pointer" (click)="selectCategory('Wirtschaft')" [class.highlighted]="selectedCategory == 'Wirtschaft'">
-          <div class="p-2 bg-gray-100 rounded-lg category-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 fill-current text-gray-600" viewBox="0 0 220 207">
+        <div class="p-2 rounded-full text-white"
+        [class.bg-dark-tertiary]="selectedCategory != 'Wirtschaft'" 
+        [class.bg-highlight]="selectedCategory == 'Wirtschaft'" 
+        [class.dark:bg-dark-primary]="selectedCategory == 'Wirtschaft'"
+        [class.dark:text-dark-background]="selectedCategory == 'Wirtschaft'">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 fill-current" viewBox="0 0 220 207">
                 <path d="M17 11c-4 0-7 2-7 6v174c0 4 3 6 7 6h186a7 7 0 000-13H23V17c0-4-3-6-6-6zm130 41c-4 0-7 3-7 7 0 3 4 6 7 6h18l-57 54-21-17c-2-2-4-3-6-2l-4 1-43 39c-3 3-3 7-1 10 3 2 7 3 10 0l39-35 21 17c2 3 7 3 9 1l63-59v19c0 4 3 7 7 7 3 0 6-3 6-7V58c0-3-3-6-6-6z"/>
             </svg>
           </div>
@@ -65,17 +74,6 @@
               Wirtschaft
           </span>
       </div>
-      <!--<div class="flex items-center lg:w-full p-2 rounded-lg category cursor-pointer" (click)="selectCategory('Umwelt')" [class.highlighted]="selectedCategory == 'Umwelt'">
-        <div class="p-2 bg-gray-100 rounded-lg category-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 fill-current text-gray-600" viewBox="0 0 163 196">
-                <path d="M88.48,208l3.34-38.33H64.67a36.42,36.42,0,0,1-18-67.87,36.45,36.45,0,0,1-3-14.47c0-17.87,13.18-33.3,30.39-36C74,50.5,74,49.74,74,49c0-19.88,16.64-36.67,36.33-36.67a36.21,36.21,0,0,1,36,36.34c0,.75,0,1.52-.05,2.3a36.39,36.39,0,0,1,27.33,50.5,35.78,35.78,0,0,1,17.72,31.91,36.2,36.2,0,0,1-36,36.29H128.18L131.51,208Zm30.67-12-3.33-38.33h39.51a24.8,24.8,0,0,0,8.35-48.11l-7.1-2.54,4.09-6.13A25.47,25.47,0,0,0,165,87a24.7,24.7,0,0,0-24.56-24.67l-9.26,1,2.58-8.24a23,23,0,0,0,.91-6.07,24.67,24.67,0,1,0-49.34,0,24.7,24.7,0,0,0,.93,6.13l2.56,8.18-9.26-1a24.62,24.62,0,0,0-20.25,38.53L63.42,107l-7.08,2.53a24.8,24.8,0,0,0,8.33,48.12h40.18L101.52,196Z" transform="translate(-29 -12)"/>
-                <path d="M171,102.33a34.4,34.4,0,0,0-27-49.66,16.43,16.43,0,0,0,.33-4,34.22,34.22,0,0,0-34-34.34C91.67,14.33,76,30,76,49a16.39,16.39,0,0,0,.33,4,34.43,34.43,0,0,0-27,49.67,34.41,34.41,0,0,0,15.34,65H94L90.67,206h38.66L126,167.67h29.33a34.22,34.22,0,0,0,34-34.34A33.61,33.61,0,0,0,171,102.33Zm-15.67,57.34H118L121.33,198h-22l3.34-38.33h-38a26.8,26.8,0,0,1-9-52L60.33,106l-2.66-4a26.61,26.61,0,0,1,22-41.67L86,61l-1.67-5.33a27.31,27.31,0,0,1-1-6.67,26.67,26.67,0,1,1,53.34,0,25.23,25.23,0,0,1-1,6.67L134,61l6.33-.67A26.75,26.75,0,0,1,167,87a27.45,27.45,0,0,1-4.67,15l-2.66,4,4.66,1.67a26.8,26.8,0,0,1-9,52Z" transform="translate(-29 -12)"/>
-            </svg>
-        </div>
-        <span class="mx-2 select-none">
-            Umwelt
-        </span>
-    </div>-->
   </div>
   <div class="hidden lg:flex flex-col justify-between w-full overflow-x-auto">
       <div class="flex flex-row justify-center">

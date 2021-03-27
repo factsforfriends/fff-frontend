@@ -53,7 +53,7 @@ registerLocaleData(localeDe, localeDeExtra);
     FooterComponent,
     TagComponent,
     SharebuttonComponent,
-    DarkmodetoggleComponent
+    DarkmodetoggleComponent,
   ],
   imports: [
     BrowserModule,

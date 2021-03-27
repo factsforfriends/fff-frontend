@@ -1,14 +1,5 @@
 @import "../../variables.scss";
 
-.highlighted {
-    .category-icon {
-        background-color: $highlight_color;
-        svg {
-            color: white;
-        }
-    }
-}
-
 .category {
     &:hover {
         background-color: #00000008;
