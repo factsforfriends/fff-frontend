@@ -27,16 +27,20 @@
     min-width: 250px;
 }
 
+.source {
+    color: $primary !important;
+}
+
 .tag {
-    background-color: #ECF9F8;
-    color: #0C8980;
+    background-color: $tags;
+    color: $primary;
     border-radius: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 0px 15px;
-    font-size: 0.8em;
-    font-weight: 600;
+    font-size: 0.9em;
+    font-weight: 500;
 }
 
 $radius: 10px;
