@@ -20,10 +20,13 @@ module.exports = {
         fffred: '#b91349',
         'tag-background': '#EDF9F8',
         'dark-background': '#151717',
+        'dark-navi': '#232424',
         'dark-primary': '#98DFD9',
-        'dark-secondary': '#323232',
-        'dark-tertiary': '#A6A6A6',
-        'dark-hover': '#2A2B2B'
+        'dark-primary-font': '#FFFFFF',
+        'dark-secondary-font': '#A6A6A6',
+        'dark-cards': '#2F3333',
+        'dark-hover': '#2A2B2B',
+        'dark-category-background': '#7F8584'
       },
       fontSize: {
         'xxs': '.6rem',

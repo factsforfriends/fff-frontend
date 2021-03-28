@@ -1,4 +1,4 @@
-<div #searchbar class="flex w-full relative z-20 inset-x-0 max-w-screen-sm m-auto top-0.5 dark:bg-dark-secondary" [ngClass]="{'isInFocus': searchbarHasFocus}">
+<div #searchbar class="flex w-full relative z-20 inset-x-0 max-w-screen-sm m-auto top-0.5 dark:bg-dark-navi" [ngClass]="{'isInFocus': searchbarHasFocus}">
   <div class="relative rounded-lg shadow-sm w-full">
     <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
       <svg class="w-5 h-5 fill-current text-highlight dark:text-dark-primary" fill="currentColor" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
@@ -17,7 +17,7 @@
   </div>
 </div>
 
-<div *ngIf="searchterm" [hidden]="!searchbarHasFocus" class="m-auto inset-x-0 max-w-screen-sm absolute bg-white dark:bg-dark-secondary w-full rounded-b-lg z-20 border-2 border-t-0 border-highlight dark:border-dark-primary" style="top:64px;">
+<div *ngIf="searchterm" [hidden]="!searchbarHasFocus" class="m-auto inset-x-0 max-w-screen-sm absolute bg-white dark:bg-dark-navi w-full rounded-b-lg z-20 border-2 border-t-0 border-highlight dark:border-dark-primary" style="top:64px;">
   <a routerLink="/fact/{{suggestion.id}}" (click)="hideSuggestions()" class="p-4 flex flex-row suggestion hover:bg-gray-200 dark:hover:bg-dark-hover" *ngFor="let suggestion of suggestions">
     <img class="hidden md:block w-24 h-16 md:w-24 md:h-16 rounded-lg" src="{{ suggestion.image_url }}" />
     <div class="pl-2 md:pl-4 flex flex-col">
