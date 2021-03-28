@@ -1,13 +1,13 @@
-<mat-dialog-content class="content relative bg-white dark:bg-dark-secondary">
+<mat-dialog-content class="content relative bg-white dark:bg-dark-navi">
     <div class="p-4">
-        <a class="absolute top-0 rounded close-button" (click)="close()">
+        <a class="absolute top-0 p-2 rounded close-button" (click)="close()">
             <svg class="h-8 w-8 fill-current" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
               <path fill-rule="evenodd" d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
             </svg>
           </a>
     
         <div class="share">
-            <h2 class="text-xl text-gray-800 text-center dark:text-white">Teile diesen Artikel als:</h2>
+            <h2 class="text-xl text-gray-800 text-center dark:text-dark-primary-font">Teile diesen Artikel als:</h2>
     
             <div class="flex justify-between m-4">
                 <div (click)="select('article')" class="flex flex-col p-4 rounded-lg hover:bg-gray-200 dark:hover:bg-dark-hover cursor-pointer dark:text-gray-200" [ngClass]="{'font-semibold text-highlight dark:text-dark-primary': current_selection == 'article'}">
@@ -55,11 +55,11 @@
     
         </div>
         <div>
-            <h2 class="text-xl text-gray-800 text-center dark:text-white">Oder kopiere den Link:</h2>
+            <h2 class="text-xl text-gray-800 text-center dark:text-dark-primary-font">Oder kopiere den Link:</h2>
     
             <div class="flex my-4">
-                <input value="{{url}}" class="w-full border border-highlight dark:border-dark-primary rounded-l-lg text-gray-200 dark:bg-dark-secondary" type="text" readonly>
-                <a (click)="copyTextToClipboard(url)" class="rounded-r bg-highlight dark:bg-dark-primary text-white dark:text-dark-secondary copy-link cursor-pointer">
+                <input value="{{url}}" class="w-full border border-highlight dark:border-dark-primary rounded-l-lg text-gray-200 dark:bg-dark-navi" type="text" readonly>
+                <a (click)="copyTextToClipboard(url)" class="rounded-r bg-highlight dark:bg-dark-primary text-white dark:text-dark-navi copy-link cursor-pointer">
                     <span *ngIf="!clipboard_copied" class="flex">Kopieren</span>
                     <span *ngIf="clipboard_copied" class="flex">Kopiert!</span>
                 </a>
