@@ -15,6 +15,9 @@ export class ShareMenuComponent implements OnInit {
   title:string = ''
   url:string
   text:string
+  sharepic:string
+
+  current_selection: "article" | "sharepic" = "article"
 
   constructor(
     private analytics: AnalyticsService,
@@ -22,10 +25,15 @@ export class ShareMenuComponent implements OnInit {
       this.title = data.title;
       this.text = data.text;
       this.url = data.url;
+      this.sharepic = data.sharepic;
     }
 
   ngOnInit(): void {
 
+  }
+
+  select(selection: "article" | "sharepic"): void {
+    this.current_selection = selection
   }
 
   truncateChar(text: string, limit: number = 280): string {

@@ -71,7 +71,15 @@
         </div>
         <div class="flex items-center justify-between mt-4 text-xs">
             <app-tag>#{{category}}</app-tag>
-            <app-sharebutton>Teilen</app-sharebutton>
+            <app-sharebutton 
+                title="{{title}}" 
+                text="{{text}}"
+                date="{{date}}"
+                category="{{category}}"
+                url="{{url}}"
+                id="{{id}}"
+                image_url="{{image_url}}"
+            >Teilen</app-sharebutton>
         </div>
     </div>
 </div>

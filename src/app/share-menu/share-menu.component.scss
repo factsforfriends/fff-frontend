@@ -11,9 +11,7 @@
 }
 
 input {
-    background-color: $searchbar_background;
     padding: 7px 15px;
-    color: $sharesheet_color;
 }
 
 .copy-link {
@@ -23,7 +21,7 @@ input {
     align-items: center;
 }
 
-.close-button, .copy-link, .share a {
+.close-button {
     &:hover {
         background-color: rgba(0,0,0,0.05);
         cursor: pointer;

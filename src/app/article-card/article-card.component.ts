@@ -24,7 +24,7 @@ export class ArticleCardComponent implements OnInit, AfterViewInit {
 
   isOverflown: boolean = false
 
-  constructor(private matDialog: MatDialog, private analytics: AnalyticsService) { }
+  constructor(private analytics: AnalyticsService) { }
 
   ngOnInit(): void {
     
@@ -47,26 +47,6 @@ export class ArticleCardComponent implements OnInit, AfterViewInit {
     let without_html = text.replace(/<(?:.|\n)*?>/gm, '');
     let short_until = without_html.substring(0, limit).lastIndexOf(" ");
     return without_html.substring(0, short_until)+ " ..."; 
-  }
-
-  share(): void {
-    if (navigator.share) {
-      navigator.share({
-          title: this.title,
-          text: this.truncateChar(this.title + '\n' + this.text),
-          url: 'https://factsforfriends.de/fact/' + this.id
-        }).then(() => console.log('Successful share'))
-        .catch(error => console.log('Error sharing:', error));
-    } else {
-      const dialogConfig = new MatDialogConfig();
-      
-      dialogConfig["data"] = {
-        url: 'https://factsforfriends.de/fact/' + this.id,
-        title: this.title,
-        text: this.text
-      }
-      const dialogRef = this.matDialog.open(ShareMenuComponent, dialogConfig);
-    }
   }
 
   checkIfOverflown(element): boolean {

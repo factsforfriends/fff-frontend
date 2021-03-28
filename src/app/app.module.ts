@@ -31,6 +31,7 @@ import { FooterComponent } from './footer/footer.component';
 import { TagComponent } from './tag/tag.component';
 import { SharebuttonComponent } from './sharebutton/sharebutton.component';
 import { DarkmodetoggleComponent } from './darkmodetoggle/darkmodetoggle.component';
+import { SnackRecommendationComponent } from './snack-recommendation/snack-recommendation.component';
 registerLocaleData(localeDe, localeDeExtra);
 
 @NgModule({
@@ -54,6 +55,7 @@ registerLocaleData(localeDe, localeDeExtra);
     TagComponent,
     SharebuttonComponent,
     DarkmodetoggleComponent,
+    SnackRecommendationComponent,
   ],
   imports: [
     BrowserModule,
