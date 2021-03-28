@@ -23,6 +23,7 @@ module.exports = {
         'dark-primary': '#98DFD9',
         'dark-secondary': '#323232',
         'dark-tertiary': '#A6A6A6',
+        'dark-hover': '#2A2B2B'
       },
       fontSize: {
         'xxs': '.6rem',
