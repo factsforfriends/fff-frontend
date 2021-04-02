@@ -1,25 +1,62 @@
 <div class="flex flex-col lg:flex-row justify-center lg:justify-start">
     <app-category-bar class="pt-20 md:pt-24 lg:h-screen lg:sticky lg:top-0 md:px-4 lg:pr-0 lg:pb-8"></app-category-bar>
     <div class="flex w-full justify-center">
-        <div class="max-w-6xl mt-4 lg:mt-24 md:mx-4 pb-4">
+        <div class="max-w-4xl mt-4 lg:mt-24 md:mx-4 pb-4 w-full">
             <app-back-button class="flex mb-4"></app-back-button>
-            <div class="rounded-lg">
-                <app-article-card
-                    title="{{fact.headline}}" 
-                    text="{{fact.snack}}"
-                    date="{{fact.date}}"
-                    category="{{fact.category}}"
-                    url="{{fact.url}}"
-                    id="{{fact.id}}"
-                    image_url="{{fact.image_url}}"
-                    index="0"
-                ></app-article-card>
+
+            <div *ngIf="fact && fact.image_url" class="mb-4 article-image bg-auto bg-no-repeat bg-center rounded-border-right cursor-pointer w-full h-80 rounded-lg bg-cover" style="background-image: url({{fact.image_url}})"></div>
+
+            <div *ngIf="fact" class="flex flex-row-reverse bg-white rounded-lg dark:bg-dark-cards dark:text-dark-primary-font">
+                <!-- <div>
+                        <img class="md:w-48 md:h-32 object-cover" src="{{image_url}}" />
+                    </div> -->
+                <div class="p-4 rounded-lg flex flex-col flex-1">
+                    <div class="cursor-pointer text-lg">{{fact.headline}}</div>
+                    <div class="mt-2">
+                    <div class="text-xs metadata">{{fact.date | date:'dd.MM.YYYY'}} |
+                        <a class="text-highlight dark:text-dark-primary" href="{{fact.url}}" target="_blank">
+                        <svg class="h-4 w-4 inline" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 426.667 426.667" style="margin-top: -1px;">
+
+                            <path
+                            d="M40.533,213.333c0-36.48,29.653-66.133,66.133-66.133H192v-40.533h-85.333C47.787,106.667,0,154.453,0,213.333
+                                                        S47.787,320,106.667,320H192v-40.533h-85.333C70.187,279.467,40.533,249.813,40.533,213.333z" />
+                            <rect x="128" y="192" width="170.667" height="42.667" />
+                            <path d="M320,106.667h-85.333V147.2H320c36.48,0,66.133,29.653,66.133,66.133S356.48,279.467,320,279.467h-85.333V320H320
+                                                        c58.88,0,106.667-47.787,106.667-106.667S378.88,106.667,320,106.667z" />
+
+                        </svg>
+                        Quelle
+                        </a>
+                    </div>
+                    </div>
+                    <div class="flex-1 mt-2 cursor-pointer">
+                    <div [ngClass]="{'truncateText': compact}">
+                        {{fact.snack}}
+                    </div>
+                    </div>
+                    <div class="flex items-center justify-between mt-4 text-xs">
+                    <app-tag>#{{fact.category}}</app-tag>
+                    <app-sharebutton title="{{fact.headline}}" text="{{fact.snack}}" date="{{fact.date}}" category="{{fact.category}}" url="{{fact.url}}" id="{{fact.id}}" image_url="{{fact.image_url}}">Teilen</app-sharebutton>
+                    </div>
+                </div>
             </div>
         </div>
         <!--<app-border-button
             class="fixed bottom-0 right-0 mr-4 md:mr-8"
             label="Texte bewerten"
             form="TPTFOIYa"
-        ></app-border-button>-->
+            ></app-border-button>-->
+        </div>
     </div>
-</div>
+    
+    <!-- <app-article-card
+        title="{{fact.headline}}" 
+        text="{{fact.snack}}"
+        date="{{fact.date}}"
+        category="{{fact.category}}"
+        url="{{fact.url}}"
+        id="{{fact.id}}"
+        image_url="{{fact.image_url}}"
+        index="0"
+    ></app-article-card> -->
