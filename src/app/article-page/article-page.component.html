@@ -1,7 +1,7 @@
-<div class="flex flex-col lg:flex-row justify-center lg:justify-start">
-    <app-category-bar class="pt-20 md:pt-24 lg:h-screen lg:sticky lg:top-0 md:px-4 lg:pr-0 lg:pb-8"></app-category-bar>
+<div class="flex flex-col lg:flex-row justify-center lg:justify-start w-full">
+    <!-- <app-category-bar class="lg:h-screen lg:sticky lg:top-0 md:px-4 lg:pr-0 lg:pb-8"></app-category-bar> -->
     <div class="flex w-full justify-center">
-        <div class="max-w-4xl mt-4 lg:mt-24 md:mx-4 pb-4 w-full">
+        <div class="m-4 max-w-4xl mt-4 md:mx-4 pb-4 w-full">
             <app-back-button class="flex mb-4"></app-back-button>
 
             <div *ngIf="fact && fact.image_url" class="mb-4 article-image bg-auto bg-no-repeat bg-center rounded-border-right cursor-pointer w-full h-80 rounded-lg bg-cover" style="background-image: url({{fact.image_url}})"></div>
