@@ -1,12 +1,13 @@
-<div class="flex flex-col lg:flex-row justify-center lg:justify-start">
-    <app-category-bar class="pt-16 md:pt-24 lg:h-auto lg:top-0 md:px-4 lg:pr-0 lg:pb-8"></app-category-bar>
+<div class="flex flex-col justify-center lg:justify-start">
+    <app-intro></app-intro>
+    <!--<app-category-bar class="pt-16 md:pt-24 lg:h-auto lg:sticky lg:top-0 md:px-4 lg:pr-0 lg:pb-8"></app-category-bar>-->
     <div class="flex justify-center w-full">
         <app-no-results-page 
             class="w-full"
             searchterm="{{searchterm}}"
             *ngIf="totalCount==0"
         ></app-no-results-page>
-        <div class="max-w-3xl grid gap-8 grid-cols-1 xl:grid-cols-2 mt-1 md:mt-4 lg:mt-24 md:mx-4 pb-4">
+        <div class="max-w-3xl grid gap-8 grid-cols-1 xl:grid-cols-2 mt-1 md:mt-4 md:mx-4 pb-4">
                 <app-article-card
                     *ngFor="let fact of facts; let i = index" 
                     [attr.data-index]="i"
