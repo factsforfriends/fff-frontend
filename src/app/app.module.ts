@@ -32,6 +32,7 @@ import { TagComponent } from './tag/tag.component';
 import { SharebuttonComponent } from './sharebutton/sharebutton.component';
 import { DarkmodetoggleComponent } from './darkmodetoggle/darkmodetoggle.component';
 import { SnackRecommendationComponent } from './snack-recommendation/snack-recommendation.component';
+import { IntroComponent } from './intro/intro.component';
 registerLocaleData(localeDe, localeDeExtra);
 
 @NgModule({
@@ -56,6 +57,7 @@ registerLocaleData(localeDe, localeDeExtra);
     SharebuttonComponent,
     DarkmodetoggleComponent,
     SnackRecommendationComponent,
+    IntroComponent,
   ],
   imports: [
     BrowserModule,
