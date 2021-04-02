@@ -20,7 +20,7 @@
                         index="{{i}}"
                         image_url="{{fact.image_url}}"
                         compact="true"
-                        [ngClass]="{'col-span-2': i == 0}"
+                        [ngClass]="{'lg:col-span-2': i == 0}"
                 ></app-article-card>
             <div class="xl:col-span-2">
                 <div *ngIf="perPage * currentPage < hits" class="text-xs flex justify-center w-full load-more text-highlight m-4">
