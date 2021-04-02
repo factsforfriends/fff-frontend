@@ -7,7 +7,7 @@
             searchterm="{{searchterm}}"
             *ngIf="totalCount==0"
         ></app-no-results-page>
-        <div class="max-w-3xl grid gap-8 grid-cols-1 xl:grid-cols-2 mt-1 md:mt-4 md:mx-4 pb-4">
+        <div class="m-4 max-w-3xl grid gap-8 grid-cols-1 xl:grid-cols-2 pb-4">
                 <app-article-card
                     *ngFor="let fact of facts; let i = index" 
                     [attr.data-index]="i"
