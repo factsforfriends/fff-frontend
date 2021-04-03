@@ -24,6 +24,7 @@ module.exports = {
         'dark-primary': '#98DFD9',
         'dark-primary-font': '#FFFFFF',
         'dark-secondary-font': '#A6A6A6',
+        'dark-dark-font': '#121212',
         'dark-cards': '#2F3333',
         'dark-hover': '#2A2B2B',
         'dark-category-background': '#7F8584'
