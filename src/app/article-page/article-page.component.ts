@@ -22,7 +22,6 @@ export class ArticlePageComponent implements OnInit, OnDestroy {
         this.dataService.getFact(params['id']).subscribe(
           fact => {
             this.fact = fact
-            console.log(fact)
             this.titleService.setTitle(this.fact.headline + ' | Facts for Friends')
             this.metaService.updateTag(
               { name: 'description', content: this.fact.headline }

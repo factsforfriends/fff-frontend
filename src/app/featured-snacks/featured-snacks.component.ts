@@ -8,7 +8,6 @@ import { Component, Input, OnInit } from '@angular/core';
 export class FeaturedSnacksComponent implements OnInit {
   @Input() title: string;
   @Input() set facts(facts: Array<any>) {
-    console.log(facts)
     facts ? this.cards = facts.slice(0, 3) : false
   }
   cards: Array<any> = undefined
