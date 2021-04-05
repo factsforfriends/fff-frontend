@@ -27,7 +27,13 @@ module.exports = {
         'dark-dark-font': '#121212',
         'dark-cards': '#2F3333',
         'dark-hover': '#2A2B2B',
-        'dark-category-background': '#7F8584'
+        'dark-category-background': '#7F8584',
+
+        'gradient-from': '#0B6B64 0%',
+        'dark-gradient-from': '#98DFD9 0%',
+        'gradient-via': '#0B6B64 50%',
+        'dark-gradient-via': '#98DFD9 50%',
+        'gradient-to': '#00000000 50%'
       },
       fontSize: {
         'xxs': '.6rem',
