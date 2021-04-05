@@ -12,20 +12,24 @@ import { Subscription } from 'rxjs';
 export class ArticlePageComponent implements OnInit, OnDestroy {
   fact
   subscription: Subscription
+  recommendedSnacks: Array<any>
 
   constructor(private titleService: Title, private metaService: Meta, private dataService: DataService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    const id = this.route.snapshot.paramMap['params']['id']
-    this.dataService.getFact(id).subscribe(
-      fact => {
-        this.fact = fact
-        console.log(fact)
-        this.titleService.setTitle(this.fact.headline + ' | Facts for Friends')
-        this.metaService.updateTag(
-          { name: 'description', content: this.fact.headline }
+    this.route.params.subscribe(
+      params => 
+        this.dataService.getFact(params['id']).subscribe(
+          fact => {
+            this.fact = fact
+            console.log(fact)
+            this.titleService.setTitle(this.fact.headline + ' | Facts for Friends')
+            this.metaService.updateTag(
+              { name: 'description', content: this.fact.headline }
+            )
+            this.dataService.getData(null, 3).subscribe(response => this.recommendedSnacks = response.facts)
+          }
         )
-      }
     )
   }
 
