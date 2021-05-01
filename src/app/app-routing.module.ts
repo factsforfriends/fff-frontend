@@ -6,14 +6,15 @@ import { PrivacyPolicyPageComponent } from './privacy-policy-page/privacy-policy
 import { ImprintPageComponent } from './imprint-page/imprint-page.component';
 import { ContentPageComponent } from './content-page/content-page.component';
 import { TypeformFeedbackPageComponent } from './typeform-feedback-page/typeform-feedback-page.component';
+import { AboutUsComponent } from './about-us/about-us.component';
 
 const routes: Routes = [
   { path: '', component: BrowseComponent },
   { path: 'fact/:id', component: ArticlePageComponent},
   { path: 'feedback', component: TypeformFeedbackPageComponent},
-  { path: 'about', component: ContentPageComponent},
   { path: 'privacy-policy', component: PrivacyPolicyPageComponent },
-  { path: 'imprint', component: ImprintPageComponent }
+  { path: 'imprint', component: ImprintPageComponent },
+  { path: 'about-us', component: AboutUsComponent}
 ];
 
 const routerOptions: ExtraOptions = {

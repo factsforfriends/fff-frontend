@@ -1,0 +1,132 @@
+<h2 class="px-1 text-xl text-center lg:text-2xl font-semibold leading-relaxed dark:text-dark-primary-font">Über uns</h2>
+<div class="flex flex-col max-w-screen-xl">
+    <div class="w-full md:w-1/2 static flex flex-row flex-nowrap py-8 md:py-20">
+        <div class="p-4 rounded-lg relative w-1/4 flex-1 bg-white dark:bg-dark-cards dark:text-dark-primary-font">
+            <div class="flex flex-col items-center md:items-start h-full">
+                <img class="visible md:h-0 md:w-0" src="assets/illustrations/why_fff.svg">
+                <div class="text-2xl">
+                    Warum Facts for Friends?
+                </div>
+                <div class="mt-2 md:w-2/3">
+                    Die Vision von Facts for Friends ist es, Bürger*Innen ein Werkzeug zur eigenständigen und effektiven Bekämpfung von Fake News in ihrem digitalen Umfeld zu bieten und dadurch eine informierte und engagierte Gesellschaft zu fördern. 
+                </div>
+                <div class="mt-2" *ngIf="whyFFFexpanded">
+                    <p class="md:w-2/3 mb-2">
+                        Wir sehen uns als eine Brücke zwischen den bereits etablierten Faktenchecker*innen und Nutzer*innen der sozialen Medien. Wir sammeln, kürzen und fassen die oft langen und komplizierten Faktenchecks von etablierten Faktenchecker*innen zusammen und machen daraus sogenannte „Fact Snacks”.
+                    </p>
+                    <p>
+                        Das sind prägnante Klar- und Richtigstellungen zu kursierenden Fake News, die sofort als Text oder SharePic in allen Sozialen Medien und Messenger Diensten geteilt werden können. Auf diese Weise wird Fact-Checking zugänglicher für Nutzer*innen und geeigneter für moderne Medienkanäle und die veränderte Nutzung dieser Kanäle. Wir ergänzen somit bestehende Fakt-Checking Angebote und sorgen dafür, dass Fact-Checking-Content dort ankommt, wo dieser am dringendsten gebraucht wird.
+                    </p>
+                </div>
+                <div class="pt-8">
+                    <a class="bg-highlight dark:bg-dark-primary flex px-4 py-2 rounded-full items-center text-white dark:text-dark-background cursor-pointer w-36" (click)="expand_collapse('whyfff')">
+                        <span class="ml-2">
+                            <p *ngIf="!whyFFFexpanded">Mehr lesen</p>
+                            <p *ngIf="whyFFFexpanded">Weniger lesen</p>
+                        </span>
+                        <svg class="h-4 w-4 ml-2" fill="currentColor" viewBox="0 0 407.437 407.437">
+                            <polygon points="386.258,91.567 203.718,273.512 21.179,91.567 0,112.815 203.718,315.87 407.437,112.815 "/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <img class="absolute top-8 -right-36 w-1/2 transform -translate-y-5 invisible md:visible" src="assets/illustrations/why_fff.svg">
+        </div>
+    </div>
+
+    <div class="w-full md:w-1/2 py-8 md:py-20 self-end">
+        <div class="p-4 rounded-lg relative flex flex-col items-center md:items-start bg-white dark:bg-dark-cards dark:text-dark-primary-font">
+            <div class="flex flex-col items-center md:pl-52 h-full items-center md:items-start">
+                <img class="visible md:h-0 md:w-0" src="assets/illustrations/fff_advantage.svg">
+                <div class="text-2xl">
+                    Die Vorteile von Facts for Friends
+                </div>
+                <div class="mt-2">
+                    <b>1. Zentral & teilbar</b><br>
+                    Facts for Friends ist eine zentrale Plattform, die Faktenchecks von glaubwürdigen Quellen sammelt und von der aus Richtigstellungen leicht in jedem sozialen Netzwerk oder Messenger Dienst geteilt werden können.
+                </div>
+            </div>
+            <div class="mt-2" *ngIf="advantageFFFexpanded">
+                <p class="md:pl-52 pb-2">
+                    <b>2. Simple & „Snackable”</b><br>
+                    Die FactSnacks sind buchstäblich „Snacks”, da Informationen zusammengefasst und kurz und prägnant dargestellt werden. <br>
+                </p>
+                <b>3. Suchfunktion</b><br>
+                Und die integrierte Suchfunktion ermöglicht es Nutzer*innen, verifizierte Faktenchecks innerhalb von Sekunden zu finden
+            </div>
+            <div class="pt-8" [ngClass]="{'md:pl-52': !advantageFFFexpanded}">
+                <a class="bg-highlight dark:bg-dark-primary flex px-4 py-2 rounded-full items-center text-white dark:text-dark-background cursor-pointer w-36" (click)="expand_collapse('fffAdvantage')">
+                    <span class="ml-2">
+                        <p *ngIf="!advantageFFFexpanded">Mehr lesen</p>
+                        <p *ngIf="advantageFFFexpanded">Weniger lesen</p>
+                    </span>
+                    <svg class="h-4 w-4 ml-2" fill="currentColor"  viewBox="0 0 407.437 407.437">
+                        <polygon points="386.258,91.567 203.718,273.512 21.179,91.567 0,112.815 203.718,315.87 407.437,112.815 "/>
+                    </svg>
+                </a>
+            </div>
+            <img class="absolute top-12 -left-40 w-1/2 transform -translate-y-10 invisible md:visible" src="assets/illustrations/fff_advantage.svg">
+        </div>
+    </div>
+
+    <div class="w-full md:w-1/2 static flex flex-row flex-nowrap py-8 md:py-20">
+        <div class="p-4 rounded-lg relative w-1/4 flex-1 bg-white dark:bg-dark-cards dark:text-dark-primary-font">
+            <div class="flex flex-col items-center md:items-start h-full">
+                <img class="visible md:h-0 md:w-0" src="assets/illustrations/fake-news.svg">
+                <div class="text-2xl">
+                    Unsere Arbeit und Prozesse
+                </div>
+                <div class="mt-2 md:w-2/3">
+                    Wir arbeiten Hand-in-Hand mit etablierten Faktenchecker*innen zusammen. Das heißt, wir sind keine Konkurrenz, sondern eine Ergänzung. Als Basis für unsere FactSnacks nutzen wir ausschließlich Content von Fact-Checking Organisationen, die Teil des <a href="https://www.ifcncodeofprinciples.poynter.org/signatories" target=”_blank”>International Fact Checking Networks</a> sind und dessen <a href="https://www.ifcncodeofprinciples.poynter.org/know-more/the-commitments-of-the-code-of-principles" target=”_blank”>Codex</a> bei der Arbeit einhalten. Dieser <a href="https://www.ifcncodeofprinciples.poynter.org/know-more/the-commitments-of-the-code-of-principles" target=”_blank”>Codex</a> ist das Ergebnis einer globalen Kooperation von  seriösen Faktenprüfern.</div>
+                <div class="mt-2" *ngIf="processesFFFexpanded">
+                    Wir sammeln Faktenchecks zu aktuellen Themen, die für unsere Nutzer*innen relevant sind. Dabei nutzen wir hauptsächlich IFCN Quellen, die Falschinformationen im deutschen Kontext aufdecken. Wir greifen jedoch ebenfalls auf internationale Quellen zurück, die Faktenchecks zu Themen publizieren, die für unsere Nutzer*innen interessant sein könnten. Dabei achten wir stets auf das Zwei-Quellen-Prinzip, sodass ein FactSnack immer auf mehr als einer Quelle basieren muss. Nach einer Überprüfung der Quelle komprimieren wir die langen Faktenchecks zu kurzen und nutzerfreundlichen FactSnacks. Jeder FactSnack wird dann mithilfe des 4-Augen Prinzips erneut kontrolliert und redigiert, bevor er auf unserer  Website und unseren social Kanälen veröffentlicht wird.                </div>
+                <div class="pt-8">
+                    <a class="bg-highlight dark:bg-dark-primary flex px-4 py-2 rounded-full items-center text-white dark:text-dark-background cursor-pointer w-36" (click)="expand_collapse('fffProcesses')">
+                        <span class="ml-2">
+                            <p *ngIf="!processesFFFexpanded">Mehr lesen</p>
+                            <p *ngIf="processesFFFexpanded">Weniger lesen</p>
+                        </span>
+                        <svg class="h-4 w-4 ml-2" fill="currentColor" viewBox="0 0 407.437 407.437">
+                            <polygon points="386.258,91.567 203.718,273.512 21.179,91.567 0,112.815 203.718,315.87 407.437,112.815 "/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <img class="absolute top-4 -right-36 w-1/2 transform -translate-y-5 invisible md:visible" src="assets/illustrations/fake-news.svg">
+        </div>
+    </div>
+
+
+    <div class="w-full md:w-1/2 py-8 md:py-20 self-end">
+        <div class="p-4 rounded-lg relative flex flex-col items-center md:items-start bg-white dark:bg-dark-cards dark:text-dark-primary-font">
+            <div class="flex flex-col md:pl-52 h-full items-center md:items-start">
+                <img class="visible md:h-0 md:w-0" src="assets/illustrations/fff-team.png">
+                <div class="text-2xl">
+                    Die Vorteile von Facts for Friends
+                </div>
+                <div class="mt-2">
+                    Unser Team besteht aktuell aus zwei Gründerinnen, Journalist*innen und Entwickler*innen. Die Idee Facts for Friends wurde ursprünglich im Rahmen des #WirVsVirus Hackathons der Bundesregierung entwickelt und mithilfe des #WirVsVirus Solution Enablers umgesetzt.
+                </div>
+            </div>
+            <div class="mt-2" *ngIf="teamFFFexpanded">
+                <p class="md:pl-52 pb-2">
+                    Obwohl wir erst am Anfang unserer Vision stehen, hat unser Projekt bereits große positive Resonanz von sachkundigen Experten aus dem öffentlichen und privaten Sektor erhalten</p>
+                    Durch den Prototype Fund im Rahmen des #WirVsVirus Hackathons wurden wir vom Bundesministerium für Bildung und Forschung gefördert, durften unser Projekt vor dem Bundespresseamt (BPA) vorstellen, wurden als Kreativpiloten 2020 ausgezeichnet und im 2020 Goalkeepers Report der Bill & Melinda Gates Stiftung namentlich erwähnt. Zudem werden wir aktiv von der Björn Steiger Stiftung unterstützt, um unsere technische Infrastruktur weiter auszubauen
+            </div>
+            <div class="pt-8" [ngClass]="{'md:pl-52': !teamFFFexpanded}">
+                <a class="bg-highlight dark:bg-dark-primary flex px-4 py-2 rounded-full items-center text-white dark:text-dark-background cursor-pointer w-36" (click)="expand_collapse('fffTeam')">
+                    <span class="ml-2">
+                        <p *ngIf="!teamFFFexpanded">Mehr lesen</p>
+                        <p *ngIf="teamFFFexpanded">Weniger lesen</p>
+                    </span>
+                    <svg class="h-4 w-4 ml-2" fill="currentColor"  viewBox="0 0 407.437 407.437">
+                        <polygon points="386.258,91.567 203.718,273.512 21.179,91.567 0,112.815 203.718,315.87 407.437,112.815 "/>
+                    </svg>
+                </a>
+            </div>
+            <img class="absolute top-12 -left-40 w-1/2 transform -translate-y-10 invisible md:visible" src="assets/illustrations/fff-team.png">
+        </div>
+    </div>
+
+    
+</div>

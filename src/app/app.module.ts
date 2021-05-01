@@ -34,6 +34,7 @@ import { DarkmodetoggleComponent } from './darkmodetoggle/darkmodetoggle.compone
 import { SnackRecommendationComponent } from './snack-recommendation/snack-recommendation.component';
 import { IntroComponent } from './intro/intro.component';
 import { FeaturedSnacksComponent } from './featured-snacks/featured-snacks.component';
+import { AboutUsComponent } from './about-us/about-us.component';
 registerLocaleData(localeDe, localeDeExtra);
 
 @NgModule({
@@ -60,6 +61,7 @@ registerLocaleData(localeDe, localeDeExtra);
     SnackRecommendationComponent,
     IntroComponent,
     FeaturedSnacksComponent,
+    AboutUsComponent,
   ],
   imports: [
     BrowserModule,
