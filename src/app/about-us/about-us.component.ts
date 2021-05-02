@@ -8,13 +8,13 @@ import { faGlassWhiskey } from '@fortawesome/free-solid-svg-icons';
 })
 export class AboutUsComponent implements OnInit {
 
-  public whyFFFexpanded;
-  public advantageFFFexpanded;
-  public processesFFFexpanded;
-  public teamFFFexpanded;
-  public steigerExpanded;
-  public holisticExpanded;
-  public wvvExpanded;
+  public whyFFFexpanded: boolean;
+  public advantageFFFexpanded: boolean;
+  public processesFFFexpanded: boolean;
+  public teamFFFexpanded: boolean;
+  public steigerExpanded: boolean;
+  public holisticExpanded: boolean;
+  public wvvExpanded: boolean;
   constructor() {
     this.whyFFFexpanded = false;
     this.advantageFFFexpanded = false;
@@ -27,32 +27,32 @@ export class AboutUsComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  expand_collapse(section: string){
-    if(section === "whyfff"){
+  expand_collapse(section: string): void{
+    if (section === 'whyfff'){
       this.whyFFFexpanded = !this.whyFFFexpanded;
       return;
     }
-    if(section === "fffAdvantage"){
+    if (section === 'fffAdvantage'){
       this.advantageFFFexpanded = !this.advantageFFFexpanded;
       return;
     }
-    if(section === "fffProcesses"){
+    if (section === 'fffProcesses'){
       this.processesFFFexpanded = !this.processesFFFexpanded;
       return;
     }
-    if(section === "fffTeam"){
+    if (section === 'fffTeam'){
       this.teamFFFexpanded = !this.teamFFFexpanded;
       return;
     }
-    if(section === "steiger"){
+    if (section === 'steiger'){
       this.steigerExpanded = !this.steigerExpanded;
       return;
     }
-    if(section === "holistic"){
+    if (section === 'holistic'){
       this.holisticExpanded = !this.holisticExpanded;
       return;
     }
-    if(section === "wvv"){
+    if (section === 'wvv'){
       this.wvvExpanded = !this.wvvExpanded;
       return;
     }
