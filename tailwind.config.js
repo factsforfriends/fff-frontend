@@ -37,6 +37,13 @@ module.exports = {
       },
       fontSize: {
         'xxs': '.6rem',
+      },
+      backgroundSize: {
+        'auto': 'auto',
+        'cover': 'cover',
+        'contain': 'contain',
+        '64': '100% 16rem'
+
       }
     }
   }
