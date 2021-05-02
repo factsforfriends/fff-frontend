@@ -1,6 +1,6 @@
 <h2 class="px-1 text-xl text-center lg:text-2xl font-semibold leading-relaxed dark:text-dark-primary-font">Über uns</h2>
 <div class="flex flex-col max-w-screen-xl">
-    <div class="w-full md:w-1/2 static flex flex-row flex-nowrap py-8 md:py-20">
+    <div class="w-full md:w-1/2 static flex flex-row flex-nowrap py-8 md:py-10">
         <div class="p-4 rounded-lg relative w-1/4 flex-1 bg-white dark:bg-dark-cards dark:text-dark-primary-font">
             <div class="flex flex-col items-center md:items-start h-full">
                 <img class="visible md:h-0 md:w-0" src="assets/illustrations/why_fff.svg">
@@ -19,14 +19,17 @@
                     </p>
                 </div>
                 <div class="pt-8">
-                    <a class="bg-highlight dark:bg-dark-primary flex px-4 py-2 rounded-full items-center text-white dark:text-dark-background cursor-pointer w-36" (click)="expand_collapse('whyfff')">
+                    <a class="bg-highlight dark:bg-dark-primary flex px-4 py-2 rounded-full text-white dark:text-dark-background cursor-pointer" (click)="expand_collapse('whyfff')">
                         <span class="ml-2">
-                            <p *ngIf="!whyFFFexpanded">Mehr lesen</p>
-                            <p *ngIf="whyFFFexpanded">Weniger lesen</p>
+                            <div *ngIf="!whyFFFexpanded" class="flex flex-row items-center">
+                                <p class="pb-1 pr-2">Mehr lesen</p>
+                                <img src="assets/menu_elements/arrow_down.svg">
+                            </div> 
+                            <div *ngIf="whyFFFexpanded" class="flex flex-row items-center">
+                                <p class="pb-1 pr-2">Weniger lesen</p>
+                                <img src="assets/menu_elements/arrow_up.svg">
+                            </div>                            
                         </span>
-                        <svg class="h-4 w-4 ml-2" fill="currentColor" viewBox="0 0 407.437 407.437">
-                            <polygon points="386.258,91.567 203.718,273.512 21.179,91.567 0,112.815 203.718,315.87 407.437,112.815 "/>
-                        </svg>
                     </a>
                 </div>
             </div>
@@ -34,7 +37,7 @@
         </div>
     </div>
 
-    <div class="w-full md:w-1/2 py-8 md:py-20 self-end">
+    <div class="w-full md:w-1/2 py-8 md:py-10 self-end">
         <div class="p-4 rounded-lg relative flex flex-col items-center md:items-start bg-white dark:bg-dark-cards dark:text-dark-primary-font">
             <div class="flex flex-col items-center md:pl-52 h-full items-center md:items-start">
                 <img class="visible md:h-0 md:w-0" src="assets/illustrations/fff_advantage.svg">
@@ -55,21 +58,24 @@
                 Und die integrierte Suchfunktion ermöglicht es Nutzer*innen, verifizierte Faktenchecks innerhalb von Sekunden zu finden
             </div>
             <div class="pt-8" [ngClass]="{'md:pl-52': !advantageFFFexpanded}">
-                <a class="bg-highlight dark:bg-dark-primary flex px-4 py-2 rounded-full items-center text-white dark:text-dark-background cursor-pointer w-36" (click)="expand_collapse('fffAdvantage')">
+                <a class="bg-highlight dark:bg-dark-primary flex px-4 py-2 rounded-full text-white dark:text-dark-background cursor-pointer" (click)="expand_collapse('fffAdvantage')">
                     <span class="ml-2">
-                        <p *ngIf="!advantageFFFexpanded">Mehr lesen</p>
-                        <p *ngIf="advantageFFFexpanded">Weniger lesen</p>
+                        <div *ngIf="!advantageFFFexpanded" class="flex flex-row items-center">
+                            <p class="pb-1 pr-2">Mehr lesen</p>
+                            <img src="assets/menu_elements/arrow_down.svg">
+                        </div> 
+                        <div *ngIf="advantageFFFexpanded" class="flex flex-row items-center">
+                            <p class="pb-1 pr-2">Weniger lesen</p>
+                            <img src="assets/menu_elements/arrow_up.svg">
+                        </div>                            
                     </span>
-                    <svg class="h-4 w-4 ml-2" fill="currentColor"  viewBox="0 0 407.437 407.437">
-                        <polygon points="386.258,91.567 203.718,273.512 21.179,91.567 0,112.815 203.718,315.87 407.437,112.815 "/>
-                    </svg>
                 </a>
             </div>
             <img class="absolute top-12 -left-40 w-1/2 transform -translate-y-10 invisible md:visible" src="assets/illustrations/fff_advantage.svg">
         </div>
     </div>
 
-    <div class="w-full md:w-1/2 static flex flex-row flex-nowrap py-8 md:py-20">
+    <div class="w-full md:w-1/2 static flex flex-row flex-nowrap py-8 md:py-10">
         <div class="p-4 rounded-lg relative w-1/4 flex-1 bg-white dark:bg-dark-cards dark:text-dark-primary-font">
             <div class="flex flex-col items-center md:items-start h-full">
                 <img class="visible md:h-0 md:w-0" src="assets/illustrations/fake-news.svg">
@@ -81,14 +87,17 @@
                 <div class="mt-2" *ngIf="processesFFFexpanded">
                     Wir sammeln Faktenchecks zu aktuellen Themen, die für unsere Nutzer*innen relevant sind. Dabei nutzen wir hauptsächlich IFCN Quellen, die Falschinformationen im deutschen Kontext aufdecken. Wir greifen jedoch ebenfalls auf internationale Quellen zurück, die Faktenchecks zu Themen publizieren, die für unsere Nutzer*innen interessant sein könnten. Dabei achten wir stets auf das Zwei-Quellen-Prinzip, sodass ein FactSnack immer auf mehr als einer Quelle basieren muss. Nach einer Überprüfung der Quelle komprimieren wir die langen Faktenchecks zu kurzen und nutzerfreundlichen FactSnacks. Jeder FactSnack wird dann mithilfe des 4-Augen Prinzips erneut kontrolliert und redigiert, bevor er auf unserer  Website und unseren social Kanälen veröffentlicht wird.                </div>
                 <div class="pt-8">
-                    <a class="bg-highlight dark:bg-dark-primary flex px-4 py-2 rounded-full items-center text-white dark:text-dark-background cursor-pointer w-36" (click)="expand_collapse('fffProcesses')">
+                    <a class="bg-highlight dark:bg-dark-primary flex px-4 py-2 rounded-full text-white dark:text-dark-background cursor-pointer" (click)="expand_collapse('fffProcesses')">
                         <span class="ml-2">
-                            <p *ngIf="!processesFFFexpanded">Mehr lesen</p>
-                            <p *ngIf="processesFFFexpanded">Weniger lesen</p>
+                            <div *ngIf="!processesFFFexpanded" class="flex flex-row items-center">
+                                <p class="pb-1 pr-2">Mehr lesen</p>
+                                <img src="assets/menu_elements/arrow_down.svg">
+                            </div> 
+                            <div *ngIf="processesFFFexpanded" class="flex flex-row items-center">
+                                <p class="pb-1 pr-2">Weniger lesen</p>
+                                <img src="assets/menu_elements/arrow_up.svg">
+                            </div>
                         </span>
-                        <svg class="h-4 w-4 ml-2" fill="currentColor" viewBox="0 0 407.437 407.437">
-                            <polygon points="386.258,91.567 203.718,273.512 21.179,91.567 0,112.815 203.718,315.87 407.437,112.815 "/>
-                        </svg>
                     </a>
                 </div>
             </div>
@@ -96,8 +105,7 @@
         </div>
     </div>
 
-
-    <div class="w-full md:w-1/2 py-8 md:py-20 self-end">
+    <div class="w-full md:w-1/2 py-8 md:py-10 self-end">
         <div class="p-4 rounded-lg relative flex flex-col items-center md:items-start bg-white dark:bg-dark-cards dark:text-dark-primary-font">
             <div class="flex flex-col md:pl-52 h-full items-center md:items-start">
                 <img class="visible md:h-0 md:w-0" src="assets/illustrations/fff-team.png">
@@ -114,14 +122,17 @@
                     Durch den Prototype Fund im Rahmen des #WirVsVirus Hackathons wurden wir vom Bundesministerium für Bildung und Forschung gefördert, durften unser Projekt vor dem Bundespresseamt (BPA) vorstellen, wurden als Kreativpiloten 2020 ausgezeichnet und im 2020 Goalkeepers Report der Bill & Melinda Gates Stiftung namentlich erwähnt. Zudem werden wir aktiv von der Björn Steiger Stiftung unterstützt, um unsere technische Infrastruktur weiter auszubauen
             </div>
             <div class="pt-8" [ngClass]="{'md:pl-52': !teamFFFexpanded}">
-                <a class="bg-highlight dark:bg-dark-primary flex px-4 py-2 rounded-full items-center text-white dark:text-dark-background cursor-pointer w-36" (click)="expand_collapse('fffTeam')">
+                <a class="bg-highlight dark:bg-dark-primary flex px-4 py-2 rounded-full text-white dark:text-dark-background cursor-pointer" (click)="expand_collapse('fffTeam')">
                     <span class="ml-2">
-                        <p *ngIf="!teamFFFexpanded">Mehr lesen</p>
-                        <p *ngIf="teamFFFexpanded">Weniger lesen</p>
+                        <div *ngIf="!teamFFFexpanded" class="flex flex-row items-center">
+                            <p class="pb-1 pr-2">Mehr lesen</p>
+                            <img src="assets/menu_elements/arrow_down.svg">
+                        </div> 
+                        <div *ngIf="teamFFFexpanded" class="flex flex-row items-center">
+                            <p class="pb-1 pr-2">Weniger lesen</p>
+                            <img src="assets/menu_elements/arrow_up.svg">
+                        </div>                            
                     </span>
-                    <svg class="h-4 w-4 ml-2" fill="currentColor"  viewBox="0 0 407.437 407.437">
-                        <polygon points="386.258,91.567 203.718,273.512 21.179,91.567 0,112.815 203.718,315.87 407.437,112.815 "/>
-                    </svg>
                 </a>
             </div>
             <img class="absolute top-12 -left-40 w-1/2 transform -translate-y-10 invisible md:visible" src="assets/illustrations/fff-team.png">
@@ -129,4 +140,90 @@
     </div>
 
     
+    <div class="p-4 w-full bg-gradient-to-b from-gradient-from via-gradient-via to-gradient-to dark:from-dark-gradient-from dark:via-dark-gradient-via to-gradient-to bg-64 bg-no-repeat flex flex-col items-center">
+        <h2 class="ml-4 text-4xl text-white dark:text-dark-background self-start">Unterstützt von</h2>
+        <div class="m-4 p-4 w-full grid justify-center gap-8 grid-cols-1 xl:grid-cols-2 max-w-screen-xl">
+            <div class="flex flex-col items-center h-full rounded-lg bg-white dark:bg-dark-cards dark:text-dark-primary-font p-4">
+                <div class="text-2xl">
+                    Björn Steiger Stiftung
+                </div>
+                <div class="mt-2">
+                    Die Björn Steiger Stiftung setzt sich seit mehr als 50 Jahren für die Verbesserung und die Entwicklung der modernen Notfallhilfe ein.                
+                </div>
+                <div class="mt-2" *ngIf="steigerExpanded">
+                    <p>
+                        Meilensteine dieses Engagements sind unter anderem die Einführung der bundesweit einheitlichen Notrufnummern 110/112, das 24h Notarztsystem und der Aufbau der zivilen Luftrettung in Deutschland. Aktuelle Initiativen widmen sich insbesondere dem Kampf gegen den Herztod, der Neustrukturierung und Digitalisierung des Rettungswesen in Deutschland sowie der Beteiligung national wie international an innovativen Entwicklungen, die die Verbesserung des Rettungs- und Notfallwesens in seiner Gesamtheit zum Ziel haben. Die Stiftung agiert als Think Tank, um innovative Ideen und Lösungsansätze für Herausforderungen im Gesundheitssystem konkret umzusetzen und mithilfe von Netzwerken zu skalieren. Mehr Informationen auf: www.steiger-stiftung.de.
+                    </p>
+                </div>
+                <div class="pt-8">
+                    <a class="bg-highlight dark:bg-dark-primary flex px-4 py-2 rounded-full text-white dark:text-dark-background cursor-pointer" (click)="expand_collapse('steiger')">
+                        <span class="ml-2">
+                            <div *ngIf="!steigerExpanded" class="flex flex-row items-center">
+                                <p class="pb-1 pr-2">Mehr lesen</p>
+                                <img src="assets/menu_elements/arrow_down.svg">
+                            </div> 
+                            <div *ngIf="steigerExpanded" class="flex flex-row items-center">
+                                <p class="pb-1 pr-2">Weniger lesen</p>
+                                <img src="assets/menu_elements/arrow_up.svg">
+                            </div>                            
+                        </span>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="flex flex-col items-center h-full rounded-lg bg-white dark:bg-dark-cards dark:text-dark-primary-font p-4">
+                <div class="text-2xl">
+                    Holistic Foundation
+                </div>
+                <div class="mt-2">
+                    Happy people for a happy planet – Die Holistic Foundation wurde 2018 von Benjamin und Janina Lin Otto ins Leben gerufen.               
+                </div>
+                <div class="mt-2" *ngIf="holisticExpanded">
+                    <p>
+                        Ziel ist es, mit vielen Partner:innen die Entwicklung neuer Lösungen für eine enkelfähige Zukunft zu unterstützen und Menschen als Individuen und in der Gemeinschaft zu inspirieren. In den kommenden Jahren sollen zahlreiche Leuchtturmprojekte initiiert werden, um die Welt gemeinsam zu einem glücklicheren Ort zu machen.
+                    </p>
+                </div>
+                <div class="pt-8">
+                    <a class="bg-highlight dark:bg-dark-primary flex px-4 py-2 rounded-full text-white dark:text-dark-background cursor-pointer" (click)="expand_collapse('holistic')">
+                        <span class="ml-2">
+                            <div *ngIf="!holisticExpanded" class="flex flex-row items-center">
+                                <p class="pb-1 pr-2">Mehr lesen</p>
+                                <img src="assets/menu_elements/arrow_down.svg">
+                            </div> 
+                            <div *ngIf="holisticExpanded" class="flex flex-row items-center">
+                                <p class="pb-1 pr-2">Weniger lesen</p>
+                                <img src="assets/menu_elements/arrow_up.svg">
+                            </div>                            
+                        </span>
+                    </a>
+                </div>
+            </div>
+            <div class="flex flex-col items-center h-full rounded-lg bg-white dark:bg-dark-cards dark:text-dark-primary-font p-4">
+                <div class="text-2xl">
+                    WirVsVirus
+                </div>
+                <div class="mt-2">
+                    Im Rahmen des #WirVsVirus Hackathons entstand im März 2020 der erste Prototyp des Projektes Facts for Friends. In dem großangelegten, von der Bundesregierung geförderten Hackathon kamen 28.361 Menschen zusammen und arbeiteten an über 1.500 kurzfristigen und effektiven Lösungsansätzen für neuartige Probleme im Zuge der aktuellen Corona-Krise.                </div>
+                <div class="mt-2" *ngIf="wvvExpanded">
+                    <p>
+                        Ziel dieser digitalen Veranstaltung war es, das kreative Potenzial der Zivilgesellschaft zu bündeln und schnell effektive Lösungen zu finden. Im Anschluss des Hackathons wurde Facts for Friends als eines der etwa 130 vielversprechendsten Projekte ausgewählt und in das #SolutionEnabler Programm aufgenommen. Mit Hilfe von diversen Förderpartnern liefert dieses Umsetzungsprogramm wertvolle Expertise, Informationen und Ressourcen. Förderpartner des Programms sind u.a. das Bundesministerium für Bildung und Forschung durch den Prototype Fund, das Vodafone Institute, die BMW Foundation Herbert Quandt und Google.
+                    </p>
+                </div>
+                <div class="pt-8">
+                    <a class="bg-highlight dark:bg-dark-primary flex px-4 py-2 rounded-full text-white dark:text-dark-background cursor-pointer" (click)="expand_collapse('wvv')">
+                        <span class="ml-2">
+                            <div *ngIf="!wvvExpanded" class="flex flex-row items-center">
+                                <p class="pb-1 pr-2">Mehr lesen</p>
+                                <img src="assets/menu_elements/arrow_down.svg">
+                            </div> 
+                            <div *ngIf="wvvExpanded" class="flex flex-row items-center">
+                                <p class="pb-1 pr-2">Weniger lesen</p>
+                                <img src="assets/menu_elements/arrow_up.svg">
+                            </div>                            
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

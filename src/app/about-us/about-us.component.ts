@@ -12,11 +12,17 @@ export class AboutUsComponent implements OnInit {
   public advantageFFFexpanded;
   public processesFFFexpanded;
   public teamFFFexpanded;
+  public steigerExpanded;
+  public holisticExpanded;
+  public wvvExpanded;
   constructor() {
     this.whyFFFexpanded = false;
     this.advantageFFFexpanded = false;
     this.processesFFFexpanded = false;
     this.teamFFFexpanded = false;
+    this.steigerExpanded = false;
+    this.holisticExpanded = false;
+    this.wvvExpanded = false;
    }
 
   ngOnInit(): void {
@@ -36,6 +42,18 @@ export class AboutUsComponent implements OnInit {
     }
     if(section === "fffTeam"){
       this.teamFFFexpanded = !this.teamFFFexpanded;
+      return;
+    }
+    if(section === "steiger"){
+      this.steigerExpanded = !this.steigerExpanded;
+      return;
+    }
+    if(section === "holistic"){
+      this.holisticExpanded = !this.holisticExpanded;
+      return;
+    }
+    if(section === "wvv"){
+      this.wvvExpanded = !this.wvvExpanded;
       return;
     }
   }
