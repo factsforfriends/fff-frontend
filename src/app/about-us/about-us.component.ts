@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { faGlassWhiskey } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-about-us',
@@ -15,6 +14,7 @@ export class AboutUsComponent implements OnInit {
   public steigerExpanded: boolean;
   public holisticExpanded: boolean;
   public wvvExpanded: boolean;
+  public darkModeActivated: boolean;
   constructor() {
     this.whyFFFexpanded = false;
     this.advantageFFFexpanded = false;
@@ -23,9 +23,13 @@ export class AboutUsComponent implements OnInit {
     this.steigerExpanded = false;
     this.holisticExpanded = false;
     this.wvvExpanded = false;
+    this.darkModeActivated = false;
    }
 
   ngOnInit(): void {
+    if (localStorage.theme === 'dark'){
+      this.darkModeActivated = true;
+    }
   }
   expand_collapse(section: string): void{
     if (section === 'whyfff'){

@@ -1,9 +1,10 @@
 <h2 class="px-1 text-xl text-center lg:text-2xl font-semibold leading-relaxed dark:text-dark-primary-font">Über uns</h2>
-<div class="flex flex-col max-w-screen-xl">
-    <div class="w-full md:w-1/2 static flex flex-row flex-nowrap py-8 md:py-10">
+<div class="flex flex-col max-w-screen-xl items-center md:items-start">
+    <div class="w-11/12 md:w-1/2 static flex flex-row flex-nowrap py-8 md:py-10">
         <div class="p-4 rounded-lg relative w-1/4 flex-1 bg-white dark:bg-dark-cards dark:text-dark-primary-font">
             <div class="flex flex-col items-center md:items-start h-full">
-                <img class="visible md:h-0 md:w-0" src="assets/illustrations/why_fff.svg">
+                <img class="md:absolute md:top-8 md:-right-36 md:w-1/2 md:transform md:-translate-y-5 dark:hidden" src="assets/illustrations/why_fff.svg">
+                <img class="md:absolute md:top-8 md:-right-36 md:w-1/2 md:transform md:-translate-y-5 hidden dark:block" src="assets/illustrations/why_fff_dark.svg">
                 <div class="text-2xl">
                     Warum Facts for Friends?
                 </div>
@@ -19,28 +20,32 @@
                     </p>
                 </div>
                 <div class="pt-8">
-                    <a class="bg-highlight dark:bg-dark-primary flex px-4 py-2 rounded-full text-white dark:text-dark-background cursor-pointer" (click)="expand_collapse('whyfff')">
+                    <a class="bg-highlight dark:bg-dark-primary flex px-2 py-1.5 rounded-full text-white dark:text-dark-background cursor-pointer" (click)="expand_collapse('whyfff')">
                         <span class="ml-2">
                             <div *ngIf="!whyFFFexpanded" class="flex flex-row items-center">
-                                <p class="pb-1 pr-2">Mehr lesen</p>
-                                <img src="assets/menu_elements/arrow_down.svg">
+                                <p class="pb-1 font-semibold">Mehr lesen</p>
+                                <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M16.664 8.59998L18.064 9.99998L12.064 16L6.06403 9.99998L7.46403 8.59998L12.064 13.2L16.664 8.59998Z" fill="currentColor"/>
+                                </svg>    
                             </div> 
                             <div *ngIf="whyFFFexpanded" class="flex flex-row items-center">
-                                <p class="pb-1 pr-2">Weniger lesen</p>
-                                <img src="assets/menu_elements/arrow_up.svg">
+                                <p class="pb-1 font-semibold">Weniger lesen</p>
+                                <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M7.46396 15.4L6.06396 14L12.064 8.00002L18.064 14L16.664 15.4L12.064 10.8L7.46396 15.4Z" fill="currentColor"/>
+                                </svg>                                    
                             </div>                            
                         </span>
                     </a>
                 </div>
             </div>
-            <img class="absolute top-8 -right-36 w-1/2 transform -translate-y-5 invisible md:visible" src="assets/illustrations/why_fff.svg">
         </div>
     </div>
 
-    <div class="w-full md:w-1/2 py-8 md:py-10 self-end">
+    <div class="w-11/12 md:w-1/2 py-8 md:py-10 md:self-end">
         <div class="p-4 rounded-lg relative flex flex-col items-center md:items-start bg-white dark:bg-dark-cards dark:text-dark-primary-font">
             <div class="flex flex-col items-center md:pl-52 h-full items-center md:items-start">
-                <img class="visible md:h-0 md:w-0" src="assets/illustrations/fff_advantage.svg">
+                <img class="md:absolute md:top-12 md:-left-40 md:w-1/2 md:transform md:-translate-y-10 dark:hidden" src="assets/illustrations/fff_advantage.svg">
+                <img class="md:absolute md:top-12 md:-left-40 md:w-1/2 md:transform md:-translate-y-10 hidden dark:block" src="assets/illustrations/fff_advantage_dark.svg">
                 <div class="text-2xl">
                     Die Vorteile von Facts for Friends
                 </div>
@@ -58,27 +63,31 @@
                 Und die integrierte Suchfunktion ermöglicht es Nutzer*innen, verifizierte Faktenchecks innerhalb von Sekunden zu finden
             </div>
             <div class="pt-8" [ngClass]="{'md:pl-52': !advantageFFFexpanded}">
-                <a class="bg-highlight dark:bg-dark-primary flex px-4 py-2 rounded-full text-white dark:text-dark-background cursor-pointer" (click)="expand_collapse('fffAdvantage')">
+                <a class="bg-highlight dark:bg-dark-primary flex px-2 py-1.5 rounded-full text-white dark:text-dark-background cursor-pointer" (click)="expand_collapse('fffAdvantage')">
                     <span class="ml-2">
                         <div *ngIf="!advantageFFFexpanded" class="flex flex-row items-center">
-                            <p class="pb-1 pr-2">Mehr lesen</p>
-                            <img src="assets/menu_elements/arrow_down.svg">
+                            <p class="pb-1 font-semibold">Mehr lesen</p>
+                            <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M16.664 8.59998L18.064 9.99998L12.064 16L6.06403 9.99998L7.46403 8.59998L12.064 13.2L16.664 8.59998Z" fill="currentColor"/>
+                            </svg>    
                         </div> 
                         <div *ngIf="advantageFFFexpanded" class="flex flex-row items-center">
-                            <p class="pb-1 pr-2">Weniger lesen</p>
-                            <img src="assets/menu_elements/arrow_up.svg">
+                            <p class="pb-1 font-semibold">Weniger lesen</p>
+                            <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M7.46396 15.4L6.06396 14L12.064 8.00002L18.064 14L16.664 15.4L12.064 10.8L7.46396 15.4Z" fill="currentColor"/>
+                            </svg>                                    
                         </div>                            
                     </span>
                 </a>
             </div>
-            <img class="absolute top-12 -left-40 w-1/2 transform -translate-y-10 invisible md:visible" src="assets/illustrations/fff_advantage.svg">
         </div>
     </div>
 
-    <div class="w-full md:w-1/2 static flex flex-row flex-nowrap py-8 md:py-10">
+    <div class="w-11/12 md:w-1/2 static flex flex-row flex-nowrap py-8 md:py-10">
         <div class="p-4 rounded-lg relative w-1/4 flex-1 bg-white dark:bg-dark-cards dark:text-dark-primary-font">
             <div class="flex flex-col items-center md:items-start h-full">
-                <img class="visible md:h-0 md:w-0" src="assets/illustrations/fake-news.svg">
+                <img class="md:absolute md:top-2 md:-right-36 md:w-1/2 md:transform md:-translate-y-5 dark:hidden" src="assets/illustrations/fake_news.svg">
+                <img class="md:absolute md:top-2 md:-right-36 md:w-1/2 md:transform md:-translate-y-5 hidden dark:block" src="assets/illustrations/fake_news_dark.svg">
                 <div class="text-2xl">
                     Unsere Arbeit und Prozesse
                 </div>
@@ -87,28 +96,32 @@
                 <div class="mt-2" *ngIf="processesFFFexpanded">
                     Wir sammeln Faktenchecks zu aktuellen Themen, die für unsere Nutzer*innen relevant sind. Dabei nutzen wir hauptsächlich IFCN Quellen, die Falschinformationen im deutschen Kontext aufdecken. Wir greifen jedoch ebenfalls auf internationale Quellen zurück, die Faktenchecks zu Themen publizieren, die für unsere Nutzer*innen interessant sein könnten. Dabei achten wir stets auf das Zwei-Quellen-Prinzip, sodass ein FactSnack immer auf mehr als einer Quelle basieren muss. Nach einer Überprüfung der Quelle komprimieren wir die langen Faktenchecks zu kurzen und nutzerfreundlichen FactSnacks. Jeder FactSnack wird dann mithilfe des 4-Augen Prinzips erneut kontrolliert und redigiert, bevor er auf unserer  Website und unseren social Kanälen veröffentlicht wird.                </div>
                 <div class="pt-8">
-                    <a class="bg-highlight dark:bg-dark-primary flex px-4 py-2 rounded-full text-white dark:text-dark-background cursor-pointer" (click)="expand_collapse('fffProcesses')">
+                    <a class="bg-highlight dark:bg-dark-primary flex px-2 py-1.5 rounded-full text-white dark:text-dark-background cursor-pointer" (click)="expand_collapse('fffProcesses')">
                         <span class="ml-2">
                             <div *ngIf="!processesFFFexpanded" class="flex flex-row items-center">
-                                <p class="pb-1 pr-2">Mehr lesen</p>
-                                <img src="assets/menu_elements/arrow_down.svg">
+                                <p class="pb-1 font-semibold">Mehr lesen</p>
+                                <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M16.664 8.59998L18.064 9.99998L12.064 16L6.06403 9.99998L7.46403 8.59998L12.064 13.2L16.664 8.59998Z" fill="currentColor"/>
+                                </svg>    
                             </div> 
                             <div *ngIf="processesFFFexpanded" class="flex flex-row items-center">
-                                <p class="pb-1 pr-2">Weniger lesen</p>
-                                <img src="assets/menu_elements/arrow_up.svg">
-                            </div>
+                                <p class="pb-1 font-semibold">Weniger lesen</p>
+                                <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M7.46396 15.4L6.06396 14L12.064 8.00002L18.064 14L16.664 15.4L12.064 10.8L7.46396 15.4Z" fill="currentColor"/>
+                                </svg>                                    
+                            </div>                            
                         </span>
                     </a>
                 </div>
             </div>
-            <img class="absolute top-4 -right-36 w-1/2 transform -translate-y-5 invisible md:visible" src="assets/illustrations/fake-news.svg">
         </div>
     </div>
 
-    <div class="w-full md:w-1/2 py-8 md:py-10 self-end">
+    <div class="w-11/12 md:w-1/2 py-8 md:py-10 md:self-end">
         <div class="p-4 rounded-lg relative flex flex-col items-center md:items-start bg-white dark:bg-dark-cards dark:text-dark-primary-font">
             <div class="flex flex-col md:pl-52 h-full items-center md:items-start">
-                <img class="visible md:h-0 md:w-0" src="assets/illustrations/fff-team.png">
+                <img class="md:absolute md:top-10 md:-left-40 md:w-1/2 md:transform md:-translate-y-10 dark:hidden" src="assets/illustrations/fff-team.svg">
+                <img class="md:absolute md:top-10 md:-left-40 md:w-1/2 md:transform md:-translate-y-10 hidden dark:block" src="assets/illustrations/fff-team-dark.svg">
                 <div class="text-2xl">
                     Die Vorteile von Facts for Friends
                 </div>
@@ -122,20 +135,23 @@
                     Durch den Prototype Fund im Rahmen des #WirVsVirus Hackathons wurden wir vom Bundesministerium für Bildung und Forschung gefördert, durften unser Projekt vor dem Bundespresseamt (BPA) vorstellen, wurden als Kreativpiloten 2020 ausgezeichnet und im 2020 Goalkeepers Report der Bill & Melinda Gates Stiftung namentlich erwähnt. Zudem werden wir aktiv von der Björn Steiger Stiftung unterstützt, um unsere technische Infrastruktur weiter auszubauen
             </div>
             <div class="pt-8" [ngClass]="{'md:pl-52': !teamFFFexpanded}">
-                <a class="bg-highlight dark:bg-dark-primary flex px-4 py-2 rounded-full text-white dark:text-dark-background cursor-pointer" (click)="expand_collapse('fffTeam')">
+                <a class="bg-highlight dark:bg-dark-primary flex px-2 py-1.5 rounded-full text-white dark:text-dark-background cursor-pointer" (click)="expand_collapse('fffTeam')">
                     <span class="ml-2">
                         <div *ngIf="!teamFFFexpanded" class="flex flex-row items-center">
-                            <p class="pb-1 pr-2">Mehr lesen</p>
-                            <img src="assets/menu_elements/arrow_down.svg">
+                            <p class="pb-1 font-semibold">Mehr lesen</p>
+                            <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M16.664 8.59998L18.064 9.99998L12.064 16L6.06403 9.99998L7.46403 8.59998L12.064 13.2L16.664 8.59998Z" fill="currentColor"/>
+                            </svg>    
                         </div> 
                         <div *ngIf="teamFFFexpanded" class="flex flex-row items-center">
-                            <p class="pb-1 pr-2">Weniger lesen</p>
-                            <img src="assets/menu_elements/arrow_up.svg">
+                            <p class="pb-1 font-semibold">Weniger lesen</p>
+                            <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M7.46396 15.4L6.06396 14L12.064 8.00002L18.064 14L16.664 15.4L12.064 10.8L7.46396 15.4Z" fill="currentColor"/>
+                            </svg>                                    
                         </div>                            
                     </span>
                 </a>
             </div>
-            <img class="absolute top-12 -left-40 w-1/2 transform -translate-y-10 invisible md:visible" src="assets/illustrations/fff-team.png">
         </div>
     </div>
 
@@ -144,9 +160,8 @@
         <h2 class="ml-4 text-4xl text-white dark:text-dark-background self-start">Unterstützt von</h2>
         <div class="m-4 p-4 w-full grid justify-center gap-8 grid-cols-1 xl:grid-cols-2 max-w-screen-xl">
             <div class="flex flex-col items-center h-full rounded-lg bg-white dark:bg-dark-cards dark:text-dark-primary-font p-4">
-                <div class="text-2xl">
-                    Björn Steiger Stiftung
-                </div>
+                <img class="w-64 pb-4" src="assets/logos/bjoern-steiger-stiftung.png">
+
                 <div class="mt-2">
                     Die Björn Steiger Stiftung setzt sich seit mehr als 50 Jahren für die Verbesserung und die Entwicklung der modernen Notfallhilfe ein.                
                 </div>
@@ -156,15 +171,19 @@
                     </p>
                 </div>
                 <div class="pt-8">
-                    <a class="bg-highlight dark:bg-dark-primary flex px-4 py-2 rounded-full text-white dark:text-dark-background cursor-pointer" (click)="expand_collapse('steiger')">
+                    <a class="bg-highlight dark:bg-dark-primary flex px-2 py-1.5 rounded-full text-white dark:text-dark-background cursor-pointer" (click)="expand_collapse('steiger')">
                         <span class="ml-2">
                             <div *ngIf="!steigerExpanded" class="flex flex-row items-center">
-                                <p class="pb-1 pr-2">Mehr lesen</p>
-                                <img src="assets/menu_elements/arrow_down.svg">
+                                <p class="pb-1 font-semibold">Mehr lesen</p>
+                                <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M16.664 8.59998L18.064 9.99998L12.064 16L6.06403 9.99998L7.46403 8.59998L12.064 13.2L16.664 8.59998Z" fill="currentColor"/>
+                                </svg>    
                             </div> 
                             <div *ngIf="steigerExpanded" class="flex flex-row items-center">
-                                <p class="pb-1 pr-2">Weniger lesen</p>
-                                <img src="assets/menu_elements/arrow_up.svg">
+                                <p class="pb-1 font-semibold">Weniger lesen</p>
+                                <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M7.46396 15.4L6.06396 14L12.064 8.00002L18.064 14L16.664 15.4L12.064 10.8L7.46396 15.4Z" fill="currentColor"/>
+                                </svg>                                    
                             </div>                            
                         </span>
                     </a>
@@ -172,9 +191,7 @@
             </div>
             
             <div class="flex flex-col items-center h-full rounded-lg bg-white dark:bg-dark-cards dark:text-dark-primary-font p-4">
-                <div class="text-2xl">
-                    Holistic Foundation
-                </div>
+                <img class="w-64 pb-4" src="assets/logos/holistic.png">
                 <div class="mt-2">
                     Happy people for a happy planet – Die Holistic Foundation wurde 2018 von Benjamin und Janina Lin Otto ins Leben gerufen.               
                 </div>
@@ -184,24 +201,26 @@
                     </p>
                 </div>
                 <div class="pt-8">
-                    <a class="bg-highlight dark:bg-dark-primary flex px-4 py-2 rounded-full text-white dark:text-dark-background cursor-pointer" (click)="expand_collapse('holistic')">
+                    <a class="bg-highlight dark:bg-dark-primary flex px-2 py-1.5 rounded-full text-white dark:text-dark-background cursor-pointer" (click)="expand_collapse('holistic')">
                         <span class="ml-2">
                             <div *ngIf="!holisticExpanded" class="flex flex-row items-center">
-                                <p class="pb-1 pr-2">Mehr lesen</p>
-                                <img src="assets/menu_elements/arrow_down.svg">
+                                <p class="pb-1 font-semibold">Mehr lesen</p>
+                                <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M16.664 8.59998L18.064 9.99998L12.064 16L6.06403 9.99998L7.46403 8.59998L12.064 13.2L16.664 8.59998Z" fill="currentColor"/>
+                                </svg>    
                             </div> 
                             <div *ngIf="holisticExpanded" class="flex flex-row items-center">
-                                <p class="pb-1 pr-2">Weniger lesen</p>
-                                <img src="assets/menu_elements/arrow_up.svg">
+                                <p class="pb-1 font-semibold">Weniger lesen</p>
+                                <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M7.46396 15.4L6.06396 14L12.064 8.00002L18.064 14L16.664 15.4L12.064 10.8L7.46396 15.4Z" fill="currentColor"/>
+                                </svg>                                    
                             </div>                            
                         </span>
                     </a>
                 </div>
             </div>
             <div class="flex flex-col items-center h-full rounded-lg bg-white dark:bg-dark-cards dark:text-dark-primary-font p-4">
-                <div class="text-2xl">
-                    WirVsVirus
-                </div>
+                <img class="w-64 pb-4" src="assets/logos/wir_vs_virus.png">
                 <div class="mt-2">
                     Im Rahmen des #WirVsVirus Hackathons entstand im März 2020 der erste Prototyp des Projektes Facts for Friends. In dem großangelegten, von der Bundesregierung geförderten Hackathon kamen 28.361 Menschen zusammen und arbeiteten an über 1.500 kurzfristigen und effektiven Lösungsansätzen für neuartige Probleme im Zuge der aktuellen Corona-Krise.                </div>
                 <div class="mt-2" *ngIf="wvvExpanded">
@@ -210,15 +229,19 @@
                     </p>
                 </div>
                 <div class="pt-8">
-                    <a class="bg-highlight dark:bg-dark-primary flex px-4 py-2 rounded-full text-white dark:text-dark-background cursor-pointer" (click)="expand_collapse('wvv')">
+                    <a class="bg-highlight dark:bg-dark-primary flex px-2 py-1.5 rounded-full text-white dark:text-dark-background cursor-pointer" (click)="expand_collapse('wvv')">
                         <span class="ml-2">
                             <div *ngIf="!wvvExpanded" class="flex flex-row items-center">
-                                <p class="pb-1 pr-2">Mehr lesen</p>
-                                <img src="assets/menu_elements/arrow_down.svg">
+                                <p class="pb-1 font-semibold">Mehr lesen</p>
+                                <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M16.664 8.59998L18.064 9.99998L12.064 16L6.06403 9.99998L7.46403 8.59998L12.064 13.2L16.664 8.59998Z" fill="currentColor"/>
+                                </svg>    
                             </div> 
                             <div *ngIf="wvvExpanded" class="flex flex-row items-center">
-                                <p class="pb-1 pr-2">Weniger lesen</p>
-                                <img src="assets/menu_elements/arrow_up.svg">
+                                <p class="pb-1 font-semibold">Weniger lesen</p>
+                                <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M7.46396 15.4L6.06396 14L12.064 8.00002L18.064 14L16.664 15.4L12.064 10.8L7.46396 15.4Z" fill="currentColor"/>
+                                </svg>                                    
                             </div>                            
                         </span>
                     </a>
