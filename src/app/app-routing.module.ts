@@ -7,6 +7,7 @@ import { ImprintPageComponent } from './imprint-page/imprint-page.component';
 import { ContentPageComponent } from './content-page/content-page.component';
 import { TypeformFeedbackPageComponent } from './typeform-feedback-page/typeform-feedback-page.component';
 import { AboutUsComponent } from './about-us/about-us.component';
+import { AboutFakeNewsComponent } from './about-fake-news/about-fake-news.component';
 
 const routes: Routes = [
   { path: '', component: BrowseComponent },
@@ -14,7 +15,8 @@ const routes: Routes = [
   { path: 'feedback', component: TypeformFeedbackPageComponent},
   { path: 'privacy-policy', component: PrivacyPolicyPageComponent },
   { path: 'imprint', component: ImprintPageComponent },
-  { path: 'about-us', component: AboutUsComponent}
+  { path: 'about-us', component: AboutUsComponent},
+  { path: 'about-fakenews', component: AboutFakeNewsComponent}
 ];
 
 const routerOptions: ExtraOptions = {
