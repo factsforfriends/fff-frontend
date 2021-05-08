@@ -1,4 +1,5 @@
 const Color = require('color')
+const { width } = require('tailwindcss/defaultTheme')
 const alpha = (clr, val) => Color(clr).alpha(val).rgb().string()
 const lighten = (clr, val) => Color(clr).lighten(val).rgb().string()
 const darken = (clr, val) => Color(clr).darken(val).rgb().string()
@@ -33,7 +34,7 @@ module.exports = {
         'dark-gradient-from': '#98DFD9 0%',
         'gradient-via': '#0B6B64 50%',
         'dark-gradient-via': '#98DFD9 50%',
-        'gradient-to': '#00000000 50%'
+        'gradient-to': '#00000000 50%',
       },
       fontSize: {
         'xxs': '.6rem',
@@ -43,8 +44,12 @@ module.exports = {
         'cover': 'cover',
         'contain': 'contain',
         '64': '100% 16rem'
-
       }
+    }
+  },
+  variants: {
+    extend: {
+      display: ['dark']
     }
   }
 }
