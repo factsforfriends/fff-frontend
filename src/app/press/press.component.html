@@ -1,0 +1,298 @@
+<div class="flex flex-col items-center text-center pb-12">
+    <h2 class="px-1 text-4xl font-semibold dark:text-dark-primary-font pb-4">Presse & Kontakt</h2>
+    <p class="text-xl font-semibold dark:text-dark-primary-font pb-4">Schreib uns</p>
+    <a href="mailto:hello@factsforfriends.de" class="cursor-pointer pb-2">
+        <img src="assets/menu_elements/mail.svg">
+    </a>
+    <a href="mailto:hello@factsforfriends.de" class="cursor-pointer text-secondary text-sm font-semibold dark:text-dark-primary pb-2">hello@factsforfriends.de</a>
+    <p class="text-sm font-thin leading-relaxed lg:leading-normal max-w-md dark:text-dark-primary-font">
+        Wir freuen uns über Rückmeldungen, Vorschläge oder Anfragen. <br>
+        Melde Dich gern bei uns!
+    </p>
+
+</div>
+
+
+<div class="flex flex-col max-w-screen-xl items-center md:items-start">
+    <h2 class="px-1 text-4xl font-semibold dark:text-dark-primary-font pb-4 self-center">Pressematerialien</h2>
+
+    <div class="w-11/12 md:w-1/2 static flex flex-row flex-nowrap py-8 md:py-10">
+        <div class="p-4 rounded-lg relative w-1/4 flex-1 bg-white dark:bg-dark-cards dark:text-dark-primary-font">
+            <div class="flex flex-col items-center md:items-start h-full">
+                <img class="md:absolute md:top-8 md:-right-36 md:w-1/2 md:transform md:translate-y-8" src="assets/illustrations/fff_visual.png">
+                <div class="text-2xl">
+                    Die Fakten zu Facts for Friends 
+                </div>
+                <div class="mt-2 md:w-2/3">
+                    Das Jahr 2020 hat die Welt auf den Kopf gestellt und ein neues „Normal“ erschaffen. Für Unternehmerin Katharina Klimkeit und Journalistin Valerie Scholz war diese Zeit nicht nur Umbruch, sondern auch Neuanfang. Sie kündigten jeweils ihre bisherigen Jobs und widmeten sich gemeinsam einem ambitionierten Ziel: Mehr Wahrheit in die digitale Welt bringen.
+                </div>
+                <div class="mt-2 self-start" *ngIf="factsExpanded">
+                    <p class="pb-2">
+                        <b>Name: Facts for Friends GmbH</b><br>
+                        URL: <www class="factsforfriends de"></www><br>
+                        Gründung: 2021<br>
+                        Sitz: Hamburg
+                    </p>
+                    <div class="flex flex-row">
+                        <p class="pr-8">
+                            <b>Gründer</b><br>
+                            Katharina Klimkeit<br>
+                            Valerie Scholz
+                        </p>
+                        <div clas="flex flex-col">
+                            <p><b>Profile</b></p>
+                            <div class="flex flex-row pt-2">
+                                <a href="https://www.facebook.com/factsforfriends.de" class="cursor-pointer mr-2" target="_blank">
+                                    <img src="assets/menu_elements/facebook_icon.svg">
+                                </a>
+                                <a href="https://www.instagram.com/factsforfriends.de/" class="cursor-pointer mr-2" target="_blank">
+                                    <img src="assets/menu_elements/insta_icon.svg">
+                                </a>
+                                <a href="https://www.linkedin.com/company/facts-for-friends/" class="cursor-pointer mr-2" target="_blank">
+                                    <img src="assets/menu_elements/linkedin_icon.svg">
+                                </a>
+                                <a href="https://twitter.com/facts4friends" class="cursor-pointer mr-2" target="_blank">
+                                    <img src="assets/menu_elements/twitter_icon.svg">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pt-8">
+                    <a class="bg-highlight dark:bg-dark-primary flex px-2 py-1.5 rounded-full text-white dark:text-dark-background cursor-pointer" (click)="expand_collapse('facts')">
+                        <span class="ml-2">
+                            <div *ngIf="!factsExpanded" class="flex flex-row items-center">
+                                <p class="pb-1 font-semibold">Mehr lesen</p>
+                                <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M16.664 8.59998L18.064 9.99998L12.064 16L6.06403 9.99998L7.46403 8.59998L12.064 13.2L16.664 8.59998Z" fill="currentColor"/>
+                                </svg>    
+                            </div> 
+                            <div *ngIf="factsExpanded" class="flex flex-row items-center">
+                                <p class="pb-1 font-semibold">Weniger lesen</p>
+                                <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M7.46396 15.4L6.06396 14L12.064 8.00002L18.064 14L16.664 15.4L12.064 10.8L7.46396 15.4Z" fill="currentColor"/>
+                                </svg>                                    
+                            </div>                            
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="w-11/12 md:w-1/2 py-8 md:py-10 md:self-end">
+        <div class="p-4 rounded-lg relative flex flex-col items-center md:items-start bg-white dark:bg-dark-cards dark:text-dark-primary-font">
+            <div class="flex flex-col items-center md:pl-52 h-full items-center md:items-start">
+                <img class="md:absolute md:top-12 md:-left-52 md:w-7/12 md:transform md:-translate-y-5" src="assets/pictures/vision.png">
+                <div class="text-2xl">
+                    Mission und Vision
+                </div>
+                <div class="mt-2">
+                    Das junge Start-Up Facts for Friends hat eine ambitionierte Vision: Das Konzept Fact-Checking revolutionieren. Facts for Friends ist eine Web App, die als Brücke zwischen etablierten Fact-Checking Organisationen und den Sozialen Medien fungiert. 
+                </div>
+            </div>
+            <div class="mt-2" *ngIf="visionExpanded">
+                <p class="md:pl-52 pb-2">
+                    Mithilfe modernster Technologie sammelt, verkürzt und vereinfacht Facts for Friends die oft langen und komplizierten Faktenchecks der etablierten Faktenprüfer, macht diese auf ihrer Plattform für NutzerInnen verfügbar und in jeden beliebigen Social Media-Dienst teilbar. 
+                </p>
+                <p>
+                    Auf diese Weise wird Fact-Checking zugänglicher für NutzerInnen und geeigneter für die modernen digitalen Medienkanäle. Somit ergänzt Facts for Friends bestehende Fact-Checking Angebote und stellt sicher, dass die Fakten und Richtigstellungen genau dort ankommen, wo sie am dringendsten benötigt werden.
+                </p>
+            </div>
+            <div class="pt-8" [ngClass]="{'md:pl-52': !visionExpanded}">
+                <a class="bg-highlight dark:bg-dark-primary flex px-2 py-1.5 rounded-full text-white dark:text-dark-background cursor-pointer" (click)="expand_collapse('vision')">
+                    <span class="ml-2">
+                        <div *ngIf="!visionExpanded" class="flex flex-row items-center">
+                            <p class="pb-1 font-semibold">Mehr lesen</p>
+                            <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M16.664 8.59998L18.064 9.99998L12.064 16L6.06403 9.99998L7.46403 8.59998L12.064 13.2L16.664 8.59998Z" fill="currentColor"/>
+                            </svg>    
+                        </div> 
+                        <div *ngIf="visionExpanded" class="flex flex-row items-center">
+                            <p class="pb-1 font-semibold">Weniger lesen</p>
+                            <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M7.46396 15.4L6.06396 14L12.064 8.00002L18.064 14L16.664 15.4L12.064 10.8L7.46396 15.4Z" fill="currentColor"/>
+                            </svg>                                    
+                        </div>                            
+                    </span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="w-11/12 md:w-1/2 static flex flex-row flex-nowrap py-8 md:py-10">
+        <div class="p-4 rounded-lg relative w-1/4 flex-1 bg-white dark:bg-dark-cards dark:text-dark-primary-font">
+            <div class="flex flex-col items-center md:items-start h-full">
+                <img class="md:absolute md:top-12 md:-right-44 md:w-7/12 md:transform md:-translate-y-5" src="assets/pictures/vision.png">
+                <div class="text-2xl">
+                    Vom Projekt zum Startup
+                </div>
+                <div class="mt-2 md:w-2/3">
+                    Die Idee Facts for Friends wurde ursprünglich mithilfe eines zwölf-köpfigen Teams aus EntwicklerInnen, JournalistInnen und GrafikerInnen im März 2020 im Rahmen des #WirVsVirus Hackathons der Bundesregierung geboren.
+                </div>
+                <div class="mt-2" *ngIf="projectExpanded">
+                    <p class="md:w-2/3">
+                        Das Projekt wurde anschließend im #WirVsVirus Solution Enabler aufgenommen, durch den es für sechs Monate im Wesentlichen durch wertvolle Kontakte unterstützt wurde.
+                    </p>
+                    <p class="mt-2">
+                        Schnell entschieden die beiden Gründerinnen Katharina Klimkeit und Valerie Scholz, dass Facts for Friends mehr als nur ein kleines Projekt ist. Sie kündigten kurzerhand ihre jeweiligen Jobs und begannen in Vollzeit und voller Euphorie den Kampf gegen Fake News.
+                    </p>
+                </div>
+                <div class="pt-8">
+                    <a class="bg-highlight dark:bg-dark-primary flex px-2 py-1.5 rounded-full text-white dark:text-dark-background cursor-pointer" (click)="expand_collapse('project')">
+                        <span class="ml-2">
+                            <div *ngIf="!projectExpanded" class="flex flex-row items-center">
+                                <p class="pb-1 font-semibold">Mehr lesen</p>
+                                <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M16.664 8.59998L18.064 9.99998L12.064 16L6.06403 9.99998L7.46403 8.59998L12.064 13.2L16.664 8.59998Z" fill="currentColor"/>
+                                </svg>    
+                            </div> 
+                            <div *ngIf="projectExpanded" class="flex flex-row items-center">
+                                <p class="pb-1 font-semibold">Weniger lesen</p>
+                                <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M7.46396 15.4L6.06396 14L12.064 8.00002L18.064 14L16.664 15.4L12.064 10.8L7.46396 15.4Z" fill="currentColor"/>
+                                </svg>                                    
+                            </div>                            
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="w-11/12 md:w-1/2 py-8 md:py-10 md:self-end">
+        <div class="p-4 rounded-lg relative flex flex-col items-center md:items-start bg-white dark:bg-dark-cards dark:text-dark-primary-font">
+            <div class="flex flex-col md:pl-52 h-full items-center md:items-start">
+                <img class="md:absolute md:top-12 md:-left-28 md:w-5/12 md:transform md:-translate-y-5" src="assets/pictures/founders.png">
+                <div class="text-2xl">
+                    Von Schulfreundinnen zum Gründer-Duo
+                </div>
+                <div class="mt-2">
+                    Inmitten nächtelanger Pitch-Vorbereitungen und stundenlanger Zoom-Calls haben die beiden Gründerinnen immer ihren Spaß, denn sie sind nicht nur starke Business-Partnerinnen, sondern auch Freundinnen seit der Schulzeit.
+                </div>
+            </div>
+            <div class="mt-2" *ngIf="foundersExpanded">
+                <p class="md:pl-52 pb-2">
+                    Katharina ist als CEO für das Projektmanagement und die Finanzen zuständig. Valerie leitet als CCO den journalistischen und redaktionellen Teil des Projekts. 
+                </p>
+                <p>
+                    Somit ergänzen sich die beiden Gründerinnen in ihren jeweiligen Fachgebieten perfekt. Während Katharina das Zahlenverständnis und ambitionierte Innovationsdenken reinbringt, hat Valerie die notwendige Branchenerfahrung als Journalistin und Content-Expertin.
+                </p>
+                </div>
+            <div class="pt-8" [ngClass]="{'md:pl-52': !foundersExpanded}">
+                <a class="bg-highlight dark:bg-dark-primary flex px-2 py-1.5 rounded-full text-white dark:text-dark-background cursor-pointer" (click)="expand_collapse('founders')">
+                    <span class="ml-2">
+                        <div *ngIf="!foundersExpanded" class="flex flex-row items-center">
+                            <p class="pb-1 font-semibold">Mehr lesen</p>
+                            <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M16.664 8.59998L18.064 9.99998L12.064 16L6.06403 9.99998L7.46403 8.59998L12.064 13.2L16.664 8.59998Z" fill="currentColor"/>
+                            </svg>    
+                        </div> 
+                        <div *ngIf="foundersExpanded" class="flex flex-row items-center">
+                            <p class="pb-1 font-semibold">Weniger lesen</p>
+                            <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M7.46396 15.4L6.06396 14L12.064 8.00002L18.064 14L16.664 15.4L12.064 10.8L7.46396 15.4Z" fill="currentColor"/>
+                            </svg>                                    
+                        </div>                            
+                    </span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <h2 class="px-1 text-4xl font-semibold dark:text-dark-primary-font pb-4 self-center">Pressefotos</h2>
+
+    <div class="p-4 w-full bg-gradient-to-b from-gradient-from via-gradient-via to-gradient-to dark:from-dark-gradient-from dark:via-dark-gradient-via to-gradient-to bg-64 bg-no-repeat flex flex-col items-center">
+        <h2 class="ml-4 text-4xl text-white dark:text-dark-background self-start">Gründer</h2>
+        <div class="m-4 p-4 w-full flex flex-row flex-wrap justify-center gap-8 grid-cols-1 xl:grid-cols-2 max-w-screen-xl">
+            <div class="w-11/12 md:w-5/12 flex flex-col items-center h-full rounded-lg bg-white dark:bg-dark-cards dark:text-dark-primary-font p-4">
+                <img class="pb-4" src="assets/pictures/FFF_Gruenderinnen_1.jpg">
+                <div class="flex flex-row w-full justify-center items-center">
+                    <p class="pr-4">Gründerinnen Foto 1</p>
+                    <a href="" class="cursor-pointer self-end">
+                        <img src="assets/menu_elements/download.svg">
+                    </a>
+                </div>
+            </div>
+            <div class="w-11/12 md:w-5/12 flex flex-col items-center h-full rounded-lg bg-white dark:bg-dark-cards dark:text-dark-primary-font p-4">
+                <img class="pb-4" src="assets/pictures/FFF_Gruenderinnen_2.jpg">
+                <div class="flex flex-row w-full justify-center items-center">
+                    <p class="pr-4">Gründerinnen Foto 2</p>
+                    <a href="" class="cursor-pointer self-end">
+                        <img src="assets/menu_elements/download.svg">
+                    </a>
+                </div>
+            </div>
+            <div class="w-11/12 md:w-5/12 flex flex-col items-center h-full rounded-lg bg-white dark:bg-dark-cards dark:text-dark-primary-font p-4 md:transform md:-translate-y-72">
+                <img class="pb-4" src="assets/pictures/Katharina_Klimkeit.jpg">
+                <div class="flex flex-row w-full justify-center items-center">
+                    <p class="pr-4">Katharina Anne Klimkeit</p>
+                    <a href="" class="cursor-pointer self-end">
+                        <img src="assets/menu_elements/download.svg">
+                    </a>
+                </div>
+            </div>
+            <div class="w-11/12 md:w-5/12 flex flex-col items-center h-full rounded-lg bg-white dark:bg-dark-cards dark:text-dark-primary-font p-4">
+                <img class="pb-4" src="assets/pictures/Valerie_Scholz.jpg">
+                <div class="flex flex-row w-full justify-center items-center">
+                    <p class="pr-4">Valerie Scholz</p>
+                    <a href="" class="cursor-pointer self-end">
+                        <img src="assets/menu_elements/download.svg">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="p-4 w-full bg-gradient-to-b from-gradient-from via-gradient-via to-gradient-to dark:from-dark-gradient-from dark:via-dark-gradient-via to-gradient-to bg-64 bg-no-repeat flex flex-col items-center">
+        <h2 class="ml-4 text-4xl text-white dark:text-dark-background self-start">Produkt</h2>
+        <div class="m-4 p-4 w-full flex flex-row flex-wrap justify-center gap-8 grid-cols-1 xl:grid-cols-2 max-w-screen-xl">
+            <div class="w-11/12 md:w-5/12 flex flex-col items-center h-full rounded-lg bg-white dark:bg-dark-cards dark:text-dark-primary-font p-4">
+                <img class="pb-4" src="assets/pictures/FFF_Gruenderinnen_1.jpg">
+                <div class="flex flex-row w-full justify-center items-center">
+                    <p class="pr-4">Gründerinnen Foto 1</p>
+                    <a href="" class="cursor-pointer self-end">
+                        <img src="assets/menu_elements/download.svg">
+                    </a>
+                </div>
+            </div>
+            <div class="w-11/12 md:w-5/12 flex flex-col items-center h-full rounded-lg bg-white dark:bg-dark-cards dark:text-dark-primary-font p-4">
+                <img class="pb-4" src="assets/pictures/FFF_Gruenderinnen_2.jpg">
+                <div class="flex flex-row w-full justify-center items-center">
+                    <p class="pr-4">Gründerinnen Foto 2</p>
+                    <a href="" class="cursor-pointer self-end">
+                        <img src="assets/menu_elements/download.svg">
+                    </a>
+                </div>
+            </div>
+            <div class="w-11/12 md:w-5/12 flex flex-col items-center h-full rounded-lg bg-white dark:bg-dark-cards dark:text-dark-primary-font p-4 md:transform md:-translate-y-72">
+                <img class="pb-4" src="assets/pictures/Katharina_Klimkeit.jpg">
+                <div class="flex flex-row w-full justify-center items-center">
+                    <p class="pr-4">Katharina Anne Klimkeit</p>
+                    <a href="" class="cursor-pointer self-end">
+                        <img src="assets/menu_elements/download.svg">
+                    </a>
+                </div>
+            </div>
+            <div class="w-11/12 md:w-5/12 flex flex-col items-center h-full rounded-lg bg-white dark:bg-dark-cards dark:text-dark-primary-font p-4">
+                <img class="pb-4" src="assets/pictures/Valerie_Scholz.jpg">
+                <div class="flex flex-row w-full justify-center items-center">
+                    <p class="pr-4">Valerie Scholz</p>
+                    <a href="" class="cursor-pointer self-end">
+                        <img src="assets/menu_elements/download.svg">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mb-8 self-center flex flex-col items-center h-full rounded-lg bg-white dark:bg-dark-cards dark:text-dark-primary-font p-4">
+        <h2 class="px-1 text-4xl font-semibold dark:text-dark-primary-font pb-4 self-center">Pressekit</h2>
+        <p class="pb-4">Alle Informationen gebündelt</p>
+        <a href="https://factsforfriends.de/assets/documents/Pressematerial_The-Story-of-Facts-for-Friends.pdf" target="_blank" class="cursor-pointer pb-4">
+            <img src="assets/menu_elements/download.svg">
+        </a>
+    </div>
+
+</div>

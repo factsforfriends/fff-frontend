@@ -26,11 +26,7 @@ export class AboutUsComponent implements OnInit {
     this.darkModeActivated = false;
    }
 
-  ngOnInit(): void {
-    if (localStorage.theme === 'dark'){
-      this.darkModeActivated = true;
-    }
-  }
+  ngOnInit(): void { }
   expand_collapse(section: string): void{
     if (section === 'whyfff'){
       this.whyFFFexpanded = !this.whyFFFexpanded;

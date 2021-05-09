@@ -36,6 +36,7 @@ import { IntroComponent } from './intro/intro.component';
 import { FeaturedSnacksComponent } from './featured-snacks/featured-snacks.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { AboutFakeNewsComponent } from './about-fake-news/about-fake-news.component';
+import { PressComponent } from './press/press.component';
 registerLocaleData(localeDe, localeDeExtra);
 
 @NgModule({
@@ -64,6 +65,7 @@ registerLocaleData(localeDe, localeDeExtra);
     FeaturedSnacksComponent,
     AboutUsComponent,
     AboutFakeNewsComponent,
+    PressComponent,
   ],
   imports: [
     BrowserModule,
