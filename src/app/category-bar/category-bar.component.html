@@ -51,7 +51,7 @@
         [class.font-thin]="selectedCategory != ''"
         (click)="selectCategory('')">
         <img src="assets/menu_elements/categories_all_grey.svg" [class.hidden]="!selectedCategory || selectedCategory == ''">
-        <img src="assets/menu_elements/categories_all_green.svg" [class.hidden]="selectedCategory != ''">
+        <img src="assets/menu_elements/categories_all_green.svg" [class.hidden]="selectedCategory != '' && selectedCategory">
         <p class="pl-4">Alle</p>
     </div>
 
@@ -70,8 +70,8 @@
     [class.font-medium]="selectedCategory == 'Gesellschaft'"
     [class.font-thin]="selectedCategory != 'Gesellschaft'"
     (click)="selectCategory('Gesellschaft')">
-    <img src="assets/menu_elements/categories_all_grey.svg" [class.hidden]="selectedCategory=='Gesellschaft'">
-    <img src="assets/menu_elements/categories_all_green.svg" [class.hidden]="selectedCategory!='Gesellschaft'">
+    <img src="assets/menu_elements/categories_society_grey.svg" [class.hidden]="selectedCategory=='Gesellschaft'">
+    <img src="assets/menu_elements/categories_society_green.svg" [class.hidden]="selectedCategory!='Gesellschaft'">
     <p class="pl-4">Gesellschaft</p>
     </div>
 
