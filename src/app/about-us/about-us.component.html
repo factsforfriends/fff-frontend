@@ -1,14 +1,14 @@
-<h2 class="px-1 text-xl text-center lg:text-2xl font-semibold leading-relaxed dark:text-dark-primary-font">Über uns</h2>
-<div class="flex flex-col max-w-screen-xl items-center md:items-start">
-    <div class="w-11/12 md:w-1/2 static flex flex-row flex-nowrap py-8 md:py-10">
-        <div class="p-4 rounded-lg relative w-1/4 flex-1 bg-white dark:bg-dark-cards dark:text-dark-primary-font">
+<h2 class="px-1 text-3xl text-center lg:text-4xl font-semibold leading-relaxed dark:text-dark-primary-font">Über uns</h2>
+<div class="flex flex-col max-w-screen-xl items-center md:items-start leading-relaxed">
+    <div class="w-11/12 md:w-2/3 static flex flex-row flex-nowrap py-8 md:py-10">
+        <div class="p-4 rounded-lg relative flex-1 bg-white dark:bg-dark-cards dark:text-dark-primary-font">
             <div class="flex flex-col items-center md:items-start h-full">
-                <img class="md:absolute md:top-8 md:-right-36 md:w-1/2 md:transform md:-translate-y-5 dark:hidden" src="assets/illustrations/why_fff.svg">
+                <img class="md:absolute md:top-8 md:-right-20 md:w-4/12 md:transform md:-translate-y-5 dark:hidden" src="assets/illustrations/why_fff.svg">
                 <img class="md:absolute md:top-8 md:-right-36 md:w-1/2 md:transform md:-translate-y-5 hidden dark:block" src="assets/illustrations/why_fff_dark.svg">
                 <div class="text-2xl">
                     Warum Facts for Friends?
                 </div>
-                <div class="mt-2 md:w-2/3">
+                <div class="mt-2 md:w-3/4">
                     Die Vision von Facts for Friends ist es, Bürger*Innen ein Werkzeug zur eigenständigen und effektiven Bekämpfung von Fake News in ihrem digitalen Umfeld zu bieten und dadurch eine informierte und engagierte Gesellschaft zu fördern. 
                 </div>
                 <div class="mt-2" *ngIf="whyFFFexpanded">
@@ -41,10 +41,10 @@
         </div>
     </div>
 
-    <div class="w-11/12 md:w-1/2 py-8 md:py-10 md:self-end">
+    <div class="w-11/12 md:w-2/3 py-8 md:py-10 md:self-end">
         <div class="p-4 rounded-lg relative flex flex-col items-center md:items-start bg-white dark:bg-dark-cards dark:text-dark-primary-font">
-            <div class="flex flex-col items-center md:pl-52 h-full items-center md:items-start">
-                <img class="md:absolute md:top-12 md:-left-40 md:w-1/2 md:transform md:-translate-y-10 dark:hidden" src="assets/illustrations/fff_advantage.svg">
+            <div class="flex flex-col items-center md:pl-40 h-full items-center md:items-start">
+                <img class="md:absolute md:top-12 md:-left-36 md:w-4/12 md:transform md:-translate-y-10 dark:hidden" src="assets/illustrations/fff_advantage.svg">
                 <img class="md:absolute md:top-12 md:-left-40 md:w-1/2 md:transform md:-translate-y-10 hidden dark:block" src="assets/illustrations/fff_advantage_dark.svg">
                 <div class="text-2xl">
                     Die Vorteile von Facts for Friends
@@ -55,14 +55,14 @@
                 </div>
             </div>
             <div class="mt-2" *ngIf="advantageFFFexpanded">
-                <p class="md:pl-52 pb-2">
+                <p class="md:pl-40 pb-2">
                     <b>2. Simple & „Snackable”</b><br>
                     Die FactSnacks sind buchstäblich „Snacks”, da Informationen zusammengefasst und kurz und prägnant dargestellt werden. <br>
                 </p>
                 <b>3. Suchfunktion</b><br>
                 Und die integrierte Suchfunktion ermöglicht es Nutzer*innen, verifizierte Faktenchecks innerhalb von Sekunden zu finden
             </div>
-            <div class="pt-8" [ngClass]="{'md:pl-52': !advantageFFFexpanded}">
+            <div class="pt-8" [ngClass]="{'md:pl-40': !advantageFFFexpanded}">
                 <a class="bg-highlight dark:bg-dark-primary flex px-2 py-1.5 rounded-full text-white dark:text-dark-background cursor-pointer" (click)="expand_collapse('fffAdvantage')">
                     <span class="ml-2">
                         <div *ngIf="!advantageFFFexpanded" class="flex flex-row items-center">
@@ -238,6 +238,34 @@
                                 </svg>    
                             </div> 
                             <div *ngIf="wvvExpanded" class="flex flex-row items-center">
+                                <p class="pb-1 font-semibold">Weniger lesen</p>
+                                <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M7.46396 15.4L6.06396 14L12.064 8.00002L18.064 14L16.664 15.4L12.064 10.8L7.46396 15.4Z" fill="currentColor"/>
+                                </svg>                                    
+                            </div>                            
+                        </span>
+                    </a>
+                </div>
+            </div>
+            <div class="flex flex-col items-center h-full rounded-lg bg-white dark:bg-dark-cards dark:text-dark-primary-font p-4">
+                <img class="w-64 pb-4" src="assets/logos/wir_vs_virus.png">
+                <div class="mt-2">
+                    Im Rahmen des #WirVsVirus Hackathons entstand im März 2020 der erste Prototyp des Projektes Facts for Friends. In dem großangelegten, von der Bundesregierung geförderten Hackathon kamen 28.361 Menschen zusammen und arbeiteten an über 1.500 kurzfristigen und effektiven Lösungsansätzen für neuartige Probleme im Zuge der aktuellen Corona-Krise.                </div>
+                <div class="mt-2" *ngIf="placeholderExpanded">
+                    <p>
+                        Ziel dieser digitalen Veranstaltung war es, das kreative Potenzial der Zivilgesellschaft zu bündeln und schnell effektive Lösungen zu finden. Im Anschluss des Hackathons wurde Facts for Friends als eines der etwa 130 vielversprechendsten Projekte ausgewählt und in das #SolutionEnabler Programm aufgenommen. Mit Hilfe von diversen Förderpartnern liefert dieses Umsetzungsprogramm wertvolle Expertise, Informationen und Ressourcen. Förderpartner des Programms sind u.a. das Bundesministerium für Bildung und Forschung durch den Prototype Fund, das Vodafone Institute, die BMW Foundation Herbert Quandt und Google.
+                    </p>
+                </div>
+                <div class="pt-8">
+                    <a class="bg-highlight dark:bg-dark-primary flex px-2 py-1.5 rounded-full text-white dark:text-dark-background cursor-pointer" (click)="expand_collapse('placeholder')">
+                        <span class="ml-2">
+                            <div *ngIf="!placeholderExpanded" class="flex flex-row items-center">
+                                <p class="pb-1 font-semibold">Mehr lesen</p>
+                                <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M16.664 8.59998L18.064 9.99998L12.064 16L6.06403 9.99998L7.46403 8.59998L12.064 13.2L16.664 8.59998Z" fill="currentColor"/>
+                                </svg>    
+                            </div> 
+                            <div *ngIf="placeholderExpanded" class="flex flex-row items-center">
                                 <p class="pb-1 font-semibold">Weniger lesen</p>
                                 <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M7.46396 15.4L6.06396 14L12.064 8.00002L18.064 14L16.664 15.4L12.064 10.8L7.46396 15.4Z" fill="currentColor"/>

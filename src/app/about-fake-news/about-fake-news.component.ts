@@ -13,7 +13,8 @@ export class AboutFakeNewsComponent implements OnInit {
   public weitklickExpanded: boolean;
   public ndmExpanded: boolean;
   public ftvExpanded: boolean;
-  public jwExpanded: boolean;
+  public ph1Expanded: boolean;
+  public ph2Expanded: boolean;
   public codetektExpanded: boolean;
   constructor() {
     this.fakenewsExpanded = false;
@@ -22,7 +23,8 @@ export class AboutFakeNewsComponent implements OnInit {
     this.weitklickExpanded = false;
     this.ndmExpanded = false;
     this.ftvExpanded = false;
-    this.jwExpanded = false;
+    this.ph1Expanded = false;
+    this.ph2Expanded = false;
     this.codetektExpanded = false;
    }
 
@@ -53,8 +55,12 @@ export class AboutFakeNewsComponent implements OnInit {
       this.ftvExpanded = !this.ftvExpanded;
       return;
     }
-    if (section === 'jw'){
-      this.jwExpanded = !this.jwExpanded;
+    if (section === 'ph1'){
+      this.ph1Expanded = !this.ph1Expanded;
+      return;
+    }
+    if (section === 'ph2'){
+      this.ph2Expanded = !this.ph2Expanded;
       return;
     }
     if (section === 'codetekt'){
