@@ -1,14 +1,14 @@
 <h2 class="px-1 text-3xl text-center lg:text-4xl font-semibold leading-relaxed dark:text-dark-primary-font">Über Fake News</h2>
 <div class="flex flex-col max-w-screen-xl items-center md:items-start">
-    <div class="w-11/12 md:w-1/2 static flex flex-row flex-nowrap py-8 md:py-10">
+    <div class="w-11/12 md:w-2/3 static flex flex-row flex-nowrap py-8 md:py-10">
         <div class="p-4 rounded-lg relative w-1/4 flex-1 bg-white dark:bg-dark-cards dark:text-dark-primary-font">
             <div class="flex flex-col items-center md:items-start h-full">
-                <img class="md:absolute md:top-8 md:-right-36 md:w-1/2 md:transform md:-translate-y-5 dark:hidden" src="assets/illustrations/fake_news_speaker.svg">
-                <img class="md:absolute md:top-8 md:-right-36 md:w-1/2 md:transform md:-translate-y-5 hidden dark:block" src="assets/illustrations/fake_news_speaker_dark.svg">
+                <img class="md:absolute md:top-8 md:-right-20 md:w-4/12 md:transform md:-translate-y-10 dark:hidden" src="assets/illustrations/fake_news_speaker.svg">
+                <img class="md:absolute md:top-8 md:-right-20 md:w-4/12 md:transform md:-translate-y-10 hidden dark:block" src="assets/illustrations/fake_news_speaker_dark.svg">
                 <div class="text-2xl">
                     Was sind Fake News?
                 </div>
-                <div class="mt-2 md:w-2/3">
+                <div class="mt-2 md:w-3/4">
                     In der heutigen (digitalen) Zeit werden Menschen immer häufiger mit Falschmeldungen und irrtümlich als Fakt dargestellten Nachrichten - sogenannten Fake News - konfrontiert. Dieser Begriff ist heutzutage jedoch stark politisiert und wird oft falsch benutzt. Daher muss er zunächst klar definiert werden.  
                 </div>
                 <div class="mt-2" *ngIf="fakenewsExpanded">
@@ -41,22 +41,27 @@
         </div>
     </div>
 
-    <div class="w-11/12 md:w-1/2 py-8 md:py-10 md:self-end">
+    <div class="w-11/12 md:w-2/3 py-8 md:py-10 md:self-end">
         <div class="p-4 rounded-lg relative flex flex-col items-center md:items-start bg-white dark:bg-dark-cards dark:text-dark-primary-font">
             <div class="flex flex-col items-center md:pl-52 h-full items-center md:items-start">
-                <img class="md:absolute md:top-12 md:-left-40 md:w-1/2 md:transform md:-translate-y-12 dark:hidden" src="assets/illustrations/laptop.svg">
-                <img class="md:absolute md:top-12 md:-left-40 md:w-1/2 md:transform md:-translate-y-12 hidden dark:block" src="assets/illustrations/laptop_dark.svg">
+                <img class="md:absolute md:top-12 md:-left-28 md:w-4/12 md:transform md:-translate-y-10 dark:hidden" src="assets/illustrations/laptop.svg">
+                <img class="md:absolute md:top-12 md:-left-28 md:w-4/12 md:transform md:-translate-y-10 hidden dark:block" src="assets/illustrations/laptop_dark.svg">
                 <div class="text-2xl">
                     Die Wirkung
                 </div>
                 <div class="mt-2">
-                    <p>Die wesentliche Funktion des Journalismus war einst die Rolle als Gatekeeper. Journalist*innen entschieden welche Themen relevant für Leser*innen sind und kontrollierten so den Informationsfluss in der Gesellschaft. Im Zeitalter der digitalen Medien hat sich diese Rolle jedoch verändert, denn im Netz ist unbegrenzten Platz für Informationen, jeder kann Inhalte produzieren und teilen.</p>                </div>
+                    <p>
+                        Die wesentliche Funktion des Journalismus war einst die Rolle als Gatekeeper. Journalist*innen entschieden welche Themen relevant für Leser*innen sind und kontrollierten so den Informationsfluss in der Gesellschaft. Im Zeitalter der digitalen Medien hat sich diese Rolle jedoch verändert, denn im Netz ist unbegrenzten Platz für Informationen, jeder kann Inhalte produzieren und teilen.                        
+                    </p>    
+                    
                 </div>
-            <div class="mt-2" *ngIf="effectExpanded">
-                <p>
-                    Dieser neuartige Informationsfluss sorgt für eine neue Freiheit und eine Vielfalt von Stimmen in den Medien, die für einen modernen und globalen Journalismus notwendig ist. Doch ohne einen Gatekeeper, der die Richtigkeit und Relevanz der publizierten Inhalte kontrolliert, steigt die Menge an irrelevanten und sogar falschen Informationen. Daher ist es die Aufgabe von Journalist*innen und Faktenchecker*innen die Nutzer*innen durch den digitalen Informationsdschungel zu führen, einige Stimmen zu verstärken und vor anderen zu warnen, die potenziell falsche Fakten oder antidemokratische Ideologien verbreiten. Nur so kann der Journalismus auch im digitalen Zeitalter eine informierte und partizipative demokratische Gesellschaft fördern und seine Aufgabe als tragende Säule der Demokratie erfüllen. 
-                </p>
             </div>
+            <p class="mt-2 md:pl-52" *ngIf="effectExpanded">
+                Dieser neuartige Informationsfluss sorgt für eine neue Freiheit und eine Vielfalt von Stimmen in den Medien, die für einen modernen und globalen Journalismus notwendig ist. Doch ohne einen Gatekeeper, der die Richtigkeit und Relevanz der publizierten Inhalte kontrolliert, steigt die Menge an irrelevanten und sogar falschen Informationen. 
+            </p>
+            <p class="mt-2" *ngIf="effectExpanded">
+                Daher ist es die Aufgabe von Journalist*innen und Faktenchecker*innen die Nutzer*innen durch den digitalen Informationsdschungel zu führen, einige Stimmen zu verstärken und vor anderen zu warnen, die potenziell falsche Fakten oder antidemokratische Ideologien verbreiten. Nur so kann der Journalismus auch im digitalen Zeitalter eine informierte und partizipative demokratische Gesellschaft fördern und seine Aufgabe als tragende Säule der Demokratie erfüllen. 
+            </p>
             <div class="pt-8" [ngClass]="{'md:pl-52': !effectExpanded}">
                 <a class="bg-highlight dark:bg-dark-primary flex px-2 py-1.5 rounded-full text-white dark:text-dark-background cursor-pointer" (click)="expand_collapse('effect')">
                     <span class="ml-2">
@@ -78,18 +83,18 @@
         </div>
     </div>
 
-    <div class="w-11/12 md:w-1/2 static flex flex-row flex-nowrap py-8 md:py-10">
+    <div class="w-11/12 md:w-2/3 static flex flex-row flex-nowrap py-8 md:py-10 md:mb-10">
         <div class="p-4 rounded-lg relative w-1/4 flex-1 bg-white dark:bg-dark-cards dark:text-dark-primary-font">
             <div class="flex flex-col items-center md:items-start h-full">
-                <img class="md:absolute md:top-2 md:-right-36 md:w-1/2 md:transform md:-translate-y-5 dark:hidden" src="assets/illustrations/chat.svg">
-                <img class="md:absolute md:top-2 md:-right-36 md:w-1/2 md:transform md:-translate-y-5 hidden dark:block" src="assets/illustrations/chat_dark.svg">
+                <img class="md:absolute md:top-8 md:-right-20 md:w-4/12 md:transform md:-translate-y-10 dark:hidden" src="assets/illustrations/chat.svg">
+                <img class="md:absolute md:top-8 md:-right-20 md:w-4/12 md:transform md:-translate-y-10 hidden dark:block" src="assets/illustrations/chat_dark.svg">
                 <div class="text-2xl">
                     Umgang mit Verschwörung
                 </div>
-                <div class="mt-2 md:w-2/3">
+                <div class="mt-2 md:w-3/4">
                     Fakten allein reichen nicht immer aus, sie müssen auch richtig eingesetzt werden. Das Spiel “Talk to Me” kann Dir dabei helfen mit Freunden oder Verwandten, die an Fehlinformationen oder Verschwörungen im Zusammenhang mit COVID-19 glauben, auf konstruktive Art und Weise zu diskutieren.                
                 </div>
-                <div class="mt-2 md:w-2/3" *ngIf="conspiracyExpanded">
+                <div class="mt-2 md:w-3/4" *ngIf="conspiracyExpanded">
                     Basierend auf einer Reihe von psychologischen und kommunikativen Konzepten und Forschungsergebnissen zeigt es Nutzer*innen, wie sie sich im Gespräch mit Freund*innen oder Verwandten verhalten können , die an Verschwörungserzählungen oder Fehlinformationen im Zusammenhang mit COVID-19 glauben. Hier gilt es, eine konstruktive Diskussion zu führen und Kommunikationstechniken zu nutzen, die ein Umdenken anstoßen können. Die erlernten Kommunikationsmuster können dann ideal in Kombination mit FactSnacks eingesetzt werden, um die Falschinformationen richtigzustellen.
                 </div>
                 <div class="pt-8">

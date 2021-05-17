@@ -15,22 +15,18 @@
 <div class="flex flex-col max-w-screen-xl items-center md:items-start">
     <h2 class="px-1 text-4xl font-semibold dark:text-dark-primary-font pb-4 self-center">Pressematerialien</h2>
 
-    <div class="w-11/12 md:w-1/2 static flex flex-row flex-nowrap py-8 md:py-10">
+    <div class="w-11/12 md:w-2/3 static flex flex-row flex-nowrap py-8 md:py-10">
         <div class="p-4 rounded-lg relative w-1/4 flex-1 bg-white dark:bg-dark-cards dark:text-dark-primary-font">
             <div class="flex flex-col items-center md:items-start h-full">
                 <a href="https://docs.google.com/uc?export=download&id=1z7kalZRCTJH_QxxSA0r2SyoAtKs8g9Ol" target="_blank">
-                    <div class="md:absolute md:top-8 md:-right-36 md:w-1/2 md:transform md:translate-y-8">
+                    <div class="md:absolute md:top-8 md:right-8 md:w-4/12 md:transform md:translate-y-8">
                         <img  src="assets/illustrations/fff_visual.png">
-                        <div class="flex flex-row w-full justify-center items-center pt-8">
-                            <p class="pr-4">Unser Logo herunterladen</p>
-                            <img src="assets/menu_elements/download.svg">
-                        </div>
                     </div>
                 </a>
                 <div class="text-2xl">
                     Die Fakten zu Facts for Friends 
                 </div>
-                <div class="mt-2 md:w-2/3">
+                <div class="mt-2 md:w-7/12">
                     Das Jahr 2020 hat die Welt auf den Kopf gestellt und ein neues „Normal“ erschaffen. Für Unternehmerin Katharina Klimkeit und Journalistin Valerie Scholz war diese Zeit nicht nur Umbruch, sondern auch Neuanfang. Sie kündigten jeweils ihre bisherigen Jobs und widmeten sich gemeinsam einem ambitionierten Ziel: Mehr Wahrheit in die digitale Welt bringen.
                 </div>
                 <div class="mt-2 self-start" *ngIf="factsExpanded">
@@ -65,11 +61,12 @@
                     </div>
                     <div class="pt-2">
                         <p><b>Logo</b></p>
-                        <div class="flex flex-row items-center pt-2">
-                            <img src="assets/menu_elements/download.svg">
-                            <p class="pl-2">Unser Logo herunterladen</p>
-                        </div>
-
+                        <a href="https://docs.google.com/uc?export=download&id=1z7kalZRCTJH_QxxSA0r2SyoAtKs8g9Ol" target="_blank">
+                            <div class="flex flex-row items-center pt-2">
+                                <img src="assets/menu_elements/download.svg">
+                                <p class="pl-2">Unser Logo herunterladen</p>
+                            </div>
+                        </a>
                     </div>
                 </div>
                 <div class="pt-8">
@@ -94,10 +91,10 @@
         </div>
     </div>
 
-    <div class="w-11/12 md:w-1/2 py-8 md:py-10 md:self-end">
+    <div class="w-11/12 md:w-2/3 py-8 md:py-10 md:self-end">
         <div class="p-4 rounded-lg relative flex flex-col items-center md:items-start bg-white dark:bg-dark-cards dark:text-dark-primary-font">
             <div class="flex flex-col items-center md:pl-52 h-full items-center md:items-start">
-                <img class="md:absolute md:top-12 md:-left-52 md:w-7/12 md:transform md:-translate-y-5" src="assets/pictures/vision.png">
+                <img class="md:absolute md:top-12 md:-left-28 md:w-4/12 md:transform md:-translate-y-5" src="assets/pictures/vision.png">
                 <div class="text-2xl">
                     Mission und Vision
                 </div>
@@ -134,18 +131,18 @@
         </div>
     </div>
 
-    <div class="w-11/12 md:w-1/2 static flex flex-row flex-nowrap py-8 md:py-10">
+    <div class="w-11/12 md:w-2/3 static flex flex-row flex-nowrap py-8 md:py-10">
         <div class="p-4 rounded-lg relative w-1/4 flex-1 bg-white dark:bg-dark-cards dark:text-dark-primary-font">
             <div class="flex flex-col items-center md:items-start h-full">
-                <img class="md:absolute md:top-12 md:-right-44 md:w-7/12 md:transform md:-translate-y-5" src="assets/pictures/office.jpg">
+                <img class="md:absolute md:top-12 md:-right-20 md:w-4/12 md:transform md:-translate-y-5" src="assets/pictures/office.jpg">
                 <div class="text-2xl">
                     Vom Projekt zum Startup
                 </div>
-                <div class="mt-2 md:w-2/3">
+                <div class="mt-2 md:w-3/4">
                     Die Idee Facts for Friends wurde ursprünglich mithilfe eines zwölf-köpfigen Teams aus EntwicklerInnen, JournalistInnen und GrafikerInnen im März 2020 im Rahmen des #WirVsVirus Hackathons der Bundesregierung geboren.
                 </div>
                 <div class="mt-2" *ngIf="projectExpanded">
-                    <p class="md:w-2/3">
+                    <p class="md:w-3/4">
                         Das Projekt wurde anschließend im #WirVsVirus Solution Enabler aufgenommen, durch den es für sechs Monate im Wesentlichen durch wertvolle Kontakte unterstützt wurde.
                     </p>
                     <p class="mt-2">
@@ -174,10 +171,10 @@
         </div>
     </div>
 
-    <div class="w-11/12 md:w-1/2 py-8 md:py-10 md:self-end">
+    <div class="w-11/12 md:w-2/3 py-8 md:py-10 md:self-end md:mb-10">
         <div class="p-4 rounded-lg relative flex flex-col items-center md:items-start bg-white dark:bg-dark-cards dark:text-dark-primary-font">
-            <div class="flex flex-col md:pl-52 h-full items-center md:items-start">
-                <img class="md:absolute md:top-12 md:-left-28 md:w-5/12 md:transform md:-translate-y-5" src="assets/pictures/founders.png">
+            <div class="flex flex-col md:pl-40 h-full items-center md:items-start">
+                <img class="md:absolute md:top-5 md:-left-16 md:w-3/12" src="assets/pictures/founders.png">
                 <div class="text-2xl">
                     Von Schulfreundinnen zum Gründer-Duo
                 </div>
@@ -186,14 +183,14 @@
                 </div>
             </div>
             <div class="mt-2" *ngIf="foundersExpanded">
-                <p class="md:pl-52 pb-2">
+                <p class="md:pl-40 pb-2">
                     Katharina ist als CEO für das Projektmanagement und die Finanzen zuständig. Valerie leitet als CCO den journalistischen und redaktionellen Teil des Projekts. 
                 </p>
                 <p>
                     Somit ergänzen sich die beiden Gründerinnen in ihren jeweiligen Fachgebieten perfekt. Während Katharina das Zahlenverständnis und ambitionierte Innovationsdenken reinbringt, hat Valerie die notwendige Branchenerfahrung als Journalistin und Content-Expertin.
                 </p>
                 </div>
-            <div class="pt-8" [ngClass]="{'md:pl-52': !foundersExpanded}">
+            <div class="pt-8" [ngClass]="{'md:pl-40': !foundersExpanded}">
                 <a class="bg-highlight dark:bg-dark-primary flex px-2 py-1.5 rounded-full text-white dark:text-dark-background cursor-pointer" (click)="expand_collapse('founders')">
                     <span class="ml-2">
                         <div *ngIf="!foundersExpanded" class="flex flex-row items-center">
@@ -214,7 +211,7 @@
         </div>
     </div>
 
-    <h2 class="px-1 text-4xl font-semibold dark:text-dark-primary-font pb-4 self-center">Pressefotos</h2>
+    <h2 class="px-1 text-4xl font-semibold dark:text-dark-primary-font pb-4 self-center md:mb-4">Pressefotos</h2>
 
     <div class="p-4 w-full bg-gradient-to-b from-gradient-from via-gradient-via to-gradient-to dark:from-dark-gradient-from dark:via-dark-gradient-via to-gradient-to bg-64 bg-no-repeat flex flex-col items-center">
         <h2 class="ml-4 text-4xl text-white dark:text-dark-background self-start">Gründerinnen</h2>

@@ -4,7 +4,7 @@
         <div class="p-4 rounded-lg relative flex-1 bg-white dark:bg-dark-cards dark:text-dark-primary-font">
             <div class="flex flex-col items-center md:items-start h-full">
                 <img class="md:absolute md:top-8 md:-right-20 md:w-4/12 md:transform md:-translate-y-5 dark:hidden" src="assets/illustrations/why_fff.svg">
-                <img class="md:absolute md:top-8 md:-right-36 md:w-1/2 md:transform md:-translate-y-5 hidden dark:block" src="assets/illustrations/why_fff_dark.svg">
+                <img class="md:absolute md:top-8 md:-right-20 md:w-4/12 md:transform md:-translate-y-5 hidden dark:block" src="assets/illustrations/why_fff_dark.svg">
                 <div class="text-2xl">
                     Warum Facts for Friends?
                 </div>
@@ -45,7 +45,7 @@
         <div class="p-4 rounded-lg relative flex flex-col items-center md:items-start bg-white dark:bg-dark-cards dark:text-dark-primary-font">
             <div class="flex flex-col items-center md:pl-40 h-full items-center md:items-start">
                 <img class="md:absolute md:top-12 md:-left-36 md:w-4/12 md:transform md:-translate-y-10 dark:hidden" src="assets/illustrations/fff_advantage.svg">
-                <img class="md:absolute md:top-12 md:-left-40 md:w-1/2 md:transform md:-translate-y-10 hidden dark:block" src="assets/illustrations/fff_advantage_dark.svg">
+                <img class="md:absolute md:top-12 md:-left-36 md:w-4/12 md:transform md:-translate-y-10 hidden dark:block" src="assets/illustrations/fff_advantage_dark.svg">
                 <div class="text-2xl">
                     Die Vorteile von Facts for Friends
                 </div>
@@ -83,18 +83,23 @@
         </div>
     </div>
 
-    <div class="w-11/12 md:w-1/2 static flex flex-row flex-nowrap py-8 md:py-10">
+    <div class="w-11/12 md:w-2/3 static flex flex-row flex-nowrap py-8 md:py-10">
         <div class="p-4 rounded-lg relative w-1/4 flex-1 bg-white dark:bg-dark-cards dark:text-dark-primary-font">
             <div class="flex flex-col items-center md:items-start h-full">
-                <img class="md:absolute md:top-2 md:-right-36 md:w-1/2 md:transform md:-translate-y-5 dark:hidden" src="assets/illustrations/fake_news.svg">
-                <img class="md:absolute md:top-2 md:-right-36 md:w-1/2 md:transform md:-translate-y-5 hidden dark:block" src="assets/illustrations/fake_news_dark.svg">
+                <img class="md:absolute md:top-8 md:-right-20 md:w-4/12 md:transform md:-translate-y-5 dark:hidden" src="assets/illustrations/fake_news.svg">
+                <img class="md:absolute md:top-8 md:-right-20 md:w-4/12 md:transform md:-translate-y-5 hidden dark:block" src="assets/illustrations/fake_news_dark.svg">
                 <div class="text-2xl">
                     Unsere Arbeit und Prozesse
                 </div>
-                <div class="mt-2 md:w-2/3">
-                    Wir arbeiten Hand-in-Hand mit etablierten Faktenchecker*innen zusammen. Das heißt, wir sind keine Konkurrenz, sondern eine Ergänzung. Als Basis für unsere FactSnacks nutzen wir ausschließlich Content von Fact-Checking Organisationen, die Teil des <a href="https://www.ifcncodeofprinciples.poynter.org/signatories" target=”_blank”>International Fact Checking Networks</a> sind und dessen <a href="https://www.ifcncodeofprinciples.poynter.org/know-more/the-commitments-of-the-code-of-principles" target=”_blank”>Codex</a> bei der Arbeit einhalten. Dieser <a href="https://www.ifcncodeofprinciples.poynter.org/know-more/the-commitments-of-the-code-of-principles" target=”_blank”>Codex</a> ist das Ergebnis einer globalen Kooperation von  seriösen Faktenprüfern.</div>
+                <div class="mt-2 md:w-3/4">
+                    Wir arbeiten Hand-in-Hand mit etablierten Faktenchecker*innen zusammen. Das heißt, wir sind keine Konkurrenz, sondern eine Ergänzung. Als Basis für unsere FactSnacks nutzen wir ausschließlich Content von Fact-Checking Organisationen, die Teil des <a href="https://www.ifcncodeofprinciples.poynter.org/signatories" target=”_blank”>International Fact Checking Networks</a> sind und dessen <a href="https://www.ifcncodeofprinciples.poynter.org/know-more/the-commitments-of-the-code-of-principles" target=”_blank”>Codex</a> bei der Arbeit einhalten. Dieser <a href="https://www.ifcncodeofprinciples.poynter.org/know-more/the-commitments-of-the-code-of-principles" target=”_blank”>Codex</a> ist das Ergebnis einer globalen Kooperation von  seriösen Faktenprüfern.
+                </div>
+                <div class="mt-2 md:w-3/4" *ngIf="processesFFFexpanded">
+                    Wir sammeln Faktenchecks zu aktuellen Themen, die für unsere Nutzer*innen relevant sind. Dabei nutzen wir hauptsächlich IFCN Quellen, die Falschinformationen im deutschen Kontext aufdecken. Wir greifen jedoch ebenfalls auf internationale Quellen zurück, die Faktenchecks zu Themen publizieren, die für unsere Nutzer*innen interessant sein könnten.
+                </div>
                 <div class="mt-2" *ngIf="processesFFFexpanded">
-                    Wir sammeln Faktenchecks zu aktuellen Themen, die für unsere Nutzer*innen relevant sind. Dabei nutzen wir hauptsächlich IFCN Quellen, die Falschinformationen im deutschen Kontext aufdecken. Wir greifen jedoch ebenfalls auf internationale Quellen zurück, die Faktenchecks zu Themen publizieren, die für unsere Nutzer*innen interessant sein könnten. Dabei achten wir stets auf das Zwei-Quellen-Prinzip, sodass ein FactSnack immer auf mehr als einer Quelle basieren muss. Nach einer Überprüfung der Quelle komprimieren wir die langen Faktenchecks zu kurzen und nutzerfreundlichen FactSnacks. Jeder FactSnack wird dann mithilfe des 4-Augen Prinzips erneut kontrolliert und redigiert, bevor er auf unserer  Website und unseren social Kanälen veröffentlicht wird.                </div>
+                    Dabei achten wir stets auf das Zwei-Quellen-Prinzip, sodass ein FactSnack immer auf mehr als einer Quelle basieren muss. Nach einer Überprüfung der Quelle komprimieren wir die langen Faktenchecks zu kurzen und nutzerfreundlichen FactSnacks. Jeder FactSnack wird dann mithilfe des 4-Augen Prinzips erneut kontrolliert und redigiert, bevor er auf unserer  Website und unseren social Kanälen veröffentlicht wird.                
+                </div>
                 <div class="pt-8">
                     <a class="bg-highlight dark:bg-dark-primary flex px-2 py-1.5 rounded-full text-white dark:text-dark-background cursor-pointer" (click)="expand_collapse('fffProcesses')">
                         <span class="ml-2">
@@ -117,11 +122,11 @@
         </div>
     </div>
 
-    <div class="w-11/12 md:w-1/2 py-8 md:py-10 md:self-end">
+    <div class="w-11/12 md:w-2/3 py-8 md:py-10 md:self-end">
         <div class="p-4 rounded-lg relative flex flex-col items-center md:items-start bg-white dark:bg-dark-cards dark:text-dark-primary-font">
             <div class="flex flex-col md:pl-52 h-full items-center md:items-start">
-                <img class="md:absolute md:top-10 md:-left-40 md:w-1/2 md:transform md:-translate-y-10 dark:hidden" src="assets/illustrations/fff-team.svg">
-                <img class="md:absolute md:top-10 md:-left-40 md:w-1/2 md:transform md:-translate-y-10 hidden dark:block" src="assets/illustrations/fff-team-dark.svg">
+                <img class="md:absolute md:top-12 md:-left-32 md:w-4/12 md:transform md:-translate-y-16 dark:hidden" src="assets/illustrations/fff-team.svg">
+                <img class="md:absolute md:top-12 md:-left-32 md:w-4/12 md:transform md:-translate-y-16 hidden dark:block" src="assets/illustrations/fff-team-dark.svg">
                 <div class="text-2xl">
                     Die Vorteile von Facts for Friends
                 </div>
