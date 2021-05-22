@@ -1,4 +1,4 @@
-<div class="flex items-center justify-center text-center pt-8 mx-4 2xl:hidden">
+<div class="flex items-center justify-center text-center pt-8 mx-4 xl:hidden">
     <div class="flex max-w-3xl w-full overflow-auto no-scrollbar">
         <div class="bg-white dark:bg-dark-cards mx-2 px-3 py-2 rounded-full text-sm dark:text-dark-primary cursor-pointer"
         [class.text-secondary]="!selectedCategory || selectedCategory == ''" 
@@ -43,8 +43,8 @@
         </div>
     </div>
 </div>
-<div class="hidden 2xl:flex flex-col w-64 p-4 rounded-lg relative flex-1 bg-white dark:bg-dark-cards dark:text-dark-primary-font">
-    <h2 class="px-1 mb-2 text-l lg:text-xl font-semibold leading-relaxed dark:text-dark-primary-font">Kategorien</h2>
+<div class="hidden xl:flex flex-col w-full max-w-48 p-4 rounded-lg relative flex-1 bg-white dark:bg-dark-cards dark:text-dark-primary-font">
+    <h2 class="px-1 mb-2 text-l lg:text-lg font-semibold leading-relaxed dark:text-dark-primary-font">Kategorien</h2>
     <div class="flex flex-row items-center my-2 cursor-pointer"
         [class.text-secondary]="!selectedCategory || selectedCategory == ''" 
         [class.font-medium]="!selectedCategory || selectedCategory == ''"
@@ -96,16 +96,16 @@
     </div>
 
 
-    <h2 class="px-1 mb-2 mt-4 text-l lg:text-xl font-semibold leading-relaxed dark:text-dark-primary-font">Unterstützt von</h2>
+    <h2 class="px-1 mb-2 mt-4 text-l lg:text-lg font-semibold leading-relaxed dark:text-dark-primary-font">Unterstützt von</h2>
     <div class="flex flex-col">
-        <img class="w-48 py-4" src="assets/logos/sidebar/steiger.png">
+        <img class="w-36 py-4" src="assets/logos/sidebar/steiger.png">
         <div class="flex flex-row">
-            <img class="w-24 pb-4" src="assets/logos/sidebar/wvv.png">
-            <img class="w-24 pb-4" src="assets/logos/sidebar/bmbf.png">    
+            <img class="w-20 pb-4" src="assets/logos/sidebar/wvv.png">
+            <img class="w-20 pb-4" src="assets/logos/sidebar/bmbf.png">    
         </div>
         <div class="flex flex-row">
-            <img class="w-24 pb-4" src="assets/logos/sidebar/holistic.png">
-            <img class="w-24 pb-4" src="assets/logos/sidebar/pt.png">
+            <img class="w-20 pb-4" src="assets/logos/sidebar/holistic.png">
+            <img class="w-20 pb-4" src="assets/logos/sidebar/pt.png">
         </div>
     </div>
 </div>
