@@ -1,46 +1,44 @@
-<div class="flex items-center justify-center text-center pt-8 mx-4 xl:hidden">
-    <div class="flex max-w-3xl w-full overflow-auto no-scrollbar">
-        <div class="bg-white dark:bg-dark-cards mx-2 px-3 py-2 rounded-full text-sm dark:text-dark-primary cursor-pointer"
-        [class.text-secondary]="!selectedCategory || selectedCategory == ''" 
-        [class.font-medium]="!selectedCategory || selectedCategory == ''"
-        [class.font-thin]="selectedCategory != ''"
-        (click)="selectCategory('')">
-            <span class="select-none">
-                Alle
-            </span>
-        </div>
-        <div class="bg-white dark:bg-dark-cards mx-2 px-3 py-2 rounded-full text-sm cursor-pointer"
-        [ngClass]="{'text-secondary font-medium dark:text-dark-primary': selectedCategory == 'COVID-19'}"
-        [ngClass]="{'font-thin dark:text-dark-primary-font': selectedCategory != 'COVID-19'}"
-        (click)="selectCategory('COVID-19')">
-            <span class="select-none">
-                COVID-19
-            </span>
-        </div>
-        <div class="bg-white dark:bg-dark-cards mx-2 px-3 py-2 rounded-full text-sm font-thin dark:text-dark-primary-font cursor-pointer"
-        [ngClass]="{'text-secondary font-medium dark:text-dark-primary': selectedCategory == 'Gesellschaft'}"
-        [ngClass]="{'font-thin dark:text-dark-primary-font': selectedCategory != 'Gesellschaft'}"
-        (click)="selectCategory('Gesellschaft')">
-            <span class="select-none">
-                Gesellschaft
-            </span>
-        </div>
-        <div class="bg-white dark:bg-dark-cards mx-2 px-3 py-2 rounded-full text-sm font-thin dark:text-dark-primary-font cursor-pointer"
-        [ngClass]="{'text-secondary font-medium dark:text-dark-primary': selectedCategory == 'Politik'}"
-        [ngClass]="{'font-thin dark:text-dark-primary-font': selectedCategory != 'Politik'}"
-        (click)="selectCategory('Politik')">
-            <span class="select-none">
-                Politik
-            </span>
-        </div>
-        <div class="bg-white dark:bg-dark-cards mx-2 px-3 py-2 rounded-full text-sm font-thin dark:text-dark-primary-font cursor-pointer"
-        [ngClass]="{'text-secondary font-medium dark:text-dark-primary': selectedCategory == 'Wirtschaft'}"
-        [ngClass]="{'font-thin dark:text-dark-primary-font': selectedCategory != 'Wirtschaft'}"
-        (click)="selectCategory('Wirtschaft')">
-            <span class="select-none">
-                Wirtschaft
-            </span>
-        </div>
+<div class="flex flex-row flex-nowrap max-w-full overflow-x-auto items-start justify-start text-center pt-8 mx-4 xl:hidden">
+    <div class="min-w-min bg-white dark:bg-dark-cards mx-2 px-3 py-2 rounded-full text-sm font-thin dark:text-dark-primary-font cursor-pointer"
+    [class.text-secondary]="!selectedCategory || selectedCategory == ''" 
+    [class.font-medium]="!selectedCategory || selectedCategory == ''"
+    [class.font-thin]="selectedCategory != ''"
+    (click)="selectCategory('')">
+        <span class="select-none">
+            Alle
+        </span>
+    </div>
+    <div class="min-w-min bg-white dark:bg-dark-cards mx-2 px-3 py-2 rounded-full text-sm font-thin dark:text-dark-primary-font cursor-pointer"
+    [ngClass]="{'text-secondary font-medium dark:text-dark-primary': selectedCategory == 'COVID-19'}"
+    [ngClass]="{'font-thin dark:text-dark-primary-font': selectedCategory != 'COVID-19'}"
+    (click)="selectCategory('COVID-19')">
+        <span class="select-none">
+            COVID-19
+        </span>
+    </div>
+    <div class="min-w-min bg-white dark:bg-dark-cards mx-2 px-3 py-2 rounded-full text-sm font-thin dark:text-dark-primary-font cursor-pointer"
+    [ngClass]="{'text-secondary font-medium dark:text-dark-primary': selectedCategory == 'Gesellschaft'}"
+    [ngClass]="{'font-thin dark:text-dark-primary-font': selectedCategory != 'Gesellschaft'}"
+    (click)="selectCategory('Gesellschaft')">
+        <span class="select-none">
+            Gesellschaft
+        </span>
+    </div>
+    <div class="min-w-min bg-white dark:bg-dark-cards mx-2 px-3 py-2 rounded-full text-sm font-thin dark:text-dark-primary-font cursor-pointer"
+    [ngClass]="{'text-secondary font-medium dark:text-dark-primary': selectedCategory == 'Politik'}"
+    [ngClass]="{'font-thin dark:text-dark-primary-font': selectedCategory != 'Politik'}"
+    (click)="selectCategory('Politik')">
+        <span class="select-none">
+            Politik
+        </span>
+    </div>
+    <div class="min-w-min bg-white dark:bg-dark-cards mx-2 px-3 py-2 rounded-full text-sm font-thin dark:text-dark-primary-font cursor-pointer"
+    [ngClass]="{'text-secondary font-medium dark:text-dark-primary': selectedCategory == 'Wirtschaft'}"
+    [ngClass]="{'font-thin dark:text-dark-primary-font': selectedCategory != 'Wirtschaft'}"
+    (click)="selectCategory('Wirtschaft')">
+        <span class="select-none">
+            Wirtschaft
+        </span>
     </div>
 </div>
 <div class="hidden xl:flex flex-col w-full max-w-48 p-4 rounded-lg relative flex-1 bg-white dark:bg-dark-cards dark:text-dark-primary-font">
