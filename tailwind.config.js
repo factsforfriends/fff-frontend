@@ -49,7 +49,7 @@ module.exports = {
   },
   variants: {
     extend: {
-      display: ['dark']
+      display: ['dark', 'hover', 'group-hover']
     }
   }
 }

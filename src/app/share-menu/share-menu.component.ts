@@ -66,6 +66,14 @@ export class ShareMenuComponent implements OnInit {
     return "https://twitter.com/intent/tweet?source=tweetbutton&text="+encodeURIComponent(this.truncateChar(this.title+"\n"+this.text, 277-this.url.length))+"&url="+this.url
   }
 
+  getMailUrl() {
+    return "mailto:?body="+encodeURIComponent(this.text+"\n")+this.url+"&subject="+this.title
+  }
+
+  getTelegramUrl(){
+    return "https://t.me/share/url?url="+this.url+"&text="+encodeURIComponent(this.title+"\n"+this.text)
+  }
+
   emitShareEvent(method) {
     this.analytics.eventEmitter('share', {method: method, content_type: 'FactSnack', content_id: this.url})
   }
