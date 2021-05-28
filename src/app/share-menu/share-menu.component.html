@@ -9,7 +9,7 @@
           <div class="share">
             <h2 class="text-xl text-gray-800 text-center dark:text-dark-primary-font">Teile diesen Artikel als:</h2>
     
-            <div class="flex justify-between m-4">
+            <div class="flex justify-center md:justify-between md:m-4">
                 <div (click)="select('article')" class="flex flex-col p-4 rounded-lg hover:bg-gray-200 dark:hover:bg-dark-hover cursor-pointer dark:text-gray-200" [ngClass]="{'font-semibold text-highlight dark:text-dark-primary': current_selection == 'article'}">
                     <div class="h-16 md:h-40 w-24 md:w-60 bg-auto bg-no-repeat bg-center rounded-lg" style="background-image: url({{this.sharepic}})" [ngClass]="{'opacity-70': current_selection != 'article'}"></div>
                     <span class="text-center mt-2">
@@ -27,35 +27,54 @@
     
             <h2 class="text-xl text-gray-800 text-center dark:text-white">Teile via:</h2>
             <div class="flex my-4 text-gray-600 dark:text-white justify-center">
-                <a (click)="emitShareEvent('facebook')" class="group p-4 rounded focus:outline-none focus:shadow-outline" [href]="getFacebookUrl()" target="_blank">
-                    <img src="assets/menu_elements/facebook_icon_grey.svg" class="group-hover:hidden">
-                    <img src="assets/menu_elements/facebook_icon.svg" class="hidden group-hover:block">
+
+                <a (click)="emitShareEvent('facebook')" class="md:p-4 rounded focus:outline-none focus:shadow-outline" [href]="getFacebookUrl()" target="_blank">
+                    <div class="hidden md:block group">
+                        <img src="assets/menu_elements/facebook_icon_grey.svg" class="group-hover:hidden">
+                        <img src="assets/menu_elements/facebook_icon.svg" class="hidden group-hover:block">
+                    </div>
+                    <img src="assets/menu_elements/facebook_icon.svg" class="md:hidden">
                 </a>
 
-                <a (click)="emitShareEvent('twitter')" class="group ml-4 p-4 rounded hover:text-highlight focus:outline-none focus:shadow-outline" [href]="getTwitterUrl()" target="_blank">
-                    <img src="assets/menu_elements/twitter_icon_grey.svg" class="group-hover:hidden">
-                    <img src="assets/menu_elements/twitter_icon.svg" class="hidden group-hover:block">
+                <a (click)="emitShareEvent('twitter')" class="md:p-4 ml-2 md:ml-4 rounded focus:outline-none focus:shadow-outline" [href]="getTwitterUrl()" target="_blank">
+                    <div class="hidden md:block group">
+                        <img src="assets/menu_elements/twitter_icon_grey.svg" class="group-hover:hidden">
+                        <img src="assets/menu_elements/twitter_icon.svg" class="hidden group-hover:block">
+                    </div>
+                    <img src="assets/menu_elements/twitter_icon.svg" class="md:hidden">
                 </a>
 
-                <a (click)="emitShareEvent('linkedin')" class="group ml-4 p-4 rounded hover:text-highlight focus:outline-none focus:shadow-outline" [href]="getLinkedInUrl()" target="_blank">
-                    <img src="assets/menu_elements/linkedin_icon_grey.svg" class="group-hover:hidden">
-                    <img src="assets/menu_elements/linkedin_icon.svg" class="hidden group-hover:block">
+                <a (click)="emitShareEvent('linkedin')" class="md:p-4 ml-2 md:ml-4 rounded focus:outline-none focus:shadow-outline" [href]="getLinkedInUrl()" target="_blank">
+                    <div class="hidden md:block group">
+                        <img src="assets/menu_elements/linkedin_icon_grey.svg" class="group-hover:hidden">
+                        <img src="assets/menu_elements/linkedin_icon.svg" class="hidden group-hover:block">
+                    </div>
+                    <img src="assets/menu_elements/linkedin_icon.svg" class="md:hidden">
                 </a>
 
-                <a (click)="emitShareEvent('whatsapp')" class="group ml-4 p-4 rounded hover:text-highlight focus:outline-none focus:shadow-outline" [href]="getWhatsAppUrl()" target="_blank">
-                    <img src="assets/menu_elements/whatsapp_icon_grey.svg" class="group-hover:hidden">
-                    <img src="assets/menu_elements/whatsapp_icon.svg" class="hidden group-hover:block">
-                </a>     
+                <a (click)="emitShareEvent('whatsapp')" class="md:p-4 ml-2 md:ml-4 rounded focus:outline-none focus:shadow-outline" [href]="getWhatsAppUrl()" target="_blank">
+                    <div class="hidden md:block group">
+                        <img src="assets/menu_elements/whatsapp_icon_grey.svg" class="group-hover:hidden">
+                        <img src="assets/menu_elements/whatsapp_icon.svg" class="hidden group-hover:block">
+                    </div>
+                    <img src="assets/menu_elements/whatsapp_icon.svg" class="md:hidden">
+                </a>
 
-                <a (click)="emitShareEvent('mail')" class="group ml-4 p-4 rounded hover:text-highlight focus:outline-none focus:shadow-outline" [href]="getMailUrl()" target="_blank">
-                    <img src="assets/menu_elements/mail_icon_grey.svg" class="group-hover:hidden">
-                    <img src="assets/menu_elements/mail.svg" class="hidden group-hover:block">
-                </a>   
-                
-                <a (click)="emitShareEvent('telegram')" class="group ml-4 p-4 rounded hover:text-highlight focus:outline-none focus:shadow-outline" [href]="getTelegramUrl()" target="_blank">
-                    <img src="assets/menu_elements/telegram_icon_grey.svg" class="group-hover:hidden">
-                    <img src="assets/menu_elements/telegram_icon.svg" class="hidden group-hover:block">
-                </a>     
+                <a (click)="emitShareEvent('mail')" class="md:p-4 ml-2 md:ml-4 rounded focus:outline-none focus:shadow-outline" [href]="getMailUrl()" target="_blank">
+                    <div class="hidden md:block group">
+                        <img src="assets/menu_elements/mail_icon_grey.svg" class="group-hover:hidden">
+                        <img src="assets/menu_elements/mail.svg" class="hidden group-hover:block">
+                    </div>
+                    <img src="assets/menu_elements/mail.svg" class="md:hidden">
+                </a>
+
+                <a (click)="emitShareEvent('telegram')" class="md:p-4 ml-2 md:ml-4 rounded focus:outline-none focus:shadow-outline" [href]="getTelegramUrl()" target="_blank">
+                    <div class="hidden md:block group">
+                        <img src="assets/menu_elements/telegram_icon_grey.svg" class="group-hover:hidden">
+                        <img src="assets/menu_elements/telegram_icon.svg" class="hidden group-hover:block">
+                    </div>
+                    <img src="assets/menu_elements/telegram_icon.svg" class="md:hidden">
+                </a>
             </div>
         </div>
         <div>
