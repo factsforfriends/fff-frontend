@@ -10,7 +10,7 @@
         ></app-no-results-page>
         <div class="m-4 max-w-3xl grid gap-8 grid-cols-1 xl:grid-cols-2 pb-4">
                 <app-article-card
-                    *ngFor="let fact of facts; let i = index" 
+                    *ngFor="let fact of facts | slice:0:3; let i = index" 
                     [attr.data-index]="i"
                         title="{{fact.title}}" 
                         text="{{fact.text}}"
@@ -22,6 +22,39 @@
                         image_url="{{fact.image_url}}"
                         compact="true"
                         [ngClass]="{'lg:col-span-2': i == 0}"
+                ></app-article-card>
+                <div class="p-4 w-full bg-gradient-to-b from-gradient-from via-gradient-via to-gradient-to dark:from-dark-gradient-from dark:via-dark-gradient-via to-gradient-to bg-64 bg-no-repeat flex flex-col items-center lg:col-span-2">
+                    <h2 class="ml-4 text-4xl text-white dark:text-dark-background self-start">Featured snacks</h2>
+                        <div class="m-4 max-w-3xl grid gap-8 grid-cols-1 xl:grid-cols-2 pb-4">
+                            <app-article-card
+                            *ngFor="let fact of facts | slice:0:2; let i = index" 
+                            [attr.data-index]="i"
+                                title="{{fact.title}}" 
+                                text="{{fact.text}}"
+                                date="{{fact.date}}"
+                                category="{{fact.category}}"
+                                url="{{fact.url}}"
+                                id="{{fact.id}}"
+                                index="{{i}}"
+                                image_url="{{fact.image_url}}"
+                                compact="true"
+                                firstBlock="false"
+                            ></app-article-card>
+                        </div>
+                </div>            
+                <app-article-card
+                    *ngFor="let fact of facts | slice:3; let i = index" 
+                    [attr.data-index]="i"
+                        title="{{fact.title}}" 
+                        text="{{fact.text}}"
+                        date="{{fact.date}}"
+                        category="{{fact.category}}"
+                        url="{{fact.url}}"
+                        id="{{fact.id}}"
+                        index="{{i}}"
+                        image_url="{{fact.image_url}}"
+                        compact="true"
+                        firstBlock="false"
                 ></app-article-card>
             <div class="xl:col-span-2">
                 <div *ngIf="perPage * currentPage < hits" class="text-xs flex justify-center w-full load-more text-highlight m-4">
