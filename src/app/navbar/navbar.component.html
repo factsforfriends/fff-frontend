@@ -16,11 +16,17 @@
         </a>
     </div>
     <div class="hidden lg:flex items-center justify-between w-5/12">
-        <a href="/about-us">
-            <span class="font-thin" >Über Uns</span>
+        <a href="/about-us"
+        [ngClass]="{'text-secondary font-medium dark:text-dark-primary': this.location.path() == '/about-us',
+        'font-thin dark:text-dark-primary-font': this.location.path() != '/about-us'}">
+            <span>
+                Über Uns
+            </span>
         </a>
-        <a href="/about-fakenews">
-            <span class="font-thin">Über Fake News</span>
+        <a href="/about-fakenews" 
+        [ngClass]="{'text-secondary font-medium dark:text-dark-primary': this.location.path() == '/about-fakenews',
+        'font-thin dark:text-dark-primary-font': this.location.path() != '/about-fakenews'}">
+            <span>Über Fake News</span>
         </a>
         <app-searchbar></app-searchbar>
     </div>

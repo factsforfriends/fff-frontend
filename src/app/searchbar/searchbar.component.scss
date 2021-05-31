@@ -15,11 +15,14 @@ input {
     top: auto;
     
     input {
-        border-bottom: 0px;
-        border-bottom-left-radius: 0;
-        border-bottom-right-radius: 0;
         padding: 15px 40px;
     }
+}
+
+.searchBarNotEmpty{
+    border-bottom: 0px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
 }
 
 .searchicon {

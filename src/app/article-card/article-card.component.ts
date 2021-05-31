@@ -22,12 +22,32 @@ export class ArticleCardComponent implements OnInit, AfterViewInit {
 
   @Input() compact: boolean = false;
 
-  isOverflown: boolean = false
+  isOverflown: boolean = false;
+  factcheckingOrganisation: string = "Quelle";
 
   constructor(private analytics: AnalyticsService) { }
 
   ngOnInit(): void {
-    
+    if(this.url.includes('correctiv')){
+      this.factcheckingOrganisation = "Correctiv";
+      return;
+    }
+    if(this.url.includes('faktencheck.afp.com')){
+      this.factcheckingOrganisation = "AFP Faktencheck";
+      return;
+    }
+    if(this.url.includes('logically.ai')){
+      this.factcheckingOrganisation = "Logically";
+      return;
+    }
+    if(this.url.includes('fullfact.org')){
+      this.factcheckingOrganisation = "Fullfact";
+      return;
+    }
+    if(this.url.includes('checkyourfact.com')){
+      this.factcheckingOrganisation = "CheckYourFact";
+      return;
+    }
   }
 
   ngAfterViewInit(): void {

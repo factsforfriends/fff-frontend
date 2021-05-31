@@ -6,7 +6,8 @@
         <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
       </svg>
     </div>
-    <input #searchinput (focus)="onFocus()" (keyup)="onKey($event)" class="rounded-lg border-2 border-highlight dark:border-dark-primary dark:bg-transparent block w-full pl-7 pr-12 sm:leading-5 focus:ring-transparent focus:border-highlight" type="text" name="q" placeholder="Suchen" autocomplete="off">
+    <input #searchinput (focus)="onFocus()" (keyup)="onKey($event)" class="rounded-lg border-2 border-highlight dark:border-dark-primary dark:bg-transparent block w-full pl-7 pr-12 sm:leading-5 focus:ring-transparent focus:border-highlight" type="text" name="q" placeholder="Suchen" autocomplete="off"
+    [ngClass]="{'searchBarNotEmpty': searchterm}">
     <div class="absolute inset-y-0 right-0 flex items-center">
       <a [hidden]="!searchterm" (click)="clear()" class="clearbutton hover:bg-gray-200 dark:hover:bg-dark-hover rounded-tr-lg cursor-pointer">
         <svg class="h-6 w-6 fill-current text-highlight dark:text-dark-primary" fill="currentColor" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">

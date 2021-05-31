@@ -1,8 +1,8 @@
 <div class="p-4 w-full bg-gradient-to-b from-gradient-from via-gradient-via to-gradient-to dark:from-dark-gradient-from dark:via-dark-gradient-via to-gradient-to bg-64 bg-no-repeat">
     <h2 class="ml-4 text-4xl text-white dark:text-dark-background">{{title}}</h2>
-    <div class="flex flex-col md:flex-row">
-        <div *ngFor="let card of cards" [routerLink]="['/fact', card.id]"  class="p-4 cursor-pointer flex-1">
-            <div class="w-full h-32 rounded-lg bg-auto bg-no-repeat bg-center" style="background-image: url({{card.image_url}})"></div>
+    <div class="flex flex-row justify-start overflow-x-auto">
+        <div *ngFor="let card of cards" [routerLink]="['/fact', card.id]"  class="p-4 cursor-pointer w-10/12 md:w-4/12 flex-none">
+            <div class="h-32 rounded-lg bg-auto bg-no-repeat bg-center" style="background-image: url({{card.image_url}})"></div>
             <h4 class="mt-2 dark:text-white">{{card.title}}</h4>
             <div class="mt-2 text-xs text-gray-400">
                 {{card.date | date:'dd.MM.YYYY'}} | #{{card.category}}

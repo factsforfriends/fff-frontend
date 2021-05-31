@@ -1,17 +1,16 @@
 @import "../../variables.scss";
 
-.content {
-    min-width: 550px;
-}
 
 .close-button {
-    right: 20px;
     color: $sharesheet_color;
     z-index: 10;
 }
 
 input {
     padding: 7px 15px;
+    &:focus {
+        outline: none !important;
+    }
 }
 
 .copy-link {
