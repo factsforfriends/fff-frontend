@@ -47,7 +47,14 @@ module.exports = {
       }
     },
     maxWidth: {
-      'screen':'100vw'
+      '1/1':'100vw',
+      '3xl': '48rem',
+      '4xl': '56rem',
+      '6xl': '72rem',
+      'md': '28rem',
+      'screen-xl': '1280px',
+      'screen-sm': '640px',
+
     }
   },
   variants: {

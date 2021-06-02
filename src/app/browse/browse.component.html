@@ -1,4 +1,4 @@
-<div class="flex flex-col justify-center lg:justify-start max-w-screen">
+<div class="flex flex-col justify-center lg:justify-start max-w-1/1">
     <app-category-bar class="hidden xl:block xl:absolute xl:top-24 xl:left-10"></app-category-bar>
     <app-intro></app-intro>
     <app-category-bar class="flex justify-center xl:hidden"></app-category-bar>
@@ -23,7 +23,7 @@
                         compact="true"
                         [ngClass]="{'lg:col-span-2': i == 0}"
                 ></app-article-card>
-                <app-featured-snacks [facts]="recommendedSnacks" title="Das Aktuellste"></app-featured-snacks>
+                <app-featured-snacks [facts]="recommendedSnacks" title="Das Aktuellste" class="lg:col-span-2"></app-featured-snacks>
  
                 <app-article-card
                     *ngFor="let fact of facts | slice:3; let i = index" 
