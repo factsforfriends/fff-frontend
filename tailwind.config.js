@@ -1,5 +1,5 @@
 const Color = require('color')
-const { width } = require('tailwindcss/defaultTheme')
+const { width, maxWidth } = require('tailwindcss/defaultTheme')
 const alpha = (clr, val) => Color(clr).alpha(val).rgb().string()
 const lighten = (clr, val) => Color(clr).lighten(val).rgb().string()
 const darken = (clr, val) => Color(clr).darken(val).rgb().string()
@@ -45,6 +45,9 @@ module.exports = {
         'contain': 'contain',
         '64': '100% 16rem'
       }
+    },
+    maxWidth: {
+      'screen':'100vw'
     }
   },
   variants: {

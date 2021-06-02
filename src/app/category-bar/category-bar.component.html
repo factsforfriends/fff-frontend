@@ -1,4 +1,4 @@
-<div class="flex flex-row flex-nowrap max-w-full overflow-x-auto items-start justify-start text-center pt-8 mx-4 xl:hidden">
+<div class="flex flex-row flex-nowrap overflow-x-auto items-start justify-start text-center pt-8 mx-4 xl:hidden">
     <div class="min-w-min bg-white dark:bg-dark-cards mx-2 px-3 py-2 rounded-full text-sm font-thin dark:text-dark-primary-font cursor-pointer"
     [class.text-secondary]="!selectedCategory || selectedCategory == ''" 
     [class.font-medium]="!selectedCategory || selectedCategory == ''"
@@ -13,7 +13,7 @@
     [ngClass]="{'font-thin dark:text-dark-primary-font': selectedCategory != 'COVID-19'}"
     (click)="selectCategory('COVID-19')">
         <span class="select-none">
-            COVID-19
+            COVID&#8209;19
         </span>
     </div>
     <div class="min-w-min bg-white dark:bg-dark-cards mx-2 px-3 py-2 rounded-full text-sm font-thin dark:text-dark-primary-font cursor-pointer"
