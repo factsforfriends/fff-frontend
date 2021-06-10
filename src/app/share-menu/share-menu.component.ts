@@ -21,7 +21,9 @@ export class ShareMenuComponent implements OnInit {
 
   constructor(
     private analytics: AnalyticsService,
-    public dialogRef: MatDialogRef<ShareMenuComponent>, @Inject(MAT_DIALOG_DATA) public data: any) {
+    public dialogRef: MatDialogRef<ShareMenuComponent>, 
+    @Inject(MAT_DIALOG_DATA) public data: any) 
+    {
       this.title = data.title;
       this.text = data.text;
       this.url = data.url;
@@ -29,7 +31,6 @@ export class ShareMenuComponent implements OnInit {
     }
 
   ngOnInit(): void {
-
   }
 
   select(selection: "article" | "sharepic"): void {
@@ -49,16 +50,16 @@ export class ShareMenuComponent implements OnInit {
 
   getFacebookUrl() {
     // https://stackoverflow.com/questions/20956229/has-facebook-sharer-php-changed-to-no-longer-accept-detailed-parameters
-    return "https://www.facebook.com/sharer/sharer.php?u="+this.url+"&title="+this.title
+    return "https://www.facebook.com/sharer/sharer.php?u="+encodeURIComponent(this.url)+"&quote="+encodeURIComponent(this.text)
   }
 
   getWhatsAppUrl() {
-    return "https://api.whatsapp.com/send?text="+encodeURIComponent(this.truncateChar(this.title+"\n"+this.text)+"\n"+this.url)
+    return "https://api.whatsapp.com/send?text="+encodeURIComponent(this.title+"\n"+this.text+"\n"+this.url)
   }
 
   getLinkedInUrl() {
-    // https://stackoverflow.com/questions/33426752/linkedin-share-post-url/61583095#61583095
-    return "https://www.linkedin.com/sharing/share-offsite/?url="+this.url
+    // https://stackoverflow.com/questions/33426752/linkedin-share-post-url/61583095#61583095   
+    return "https://www.linkedin.com/sharing/share-offsite/?url="+encodeURIComponent(this.url)
   }
 
   getTwitterUrl() {

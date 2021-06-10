@@ -10,6 +10,7 @@ export class NavbarComponent implements OnInit {
   @Input() MenuOpen = false;
   public page: string;
   public location: Location;
+  public searchOpen: boolean;
 
 
   constructor(location: Location) {
@@ -28,6 +29,8 @@ export class NavbarComponent implements OnInit {
     return this.MenuOpen = false;
   }
 
-
-
+  toggleSearch(): void{
+    this.MenuOpen = false;
+    this.searchOpen = true;
+  }
 }

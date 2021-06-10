@@ -13,7 +13,7 @@ export class BrowseComponent implements OnInit {
   facts: Array < Fact >
   selectedCategory: string
   searchterm: string
-  perPage: number = 10
+  perPage: number = 11
   hits: number
   currentPage: number = 1
   totalCount: number

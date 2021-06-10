@@ -1,6 +1,6 @@
 <div class="flex flex-col justify-center lg:justify-start max-w-1/1">
     <app-category-bar class="hidden xl:block xl:absolute xl:top-24 xl:left-10"></app-category-bar>
-    <app-intro></app-intro>
+    <app-intro class="mb-6"></app-intro>
     <app-category-bar class="flex justify-center xl:hidden"></app-category-bar>
     <div class="flex justify-center w-full">
         <app-no-results-page 
@@ -10,7 +10,7 @@
         ></app-no-results-page>
         <div class="m-4 max-w-3xl grid gap-8 grid-cols-1 xl:grid-cols-2 pb-4">
                 <app-article-card
-                    *ngFor="let fact of facts | slice:0:3; let i = index" 
+                    *ngFor="let fact of facts | slice:0:5; let i = index" 
                     [attr.data-index]="i"
                         title="{{fact.title}}" 
                         text="{{fact.text}}"
@@ -26,7 +26,7 @@
                 <app-featured-snacks [facts]="recommendedSnacks" title="Das Aktuellste" class="lg:col-span-2"></app-featured-snacks>
  
                 <app-article-card
-                    *ngFor="let fact of facts | slice:3; let i = index" 
+                    *ngFor="let fact of facts | slice:5; let i = index" 
                     [attr.data-index]="i"
                         title="{{fact.title}}" 
                         text="{{fact.text}}"
@@ -40,7 +40,7 @@
                         firstBlock="false"
                 ></app-article-card>
             <div class="xl:col-span-2">
-                <div *ngIf="perPage * currentPage < hits" class="text-xs flex justify-center w-full load-more text-highlight m-4">
+                <div *ngIf="perPage * currentPage < hits" class="text-xs flex justify-center w-full text-highlight m-4">
                     <a (click)="loadMore()" class="bg-highlight dark:bg-dark-primary flex px-4 py-2 rounded-full items-center text-white dark:text-dark-background cursor-pointer">
                         <!-- <svg class="h-5 w-5 fill-current" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" d="M1 3.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5zM8 6a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 0 1 .708-.708L7.5 12.293V6.5A.5.5 0 0 1 8 6z"/>

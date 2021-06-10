@@ -26,9 +26,10 @@ export class ArticlePageComponent implements OnInit, OnDestroy {
           fact => {
             this.fact = fact
             this.titleService.setTitle(this.fact.headline + ' | Facts for Friends')
-            this.metaService.updateTag(
-              { name: 'description', content: this.fact.headline }
-            )
+            this.metaService.updateTag( { name: 'description', content: this.fact.headline } )
+            this.metaService.updateTag( { property:'og:title', content:this.fact.headline } )
+            this.metaService.updateTag( { property:'og:description', content:this.fact.title } )
+            this.metaService.updateTag( { property:'og:url', content:this.fact.url } )
             this.dataService.getData(null, 3).subscribe(response => this.recommendedSnacks = response.facts)
             if(this.fact.url.includes('correctiv')){
               this.factcheckingOrganisation = "Correctiv";

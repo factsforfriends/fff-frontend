@@ -25,10 +25,6 @@ export class SharebuttonComponent implements OnInit {
 
   ngOnInit(): void {
     this.deviceInfo = this.deviceService.getDeviceInfo();
-      const isMobile = this.deviceService.isMobile();
-      const isTablet = this.deviceService.isTablet();
-      const isDesktopDevice = this.deviceService.isDesktop();
-
   }
 
   share(): void {
@@ -48,7 +44,7 @@ export class SharebuttonComponent implements OnInit {
         text: this.text,
         sharepic: this.image_url
       }
-      const dialogRef = this.matDialog.open(ShareMenuComponent, dialogConfig);
+      this.matDialog.open(ShareMenuComponent, dialogConfig);
     }
   }
 
