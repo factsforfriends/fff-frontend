@@ -8,7 +8,7 @@
             searchterm="{{searchterm}}"
             *ngIf="totalCount==0"
         ></app-no-results-page>
-        <div class="m-4 max-w-3xl grid gap-8 grid-cols-1 xl:grid-cols-2 pb-4">
+        <div class="m-4 max-w-3xl grid gap-8 grid-cols-1 lg:grid-cols-2 pb-4">
                 <app-article-card
                     *ngFor="let fact of facts | slice:0:5; let i = index" 
                     [attr.data-index]="i"
@@ -39,7 +39,7 @@
                         compact="true"
                         firstBlock="false"
                 ></app-article-card>
-            <div class="xl:col-span-2">
+            <div class="lg:col-span-2">
                 <div *ngIf="perPage * currentPage < hits" class="text-xs flex justify-center w-full text-highlight m-4">
                     <a (click)="loadMore()" class="bg-highlight dark:bg-dark-primary flex px-4 py-2 rounded-full items-center text-white dark:text-dark-background cursor-pointer">
                         <!-- <svg class="h-5 w-5 fill-current" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
