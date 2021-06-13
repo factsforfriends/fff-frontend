@@ -70,7 +70,7 @@
     </div>
   </div>
 
-  <div *ngIf="searchterm" [hidden]="!searchbarHasFocus" class="m-auto inset-x-0 max-w-screen-sm absolute bg-white dark:bg-dark-navi w-full rounded-none z-20 border-2 border-t-0 border-highlight dark:border-dark-primary" style="top:45px;">
+  <div *ngIf="searchterm" [hidden]="!searchbarHasFocus" class="m-auto inset-x-0 max-w-screen-sm absolute bg-white dark:bg-dark-navi w-full rounded-none z-20 border-2 border-t-0 border-highlight dark:border-dark-primary" style="top: 4rem;">
     <a routerLink="/fact/{{suggestion.id}}" (click)="hideSuggestions()" class="p-4 flex flex-row suggestion hover:bg-gray-200 dark:hover:bg-dark-hover" *ngFor="let suggestion of suggestions">
       <img class="hidden md:block w-24 h-16 md:w-24 md:h-16" src="{{ suggestion.image_url }}" />
       <div class="pl-2 md:pl-4 flex flex-col">
@@ -93,4 +93,4 @@
   </div>
 </div>
 
-<div #backgroundOverlay [hidden]="!searchbarHasFocus" (click)="hideSuggestions()" class="absolute w-full h-screen background-overlay z-10"></div>
+<div #backgroundOverlay [hidden]="!searchbarHasFocus" (click)="clear()" class="absolute w-full h-screen background-overlay z-10"></div>
