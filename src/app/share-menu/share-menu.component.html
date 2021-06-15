@@ -2,88 +2,125 @@
     <div class="p-4">
         <a class="absolute top-0 right-0 p-2 rounded close-button" (click)="close()">
             <svg class="h-8 w-8 fill-current" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd" d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+                <path fill-rule="evenodd"
+                    d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
             </svg>
-          </a>
-    
-          <div class="share">
-            <h2 class="text-xl text-gray-800 text-center dark:text-dark-primary-font">Teile diesen Artikel als:</h2>
-    
-            <div class="flex justify-center md:justify-between md:m-4">
-                <div (click)="select('article')" class="flex flex-col p-4 rounded-lg hover:bg-gray-200 dark:hover:bg-dark-hover cursor-pointer dark:text-gray-200" [ngClass]="{'font-semibold text-highlight dark:text-dark-primary': current_selection == 'article'}">
-                    <div class="h-16 md:h-40 w-24 md:w-60 bg-auto bg-no-repeat bg-center rounded-lg" style="background-image: url({{this.sharepic}})" [ngClass]="{'opacity-70': current_selection != 'article'}"></div>
+        </a>
+
+        <div class="share">
+            <h2 class="text-lg md:text-xl text-gray-800 text-center dark:text-dark-primary-font">Teile diesen Artikel
+                als:</h2>
+
+            <div class="flex flex-col md:flex-row justify-center md:justify-between md:m-4">
+                <div (click)="select('article')"
+                    class="flex flex-col justify-center p-4 rounded-lg hover:bg-gray-200 dark:hover:bg-dark-hover cursor-pointer dark:text-gray-200"
+                    [ngClass]="{'font-semibold text-highlight dark:text-dark-primary': current_selection == 'article'}">
+                    <div class="h-32 md:h-40 w-48 md:w-60 bg-auto bg-no-repeat bg-center rounded-lg self-center"
+                        style="background-image: url({{this.sharepic}})"
+                        [ngClass]="{'opacity-70': current_selection != 'article'}"></div>
                     <span class="text-center mt-2">
                         Artikel
                     </span>
                 </div>
-    
-                <div (click)="select('sharepic')" class="flex flex-col p-4 rounded-lg hover:bg-gray-200 dark:hover:bg-dark-hover cursor-pointer dark:text-gray-200" [ngClass]="{'font-semibold text-highlight dark:text-dark-primary': current_selection == 'sharepic'}">
-                    <div class="h-16 md:h-40 w-24 md:w-60 bg-auto bg-no-repeat bg-center rounded-lg" style="background-image: url({{this.sharepic}})" [ngClass]="{'opacity-30': current_selection != 'sharepic'}"></div>
+
+                <div (click)="select('sharepic')"
+                    class="flex flex-col p-4 rounded-lg hover:bg-gray-200 dark:hover:bg-dark-hover cursor-pointer dark:text-gray-200"
+                    [ngClass]="{'font-semibold text-highlight dark:text-dark-primary': current_selection == 'sharepic'}">
+                    <div class="h-32 md:h-40 w-48 md:w-60 bg-auto bg-no-repeat bg-center rounded-lg self-center"
+                        style="background-image: url({{this.sharepic}})"
+                        [ngClass]="{'opacity-30': current_selection != 'sharepic'}"></div>
                     <span class="text-center mt-2">
                         Sharepic
                     </span>
                 </div>
             </div>
-    
-            <h2 class="text-xl text-gray-800 text-center dark:text-white">Teile via:</h2>
-            <div class="flex my-4 text-gray-600 dark:text-white justify-center">
+            <div *ngIf="!isMobile && current_selection=='article'">
+                <h2 class="text-xl text-gray-800 text-center dark:text-white">Teile via:</h2>
+                <div class="flex my-4 text-gray-600 dark:text-white justify-center">
 
-                <a (click)="emitShareEvent('facebook')" class="md:p-4 rounded focus:outline-none focus:shadow-outline" [href]="getFacebookUrl()" target="_blank">
-                    <div class="hidden md:block group">
-                        <img src="assets/menu_elements/facebook_icon_grey.svg" class="group-hover:hidden">
-                        <img src="assets/menu_elements/facebook_icon.svg" class="hidden group-hover:block">
-                    </div>
-                    <img src="assets/menu_elements/facebook_icon.svg" class="md:hidden">
-                </a>
+                    <a (click)="emitShareEvent('facebook')"
+                        class="md:p-4 rounded focus:outline-none focus:shadow-outline" [href]="getFacebookUrl()"
+                        target="_blank">
+                        <div class="hidden md:block group">
+                            <img src="assets/menu_elements/facebook_icon_grey.svg" class="group-hover:hidden">
+                            <img src="assets/menu_elements/facebook_icon.svg" class="hidden group-hover:block">
+                        </div>
+                        <img src="assets/menu_elements/facebook_icon.svg" class="md:hidden">
+                    </a>
 
-                <a (click)="emitShareEvent('twitter')" class="md:p-4 ml-2 md:ml-4 rounded focus:outline-none focus:shadow-outline" [href]="getTwitterUrl()" target="_blank">
-                    <div class="hidden md:block group">
-                        <img src="assets/menu_elements/twitter_icon_grey.svg" class="group-hover:hidden">
-                        <img src="assets/menu_elements/twitter_icon.svg" class="hidden group-hover:block">
-                    </div>
-                    <img src="assets/menu_elements/twitter_icon.svg" class="md:hidden">
-                </a>
+                    <a (click)="emitShareEvent('twitter')"
+                        class="md:p-4 ml-2 md:ml-4 rounded focus:outline-none focus:shadow-outline"
+                        [href]="getTwitterUrl()" target="_blank">
+                        <div class="hidden md:block group">
+                            <img src="assets/menu_elements/twitter_icon_grey.svg" class="group-hover:hidden">
+                            <img src="assets/menu_elements/twitter_icon.svg" class="hidden group-hover:block">
+                        </div>
+                        <img src="assets/menu_elements/twitter_icon.svg" class="md:hidden">
+                    </a>
 
-                <a (click)="emitShareEvent('linkedin')" class="md:p-4 ml-2 md:ml-4 rounded focus:outline-none focus:shadow-outline" [href]="getLinkedInUrl()" target="_blank">
-                    <div class="hidden md:block group">
-                        <img src="assets/menu_elements/linkedin_icon_grey.svg" class="group-hover:hidden">
-                        <img src="assets/menu_elements/linkedin_icon.svg" class="hidden group-hover:block">
-                    </div>
-                    <img src="assets/menu_elements/linkedin_icon.svg" class="md:hidden">
-                </a>
+                    <a (click)="emitShareEvent('whatsapp')"
+                        class="md:p-4 ml-2 md:ml-4 rounded focus:outline-none focus:shadow-outline"
+                        [href]="getWhatsAppUrl()" target="_blank">
+                        <div class="hidden md:block group">
+                            <img src="assets/menu_elements/whatsapp_icon_grey.svg" class="group-hover:hidden">
+                            <img src="assets/menu_elements/whatsapp_icon.svg" class="hidden group-hover:block">
+                        </div>
+                        <img src="assets/menu_elements/whatsapp_icon.svg" class="md:hidden">
+                    </a>
 
-                <a (click)="emitShareEvent('whatsapp')" class="md:p-4 ml-2 md:ml-4 rounded focus:outline-none focus:shadow-outline" [href]="getWhatsAppUrl()" target="_blank">
-                    <div class="hidden md:block group">
-                        <img src="assets/menu_elements/whatsapp_icon_grey.svg" class="group-hover:hidden">
-                        <img src="assets/menu_elements/whatsapp_icon.svg" class="hidden group-hover:block">
-                    </div>
-                    <img src="assets/menu_elements/whatsapp_icon.svg" class="md:hidden">
-                </a>
+                    <a (click)="emitShareEvent('mail')"
+                        class="md:p-4 ml-2 md:ml-4 rounded focus:outline-none focus:shadow-outline"
+                        [href]="getMailUrl()" target="_blank">
+                        <div class="hidden md:block group">
+                            <img src="assets/menu_elements/mail_icon_grey.svg" class="group-hover:hidden">
+                            <img src="assets/menu_elements/mail.svg" class="hidden group-hover:block">
+                        </div>
+                        <img src="assets/menu_elements/mail.svg" class="md:hidden">
+                    </a>
 
-                <a (click)="emitShareEvent('mail')" class="md:p-4 ml-2 md:ml-4 rounded focus:outline-none focus:shadow-outline" [href]="getMailUrl()" target="_blank">
-                    <div class="hidden md:block group">
-                        <img src="assets/menu_elements/mail_icon_grey.svg" class="group-hover:hidden">
-                        <img src="assets/menu_elements/mail.svg" class="hidden group-hover:block">
+                    <a (click)="emitShareEvent('telegram')"
+                        class="md:p-4 ml-2 md:ml-4 rounded focus:outline-none focus:shadow-outline"
+                        [href]="getTelegramUrl()" target="_blank">
+                        <div class="hidden md:block group">
+                            <img src="assets/menu_elements/telegram_icon_grey.svg" class="group-hover:hidden">
+                            <img src="assets/menu_elements/telegram_icon.svg" class="hidden group-hover:block">
+                        </div>
+                        <img src="assets/menu_elements/telegram_icon.svg" class="md:hidden">
+                    </a>
+                </div>
+                <div>
+                    <h2 class="text-xl text-gray-800 text-center dark:text-dark-primary-font">Oder kopiere den Link:
+                    </h2>
+                    <div class="flex my-4">
+                        <input value="{{url}}"
+                            class="w-full border-2 border-highlight dark:border-dark-primary rounded-l-lg text-gray-400 dark:bg-dark-navi focus:ring-transparent focus:border-highlight"
+                            type="text" readonly>
+                        <a (click)="copyTextToClipboard(url)"
+                            class="rounded-r bg-highlight dark:bg-dark-primary text-white dark:text-dark-navi copy-link cursor-pointer">
+                            <span *ngIf="!clipboard_copied" class="flex">Kopieren</span>
+                            <span *ngIf="clipboard_copied" class="flex">Kopiert!</span>
+                        </a>
                     </div>
-                    <img src="assets/menu_elements/mail.svg" class="md:hidden">
-                </a>
-
-                <a (click)="emitShareEvent('telegram')" class="md:p-4 ml-2 md:ml-4 rounded focus:outline-none focus:shadow-outline" [href]="getTelegramUrl()" target="_blank">
-                    <div class="hidden md:block group">
-                        <img src="assets/menu_elements/telegram_icon_grey.svg" class="group-hover:hidden">
-                        <img src="assets/menu_elements/telegram_icon.svg" class="hidden group-hover:block">
-                    </div>
-                    <img src="assets/menu_elements/telegram_icon.svg" class="md:hidden">
-                </a>
+                </div>
             </div>
-        </div>
-        <div>
-            <h2 class="text-xl text-gray-800 text-center dark:text-dark-primary-font">Oder kopiere den Link:</h2>
-            <div class="flex my-4">
-                <input value="{{url}}" class="w-full border-2 border-highlight dark:border-dark-primary rounded-l-lg text-gray-400 dark:bg-dark-navi focus:ring-transparent focus:border-highlight" type="text" readonly>
-                <a (click)="copyTextToClipboard(url)" class="rounded-r bg-highlight dark:bg-dark-primary text-white dark:text-dark-navi copy-link cursor-pointer">
-                    <span *ngIf="!clipboard_copied" class="flex">Kopieren</span>
-                    <span *ngIf="clipboard_copied" class="flex">Kopiert!</span>
+            <div *ngIf="!isMobile && current_selection=='sharepic'" class="flex flex-col items-center">
+                <h2 class="text-xl text-gray-800 text-center dark:text-white">Sharepic herunterladen:</h2>
+                <p class="w-2/3 text-center dark:text-dark-primary-font">Lade das Sharepic herunter und teile es auf Social Media, um Fake News
+                    entgegen zu treten!</p>
+                <a class="bg-highlight dark:bg-dark-primary flex pr-4 py-1.5 my-4 rounded-full text-white dark:text-dark-background cursor-pointer"
+                    (click)="downloadSharepic()">
+                    <span class="ml-2">
+                        <div class="flex flex-row items-center pl-2">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M14 11V14H2V11H0V14C0 15.1 0.9 16 2 16H14C15.1 16 16 15.1 16 14V11H14ZM13 7L11.59 5.59L9 8.17V0H7V8.17L4.41 5.59L3 7L8 12L13 7Z"
+                                    fill="currentColor" />
+                            </svg>
+                            <p class="pb-1 pl-2 font-semibold">Download</p>
+
+                        </div>
+                    </span>
                 </a>
             </div>
         </div>

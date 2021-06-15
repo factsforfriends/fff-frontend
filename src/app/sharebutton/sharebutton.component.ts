@@ -27,36 +27,16 @@ export class SharebuttonComponent implements OnInit {
     this.deviceInfo = this.deviceService.getDeviceInfo();
   }
 
-  share(): void {
-    if (navigator.share && (this.deviceService.isMobile() || this.deviceService.isTablet())) {
-      navigator.share({
-          title: this.title,
-          text: this.truncateChar(this.title + '\n' + this.text),
-          url: 'https://factsforfriends.de/fact/' + this.id
-        }).then(() => console.log('Successful share'))
-        .catch(error => console.log('Error sharing:', error));
-    } else {
-      const dialogConfig = new MatDialogConfig();
-      
-      dialogConfig["data"] = {
-        url: 'https://factsforfriends.de/fact/' + this.id,
-        title: this.title,
-        text: this.text,
-        sharepic: this.image_url
-      }
-      this.matDialog.open(ShareMenuComponent, dialogConfig);
+  share(){
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig["data"] = {
+      url: 'https://factsforfriends.de/fact/' + this.id,
+      title: this.title,
+      text: this.text,
+      sharepic: this.image_url,
+      id: this.id
     }
-  }
-
-
-  truncateChar(text: string, limit: number = 280): string {
-    if(!text || text.length <= limit )
-    {
-        return text;
-    }
-
-    let without_html = text.replace(/<(?:.|\n)*?>/gm, '');
-    let short_until = without_html.substring(0, limit).lastIndexOf(" ");
-    return without_html.substring(0, short_until)+ " ..."; 
+    dialogConfig["data"]["isMobile"] = (this.deviceService.isMobile() || this.deviceService.isTablet()) ? true : false
+    this.matDialog.open(ShareMenuComponent, dialogConfig);
   }
 }

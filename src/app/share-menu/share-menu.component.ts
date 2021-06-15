@@ -4,6 +4,7 @@ import {MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { Inject } from '@angular/core';
 
 import { AnalyticsService } from '../analytics.service';
+import { share } from 'rxjs/operators';
 
 @Component({
   selector: 'app-share-menu',
@@ -16,6 +17,8 @@ export class ShareMenuComponent implements OnInit {
   url:string
   text:string
   sharepic:string
+  id:string
+  isMobile:boolean
 
   current_selection: "article" | "sharepic" = "article"
 
@@ -28,13 +31,27 @@ export class ShareMenuComponent implements OnInit {
       this.text = data.text;
       this.url = data.url;
       this.sharepic = data.sharepic;
+      // this.sharepic = "http://localhost:4200/assets/logos/wir_vs_virus.png";
+      this.isMobile = data.isMobile;
+      // this.isMobile = true;
+      this.id = data.id;
     }
 
   ngOnInit(): void {
   }
 
   select(selection: "article" | "sharepic"): void {
-    this.current_selection = selection
+    if(this.isMobile){
+      if(selection == "article"){
+        this.shareText();
+      }
+      else{
+        this.share_image();
+      }
+    }
+    else{
+      this.current_selection = selection
+    }
   }
 
   truncateChar(text: string, limit: number = 280): string {
@@ -117,5 +134,88 @@ export class ShareMenuComponent implements OnInit {
   close() {
     this.dialogRef.close();
   }
+
+  share_image() {
+    let navigator: any;
+    navigator = window.navigator;
+    fetch(this.sharepic)
+      .then(function(response) {
+        return response.blob()})
+      .then(function(blob) {
+        let file = new File([blob], "sharepic.jpg", { type: blob.type });
+        let fileArray = [file];
+        console.log(fileArray);
+        let data = {              
+          text: 'some_text',
+          files: fileArray,
+          title: 'some_title',
+          url: 'some_url'
+        }
+        if (navigator.canShare && navigator.canShare({files: fileArray}))
+        {        
+          navigator
+            .share(data)
+            .then(() => {console.log('Successful image share')})
+            .catch(err => {
+              console.error("Unsuccessful share " + err);
+            });
+        }    
+        else{
+          console.log("Cannot share")
+        }
+    })
+  }
+
+  shareText(){
+  if (navigator.share && this.isMobile) {
+      navigator.share({
+          title: this.title,
+          text: this.truncateChar(this.title + '\n' + this.text),
+          url: 'https://factsforfriends.de/fact/' + this.id
+        }).then(() => console.log('Successful share'))
+        .catch(error => console.log('Error sharing:', error));
+    } 
+  }
+
+  downloadSharepic():void{
+    // var link = document.createElement("a");
+    // link.download = "fff_sharepic.jpg";
+    // link.href = this.sharepic;
+    // link.target = "_blank";
+    // document.body.appendChild(link);
+    // link.click();
+    // document.body.removeChild(link);
+    
+    fetch(this.sharepic)
+      .then(function(response) {
+        return response.blob()})
+      .then(function(blob) {
+        let file = new File([blob], "sharepic.jpg", { type: blob.type });
+        var urlCreator = window.URL || window.webkitURL;
+        var imageUrl = urlCreator.createObjectURL(this.response);
+        var tag = document.createElement('a');
+        tag.href = imageUrl;
+        tag.download = "fff_sharepic";
+        document.body.appendChild(tag);
+        tag.click();
+        document.body.removeChild(tag);
+      });
+    }
+
+    // var xhr = new XMLHttpRequest();
+    // xhr.open("GET", this.sharepic, true);
+    // xhr.responseType = "blob";
+    // xhr.onload = function(){
+    //     var urlCreator = window.URL || window.webkitURL;
+    //     var imageUrl = urlCreator.createObjectURL(this.response);
+    //     var tag = document.createElement('a');
+    //     tag.href = imageUrl;
+    //     tag.download = "fff_sharepic";
+    //     document.body.appendChild(tag);
+    //     tag.click();
+    //     document.body.removeChild(tag);
+    // }
+    // xhr.send();
+  // }
 
 }
