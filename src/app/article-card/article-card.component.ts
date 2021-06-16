@@ -19,7 +19,9 @@ export class ArticleCardComponent implements OnInit, AfterViewInit {
   @Input() index: number;
   @Input() id: string;
   @Input() image_url: string;
+  @Input() sharepic_url: string;
   @Input() firstBlock: boolean = true;
+
 
   @Input() compact: boolean = false;
 

@@ -65,6 +65,9 @@ export class DataService {
         // Fallback to random image
         fact['image_url'] = 'https://picsum.photos/400/300'
       }
+      if(el.hasOwnProperty('sharepic_url')){
+        fact['sharepic_url'] = el['sharepic_url']
+      }
       facts.push(fact)
     });
     return {hits_count, facts}

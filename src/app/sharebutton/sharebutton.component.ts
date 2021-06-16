@@ -17,6 +17,7 @@ export class SharebuttonComponent implements OnInit {
   @Input() index: number;
   @Input() id: string;
   @Input() image_url: string;
+  @Input() sharepic_url: string;
 
   isMobile:boolean = false; //initiate as false
   deviceInfo = null;
@@ -33,8 +34,9 @@ export class SharebuttonComponent implements OnInit {
       url: 'https://factsforfriends.de/fact/' + this.id,
       title: this.title,
       text: this.text,
-      sharepic: this.image_url,
-      id: this.id
+      sharepic: this.sharepic_url,
+      id: this.id,
+      image_url: this.image_url
     }
     dialogConfig["data"]["isMobile"] = (this.deviceService.isMobile() || this.deviceService.isTablet()) ? true : false
     this.matDialog.open(ShareMenuComponent, dialogConfig);

@@ -17,27 +17,35 @@ export class ShareMenuComponent implements OnInit {
   url:string
   text:string
   sharepic:string
+  image_url: string
   id:string
   isMobile:boolean
+  hasSharepic: boolean
 
   current_selection: "article" | "sharepic" = "article"
 
   constructor(
     private analytics: AnalyticsService,
     public dialogRef: MatDialogRef<ShareMenuComponent>, 
-    @Inject(MAT_DIALOG_DATA) public data: any) 
+    @Inject(MAT_DIALOG_DATA) public data: any)
     {
       this.title = data.title;
       this.text = data.text;
       this.url = data.url;
       this.sharepic = data.sharepic;
-      // this.sharepic = "http://localhost:4200/assets/logos/wir_vs_virus.png";
+      this.image_url = data.image_url;
       this.isMobile = data.isMobile;
       // this.isMobile = true;
       this.id = data.id;
     }
 
   ngOnInit(): void {
+    if(this.sharepic===null || this.sharepic===""){
+      this.hasSharepic = false
+    }
+    else{
+      this.hasSharepic = true
+    }
   }
 
   select(selection: "article" | "sharepic"): void {

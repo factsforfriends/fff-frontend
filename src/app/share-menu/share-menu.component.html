@@ -11,22 +11,22 @@
             <h2 class="text-lg md:text-xl text-gray-800 text-center dark:text-dark-primary-font">Teile diesen Artikel
                 als:</h2>
 
-            <div class="flex flex-col md:flex-row justify-center md:justify-between md:m-4">
+            <div class="flex flex-col md:flex-row justify-center  md:m-4" [class.md:justify-between]="hasSharepic">
                 <div (click)="select('article')"
                     class="flex flex-col justify-center p-4 rounded-lg hover:bg-gray-200 dark:hover:bg-dark-hover cursor-pointer dark:text-gray-200"
                     [ngClass]="{'font-semibold text-highlight dark:text-dark-primary': current_selection == 'article'}">
                     <div class="h-32 md:h-40 w-48 md:w-60 bg-auto bg-no-repeat bg-center rounded-lg self-center"
-                        style="background-image: url({{this.sharepic}})"
+                        style="background-image: url({{this.image_url}})"
                         [ngClass]="{'opacity-70': current_selection != 'article'}"></div>
                     <span class="text-center mt-2">
                         Artikel
                     </span>
                 </div>
 
-                <div (click)="select('sharepic')"
+                <div (click)="select('sharepic')" *ngIf="this.hasSharepic"
                     class="flex flex-col p-4 rounded-lg hover:bg-gray-200 dark:hover:bg-dark-hover cursor-pointer dark:text-gray-200"
                     [ngClass]="{'font-semibold text-highlight dark:text-dark-primary': current_selection == 'sharepic'}">
-                    <div class="h-32 md:h-40 w-48 md:w-60 bg-auto bg-no-repeat bg-center rounded-lg self-center"
+                    <div class="h-32 md:h-40 w-48 md:w-60 bg-contain bg-no-repeat bg-center rounded-lg self-center"
                         style="background-image: url({{this.sharepic}})"
                         [ngClass]="{'opacity-30': current_selection != 'sharepic'}"></div>
                     <span class="text-center mt-2">
