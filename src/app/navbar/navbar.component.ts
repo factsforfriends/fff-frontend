@@ -18,7 +18,6 @@ export class NavbarComponent implements OnInit {
   }
 
   ngOnInit(): void{
-    console.log(this.location.path());
   }
 
   openMenu(): boolean{

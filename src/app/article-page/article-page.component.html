@@ -4,14 +4,14 @@
         <div class="m-4 max-w-3xl mt-4 md:mx-4 pb-4 w-full">
             <app-back-button class="flex mb-4"></app-back-button>
 
-            <div *ngIf="fact && fact.image_url" class="mb-4 article-image bg-auto bg-no-repeat bg-center rounded-border-right cursor-pointer w-full h-80 rounded-lg bg-cover" style="background-image: url({{fact.image_url}})"></div>
+            <div *ngIf="fact && fact.image_url" class="mb-4 article-image bg-auto bg-no-repeat bg-center rounded-border-right w-full h-80 rounded-lg bg-cover" style="background-image: url({{fact.image_url}})"></div>
 
             <div *ngIf="fact" class="flex flex-row-reverse bg-white rounded-lg dark:bg-dark-cards dark:text-dark-primary-font">
                 <!-- <div>
                         <img class="md:w-48 md:h-32 object-cover" src="{{image_url}}" />
                     </div> -->
                 <div class="p-4 rounded-lg flex flex-col flex-1">
-                    <div class="cursor-pointer text-lg">{{fact.headline}}</div>
+                    <div class="text-lg">{{fact.headline}}</div>
                     <div class="mt-2">
                     <div class="text-xs metadata">{{fact.date | date:'dd.MM.YYYY'}} |
                         <a class="text-highlight dark:text-dark-primary" href="{{fact.url}}" target="_blank">
@@ -30,19 +30,19 @@
                     </a>
                     </div>
                     </div>
-                    <div class="flex-1 mt-2 cursor-pointer">
+                    <div class="flex-1 mt-2">
                     <div [ngClass]="{'truncateText': compact}">
                         {{fact.snack}}
                     </div>
                     </div>
                     <div class="flex items-center justify-between mt-4 text-xs">
-                    <app-tag>#{{fact.category}}</app-tag>
+                    <app-tag category="{{fact.category}}"></app-tag>
                     <app-sharebutton title="{{fact.headline}}" text="{{fact.snack}}" date="{{fact.date}}" category="{{fact.category}}" url="{{fact.url}}" id="{{fact.id}}" image_url="{{fact.image_url}}" sharepic_url="{{fact.sharepic_url}}">Teilen</app-sharebutton>
                     </div>
                 </div>
             </div>
 
-            <div class="w-full my-4">
+            <div class="w-full mt-12 mb-4">
                 <app-featured-snacks [facts]="recommendedSnacks" title="FactSnacks für Dich"></app-featured-snacks>
             </div>
         </div>
