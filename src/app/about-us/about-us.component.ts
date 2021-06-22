@@ -15,7 +15,8 @@ export class AboutUsComponent implements OnInit {
   public holisticExpanded: boolean;
   public wvvExpanded: boolean;
   public darkModeActivated: boolean;
-  public placeholderExpanded: boolean;
+  public sendExpanded: boolean;
+  public ptExpanded: boolean;
   constructor() {
     this.whyFFFexpanded = false;
     this.advantageFFFexpanded = false;
@@ -25,7 +26,8 @@ export class AboutUsComponent implements OnInit {
     this.holisticExpanded = false;
     this.wvvExpanded = false;
     this.darkModeActivated = false;
-    this.placeholderExpanded = false;
+    this.sendExpanded = false;
+    this.ptExpanded = false;
    }
 
   ngOnInit(): void { }
@@ -58,8 +60,12 @@ export class AboutUsComponent implements OnInit {
       this.wvvExpanded = !this.wvvExpanded;
       return;
     }
-    if (section === 'placeholder'){
-      this.placeholderExpanded = !this.placeholderExpanded;
+    if (section === 'send'){
+      this.sendExpanded = !this.sendExpanded;
+      return;
+    }
+    if (section === 'pt'){
+      this.ptExpanded = !this.ptExpanded;
       return;
     }
   }
