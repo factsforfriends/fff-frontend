@@ -31,8 +31,12 @@
                     </div>
                     </div>
                     <div class="flex-1 mt-2">
-                    <div [ngClass]="{'truncateText': compact}">
+                    <div [ngClass]="{'truncateText': compact}" *ngIf="!fact.claim">
                         {{fact.snack}}
+                    </div>
+                    <div class="flex flex-col md:flex-row" *ngIf="fact.claim">
+                        <p class="md:px-2 py-2 md:py-0">{{fact.claim}}</p>
+                        <p class="md:px-2">{{fact.snack}}</p>
                     </div>
                     </div>
                     <div class="flex items-center justify-between mt-4 text-xs">

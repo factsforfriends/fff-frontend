@@ -68,6 +68,9 @@ export class DataService {
       if(el.hasOwnProperty('sharepic_url')){
         fact['sharepic_url'] = el['sharepic_url']
       }
+      if(el.hasOwnProperty('claim')){
+        fact['claim'] = el['claim']
+      }
       facts.push(fact)
     });
     return {hits_count, facts}
