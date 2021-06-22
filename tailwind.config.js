@@ -55,6 +55,9 @@ module.exports = {
       'screen-xl': '1280px',
       'screen-sm': '640px',
 
+    },
+    minWidth: {
+      '1/3':'33%'
     }
   },
   variants: {
