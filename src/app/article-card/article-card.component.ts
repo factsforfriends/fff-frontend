@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, ElementRef, AfterViewInit, AfterContentInit, Testability } from '@angular/core';
 import { ShareMenuComponent } from '../share-menu/share-menu.component';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 
@@ -9,7 +9,7 @@ import { AnalyticsService } from '../analytics.service';
   templateUrl: './article-card.component.html',
   styleUrls: ['./article-card.component.scss']
 })
-export class ArticleCardComponent implements OnInit, AfterViewInit {
+export class ArticleCardComponent implements OnInit, AfterViewInit, AfterContentInit {
   @ViewChild('textElement') textElement: ElementRef
   @Input() title: string;
   @Input() text: string;
@@ -29,6 +29,10 @@ export class ArticleCardComponent implements OnInit, AfterViewInit {
   factcheckingOrganisation: string = "Quelle";
 
   constructor(private analytics: AnalyticsService) { }
+
+  ngAfterContentInit(): void {
+    this.formatText()
+  }
 
   ngOnInit(): void {
     if(this.url.includes('correctiv')){
@@ -76,4 +80,15 @@ export class ArticleCardComponent implements OnInit, AfterViewInit {
     return element.scrollHeight > element.clientHeight || element.scrollWidth > element.clientWidth
   }
 
+  formatText(){
+    if(this.text.startsWith("Fakt:")){
+      this.text = this.text.replace("Fakt:", '<b>Fakt:</b>')
+    }
+    let keywords = ["Falsch:", "Richtig:", "Wahr:", "Irreführend:", "Widerlegt:", "Bestätigt:"];
+    for(let kw of keywords){
+      if(this.title.startsWith(kw)){
+        this.title = this.title.replace(kw, '<b>'+kw+'</b>')
+      }
+    }
+  }
 }
