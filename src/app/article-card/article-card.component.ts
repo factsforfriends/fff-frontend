@@ -9,10 +9,12 @@ import { AnalyticsService } from '../analytics.service';
   templateUrl: './article-card.component.html',
   styleUrls: ['./article-card.component.scss']
 })
-export class ArticleCardComponent implements OnInit, AfterViewInit, AfterContentInit {
+export class ArticleCardComponent implements OnInit, AfterViewInit {
   @ViewChild('textElement') textElement: ElementRef
   @Input() title: string;
+  @Input() titleFormatted: string;
   @Input() text: string;
+  @Input() textFormatted: string;
   @Input() url: string;
   @Input() date: string;
   @Input() category: string;
@@ -21,41 +23,17 @@ export class ArticleCardComponent implements OnInit, AfterViewInit, AfterContent
   @Input() image_url: string;
   @Input() sharepic_url: string;
   @Input() firstBlock: boolean = true;
+  @Input() factcheckingOrganisation: string;
 
 
   @Input() compact: boolean = false;
 
   isOverflown: boolean = false;
-  factcheckingOrganisation: string = "Quelle";
 
   constructor(private analytics: AnalyticsService) { }
 
-  ngAfterContentInit(): void {
-    this.formatText()
-  }
 
-  ngOnInit(): void {
-    if(this.url.includes('correctiv')){
-      this.factcheckingOrganisation = "Correctiv";
-      return;
-    }
-    if(this.url.includes('faktencheck.afp.com')){
-      this.factcheckingOrganisation = "AFP Faktencheck";
-      return;
-    }
-    if(this.url.includes('logically.ai')){
-      this.factcheckingOrganisation = "Logically";
-      return;
-    }
-    if(this.url.includes('fullfact.org')){
-      this.factcheckingOrganisation = "Fullfact";
-      return;
-    }
-    if(this.url.includes('checkyourfact.com')){
-      this.factcheckingOrganisation = "CheckYourFact";
-      return;
-    }
-  }
+  ngOnInit(): void { }
 
   ngAfterViewInit(): void {
     // set timeout to circumvent error: Expression has changed after it was checked
@@ -80,15 +58,4 @@ export class ArticleCardComponent implements OnInit, AfterViewInit, AfterContent
     return element.scrollHeight > element.clientHeight || element.scrollWidth > element.clientWidth
   }
 
-  formatText(){
-    if(this.text.startsWith("Fakt:")){
-      this.text = this.text.replace("Fakt:", '<b>Fakt:</b>')
-    }
-    let keywords = ["Falsch:", "Richtig:", "Wahr:", "Irreführend:", "Widerlegt:", "Bestätigt:"];
-    for(let kw of keywords){
-      if(this.title.startsWith(kw)){
-        this.title = this.title.replace(kw, '<b>'+kw+'</b>')
-      }
-    }
-  }
 }

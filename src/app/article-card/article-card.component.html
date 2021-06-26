@@ -8,7 +8,7 @@
 
   <div
     class="p-4 rounded-lg flex flex-col flex-1 bg-white dark:bg-dark-cards dark:text-dark-primary-font">
-    <div [routerLink]="['fact', id]" class="cursor-pointer" [innerHTML]="this.title"></div>
+    <div [routerLink]="['fact', id]" class="cursor-pointer" [innerHTML]="this.titleFormatted"></div>
     <div class="mt-2">
       <div class="text-xs metadata">{{date | date:'dd.MM.YYYY'}} |
         <a class="text-highlight dark:text-dark-primary" href="{{url}}" target="_blank">
@@ -32,7 +32,7 @@
       </div>
     </div>
     <div [routerLink]="['fact', id]" class="flex-1 mt-2 text-xs cursor-pointer">
-      <div [innerHTML]="this.text" class="" [ngClass]="{'truncateText': compact}"></div>
+      <div [innerHTML]="this.textFormatted" class="" [ngClass]="{'truncateText': compact}"></div>
     </div>
     <div class="flex items-center justify-between mt-4 text-xs">
       <app-tag category={{category}}></app-tag>

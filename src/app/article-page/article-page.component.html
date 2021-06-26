@@ -11,7 +11,7 @@
                         <img class="md:w-48 md:h-32 object-cover" src="{{image_url}}" />
                     </div> -->
                 <div class="p-4 rounded-lg flex flex-col flex-1">
-                    <div class="text-lg" [innerHTML]="fact.headline"></div>
+                    <div class="text-lg" [innerHTML]="fact.titleFormatted"></div>
                     <div class="mt-2">
                     <div class="text-xs metadata">{{fact.date | date:'dd.MM.YYYY'}} |
                         <a class="text-highlight dark:text-dark-primary" href="{{fact.url}}" target="_blank">
@@ -26,15 +26,15 @@
                                                         c58.88,0,106.667-47.787,106.667-106.667S378.88,106.667,320,106.667z" />
 
                         </svg>
-                        {{ factcheckingOrganisation }}
+                        {{ fact.factcheckingOrganisation }}
                     </a>
                     </div>
                     </div>
                     <div class="flex-1 mt-2">
-                    <div [ngClass]="{'truncateText': compact}" *ngIf="!fact.claim" [innerHTML]="fact.snack"></div>
+                    <div [ngClass]="{'truncateText': compact}" *ngIf="!fact.claim" [innerHTML]="fact.textFormatted"></div>
                     <div class="flex flex-col md:flex-row" *ngIf="fact.claim">
-                        <p class="md:px-2 py-2 md:py-0 md:min-w-1/3" [innerHTML]="fact.claim"></p>
-                        <p class="md:px-2" [innerHTML]="fact.snack"></p>
+                        <p class="md:px-2 py-2 md:py-0 md:min-w-1/3" [innerHTML]="fact.claimFormatted"></p>
+                        <p class="md:px-2" [innerHTML]="fact.textFormatted"></p>
                     </div>
                     </div>
                     <div class="flex items-center justify-between mt-4 text-xs">
