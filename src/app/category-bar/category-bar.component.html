@@ -1,3 +1,4 @@
+<!-- Mobile version -->
 <div class="flex flex-row flex-nowrap overflow-x-auto items-start justify-start text-center mx-4 xl:hidden">
     <div class="min-w-min bg-white dark:bg-dark-cards mx-2 px-3 py-2 rounded-full text-sm font-thin dark:text-dark-primary-font cursor-pointer"
     [class.text-secondary]="!selectedCategory || selectedCategory == ''" 
@@ -57,7 +58,8 @@
         </span>
     </div>
 </div>
-<div class="hidden xl:flex flex-col w-full p-4 rounded-lg relative flex-1 bg-white dark:bg-dark-cards dark:text-dark-primary-font">
+<!-- Desktop version  -->
+<div class="hidden xl:flex flex-col w-48 p-4 rounded-lg relative flex-1 bg-white dark:bg-dark-cards dark:text-dark-primary-font">
     <h2 class="px-1 mb-2 text-l lg:text-lg font-semibold leading-relaxed dark:text-dark-primary-font">Kategorien</h2>
     <div class="flex flex-row items-center my-2 cursor-pointer"
         [class.text-secondary]="!selectedCategory || selectedCategory == ''" 
