@@ -44,6 +44,9 @@ module.exports = {
         'cover': 'cover',
         'contain': 'contain',
         '64': '100% 16rem'
+      },
+      inset:{
+        '26': '6.5rem'
       }
     },
     maxWidth: {
