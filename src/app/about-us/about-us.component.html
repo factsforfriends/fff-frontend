@@ -1,272 +1,56 @@
-<h2 class="px-1 text-3xl text-center lg:text-4xl font-semibold leading-relaxed dark:text-dark-primary-font">Über uns
-</h2>
-<div class="flex flex-col max-w-screen-xl items-center md:items-start leading-relaxed">
-    <div class="w-11/12 md:w-2/3 static flex flex-row flex-nowrap py-8 md:py-10">
-        <div class="p-4 rounded-lg relative flex-1 bg-white dark:bg-dark-cards dark:text-dark-primary-font">
-            <div class="flex flex-col items-center md:items-start h-full">
-                <img class="md:absolute md:top-8 md:-right-20 md:w-4/12 md:transform md:-translate-y-5 dark:hidden"
-                    src="assets/illustrations/why_fff.svg">
-                <img class="md:absolute md:top-8 md:-right-20 md:w-4/12 md:transform md:-translate-y-5 hidden dark:block"
-                    src="assets/illustrations/why_fff_dark.svg">
-                <div class="text-2xl">
-                    Warum Facts for Friends?
-                </div>
-                <div class="mt-2 md:w-3/4">
-                    Die Vision von Facts for Friends ist es, Bürger*Innen ein Werkzeug zur eigenständigen und effektiven
-                    Bekämpfung von Fake News in ihrem digitalen Umfeld zu bieten und dadurch eine informierte und
-                    engagierte Gesellschaft zu fördern.
-                </div>
-                <div class="mt-2" *ngIf="whyFFFexpanded">
-                    <p class="md:w-2/3 mb-2">
-                        Wir sehen uns als eine Brücke zwischen den bereits etablierten Faktenchecker*innen und
-                        Nutzer*innen der sozialen Medien. Wir sammeln, kürzen und fassen die oft langen und
-                        komplizierten Faktenchecks von etablierten Faktenchecker*innen zusammen und machen daraus
-                        sogenannte „Fact Snacks”.
-                    </p>
-                    <p>
-                        Das sind prägnante Klar- und Richtigstellungen zu kursierenden Fake News, die sofort als Text
-                        oder SharePic in allen Sozialen Medien und Messenger Diensten geteilt werden können. Auf diese
-                        Weise wird Fact-Checking zugänglicher für Nutzer*innen und geeigneter für moderne Medienkanäle
-                        und die veränderte Nutzung dieser Kanäle. Wir ergänzen somit bestehende Fakt-Checking Angebote
-                        und sorgen dafür, dass Fact-Checking-Content dort ankommt, wo dieser am dringendsten gebraucht
-                        wird.
-                    </p>
-                </div>
-                <div class="pt-8">
-                    <a class="bg-highlight dark:bg-dark-primary flex px-2 py-1.5 rounded-full text-white dark:text-dark-background cursor-pointer"
-                        (click)="expand_collapse('whyfff')">
-                        <span class="ml-2">
-                            <div *ngIf="!whyFFFexpanded" class="flex flex-row items-center">
-                                <p class="pb-1 font-semibold">Mehr lesen</p>
-                                <svg width="25" height="24" viewBox="0 0 25 24" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                        d="M16.664 8.59998L18.064 9.99998L12.064 16L6.06403 9.99998L7.46403 8.59998L12.064 13.2L16.664 8.59998Z"
-                                        fill="currentColor" />
-                                </svg>
-                            </div>
-                            <div *ngIf="whyFFFexpanded" class="flex flex-row items-center">
-                                <p class="pb-1 font-semibold">Weniger lesen</p>
-                                <svg width="25" height="24" viewBox="0 0 25 24" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                        d="M7.46396 15.4L6.06396 14L12.064 8.00002L18.064 14L16.664 15.4L12.064 10.8L7.46396 15.4Z"
-                                        fill="currentColor" />
-                                </svg>
-                            </div>
-                        </span>
-                    </a>
-                </div>
-            </div>
-        </div>
+<div class="max-w-screen-xl">
+    <h2 class="px-1 text-3xl text-center lg:text-4xl font-semibold leading-relaxed dark:text-dark-primary-font">Über uns
+    </h2>
+    <div class="flex justify-center">
+        <video class="pt-4 w-11/12 md:w-8/12" controls>
+            <source src="https://fff-content-items.s3.eu-central-1.amazonaws.com/FactsforFriends_Imagefilm.mp4"
+                type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
     </div>
-
-    <div class="w-11/12 md:w-2/3 py-8 md:py-10 md:self-end">
-        <div
-            class="p-4 rounded-lg relative flex flex-col items-center md:items-start bg-white dark:bg-dark-cards dark:text-dark-primary-font">
-            <div class="flex flex-col items-center md:pl-40 h-full items-center md:items-start">
-                <img class="md:absolute md:top-12 md:-left-36 md:w-4/12 md:transform md:-translate-y-10 dark:hidden"
-                    src="assets/illustrations/fff_advantage.svg">
-                <img class="md:absolute md:top-12 md:-left-36 md:w-4/12 md:transform md:-translate-y-10 hidden dark:block"
-                    src="assets/illustrations/fff_advantage_dark.svg">
-                <div class="text-2xl">
-                    Die Vorteile von Facts for Friends
-                </div>
-                <div class="mt-2">
-                    <b>1. Zentral & teilbar</b><br>
-                    Facts for Friends ist eine zentrale Plattform, die Faktenchecks von glaubwürdigen Quellen sammelt
-                    und von der aus Richtigstellungen leicht in jedem sozialen Netzwerk oder Messenger Dienst geteilt
-                    werden können.
-                </div>
-            </div>
-            <div class="mt-2" *ngIf="advantageFFFexpanded">
-                <p class="md:pl-40 pb-2">
-                    <b>2. Simple & „Snackable”</b><br>
-                    Die FactSnacks sind buchstäblich „Snacks”, da Informationen zusammengefasst und kurz und prägnant
-                    dargestellt werden. <br>
-                </p>
-                <b>3. Suchfunktion</b><br>
-                Und die integrierte Suchfunktion ermöglicht es Nutzer*innen, verifizierte Faktenchecks innerhalb von
-                Sekunden zu finden
-            </div>
-            <div class="pt-8" [ngClass]="{'md:pl-40': !advantageFFFexpanded}">
-                <a class="bg-highlight dark:bg-dark-primary flex px-2 py-1.5 rounded-full text-white dark:text-dark-background cursor-pointer"
-                    (click)="expand_collapse('fffAdvantage')">
-                    <span class="ml-2">
-                        <div *ngIf="!advantageFFFexpanded" class="flex flex-row items-center">
-                            <p class="pb-1 font-semibold">Mehr lesen</p>
-                            <svg width="25" height="24" viewBox="0 0 25 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                    d="M16.664 8.59998L18.064 9.99998L12.064 16L6.06403 9.99998L7.46403 8.59998L12.064 13.2L16.664 8.59998Z"
-                                    fill="currentColor" />
-                            </svg>
-                        </div>
-                        <div *ngIf="advantageFFFexpanded" class="flex flex-row items-center">
-                            <p class="pb-1 font-semibold">Weniger lesen</p>
-                            <svg width="25" height="24" viewBox="0 0 25 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                    d="M7.46396 15.4L6.06396 14L12.064 8.00002L18.064 14L16.664 15.4L12.064 10.8L7.46396 15.4Z"
-                                    fill="currentColor" />
-                            </svg>
-                        </div>
-                    </span>
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <div class="w-11/12 md:w-2/3 static flex flex-row flex-nowrap py-8 md:py-10">
-        <div class="p-4 rounded-lg relative w-1/4 flex-1 bg-white dark:bg-dark-cards dark:text-dark-primary-font">
-            <div class="flex flex-col items-center md:items-start h-full">
-                <img class="md:absolute md:top-8 md:-right-20 md:w-4/12 md:transform md:-translate-y-5 dark:hidden"
-                    src="assets/illustrations/fake_news.svg">
-                <img class="md:absolute md:top-8 md:-right-20 md:w-4/12 md:transform md:-translate-y-5 hidden dark:block"
-                    src="assets/illustrations/fake_news_dark.svg">
-                <div class="text-2xl">
-                    Unsere Arbeit und Prozesse
-                </div>
-                <div class="mt-2 md:w-3/4">
-                    Wir arbeiten Hand-in-Hand mit etablierten Faktenchecker*innen zusammen. Das heißt, wir sind keine
-                    Konkurrenz, sondern eine Ergänzung. Als Basis für unsere FactSnacks nutzen wir ausschließlich
-                    Content von Fact-Checking Organisationen, die Teil des <a
-                        href="https://www.ifcncodeofprinciples.poynter.org/signatories" target=”_blank”>International
-                        Fact Checking Networks</a> sind und dessen <a
-                        href="https://www.ifcncodeofprinciples.poynter.org/know-more/the-commitments-of-the-code-of-principles"
-                        target=”_blank”>Codex</a> bei der Arbeit einhalten. Dieser <a
-                        href="https://www.ifcncodeofprinciples.poynter.org/know-more/the-commitments-of-the-code-of-principles"
-                        target=”_blank”>Codex</a> ist das Ergebnis einer globalen Kooperation von seriösen
-                    Faktenprüfern.
-                </div>
-                <div class="mt-2 md:w-3/4" *ngIf="processesFFFexpanded">
-                    Wir sammeln Faktenchecks zu aktuellen Themen, die für unsere Nutzer*innen relevant sind. Dabei
-                    nutzen wir hauptsächlich IFCN Quellen, die Falschinformationen im deutschen Kontext aufdecken. Wir
-                    greifen jedoch ebenfalls auf internationale Quellen zurück, die Faktenchecks zu Themen publizieren,
-                    die für unsere Nutzer*innen interessant sein könnten.
-                </div>
-                <div class="mt-2" *ngIf="processesFFFexpanded">
-                    Dabei achten wir stets auf das Zwei-Quellen-Prinzip, sodass ein FactSnack immer auf mehr als einer
-                    Quelle basieren muss. Nach einer Überprüfung der Quelle komprimieren wir die langen Faktenchecks zu
-                    kurzen und nutzerfreundlichen FactSnacks. Jeder FactSnack wird dann mithilfe des 4-Augen Prinzips
-                    erneut kontrolliert und redigiert, bevor er auf unserer Website und unseren social Kanälen
-                    veröffentlicht wird.
-                </div>
-                <div class="pt-8">
-                    <a class="bg-highlight dark:bg-dark-primary flex px-2 py-1.5 rounded-full text-white dark:text-dark-background cursor-pointer"
-                        (click)="expand_collapse('fffProcesses')">
-                        <span class="ml-2">
-                            <div *ngIf="!processesFFFexpanded" class="flex flex-row items-center">
-                                <p class="pb-1 font-semibold">Mehr lesen</p>
-                                <svg width="25" height="24" viewBox="0 0 25 24" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                        d="M16.664 8.59998L18.064 9.99998L12.064 16L6.06403 9.99998L7.46403 8.59998L12.064 13.2L16.664 8.59998Z"
-                                        fill="currentColor" />
-                                </svg>
-                            </div>
-                            <div *ngIf="processesFFFexpanded" class="flex flex-row items-center">
-                                <p class="pb-1 font-semibold">Weniger lesen</p>
-                                <svg width="25" height="24" viewBox="0 0 25 24" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                        d="M7.46396 15.4L6.06396 14L12.064 8.00002L18.064 14L16.664 15.4L12.064 10.8L7.46396 15.4Z"
-                                        fill="currentColor" />
-                                </svg>
-                            </div>
-                        </span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="w-11/12 md:w-2/3 py-8 md:py-10 md:self-end">
-        <div
-            class="p-4 rounded-lg relative flex flex-col items-center md:items-start bg-white dark:bg-dark-cards dark:text-dark-primary-font">
-            <div class="flex flex-col md:pl-52 h-full items-center md:items-start">
-                <img class="md:absolute md:top-12 md:-left-32 md:w-4/12 md:transform md:-translate-y-16 dark:hidden"
-                    src="assets/illustrations/fff-team.svg">
-                <img class="md:absolute md:top-12 md:-left-32 md:w-4/12 md:transform md:-translate-y-16 hidden dark:block"
-                    src="assets/illustrations/fff-team-dark.svg">
-                <div class="text-2xl">
-                    Die Vorteile von Facts for Friends
-                </div>
-                <div class="mt-2">
-                    Unser Team besteht aktuell aus zwei Gründerinnen, Journalist*innen und Entwickler*innen. Die Idee
-                    Facts for Friends wurde ursprünglich im Rahmen des #WirVsVirus Hackathons der Bundesregierung
-                    entwickelt und mithilfe des #WirVsVirus Solution Enablers umgesetzt.
-                </div>
-            </div>
-            <div class="mt-2" *ngIf="teamFFFexpanded">
-                <p class="md:pl-52 pb-2">
-                    Obwohl wir erst am Anfang unserer Vision stehen, hat unser Projekt bereits große positive Resonanz
-                    von sachkundigen Experten aus dem öffentlichen und privaten Sektor erhalten</p>
-                Durch den Prototype Fund im Rahmen des #WirVsVirus Hackathons wurden wir vom Bundesministerium für
-                Bildung und Forschung gefördert, durften unser Projekt vor dem Bundespresseamt (BPA) vorstellen, wurden
-                als Kreativpiloten 2020 ausgezeichnet und im 2020 Goalkeepers Report der Bill & Melinda Gates Stiftung
-                namentlich erwähnt. Zudem werden wir aktiv von der Björn Steiger Stiftung unterstützt, um unsere
-                technische Infrastruktur weiter auszubauen
-            </div>
-            <div class="pt-8" [ngClass]="{'md:pl-52': !teamFFFexpanded}">
-                <a class="bg-highlight dark:bg-dark-primary flex px-2 py-1.5 rounded-full text-white dark:text-dark-background cursor-pointer"
-                    (click)="expand_collapse('fffTeam')">
-                    <span class="ml-2">
-                        <div *ngIf="!teamFFFexpanded" class="flex flex-row items-center">
-                            <p class="pb-1 font-semibold">Mehr lesen</p>
-                            <svg width="25" height="24" viewBox="0 0 25 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                    d="M16.664 8.59998L18.064 9.99998L12.064 16L6.06403 9.99998L7.46403 8.59998L12.064 13.2L16.664 8.59998Z"
-                                    fill="currentColor" />
-                            </svg>
-                        </div>
-                        <div *ngIf="teamFFFexpanded" class="flex flex-row items-center">
-                            <p class="pb-1 font-semibold">Weniger lesen</p>
-                            <svg width="25" height="24" viewBox="0 0 25 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                    d="M7.46396 15.4L6.06396 14L12.064 8.00002L18.064 14L16.664 15.4L12.064 10.8L7.46396 15.4Z"
-                                    fill="currentColor" />
-                            </svg>
-                        </div>
-                    </span>
-                </a>
-            </div>
-        </div>
-    </div>
-    <div
-        class="p-4 w-full bg-gradient-to-b from-gradient-from via-gradient-via to-gradient-to dark:from-dark-gradient-from dark:via-dark-gradient-via to-gradient-to bg-64 bg-no-repeat flex flex-col items-center">
-        <h2 class="ml-4 text-4xl text-white dark:text-dark-background self-start">Unterstützt von</h2>
-        <div class="m-4 p-4 w-full grid justify-center gap-8 grid-cols-1 xl:grid-cols-2 max-w-screen-xl">
-            <div class="flex flex-col">
-                <div
-                    class="flex flex-col items-center h-full rounded-lg bg-white dark:bg-dark-cards dark:text-dark-primary-font p-4">
-                    <a href="https://www.steiger-stiftung.de" target="_blank">
-                        <img class="w-64 pb-4" src="assets/logos/bjoern-steiger-stiftung.png">
-                    </a>
-                    <div class="mt-2">
-                        Die Björn Steiger Stiftung setzt sich seit mehr als 50 Jahren für die Verbesserung und die
-                        Entwicklung der modernen Notfallhilfe ein.
+    <div class="flex flex-col items-center md:items-start leading-relaxed">
+        <div class="w-11/12 md:w-2/3 static flex flex-row flex-nowrap pb-8 pt-4 md:pt-4 md:py-10">
+            <div class="p-4 rounded-lg relative flex-1 bg-white dark:bg-dark-cards dark:text-dark-primary-font">
+                <div class="flex flex-col items-center md:items-start h-full">
+                    <img class="md:absolute md:top-8 md:-right-20 md:w-4/12 md:transform md:-translate-y-5 dark:hidden"
+                        src="assets/illustrations/why_fff.svg">
+                    <img class="md:absolute md:top-8 md:-right-20 md:w-4/12 md:transform md:-translate-y-5 hidden dark:block"
+                        src="assets/illustrations/why_fff_dark.svg">
+                    <div class="text-2xl">
+                        Warum Facts for Friends?
                     </div>
-                    <div class="mt-2" *ngIf="steigerExpanded">
+                    <div class="mt-2 md:w-3/4">
+                        Die Vision von Facts for Friends ist es, Bürger*Innen ein Werkzeug zur eigenständigen und
+                        effektiven
+                        Bekämpfung von Fake News in ihrem digitalen Umfeld zu bieten und dadurch eine informierte und
+                        engagierte Gesellschaft zu fördern.
+                    </div>
+                    <div class="mt-2" *ngIf="whyFFFexpanded">
+                        <p class="md:w-2/3 mb-2">
+                            Wir sehen uns als eine Brücke zwischen den bereits etablierten Faktenchecker*innen und
+                            Nutzer*innen der sozialen Medien. Wir sammeln, kürzen und fassen die oft langen und
+                            komplizierten Faktenchecks von etablierten Faktenchecker*innen zusammen und machen daraus
+                            sogenannte „Fact Snacks”.
+                        </p>
                         <p>
-                            Meilensteine dieses Engagements sind unter anderem die Einführung der bundesweit
-                            einheitlichen Notrufnummern 110/112, das 24h Notarztsystem und der Aufbau der zivilen
-                            Luftrettung in Deutschland. Aktuelle Initiativen widmen sich insbesondere dem Kampf gegen
-                            den Herztod, der Neustrukturierung und Digitalisierung des Rettungswesen in Deutschland
-                            sowie der Beteiligung national wie international an innovativen Entwicklungen, die die
-                            Verbesserung des Rettungs- und Notfallwesens in seiner Gesamtheit zum Ziel haben. Die
-                            Stiftung agiert als Think Tank, um innovative Ideen und Lösungsansätze für Herausforderungen
-                            im Gesundheitssystem konkret umzusetzen und mithilfe von Netzwerken zu skalieren. Mehr
-                            Informationen auf: www.steiger-stiftung.de.
+                            Das sind prägnante Klar- und Richtigstellungen zu kursierenden Fake News, die sofort als
+                            Text
+                            oder SharePic in allen Sozialen Medien und Messenger Diensten geteilt werden können. Auf
+                            diese
+                            Weise wird Fact-Checking zugänglicher für Nutzer*innen und geeigneter für moderne
+                            Medienkanäle
+                            und die veränderte Nutzung dieser Kanäle. Wir ergänzen somit bestehende Fakt-Checking
+                            Angebote
+                            und sorgen dafür, dass Fact-Checking-Content dort ankommt, wo dieser am dringendsten
+                            gebraucht
+                            wird.
                         </p>
                     </div>
                     <div class="pt-8">
                         <a class="bg-highlight dark:bg-dark-primary flex px-2 py-1.5 rounded-full text-white dark:text-dark-background cursor-pointer"
-                            (click)="expand_collapse('steiger')">
+                            (click)="expand_collapse('whyfff')">
                             <span class="ml-2">
-                                <div *ngIf="!steigerExpanded" class="flex flex-row items-center">
+                                <div *ngIf="!whyFFFexpanded" class="flex flex-row items-center">
                                     <p class="pb-1 font-semibold">Mehr lesen</p>
                                     <svg width="25" height="24" viewBox="0 0 25 24" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
@@ -275,7 +59,7 @@
                                             fill="currentColor" />
                                     </svg>
                                 </div>
-                                <div *ngIf="steigerExpanded" class="flex flex-row items-center">
+                                <div *ngIf="whyFFFexpanded" class="flex flex-row items-center">
                                     <p class="pb-1 font-semibold">Weniger lesen</p>
                                     <svg width="25" height="24" viewBox="0 0 25 24" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
@@ -288,176 +72,45 @@
                         </a>
                     </div>
                 </div>
-                <div class="h-full"></div>
             </div>
-            <div class="flex flex-col">
-                <div
-                    class="flex flex-col items-center h-full rounded-lg bg-white dark:bg-dark-cards dark:text-dark-primary-font p-4">
-                    <a href="https://holistic.foundation" target="_blank">
-                        <img class="w-64 pb-4 dark:hidden" src="assets/logos/sidebar/holistic.png">
-                        <img class="w-64 pb-4 hidden dark:block" src="assets/logos/sidebar/holistic_dark.png">
-                    </a>
-                    <div class="mt-2">
-                        Happy people for a happy planet – Die Holistic Foundation wurde 2018 von Benjamin und Janina Lin
-                        Otto ins Leben gerufen.
-                    </div>
-                    <div class="mt-2" *ngIf="holisticExpanded">
-                        <p>
-                            Ziel ist es, mit vielen Partner:innen die Entwicklung neuer Lösungen für eine enkelfähige
-                            Zukunft zu unterstützen und Menschen als Individuen und in der Gemeinschaft zu inspirieren.
-                            In den kommenden Jahren sollen zahlreiche Leuchtturmprojekte initiiert werden, um die Welt
-                            gemeinsam zu einem glücklicheren Ort zu machen.
-                        </p>
-                    </div>
-                    <div class="pt-8">
-                        <a class="bg-highlight dark:bg-dark-primary flex px-2 py-1.5 rounded-full text-white dark:text-dark-background cursor-pointer"
-                            (click)="expand_collapse('holistic')">
-                            <span class="ml-2">
-                                <div *ngIf="!holisticExpanded" class="flex flex-row items-center">
-                                    <p class="pb-1 font-semibold">Mehr lesen</p>
-                                    <svg width="25" height="24" viewBox="0 0 25 24" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M16.664 8.59998L18.064 9.99998L12.064 16L6.06403 9.99998L7.46403 8.59998L12.064 13.2L16.664 8.59998Z"
-                                            fill="currentColor" />
-                                    </svg>
-                                </div>
-                                <div *ngIf="holisticExpanded" class="flex flex-row items-center">
-                                    <p class="pb-1 font-semibold">Weniger lesen</p>
-                                    <svg width="25" height="24" viewBox="0 0 25 24" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M7.46396 15.4L6.06396 14L12.064 8.00002L18.064 14L16.664 15.4L12.064 10.8L7.46396 15.4Z"
-                                            fill="currentColor" />
-                                    </svg>
-                                </div>
-                            </span>
-                        </a>
-                    </div>
-                </div>
-                <div class="h-full"></div>
-            </div>
-            <div class="flex flex-col">
-                <div
-                    class="flex flex-col items-center h-full rounded-lg bg-white dark:bg-dark-cards dark:text-dark-primary-font p-4">
-                    <a href="https://wirvsvirus.org" target="_blank">
-                        <img class="w-64 pb-4" src="assets/logos/wir_vs_virus.png">
-                    </a>
-                    <div class="mt-2">
-                        Im Rahmen des #WirVsVirus Hackathons entstand im März 2020 der erste Prototyp des Projektes
-                        Facts for Friends. In dem großangelegten, von der Bundesregierung geförderten Hackathon kamen
-                        28.361 Menschen zusammen und arbeiteten an über 1.500 kurzfristigen und effektiven
-                        Lösungsansätzen für neuartige Probleme im Zuge der aktuellen Corona-Krise. </div>
-                    <div class="mt-2" *ngIf="wvvExpanded">
-                        <p>
-                            Ziel dieser digitalen Veranstaltung war es, das kreative Potenzial der Zivilgesellschaft zu
-                            bündeln und schnell effektive Lösungen zu finden. Im Anschluss des Hackathons wurde Facts
-                            for Friends als eines der etwa 130 vielversprechendsten Projekte ausgewählt und in das
-                            #SolutionEnabler Programm aufgenommen. Mit Hilfe von diversen Förderpartnern liefert dieses
-                            Umsetzungsprogramm wertvolle Expertise, Informationen und Ressourcen. Förderpartner des
-                            Programms sind u.a. das Bundesministerium für Bildung und Forschung durch den Prototype
-                            Fund, das Vodafone Institute, die BMW Foundation Herbert Quandt und Google.
-                        </p>
-                    </div>
-                    <div class="pt-8">
-                        <a class="bg-highlight dark:bg-dark-primary flex px-2 py-1.5 rounded-full text-white dark:text-dark-background cursor-pointer"
-                            (click)="expand_collapse('wvv')">
-                            <span class="ml-2">
-                                <div *ngIf="!wvvExpanded" class="flex flex-row items-center">
-                                    <p class="pb-1 font-semibold">Mehr lesen</p>
-                                    <svg width="25" height="24" viewBox="0 0 25 24" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M16.664 8.59998L18.064 9.99998L12.064 16L6.06403 9.99998L7.46403 8.59998L12.064 13.2L16.664 8.59998Z"
-                                            fill="currentColor" />
-                                    </svg>
-                                </div>
-                                <div *ngIf="wvvExpanded" class="flex flex-row items-center">
-                                    <p class="pb-1 font-semibold">Weniger lesen</p>
-                                    <svg width="25" height="24" viewBox="0 0 25 24" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M7.46396 15.4L6.06396 14L12.064 8.00002L18.064 14L16.664 15.4L12.064 10.8L7.46396 15.4Z"
-                                            fill="currentColor" />
-                                    </svg>
-                                </div>
-                            </span>
-                        </a>
-                    </div>
-                </div>
-                <div class="h-full"></div>
-            </div>
-            <div class="flex flex-col">
+        </div>
 
-                <div
-                    class="flex flex-col items-center h-full rounded-lg bg-white dark:bg-dark-cards dark:text-dark-primary-font p-4">
-                    <a href="https://www.send-ev.de" target="_blank">
-                        <img class="w-64 pb-4 dark:hidden" src="assets/logos/send.png">
-                        <img class="w-64 pb-4 hidden dark:block" src="assets/logos/send_dark.svg">
-                    </a>
-                    <div class="mt-2">
-                        Das Social Entrepreneurship Netzwerk Deutschlands (SEND) ist angetreten, um Sozialunternehmen zu
-                        vernetzen, zu stärken und ihnen eine gemeinsame Stimme zu geben.
-                    </div>
-                    <div class="mt-2" *ngIf="sendExpanded">
-                        <p>
-                            SEND baut wichtige Brücken zur Politik, Zivilgesellschaft, Wohlfahrt und klassischen
-                            Wirtschaft, um positiven Wandel in unserer Gesellschaft voranzutreiben und die
-                            Rahmenbedingungen für soziale Innovationen zu verbessern. Bei all dem gilt das Leitmotiv
-                            #GemeinsamWirken.
-                        </p>
-                    </div>
-                    <div class="pt-8">
-                        <a class="bg-highlight dark:bg-dark-primary flex px-2 py-1.5 rounded-full text-white dark:text-dark-background cursor-pointer"
-                            (click)="expand_collapse('send')">
-                            <span class="ml-2">
-                                <div *ngIf="!sendExpanded" class="flex flex-row items-center">
-                                    <p class="pb-1 font-semibold">Mehr lesen</p>
-                                    <svg width="25" height="24" viewBox="0 0 25 24" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M16.664 8.59998L18.064 9.99998L12.064 16L6.06403 9.99998L7.46403 8.59998L12.064 13.2L16.664 8.59998Z"
-                                            fill="currentColor" />
-                                    </svg>
-                                </div>
-                                <div *ngIf="sendExpanded" class="flex flex-row items-center">
-                                    <p class="pb-1 font-semibold">Weniger lesen</p>
-                                    <svg width="25" height="24" viewBox="0 0 25 24" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M7.46396 15.4L6.06396 14L12.064 8.00002L18.064 14L16.664 15.4L12.064 10.8L7.46396 15.4Z"
-                                            fill="currentColor" />
-                                    </svg>
-                                </div>
-                            </span>
-                        </a>
-                    </div>
-                </div>
-                <div class="h-full"></div>
-            </div>
+        <div class="w-11/12 md:w-2/3 py-8 md:py-10 md:self-end">
             <div
-                class="flex flex-col items-center h-full rounded-lg bg-white dark:bg-dark-cards dark:text-dark-primary-font p-4 xl:col-span-2 xl:w-1/2 place-self-center">
-                <a href="https://projecttogether.org" target="_blank">
-                    <img class="w-64 pb-4" src="assets/logos/project_together.png">
-                </a>
-                <div class="mt-2">
-                    ProjectTogether ist ein gemeinnütziges Sozialunternehmen, welches als Innovationsplattform fungiert
-                    um junge Talente und die Entwicklung von zukunftsweisenden Ideen zu fördern.
+                class="p-4 rounded-lg relative flex flex-col items-center md:items-start bg-white dark:bg-dark-cards dark:text-dark-primary-font">
+                <div class="flex flex-col items-center md:pl-40 h-full items-center md:items-start">
+                    <img class="md:absolute md:top-12 md:-left-36 md:w-4/12 md:transform md:-translate-y-10 dark:hidden"
+                        src="assets/illustrations/fff_advantage.svg">
+                    <img class="md:absolute md:top-12 md:-left-36 md:w-4/12 md:transform md:-translate-y-10 hidden dark:block"
+                        src="assets/illustrations/fff_advantage_dark.svg">
+                    <div class="text-2xl">
+                        Die Vorteile von Facts for Friends
+                    </div>
+                    <div class="mt-2">
+                        <b>1. Zentral & teilbar</b><br>
+                        Facts for Friends ist eine zentrale Plattform, die Faktenchecks von glaubwürdigen Quellen
+                        sammelt
+                        und von der aus Richtigstellungen leicht in jedem sozialen Netzwerk oder Messenger Dienst
+                        geteilt
+                        werden können.
+                    </div>
                 </div>
-                <div class="mt-2" *ngIf="ptExpanded">
-                    <p>
-                        ProjectTogether sieht sich selbst als “Wegbegleiter für gesellschaftlichen Fortschritt”. Ziel
-                        ist es, insbesondere die Zivilgesellschaft mittels des “Open Social Innvoation” Ansatzes zu
-                        befähigen innovative Lösungen für die großen gesellschaftlichen Herausforderungen unserer Zeit
-                        zu schaffen. Dabei dient ProjectTogether als Verbindungsglied zwischen diesen kreativen Akteuren
-                        in der Zivilgesellschaft und der Umsetzungskraft von Institutionen und Unternehmen.
+                <div class="mt-2" *ngIf="advantageFFFexpanded">
+                    <p class="md:pl-40 pb-2">
+                        <b>2. Simple & „Snackable”</b><br>
+                        Die FactSnacks sind buchstäblich „Snacks”, da Informationen zusammengefasst und kurz und
+                        prägnant
+                        dargestellt werden. <br>
                     </p>
+                    <b>3. Suchfunktion</b><br>
+                    Und die integrierte Suchfunktion ermöglicht es Nutzer*innen, verifizierte Faktenchecks innerhalb von
+                    Sekunden zu finden
                 </div>
-                <div class="pt-8">
+                <div class="pt-8" [ngClass]="{'md:pl-40': !advantageFFFexpanded}">
                     <a class="bg-highlight dark:bg-dark-primary flex px-2 py-1.5 rounded-full text-white dark:text-dark-background cursor-pointer"
-                        (click)="expand_collapse('pt')">
+                        (click)="expand_collapse('fffAdvantage')">
                         <span class="ml-2">
-                            <div *ngIf="!ptExpanded" class="flex flex-row items-center">
+                            <div *ngIf="!advantageFFFexpanded" class="flex flex-row items-center">
                                 <p class="pb-1 font-semibold">Mehr lesen</p>
                                 <svg width="25" height="24" viewBox="0 0 25 24" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -466,7 +119,7 @@
                                         fill="currentColor" />
                                 </svg>
                             </div>
-                            <div *ngIf="ptExpanded" class="flex flex-row items-center">
+                            <div *ngIf="advantageFFFexpanded" class="flex flex-row items-center">
                                 <p class="pb-1 font-semibold">Weniger lesen</p>
                                 <svg width="25" height="24" viewBox="0 0 25 24" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -477,6 +130,397 @@
                             </div>
                         </span>
                     </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="w-11/12 md:w-2/3 static flex flex-row flex-nowrap py-8 md:py-10">
+            <div class="p-4 rounded-lg relative w-1/4 flex-1 bg-white dark:bg-dark-cards dark:text-dark-primary-font">
+                <div class="flex flex-col items-center md:items-start h-full">
+                    <img class="md:absolute md:top-8 md:-right-20 md:w-4/12 md:transform md:-translate-y-5 dark:hidden"
+                        src="assets/illustrations/fake_news.svg">
+                    <img class="md:absolute md:top-8 md:-right-20 md:w-4/12 md:transform md:-translate-y-5 hidden dark:block"
+                        src="assets/illustrations/fake_news_dark.svg">
+                    <div class="text-2xl">
+                        Unsere Arbeit und Prozesse
+                    </div>
+                    <div class="mt-2 md:w-3/4">
+                        Wir arbeiten Hand-in-Hand mit etablierten Faktenchecker*innen zusammen. Das heißt, wir sind
+                        keine
+                        Konkurrenz, sondern eine Ergänzung. Als Basis für unsere FactSnacks nutzen wir ausschließlich
+                        Content von Fact-Checking Organisationen, die Teil des <a
+                            href="https://www.ifcncodeofprinciples.poynter.org/signatories"
+                            target=”_blank”>International
+                            Fact Checking Networks</a> sind und dessen <a
+                            href="https://www.ifcncodeofprinciples.poynter.org/know-more/the-commitments-of-the-code-of-principles"
+                            target=”_blank”>Codex</a> bei der Arbeit einhalten. Dieser <a
+                            href="https://www.ifcncodeofprinciples.poynter.org/know-more/the-commitments-of-the-code-of-principles"
+                            target=”_blank”>Codex</a> ist das Ergebnis einer globalen Kooperation von seriösen
+                        Faktenprüfern.
+                    </div>
+                    <div class="mt-2 md:w-3/4" *ngIf="processesFFFexpanded">
+                        Wir sammeln Faktenchecks zu aktuellen Themen, die für unsere Nutzer*innen relevant sind. Dabei
+                        nutzen wir hauptsächlich IFCN Quellen, die Falschinformationen im deutschen Kontext aufdecken.
+                        Wir
+                        greifen jedoch ebenfalls auf internationale Quellen zurück, die Faktenchecks zu Themen
+                        publizieren,
+                        die für unsere Nutzer*innen interessant sein könnten.
+                    </div>
+                    <div class="mt-2" *ngIf="processesFFFexpanded">
+                        Dabei achten wir stets auf das Zwei-Quellen-Prinzip, sodass ein FactSnack immer auf mehr als
+                        einer
+                        Quelle basieren muss. Nach einer Überprüfung der Quelle komprimieren wir die langen Faktenchecks
+                        zu
+                        kurzen und nutzerfreundlichen FactSnacks. Jeder FactSnack wird dann mithilfe des 4-Augen
+                        Prinzips
+                        erneut kontrolliert und redigiert, bevor er auf unserer Website und unseren social Kanälen
+                        veröffentlicht wird.
+                    </div>
+                    <div class="pt-8">
+                        <a class="bg-highlight dark:bg-dark-primary flex px-2 py-1.5 rounded-full text-white dark:text-dark-background cursor-pointer"
+                            (click)="expand_collapse('fffProcesses')">
+                            <span class="ml-2">
+                                <div *ngIf="!processesFFFexpanded" class="flex flex-row items-center">
+                                    <p class="pb-1 font-semibold">Mehr lesen</p>
+                                    <svg width="25" height="24" viewBox="0 0 25 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M16.664 8.59998L18.064 9.99998L12.064 16L6.06403 9.99998L7.46403 8.59998L12.064 13.2L16.664 8.59998Z"
+                                            fill="currentColor" />
+                                    </svg>
+                                </div>
+                                <div *ngIf="processesFFFexpanded" class="flex flex-row items-center">
+                                    <p class="pb-1 font-semibold">Weniger lesen</p>
+                                    <svg width="25" height="24" viewBox="0 0 25 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M7.46396 15.4L6.06396 14L12.064 8.00002L18.064 14L16.664 15.4L12.064 10.8L7.46396 15.4Z"
+                                            fill="currentColor" />
+                                    </svg>
+                                </div>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="w-11/12 md:w-2/3 py-8 md:py-10 md:self-end">
+            <div
+                class="p-4 rounded-lg relative flex flex-col items-center md:items-start bg-white dark:bg-dark-cards dark:text-dark-primary-font">
+                <div class="flex flex-col md:pl-52 h-full items-center md:items-start">
+                    <img class="md:absolute md:top-12 md:-left-32 md:w-4/12 md:transform md:-translate-y-16 dark:hidden"
+                        src="assets/illustrations/fff-team.svg">
+                    <img class="md:absolute md:top-12 md:-left-32 md:w-4/12 md:transform md:-translate-y-16 hidden dark:block"
+                        src="assets/illustrations/fff-team-dark.svg">
+                    <div class="text-2xl">
+                        Die Vorteile von Facts for Friends
+                    </div>
+                    <div class="mt-2">
+                        Unser Team besteht aktuell aus zwei Gründerinnen, Journalist*innen und Entwickler*innen. Die
+                        Idee
+                        Facts for Friends wurde ursprünglich im Rahmen des #WirVsVirus Hackathons der Bundesregierung
+                        entwickelt und mithilfe des #WirVsVirus Solution Enablers umgesetzt.
+                    </div>
+                </div>
+                <div class="mt-2" *ngIf="teamFFFexpanded">
+                    <p class="md:pl-52 pb-2">
+                        Obwohl wir erst am Anfang unserer Vision stehen, hat unser Projekt bereits große positive
+                        Resonanz
+                        von sachkundigen Experten aus dem öffentlichen und privaten Sektor erhalten</p>
+                    Durch den Prototype Fund im Rahmen des #WirVsVirus Hackathons wurden wir vom Bundesministerium für
+                    Bildung und Forschung gefördert, durften unser Projekt vor dem Bundespresseamt (BPA) vorstellen,
+                    wurden
+                    als Kreativpiloten 2020 ausgezeichnet und im 2020 Goalkeepers Report der Bill & Melinda Gates
+                    Stiftung
+                    namentlich erwähnt. Zudem werden wir aktiv von der Björn Steiger Stiftung unterstützt, um unsere
+                    technische Infrastruktur weiter auszubauen
+                </div>
+                <div class="pt-8" [ngClass]="{'md:pl-52': !teamFFFexpanded}">
+                    <a class="bg-highlight dark:bg-dark-primary flex px-2 py-1.5 rounded-full text-white dark:text-dark-background cursor-pointer"
+                        (click)="expand_collapse('fffTeam')">
+                        <span class="ml-2">
+                            <div *ngIf="!teamFFFexpanded" class="flex flex-row items-center">
+                                <p class="pb-1 font-semibold">Mehr lesen</p>
+                                <svg width="25" height="24" viewBox="0 0 25 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M16.664 8.59998L18.064 9.99998L12.064 16L6.06403 9.99998L7.46403 8.59998L12.064 13.2L16.664 8.59998Z"
+                                        fill="currentColor" />
+                                </svg>
+                            </div>
+                            <div *ngIf="teamFFFexpanded" class="flex flex-row items-center">
+                                <p class="pb-1 font-semibold">Weniger lesen</p>
+                                <svg width="25" height="24" viewBox="0 0 25 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M7.46396 15.4L6.06396 14L12.064 8.00002L18.064 14L16.664 15.4L12.064 10.8L7.46396 15.4Z"
+                                        fill="currentColor" />
+                                </svg>
+                            </div>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div
+            class="p-4 w-full bg-gradient-to-b from-gradient-from via-gradient-via to-gradient-to dark:from-dark-gradient-from dark:via-dark-gradient-via to-gradient-to bg-64 bg-no-repeat flex flex-col items-center">
+            <h2 class="ml-4 text-4xl text-white dark:text-dark-background self-start">Unterstützt von</h2>
+            <div class="m-4 p-4 w-full grid justify-center gap-8 grid-cols-1 xl:grid-cols-2 max-w-screen-xl">
+                <div class="flex flex-col">
+                    <div
+                        class="flex flex-col items-center h-full rounded-lg bg-white dark:bg-dark-cards dark:text-dark-primary-font p-4">
+                        <a href="https://www.steiger-stiftung.de" target="_blank">
+                            <img class="w-64 pb-4" src="assets/logos/bjoern-steiger-stiftung.png">
+                        </a>
+                        <div class="mt-2">
+                            Die Björn Steiger Stiftung setzt sich seit mehr als 50 Jahren für die Verbesserung und die
+                            Entwicklung der modernen Notfallhilfe ein.
+                        </div>
+                        <div class="mt-2" *ngIf="steigerExpanded">
+                            <p>
+                                Meilensteine dieses Engagements sind unter anderem die Einführung der bundesweit
+                                einheitlichen Notrufnummern 110/112, das 24h Notarztsystem und der Aufbau der zivilen
+                                Luftrettung in Deutschland. Aktuelle Initiativen widmen sich insbesondere dem Kampf
+                                gegen
+                                den Herztod, der Neustrukturierung und Digitalisierung des Rettungswesen in Deutschland
+                                sowie der Beteiligung national wie international an innovativen Entwicklungen, die die
+                                Verbesserung des Rettungs- und Notfallwesens in seiner Gesamtheit zum Ziel haben. Die
+                                Stiftung agiert als Think Tank, um innovative Ideen und Lösungsansätze für
+                                Herausforderungen
+                                im Gesundheitssystem konkret umzusetzen und mithilfe von Netzwerken zu skalieren. Mehr
+                                Informationen auf: www.steiger-stiftung.de.
+                            </p>
+                        </div>
+                        <div class="pt-8">
+                            <a class="bg-highlight dark:bg-dark-primary flex px-2 py-1.5 rounded-full text-white dark:text-dark-background cursor-pointer"
+                                (click)="expand_collapse('steiger')">
+                                <span class="ml-2">
+                                    <div *ngIf="!steigerExpanded" class="flex flex-row items-center">
+                                        <p class="pb-1 font-semibold">Mehr lesen</p>
+                                        <svg width="25" height="24" viewBox="0 0 25 24" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M16.664 8.59998L18.064 9.99998L12.064 16L6.06403 9.99998L7.46403 8.59998L12.064 13.2L16.664 8.59998Z"
+                                                fill="currentColor" />
+                                        </svg>
+                                    </div>
+                                    <div *ngIf="steigerExpanded" class="flex flex-row items-center">
+                                        <p class="pb-1 font-semibold">Weniger lesen</p>
+                                        <svg width="25" height="24" viewBox="0 0 25 24" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M7.46396 15.4L6.06396 14L12.064 8.00002L18.064 14L16.664 15.4L12.064 10.8L7.46396 15.4Z"
+                                                fill="currentColor" />
+                                        </svg>
+                                    </div>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="h-full"></div>
+                </div>
+                <div class="flex flex-col">
+                    <div
+                        class="flex flex-col items-center h-full rounded-lg bg-white dark:bg-dark-cards dark:text-dark-primary-font p-4">
+                        <a href="https://holistic.foundation" target="_blank">
+                            <img class="w-64 pb-4 dark:hidden" src="assets/logos/sidebar/holistic.png">
+                            <img class="w-64 pb-4 hidden dark:block" src="assets/logos/sidebar/holistic_dark.png">
+                        </a>
+                        <div class="mt-2">
+                            Happy people for a happy planet – Die Holistic Foundation wurde 2018 von Benjamin und Janina
+                            Lin
+                            Otto ins Leben gerufen.
+                        </div>
+                        <div class="mt-2" *ngIf="holisticExpanded">
+                            <p>
+                                Ziel ist es, mit vielen Partner:innen die Entwicklung neuer Lösungen für eine
+                                enkelfähige
+                                Zukunft zu unterstützen und Menschen als Individuen und in der Gemeinschaft zu
+                                inspirieren.
+                                In den kommenden Jahren sollen zahlreiche Leuchtturmprojekte initiiert werden, um die
+                                Welt
+                                gemeinsam zu einem glücklicheren Ort zu machen.
+                            </p>
+                        </div>
+                        <div class="pt-8">
+                            <a class="bg-highlight dark:bg-dark-primary flex px-2 py-1.5 rounded-full text-white dark:text-dark-background cursor-pointer"
+                                (click)="expand_collapse('holistic')">
+                                <span class="ml-2">
+                                    <div *ngIf="!holisticExpanded" class="flex flex-row items-center">
+                                        <p class="pb-1 font-semibold">Mehr lesen</p>
+                                        <svg width="25" height="24" viewBox="0 0 25 24" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M16.664 8.59998L18.064 9.99998L12.064 16L6.06403 9.99998L7.46403 8.59998L12.064 13.2L16.664 8.59998Z"
+                                                fill="currentColor" />
+                                        </svg>
+                                    </div>
+                                    <div *ngIf="holisticExpanded" class="flex flex-row items-center">
+                                        <p class="pb-1 font-semibold">Weniger lesen</p>
+                                        <svg width="25" height="24" viewBox="0 0 25 24" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M7.46396 15.4L6.06396 14L12.064 8.00002L18.064 14L16.664 15.4L12.064 10.8L7.46396 15.4Z"
+                                                fill="currentColor" />
+                                        </svg>
+                                    </div>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="h-full"></div>
+                </div>
+                <div class="flex flex-col">
+                    <div
+                        class="flex flex-col items-center h-full rounded-lg bg-white dark:bg-dark-cards dark:text-dark-primary-font p-4">
+                        <a href="https://wirvsvirus.org" target="_blank">
+                            <img class="w-64 pb-4" src="assets/logos/wir_vs_virus.png">
+                        </a>
+                        <div class="mt-2">
+                            Im Rahmen des #WirVsVirus Hackathons entstand im März 2020 der erste Prototyp des Projektes
+                            Facts for Friends. In dem großangelegten, von der Bundesregierung geförderten Hackathon
+                            kamen
+                            28.361 Menschen zusammen und arbeiteten an über 1.500 kurzfristigen und effektiven
+                            Lösungsansätzen für neuartige Probleme im Zuge der aktuellen Corona-Krise. </div>
+                        <div class="mt-2" *ngIf="wvvExpanded">
+                            <p>
+                                Ziel dieser digitalen Veranstaltung war es, das kreative Potenzial der Zivilgesellschaft
+                                zu
+                                bündeln und schnell effektive Lösungen zu finden. Im Anschluss des Hackathons wurde
+                                Facts
+                                for Friends als eines der etwa 130 vielversprechendsten Projekte ausgewählt und in das
+                                #SolutionEnabler Programm aufgenommen. Mit Hilfe von diversen Förderpartnern liefert
+                                dieses
+                                Umsetzungsprogramm wertvolle Expertise, Informationen und Ressourcen. Förderpartner des
+                                Programms sind u.a. das Bundesministerium für Bildung und Forschung durch den Prototype
+                                Fund, das Vodafone Institute, die BMW Foundation Herbert Quandt und Google.
+                            </p>
+                        </div>
+                        <div class="pt-8">
+                            <a class="bg-highlight dark:bg-dark-primary flex px-2 py-1.5 rounded-full text-white dark:text-dark-background cursor-pointer"
+                                (click)="expand_collapse('wvv')">
+                                <span class="ml-2">
+                                    <div *ngIf="!wvvExpanded" class="flex flex-row items-center">
+                                        <p class="pb-1 font-semibold">Mehr lesen</p>
+                                        <svg width="25" height="24" viewBox="0 0 25 24" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M16.664 8.59998L18.064 9.99998L12.064 16L6.06403 9.99998L7.46403 8.59998L12.064 13.2L16.664 8.59998Z"
+                                                fill="currentColor" />
+                                        </svg>
+                                    </div>
+                                    <div *ngIf="wvvExpanded" class="flex flex-row items-center">
+                                        <p class="pb-1 font-semibold">Weniger lesen</p>
+                                        <svg width="25" height="24" viewBox="0 0 25 24" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M7.46396 15.4L6.06396 14L12.064 8.00002L18.064 14L16.664 15.4L12.064 10.8L7.46396 15.4Z"
+                                                fill="currentColor" />
+                                        </svg>
+                                    </div>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="h-full"></div>
+                </div>
+                <div class="flex flex-col">
+
+                    <div
+                        class="flex flex-col items-center h-full rounded-lg bg-white dark:bg-dark-cards dark:text-dark-primary-font p-4">
+                        <a href="https://www.send-ev.de" target="_blank">
+                            <img class="w-64 pb-4 dark:hidden" src="assets/logos/send.png">
+                            <img class="w-64 pb-4 hidden dark:block" src="assets/logos/send_dark.svg">
+                        </a>
+                        <div class="mt-2">
+                            Das Social Entrepreneurship Netzwerk Deutschlands (SEND) ist angetreten, um
+                            Sozialunternehmen zu
+                            vernetzen, zu stärken und ihnen eine gemeinsame Stimme zu geben.
+                        </div>
+                        <div class="mt-2" *ngIf="sendExpanded">
+                            <p>
+                                SEND baut wichtige Brücken zur Politik, Zivilgesellschaft, Wohlfahrt und klassischen
+                                Wirtschaft, um positiven Wandel in unserer Gesellschaft voranzutreiben und die
+                                Rahmenbedingungen für soziale Innovationen zu verbessern. Bei all dem gilt das Leitmotiv
+                                #GemeinsamWirken.
+                            </p>
+                        </div>
+                        <div class="pt-8">
+                            <a class="bg-highlight dark:bg-dark-primary flex px-2 py-1.5 rounded-full text-white dark:text-dark-background cursor-pointer"
+                                (click)="expand_collapse('send')">
+                                <span class="ml-2">
+                                    <div *ngIf="!sendExpanded" class="flex flex-row items-center">
+                                        <p class="pb-1 font-semibold">Mehr lesen</p>
+                                        <svg width="25" height="24" viewBox="0 0 25 24" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M16.664 8.59998L18.064 9.99998L12.064 16L6.06403 9.99998L7.46403 8.59998L12.064 13.2L16.664 8.59998Z"
+                                                fill="currentColor" />
+                                        </svg>
+                                    </div>
+                                    <div *ngIf="sendExpanded" class="flex flex-row items-center">
+                                        <p class="pb-1 font-semibold">Weniger lesen</p>
+                                        <svg width="25" height="24" viewBox="0 0 25 24" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M7.46396 15.4L6.06396 14L12.064 8.00002L18.064 14L16.664 15.4L12.064 10.8L7.46396 15.4Z"
+                                                fill="currentColor" />
+                                        </svg>
+                                    </div>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="h-full"></div>
+                </div>
+                <div
+                    class="flex flex-col items-center h-full rounded-lg bg-white dark:bg-dark-cards dark:text-dark-primary-font p-4 xl:col-span-2 xl:w-1/2 place-self-center">
+                    <a href="https://projecttogether.org" target="_blank">
+                        <img class="w-64 pb-4" src="assets/logos/project_together.png">
+                    </a>
+                    <div class="mt-2">
+                        ProjectTogether ist ein gemeinnütziges Sozialunternehmen, welches als Innovationsplattform
+                        fungiert
+                        um junge Talente und die Entwicklung von zukunftsweisenden Ideen zu fördern.
+                    </div>
+                    <div class="mt-2" *ngIf="ptExpanded">
+                        <p>
+                            ProjectTogether sieht sich selbst als “Wegbegleiter für gesellschaftlichen Fortschritt”.
+                            Ziel
+                            ist es, insbesondere die Zivilgesellschaft mittels des “Open Social Innvoation” Ansatzes zu
+                            befähigen innovative Lösungen für die großen gesellschaftlichen Herausforderungen unserer
+                            Zeit
+                            zu schaffen. Dabei dient ProjectTogether als Verbindungsglied zwischen diesen kreativen
+                            Akteuren
+                            in der Zivilgesellschaft und der Umsetzungskraft von Institutionen und Unternehmen.
+                        </p>
+                    </div>
+                    <div class="pt-8">
+                        <a class="bg-highlight dark:bg-dark-primary flex px-2 py-1.5 rounded-full text-white dark:text-dark-background cursor-pointer"
+                            (click)="expand_collapse('pt')">
+                            <span class="ml-2">
+                                <div *ngIf="!ptExpanded" class="flex flex-row items-center">
+                                    <p class="pb-1 font-semibold">Mehr lesen</p>
+                                    <svg width="25" height="24" viewBox="0 0 25 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M16.664 8.59998L18.064 9.99998L12.064 16L6.06403 9.99998L7.46403 8.59998L12.064 13.2L16.664 8.59998Z"
+                                            fill="currentColor" />
+                                    </svg>
+                                </div>
+                                <div *ngIf="ptExpanded" class="flex flex-row items-center">
+                                    <p class="pb-1 font-semibold">Weniger lesen</p>
+                                    <svg width="25" height="24" viewBox="0 0 25 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M7.46396 15.4L6.06396 14L12.064 8.00002L18.064 14L16.664 15.4L12.064 10.8L7.46396 15.4Z"
+                                            fill="currentColor" />
+                                    </svg>
+                                </div>
+                            </span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
