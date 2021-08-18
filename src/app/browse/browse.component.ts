@@ -19,6 +19,7 @@ export class BrowseComponent implements OnInit {
   totalCount: number
   data = new Date()
   recommendedSnacks: Array<any>
+  recommendationHeadline: string
 
 
   constructor(private dataService: DataService, private route: ActivatedRoute, private router: Router) { }
@@ -40,7 +41,10 @@ export class BrowseComponent implements OnInit {
     const q = this.route.snapshot.queryParamMap.get("q")
     const c = this.route.snapshot.queryParamMap.get("c")
     this.fetch(q, c)
-    this.dataService.getData(null, 3).subscribe(response => this.recommendedSnacks = response.facts)
+    this.dataService.getFeaturedSnacks().subscribe(response => {
+      this.recommendedSnacks = response.facts;
+      this.recommendationHeadline = response.name
+    })
   }
 
   async fetch(q: string, c: string) {

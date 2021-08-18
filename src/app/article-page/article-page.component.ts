@@ -26,7 +26,6 @@ export class ArticlePageComponent implements OnInit, OnDestroy {
     this.route.params.subscribe((params) => {
       this.dataService.getFact(params['id']).subscribe((fact) => {
         this.fact = fact;
-        console.log(this.fact);
         this.titleService.setTitle(this.fact.title + ' | Facts for Friends');
         this.metaService.updateTag({
           name: 'description',
@@ -44,43 +43,21 @@ export class ArticlePageComponent implements OnInit, OnDestroy {
           property: 'og:url',
           content: this.fact.url,
         });
-        this.dataService
-          .getData(null, 3)
-          .subscribe((response) => (this.recommendedSnacks = response.facts));
+        // Try to get recommended snacks
+        this.dataService.getRecommendations(fact.id).subscribe(
+          (response) => {
+            this.recommendedSnacks = response;
+          },
+          (_error) => {
+            // Fallback, if recommended snacks can't be loaded
+            this.dataService.getFeaturedSnacks().subscribe((response) => {
+              this.recommendedSnacks = response.facts;
+            })
+          }
+        );
       });
     });
-}
+  }
 
   ngOnDestroy(): void {}
-
-  // formatText() {
-  //   console.log(this.fact);
-  //   // if (this.fact.claim) {
-  //   //   if (this.fact.claim.startsWith('Behauptung:')) {
-  //   //     this.fact.claim = this.fact.claim.replace(
-  //   //       'Behauptung:',
-  //   //       '<b>Behauptung:</b>'
-  //   //     );
-  //   //   }
-  //   // }
-  //   // if (this.fact.snack.startsWith('Fakt:')) {
-  //   //   this.fact.snack = this.fact.snack.replace('Fakt:', '<b>Fakt:</b>');
-  //   // }
-  //   let keywords = [
-  //     'Falsch:',
-  //     'Richtig:',
-  //     'Wahr:',
-  //     'Irreführend:',
-  //     'Widerlegt:',
-  //     'Bestätigt:',
-  //   ];
-  //   for (let kw of keywords) {
-  //     if (this.fact.headline.startsWith(kw)) {
-  //       this.fact.headline = this.fact.headline.replace(
-  //         kw,
-  //         '<b>' + kw + '</b>'
-  //       );
-  //     }
-  //   }
-  // }
 }

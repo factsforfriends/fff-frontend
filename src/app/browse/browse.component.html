@@ -27,7 +27,7 @@
                         compact="true"
                         [ngClass]="{'lg:col-span-2': i == 0}"
                 ></app-article-card>
-                <app-featured-snacks [facts]="recommendedSnacks" title="Das Aktuellste" class="lg:col-span-2"></app-featured-snacks>
+                <app-featured-snacks [facts]="recommendedSnacks" title="{{recommendationHeadline}}" class="lg:col-span-2"></app-featured-snacks>
  
                 <app-article-card
                     *ngFor="let fact of facts | slice:5; let i = index" 
@@ -62,10 +62,5 @@
                 </div>
             </div>
         </div>
-        <!--<app-border-button
-            class="fixed bottom-0 right-0 mr-4 md:mr-8"
-            label="Layout bewerten"
-            form="O8B4KOEI"
-        ></app-border-button>-->
     </div>
 </div>

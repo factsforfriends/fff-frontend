@@ -23,11 +23,17 @@ export class DataService {
   }
 
   public getRecommendations(factId?: string) {
-    console.log('getting recommendations');
     let response = this.httpClient.get(
       `https://cms.factsforfriends.de/recommendations?fact=${factId}`
     );
     return response.pipe(map(this.parseRecommendations, this));
+  }
+
+  public getFeaturedSnacks() {
+    let response = this.httpClient.get(
+      `https://cms.factsforfriends.de/collections`
+    );
+    return response.pipe(map(this.parseFeaturedSnacks, this));
   }
 
   public getFactCount(category?: string) {
@@ -69,21 +75,18 @@ export class DataService {
   private parseSnacks(data: Array<any>) {
     let hits_count = data['found'];
     let facts: Array<Fact> = [];
-    console.log(data);
-    
+
     if (data) {
       data.forEach((el) => {
         let fact = this.parseSnack(el);
         facts.push(fact);
       });
     } else {
-      console.log('no element found');
     }
     return { hits_count, facts };
   }
 
   private parseSnack(el: any) {
-    console.log(el);
     let fact: Fact = {
       id: el['id'],
       title: el['headline'],
@@ -145,25 +148,48 @@ export class DataService {
 
   private parseRecommendations(data: Array<any>) {
     let recomendations = data[0];
-    console.log(recomendations);
 
     let facts: Array<Fact> = [];
 
     if (recomendations['recommends']) {
       recomendations = recomendations['recommends'];
-      console.log(recomendations);
 
       recomendations.forEach((rec) => {
         var fact = this.parseSnack(rec);
         facts.push(fact);
       });
-      console.log('Facts');
-      console.log(facts);
     }
     if (facts.length < 3) {
       throw 'Could not get 3 recommendations';
     } else {
       return facts;
     }
+  }
+
+  private parseFeaturedSnacks(data: Array<any>) {
+    let collections = data;
+
+    for (let col of collections) {
+      let name = col['name']
+      let validThrough = Date.parse(col['valid_through']);
+      let processedFacts: Array<Fact> = [];
+      let facts = col['facts'];
+      // TODO: Uncomment, once collection dates have been updated
+      // if (validThrough <= Date.now()) {
+      //   continue;
+      // }
+      facts.forEach((f) => {
+        var fact = this.parseSnack(f);
+        processedFacts.push(fact);
+      });
+
+      if (processedFacts.length < 3) {
+        processedFacts = [];
+        continue;
+      } else {
+        return{'facts': processedFacts, 'name': name} 
+      }
+    }
+    throw 'Could not get 3 recommendations';
   }
 }
