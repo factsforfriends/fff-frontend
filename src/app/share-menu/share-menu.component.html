@@ -29,11 +29,9 @@
 
                     <div class="h-32 md:h-40 w-48 md:w-60 bg-contain bg-no-repeat bg-center rounded-lg self-center text-center"
                         style="background-image:url({{this.sharepic}})"
-                        [ngClass]="{'opacity-30': current_selection != 'sharepic' && !this.isMobile }"
-                        [ngClass]="{'opacity-30': iOS }">
+                        [ngClass]="{'opacity-30': current_selection != 'sharepic' && !this.isMobile }">
                     </div>
-                    <span *ngIf="iOS" class="absolute bottom-20 left-16 md:left-auto md:bottom-32 md:right-26 text-center w-max">Bald auch <br> für iOS verfügbar</span>
-                    <span *ngIf="!iOS" class="text-center mt-2">
+                    <span class="text-center mt-2">
                         Sharepic
                     </span>
                 </div>

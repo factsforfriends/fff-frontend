@@ -26,7 +26,6 @@ export class ShareMenuComponent implements OnInit {
   sharedataText: any;
   sharedataImage: any;
   navigator: any;
-  iOS: boolean;
 
   current_selection: 'article' | 'sharepic' = 'article';
 
@@ -39,20 +38,22 @@ export class ShareMenuComponent implements OnInit {
     this.text = data.text;
     this.url = data.url;
     this.sharepic = data.sharepic;
+    this.sharepic = !this.checkiOS()
+      ? data.sharepic
+      : 'assets/illustrations/sharepic_ios.png';
     this.image_url = data.image_url;
     this.isMobile = data.isMobile;
-    // this.isMobile = true;
     this.id = data.id;
-    this.navigator = window.navigator
+    this.navigator = window.navigator;
     this.sharedataText = {
       title: this.title,
       text: this.truncateChar(this.title + '\n' + this.text),
-      url: 'https://factsforfriends.de/fact/' + this.id
+      url: 'https://factsforfriends.de/fact/' + this.id,
     };
     this.sharedataImage = {
       title: this.title,
       text: this.truncateChar(this.title + '\n' + this.text),
-      url: 'https://factsforfriends.de/fact/' + this.id
+      url: 'https://factsforfriends.de/fact/' + this.id,
     };
   }
 
@@ -61,46 +62,46 @@ export class ShareMenuComponent implements OnInit {
       this.hasSharepic = false;
     } else {
       this.hasSharepic = true;
-      const self = this;
-      const s3 = new S3({
-        region: 'eu-central-1',
-        credentials: {
-          accessKeyId: 'AKIA5KE74FK53QQR2MMB',
-          secretAccessKey: '2nhi2x7LWWXqA9G0cV4VNvpxx8NVeGI4FBLxB6qn',
-        },
-      });
-      var getParams = {
-        Bucket: 'fff-sharepics', // your bucket name,
-        // Todo: Get key from sharepic url 
-        Key: this.id + '.png', // path to the object you're looking for
-      };
-
-
-      s3.getObject(getParams, function (err, data) {
-        // Handle any error and exit
-        if (err) {
-          return err;
-        }
-        // No error happened
-        // Convert Body from a Buffer to an object
-        let chunks = [];
-        let reader = data['Body'].getReader();
-        reader.read().then(function processText({ done, value }) {
-          if (done) {
-
-            let blob = new Blob(chunks);
-            let file = new File([blob], 'sharepic.png', { type: 'image/png' });
-            let fileArray = [file];
-            self.sharedataImage['files'] = fileArray
-            console.log(self.sharedataImage);
-            return;
-          }
-          chunks.push(value);
-          return reader.read().then(processText);
+      if (!this.checkiOS()) {
+        const self = this;
+        const s3 = new S3({
+          region: 'eu-central-1',
+          credentials: {
+            accessKeyId: 'AKIA5KE74FK53QQR2MMB',
+            secretAccessKey: '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',
+          },
         });
-      });
-      this.iOS = this.checkiOS()
-      // this.iOS = true
+        var getParams = {
+          Bucket: 'fff-sharepics', // your bucket name,
+          // Todo: Get key from sharepic url
+          Key: this.id + '.png', // path to the object you're looking for
+        };
+
+        s3.getObject(getParams, function (err, data) {
+          // Handle any error and exit
+          if (err) {
+            return err;
+          }
+          // No error happened
+          // Convert Body from a Buffer to an object
+          let chunks = [];
+          let reader = data['Body'].getReader();
+          reader.read().then(function processText({ done, value }) {
+            if (done) {
+              let blob = new Blob(chunks);
+              let file = new File([blob], 'sharepic.png', {
+                type: 'image/png',
+              });
+              let fileArray = [file];
+              self.sharedataImage['files'] = fileArray;
+              console.log(self.sharedataImage);
+              return;
+            }
+            chunks.push(value);
+            return reader.read().then(processText);
+          });
+        });
+      }
     }
   }
 
@@ -239,7 +240,10 @@ export class ShareMenuComponent implements OnInit {
   }
 
   share_image() {
-    if (this.navigator.canShare && this.navigator.canShare({files: this.sharedataImage['files']})) {
+    if (
+      this.navigator.canShare &&
+      this.navigator.canShare({ files: this.sharedataImage['files'] })
+    ) {
       this.navigator
         .share(this.sharedataImage)
         .then(() => {
@@ -255,20 +259,21 @@ export class ShareMenuComponent implements OnInit {
 
   shareText() {
     console.log(this.sharedataText);
-    
+
     if (this.navigator.share) {
       navigator
         .share(this.sharedataText)
         .then(() => console.log('Successful share'))
         .catch((error) => console.log('Error sharing:', error));
-    }
-    else{
-      console.log("Cannot share text");     
+    } else {
+      console.log('Cannot share text');
     }
   }
 
   downloadSharepic(): void {
-    let file = new File([this.sharedataImage['files'][0]], 'sharepic.png', { type: 'image/png' });
+    let file = new File([this.sharedataImage['files'][0]], 'sharepic.png', {
+      type: 'image/png',
+    });
     var urlCreator = window.URL || window.webkitURL;
     var imageUrl = urlCreator.createObjectURL(file);
     var tag = document.createElement('a');
@@ -280,16 +285,17 @@ export class ShareMenuComponent implements OnInit {
   }
 
   checkiOS() {
-    return [
-      'iPad Simulator',
-      'iPhone Simulator',
-      'iPod Simulator',
-      'iPad',
-      'iPhone',
-      'iPod'
-    ].includes(navigator.platform)
-    // iPad on iOS 13 detection
-    || (navigator.userAgent.includes("Mac") && "ontouchend" in document)
+    return (
+      [
+        'iPad Simulator',
+        'iPhone Simulator',
+        'iPod Simulator',
+        'iPad',
+        'iPhone',
+        'iPod',
+      ].includes(navigator.platform) ||
+      // iPad on iOS 13 detection
+      (navigator.userAgent.includes('Mac') && 'ontouchend' in document)
+    );
   }
-  
 }
