@@ -17,7 +17,7 @@ const routes: Routes = [
   { path: 'privacy-policy', component: PrivacyPolicyPageComponent },
   { path: 'imprint', component: ImprintPageComponent },
   { path: 'about-us', component: AboutUsComponent},
-  { path: 'about-fakenews', component: AboutFakeNewsComponent},
+  { path: 'about-desinfo', component: AboutFakeNewsComponent},
   { path: 'press', component: PressComponent}
 ];
 

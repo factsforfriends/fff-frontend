@@ -27,7 +27,7 @@
                         compact="true"
                         [ngClass]="{'lg:col-span-2': i == 0}"
                 ></app-article-card>
-                <app-featured-snacks [facts]="recommendedSnacks" title="{{recommendationHeadline}}" class="lg:col-span-2"></app-featured-snacks>
+                <app-featured-snacks [facts]="recommendedSnacks" title="Themenfokus: {{recommendationHeadline}}" class="lg:col-span-2"></app-featured-snacks>
  
                 <app-article-card
                     *ngFor="let fact of facts | slice:5; let i = index" 
