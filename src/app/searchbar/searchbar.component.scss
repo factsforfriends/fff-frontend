@@ -7,19 +7,27 @@ input {
     &:focus {
         outline: none;
     }
+    @media only screen and (max-width: 1024px){
+        height: 4rem;
+    }
 }
 
 .isInFocus {
     position: absolute;
-    bottom: 0;
-    top: auto;
+    @media (min-width: 1024px) {
+        bottom: 0;
+        top: auto;
+    }
     
     input {
-        border-bottom: 0px;
-        border-bottom-left-radius: 0;
-        border-bottom-right-radius: 0;
         padding: 15px 40px;
     }
+}
+
+.searchBarNotEmpty{
+    border-bottom: 0px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
 }
 
 .searchicon {

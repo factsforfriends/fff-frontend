@@ -1,0 +1,350 @@
+<h2 class="px-1 text-3xl text-center lg:text-4xl font-semibold leading-relaxed dark:text-dark-primary-font">Über Fake News</h2>
+<div class="flex flex-col max-w-screen-xl items-center md:items-start">
+    <div class="w-11/12 md:w-2/3 static flex flex-row flex-nowrap py-8 md:py-10">
+        <div class="p-4 rounded-lg relative w-1/4 flex-1 bg-white dark:bg-dark-cards dark:text-dark-primary-font">
+            <div class="flex flex-col items-center md:items-start h-full">
+                <img class="md:absolute md:top-8 md:-right-20 md:w-4/12 md:transform md:-translate-y-10 dark:hidden" src="assets/illustrations/fake_news_speaker.svg">
+                <img class="md:absolute md:top-8 md:-right-20 md:w-4/12 md:transform md:-translate-y-10 hidden dark:block" src="assets/illustrations/fake_news_speaker_dark.svg">
+                <div class="text-2xl">
+                    Was sind Fake News?
+                </div>
+                <div class="mt-2 md:w-3/4">
+                    In der heutigen (digitalen) Zeit werden Menschen immer häufiger mit Falschmeldungen und irrtümlich als Fakt dargestellten Nachrichten - sogenannten Fake News - konfrontiert. Dieser Begriff ist heutzutage jedoch stark politisiert und wird oft falsch benutzt. Daher muss er zunächst klar definiert werden.  
+                </div>
+                <div class="mt-2" *ngIf="fakenewsExpanded">
+                    <p class="md:w-2/3 mb-2">
+                        Unter den Begriff „Fake News“ fallen erstens Misinformationen, also Nachrichten, die fehlerhaft, schlecht recherchiert oder veraltet sind und zweitens Desinformationen, also Nachrichten, die verfasst und verbreitet werden, um den Einzelnen oder die Gesellschaft bewusst zu manipulieren.
+                    </p>
+                    <p>
+                        Desinformationen imitieren oft Optik, Stil und Form von seriösen Nachrichten aus etablierten Medien, um die erfundenen Nachrichten glaubwürdiger erscheinen zu lassen. So werden beispielsweise Webseiten genutzt, die bekannten Nachrichtenportalen optisch sehr stark ähneln. Produzenten von Desinformationen verfolgen verschiedenste Ziele, wie zum Beispiel politische oder wirtschaftliche Anreize. Satire oder Ironie hingegen fallen  nicht unter den Begriff „Fake News“. 
+                    </p>
+                </div>
+                <div class="pt-8">
+                    <a class="bg-highlight dark:bg-dark-primary flex px-2 py-1.5 rounded-full text-white dark:text-dark-background cursor-pointer" (click)="expand_collapse('fakenews')">
+                        <span class="ml-2">
+                            <div *ngIf="!fakenewsExpanded" class="flex flex-row items-center">
+                                <p class="pb-1 font-semibold">Mehr lesen</p>
+                                <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M16.664 8.59998L18.064 9.99998L12.064 16L6.06403 9.99998L7.46403 8.59998L12.064 13.2L16.664 8.59998Z" fill="currentColor"/>
+                                </svg>    
+                            </div> 
+                            <div *ngIf="fakenewsExpanded" class="flex flex-row items-center">
+                                <p class="pb-1 font-semibold">Weniger lesen</p>
+                                <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M7.46396 15.4L6.06396 14L12.064 8.00002L18.064 14L16.664 15.4L12.064 10.8L7.46396 15.4Z" fill="currentColor"/>
+                                </svg>                                    
+                            </div>                            
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="w-11/12 md:w-2/3 py-8 md:py-10 md:self-end">
+        <div class="p-4 rounded-lg relative flex flex-col items-center md:items-start bg-white dark:bg-dark-cards dark:text-dark-primary-font">
+            <div class="flex flex-col items-center md:pl-52 h-full items-center md:items-start">
+                <img class="md:absolute md:top-12 md:-left-28 md:w-4/12 md:transform md:-translate-y-10 dark:hidden" src="assets/illustrations/laptop.svg">
+                <img class="md:absolute md:top-12 md:-left-28 md:w-4/12 md:transform md:-translate-y-10 hidden dark:block" src="assets/illustrations/laptop_dark.svg">
+                <div class="text-2xl">
+                    Die Wirkung
+                </div>
+                <div class="mt-2">
+                    <p>
+                        Die wesentliche Funktion des Journalismus war einst die Rolle als Gatekeeper. Journalist*innen entschieden welche Themen relevant für Leser*innen sind und kontrollierten so den Informationsfluss in der Gesellschaft. Im Zeitalter der digitalen Medien hat sich diese Rolle jedoch verändert, denn im Netz ist unbegrenzten Platz für Informationen, jeder kann Inhalte produzieren und teilen.                        
+                    </p>    
+                    
+                </div>
+            </div>
+            <p class="mt-2 md:pl-52" *ngIf="effectExpanded">
+                Dieser neuartige Informationsfluss sorgt für eine neue Freiheit und eine Vielfalt von Stimmen in den Medien, die für einen modernen und globalen Journalismus notwendig ist. Doch ohne einen Gatekeeper, der die Richtigkeit und Relevanz der publizierten Inhalte kontrolliert, steigt die Menge an irrelevanten und sogar falschen Informationen. 
+            </p>
+            <p class="mt-2" *ngIf="effectExpanded">
+                Daher ist es die Aufgabe von Journalist*innen und Faktenchecker*innen die Nutzer*innen durch den digitalen Informationsdschungel zu führen, einige Stimmen zu verstärken und vor anderen zu warnen, die potenziell falsche Fakten oder antidemokratische Ideologien verbreiten. Nur so kann der Journalismus auch im digitalen Zeitalter eine informierte und partizipative demokratische Gesellschaft fördern und seine Aufgabe als tragende Säule der Demokratie erfüllen. 
+            </p>
+            <div class="pt-8" [ngClass]="{'md:pl-52': !effectExpanded}">
+                <a class="bg-highlight dark:bg-dark-primary flex px-2 py-1.5 rounded-full text-white dark:text-dark-background cursor-pointer" (click)="expand_collapse('effect')">
+                    <span class="ml-2">
+                        <div *ngIf="!effectExpanded" class="flex flex-row items-center">
+                            <p class="pb-1 font-semibold">Mehr lesen</p>
+                            <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M16.664 8.59998L18.064 9.99998L12.064 16L6.06403 9.99998L7.46403 8.59998L12.064 13.2L16.664 8.59998Z" fill="currentColor"/>
+                            </svg>    
+                        </div> 
+                        <div *ngIf="effectExpanded" class="flex flex-row items-center">
+                            <p class="pb-1 font-semibold">Weniger lesen</p>
+                            <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M7.46396 15.4L6.06396 14L12.064 8.00002L18.064 14L16.664 15.4L12.064 10.8L7.46396 15.4Z" fill="currentColor"/>
+                            </svg>                                    
+                        </div>                            
+                    </span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="w-11/12 md:w-2/3 static flex flex-row flex-nowrap py-8 md:py-10 md:mb-10">
+        <div class="p-4 rounded-lg relative w-1/4 flex-1 bg-white dark:bg-dark-cards dark:text-dark-primary-font">
+            <div class="flex flex-col items-center md:items-start h-full">
+                <img class="md:absolute md:top-8 md:-right-20 md:w-4/12 md:transform md:-translate-y-10 dark:hidden" src="assets/illustrations/chat.svg">
+                <img class="md:absolute md:top-8 md:-right-20 md:w-4/12 md:transform md:-translate-y-10 hidden dark:block" src="assets/illustrations/chat_dark.svg">
+                <div class="text-2xl">
+                    Umgang mit Verschwörung
+                </div>
+                <div class="mt-2 md:w-3/4">
+                    Fakten allein reichen nicht immer aus, sie müssen auch richtig eingesetzt werden. Das Spiel “Talk to Me” kann Dir dabei helfen mit Freunden oder Verwandten, die an Fehlinformationen oder Verschwörungen im Zusammenhang mit COVID-19 glauben, auf konstruktive Art und Weise zu diskutieren.                
+                </div>
+                <div class="mt-2 md:w-3/4" *ngIf="conspiracyExpanded">
+                    Basierend auf einer Reihe von psychologischen und kommunikativen Konzepten und Forschungsergebnissen zeigt es Nutzer*innen, wie sie sich im Gespräch mit Freund*innen oder Verwandten verhalten können , die an Verschwörungserzählungen oder Fehlinformationen im Zusammenhang mit COVID-19 glauben. Hier gilt es, eine konstruktive Diskussion zu führen und Kommunikationstechniken zu nutzen, die ein Umdenken anstoßen können. Die erlernten Kommunikationsmuster können dann ideal in Kombination mit FactSnacks eingesetzt werden, um die Falschinformationen richtigzustellen.
+                </div>
+                <div class="pt-8">
+                    <a class="bg-highlight dark:bg-dark-primary flex px-2 py-1.5 rounded-full text-white dark:text-dark-background cursor-pointer" (click)="expand_collapse('conspiracy')">
+                        <span class="ml-2">
+                            <div *ngIf="!conspiracyExpanded" class="flex flex-row items-center">
+                                <p class="pb-1 font-semibold">Mehr lesen</p>
+                                <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M16.664 8.59998L18.064 9.99998L12.064 16L6.06403 9.99998L7.46403 8.59998L12.064 13.2L16.664 8.59998Z" fill="currentColor"/>
+                                </svg>    
+                            </div> 
+                            <div *ngIf="conspiracyExpanded" class="flex flex-row items-center">
+                                <p class="pb-1 font-semibold">Weniger lesen</p>
+                                <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M7.46396 15.4L6.06396 14L12.064 8.00002L18.064 14L16.664 15.4L12.064 10.8L7.46396 15.4Z" fill="currentColor"/>
+                                </svg>                                    
+                            </div>                            
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   
+    <div class="p-4 w-full bg-gradient-to-b from-gradient-from via-gradient-via to-gradient-to dark:from-dark-gradient-from dark:via-dark-gradient-via to-gradient-to bg-64 bg-no-repeat flex flex-col items-center">
+        <h2 class="ml-4 text-4xl text-white dark:text-dark-background self-start">In Kooperation mit</h2>
+        <div class="m-4 p-4 w-full grid justify-center gap-8 grid-cols-1 xl:grid-cols-2 max-w-screen-xl">
+            <div class="flex flex-col">
+                <div class="flex flex-col items-center h-full rounded-lg bg-white dark:bg-dark-cards dark:text-dark-primary-font p-4">
+                    <div class="flex items-center h-32">
+                        <a href="https://www.weitklick.de" target="_blank">
+                            <img class="w-64" src="assets/logos/weitklick.png">
+                        </a>
+                    </div>
+                    <div class="mt-2">
+                        Ziel des Projektes weitklick ist es, Lehrkräfte dabei zu unterstützen, das Thema Desinformation im digitalen Raum nachhaltig in den Unterricht zu integrieren.                
+                    </div>
+                    <div class="mt-2" *ngIf="weitklickExpanded">
+                        <p>
+                            Um dies zu erreichen, bieten wir Online-Kurse zum Selbstlernen, eine Sammlung an Unterrichtsmaterialien sowie regelmäßig stattfindende Webinare und individualisierte Fortbildungsveranstaltungen für Lehrkräfte an.
+                        </p>
+                    </div>
+                    <div class="pt-8">
+                        <a class="bg-highlight dark:bg-dark-primary flex px-2 py-1.5 rounded-full text-white dark:text-dark-background cursor-pointer" (click)="expand_collapse('weitklick')">
+                            <span class="ml-2">
+                                <div *ngIf="!weitklickExpanded" class="flex flex-row items-center">
+                                    <p class="pb-1 font-semibold">Mehr lesen</p>
+                                    <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M16.664 8.59998L18.064 9.99998L12.064 16L6.06403 9.99998L7.46403 8.59998L12.064 13.2L16.664 8.59998Z" fill="currentColor"/>
+                                    </svg>    
+                                </div> 
+                                <div *ngIf="weitklickExpanded" class="flex flex-row items-center">
+                                    <p class="pb-1 font-semibold">Weniger lesen</p>
+                                    <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M7.46396 15.4L6.06396 14L12.064 8.00002L18.064 14L16.664 15.4L12.064 10.8L7.46396 15.4Z" fill="currentColor"/>
+                                    </svg>                                    
+                                </div>                            
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                <div class="h-full"></div> 
+            </div>
+
+            <div class="flex flex-col">
+                <div class="flex flex-col items-center h-full rounded-lg bg-white dark:bg-dark-cards dark:text-dark-primary-font p-4">
+                    <div class="flex items-center h-32">
+                        <a href="https://no-hate-speech.de" target="_blank">
+                            <img class="w-64" src="assets/logos/ndm.png">
+                        </a>
+                    </div>
+                    <div class="mt-2">
+                        Das No Hate Speech Movement ist eine Initiative des Europarats und wird in Deutschland von den Neuen deutschen Medienmacher:innen umgesetzt.               
+                    </div>
+                    <div class="mt-2" *ngIf="ndmExpanded">
+                        <p>
+                            Seit 2016 entwickeln wir Strategien zum Umgang mit Hass im Netz – und bereiten diese auf, unter anderem in einem umfassenden und praktikablen Webtool, dem Helpdesk, oder live und in Farbe, ganz analog, im Leitfaden für Medienschaffende zum Umgang mit Hass im Netz. Wir unterstützen und beraten Medienschaffende und Redaktionen, Initiativen und politische Akteur:innen. Seit 2020 sind wir außerdem Teil des internationalen Projekts WE CAN for human rights speech, das wir gemeinsam mit dem Europarat und Partner:innen aus Belgien, Italien und Rumänien umsetzen.
+                        </p>
+                    </div>
+                    <div class="pt-8">
+                        <a class="bg-highlight dark:bg-dark-primary flex px-2 py-1.5 rounded-full text-white dark:text-dark-background cursor-pointer" (click)="expand_collapse('ndm')">
+                            <span class="ml-2">
+                                <div *ngIf="!ndmExpanded" class="flex flex-row items-center">
+                                    <p class="pb-1 font-semibold">Mehr lesen</p>
+                                    <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M16.664 8.59998L18.064 9.99998L12.064 16L6.06403 9.99998L7.46403 8.59998L12.064 13.2L16.664 8.59998Z" fill="currentColor"/>
+                                    </svg>    
+                                </div> 
+                                <div *ngIf="ndmExpanded" class="flex flex-row items-center">
+                                    <p class="pb-1 font-semibold">Weniger lesen</p>
+                                    <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M7.46396 15.4L6.06396 14L12.064 8.00002L18.064 14L16.664 15.4L12.064 10.8L7.46396 15.4Z" fill="currentColor"/>
+                                    </svg>                                    
+                                </div>                            
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                <div class="h-full"></div> 
+            </div>
+
+            <div class="flex flex-col">
+                <div class="flex flex-col items-center h-full rounded-lg bg-white dark:bg-dark-cards dark:text-dark-primary-font p-4">
+                    <div class="flex items-center h-32">
+                        <a href="https://www.followthevote.com" target="_blank">
+                            <img class="w-64" src="assets/logos/ftv.png">
+                        </a>
+                    </div>
+                    <div class="mt-2">
+                        Informed. Engaged. Empowered" - unter diesem Motto bietet das Social-Impact Start-Up FollowTheVote eine kreative und innovative App, welche Politik wieder einfach, sachlich und unterhaltsam macht. 
+                    </div>
+                    <div class="mt-2" *ngIf="ftvExpanded">
+                        <p>
+                            Junge Bürger*innen werden animiert, sich über Politik zu informieren und motiviert, sich gesellschaftlich und politisch zu engagieren. Gemäß dem Sustainable Development Goal (SDG) 16 der Vereinten Nationen: Peace, Justice and Strong Institutions sowie dem SDG 4: Quality Education, setzen wir uns für die Stärkung von Demokratie, Frieden und Freiheit für die nächsten Generationen ein.
+                        </p>
+                    </div>
+                    <div class="pt-8">
+                        <a class="bg-highlight dark:bg-dark-primary flex px-2 py-1.5 rounded-full text-white dark:text-dark-background cursor-pointer" (click)="expand_collapse('ftv')">
+                            <span class="ml-2">
+                                <div *ngIf="!ftvExpanded" class="flex flex-row items-center">
+                                    <p class="pb-1 font-semibold">Mehr lesen</p>
+                                    <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M16.664 8.59998L18.064 9.99998L12.064 16L6.06403 9.99998L7.46403 8.59998L12.064 13.2L16.664 8.59998Z" fill="currentColor"/>
+                                    </svg>    
+                                </div> 
+                                <div *ngIf="ftvExpanded" class="flex flex-row items-center">
+                                    <p class="pb-1 font-semibold">Weniger lesen</p>
+                                    <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M7.46396 15.4L6.06396 14L12.064 8.00002L18.064 14L16.664 15.4L12.064 10.8L7.46396 15.4Z" fill="currentColor"/>
+                                    </svg>                                    
+                                </div>                            
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                <div class="h-full"></div> 
+            </div>
+
+            <div class="flex flex-col">
+                <div class="flex flex-col items-center h-full rounded-lg bg-white dark:bg-dark-cards dark:text-dark-primary-font p-4">
+                    <div class="flex items-center h-32">
+                        <a href="https://info.codetekt.org" target="_blank">
+                            <img class="w-64" src="assets/logos/codetekt.png">
+                        </a>
+                    </div>
+                    <div class="mt-2">
+                        codetekt bekämpft Falschinformationen mit Hilfe der Gemeinschaft – objektiv, transparent und kostenlos für alle zugänglich.
+                    </div>
+                    <div class="mt-2" *ngIf="codetektExpanded">
+                        <p>
+                            Auf unserer Plattform bewertet unsere Community die Glaubwürdigkeit digitaler Nachrichten. Die Ergebnisse der Prüfung geben im Anschluss einfach verständlich Auskunft - für eine resiliente Demokratie und gut informierte Gesellschaft.
+                        </p>
+                    </div>
+                    <div class="pt-8">
+                        <a class="bg-highlight dark:bg-dark-primary flex px-2 py-1.5 rounded-full text-white dark:text-dark-background cursor-pointer" (click)="expand_collapse('codetekt')">
+                            <span class="ml-2">
+                                <div *ngIf="!codetektExpanded" class="flex flex-row items-center">
+                                    <p class="pb-1 font-semibold">Mehr lesen</p>
+                                    <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M16.664 8.59998L18.064 9.99998L12.064 16L6.06403 9.99998L7.46403 8.59998L12.064 13.2L16.664 8.59998Z" fill="currentColor"/>
+                                    </svg>    
+                                </div> 
+                                <div *ngIf="codetektExpanded" class="flex flex-row items-center">
+                                    <p class="pb-1 font-semibold">Weniger lesen</p>
+                                    <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M7.46396 15.4L6.06396 14L12.064 8.00002L18.064 14L16.664 15.4L12.064 10.8L7.46396 15.4Z" fill="currentColor"/>
+                                    </svg>                                    
+                                </div>                            
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                <div class="h-full"></div> 
+            </div>
+
+            <div class="flex flex-col">
+                <div class="flex flex-col items-center h-full rounded-lg bg-white dark:bg-dark-cards dark:text-dark-primary-font p-4">
+                    <div class="flex items-center h-32">
+                        <a href="https://www.betterplace-lab.org" target="_blank">
+                            <img class="w-32" src="assets/logos/bplab.jpg">
+                        </a>
+                    </div>
+                    <div class="mt-2">
+                        Das betterplace lab ist ein digital-sozialer Think-und-Do-Tank und die Schwester von betterplace.org, Deutschlands größter Online-Spendenplattform.
+                    </div>
+                    <div class="mt-2" *ngIf="bpExpanded">
+                        <p>
+                            Gute Zusammenarbeit braucht Zeit, ein Sich-Einlassen auf die anderen, ein Geben-und-Nehmen und Mut zum Risiko. Echte Kollaboration bedeutet, einen Perspektivwechsel einzugehen. Mit diesen neu gewonnenen Kompetenzen wirken die Workshopteilnehmende in ihre Engagementfelder hinein – und initiieren damit einen Kulturwandel hin zu einem sozialeren, effektiveren Miteinander.
+                            Das betterplace co:lab-Programm besteht aus fünf aufeinander aufbauenden Workshops. Im Verlauf der nächsten zwei Jahre werden insgesamt 66 Workshops angeboten, so dass mehr als 500 Menschen daran teilnehmen können. Zusätzlich werden acht organisationsübergreifende Gruppen – sogenannte Cluster – unterstützt, welche ein gesellschaftliches Zukunftsthema bearbeiten, mit Prozesscoachings.
+                        </p>
+                    </div>
+                    <div class="pt-8">
+                        <a class="bg-highlight dark:bg-dark-primary flex px-2 py-1.5 rounded-full text-white dark:text-dark-background cursor-pointer" (click)="expand_collapse('bp')">
+                            <span class="ml-2">
+                                <div *ngIf="!bpExpanded" class="flex flex-row items-center">
+                                    <p class="pb-1 font-semibold">Mehr lesen</p>
+                                    <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M16.664 8.59998L18.064 9.99998L12.064 16L6.06403 9.99998L7.46403 8.59998L12.064 13.2L16.664 8.59998Z" fill="currentColor"/>
+                                    </svg>    
+                                </div> 
+                                <div *ngIf="bpExpanded" class="flex flex-row items-center">
+                                    <p class="pb-1 font-semibold">Weniger lesen</p>
+                                    <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M7.46396 15.4L6.06396 14L12.064 8.00002L18.064 14L16.664 15.4L12.064 10.8L7.46396 15.4Z" fill="currentColor"/>
+                                    </svg>                                    
+                                </div>                            
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                <div class="h-full"></div> 
+            </div>
+
+            <div class="flex flex-col">
+
+                <div class="flex flex-col items-center h-full rounded-lg bg-white dark:bg-dark-cards dark:text-dark-primary-font p-4">
+                    <div class="flex items-center h-32">
+                        <img class="w-64" src="assets/logos/dda.png">
+                    </div>
+                    <div class="mt-2">
+                        Die Allianz eint die Vision, ganzheitlich über Desinformation aufzuklären, Medienkompetenz zu stärken, Fakten zugänglich zu machen, politische Partizipation zu fördern und die Demokratie zu schützen.
+                    </div>
+                    <div class="mt-2" *ngIf="ph2Expanded">
+                        <p>
+                            Die FaktenAllianz ist erstens ein Zusammenschluss eigenständiger Initiativen, die alle im Bereich Kommunikation, Information und Desinformation arbeiten, dazu gehört aktuell Facts for Friends, Codetekt, Solvery, VeryFact und FollowTheVote. Im Rahmen der Allianz wollen wir die Wirkung der teilnehmenden Initiativen verstärken und neue gemeinsame Lösungen finden. Zusätzlich arbeitet die Allianz an eigenen Projekten wie etwa die Erarbeitung eines Medienkompetenzguides.
+                        </p>
+                    </div>
+                    <div class="pt-8">
+                        <a class="bg-highlight dark:bg-dark-primary flex px-2 py-1.5 rounded-full text-white dark:text-dark-background cursor-pointer" (click)="expand_collapse('ph2')">
+                            <span class="ml-2">
+                                <div *ngIf="!ph2Expanded" class="flex flex-row items-center">
+                                    <p class="pb-1 font-semibold">Mehr lesen</p>
+                                    <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M16.664 8.59998L18.064 9.99998L12.064 16L6.06403 9.99998L7.46403 8.59998L12.064 13.2L16.664 8.59998Z" fill="currentColor"/>
+                                    </svg>    
+                                </div> 
+                                <div *ngIf="ph2Expanded" class="flex flex-row items-center">
+                                    <p class="pb-1 font-semibold">Weniger lesen</p>
+                                    <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M7.46396 15.4L6.06396 14L12.064 8.00002L18.064 14L16.664 15.4L12.064 10.8L7.46396 15.4Z" fill="currentColor"/>
+                                    </svg>                                    
+                                </div>                            
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                <div class="h-full"></div> 
+            </div>
+
+        </div>
+    </div>
+</div>

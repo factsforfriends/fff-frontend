@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-
+import { Location } from '@angular/common';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -7,19 +7,29 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  @Input() MenuOpen: boolean = false;
+  @Input() MenuOpen = false;
+  public page: string;
+  public location: Location;
+  public searchOpen: boolean;
 
-  constructor() { }
 
-  openMenu(){
+  constructor(location: Location) {
+    this.location = location;
+  }
+
+  ngOnInit(): void{
+  }
+
+  openMenu(): boolean{
     return this.MenuOpen = true;
   }
 
-  closeMenu(){
+  closeMenu(): boolean{
     return this.MenuOpen = false;
   }
 
-  ngOnInit(): void {
+  toggleSearch(): void{
+    this.MenuOpen = false;
+    this.searchOpen = true;
   }
-
 }

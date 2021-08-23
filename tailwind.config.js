@@ -1,4 +1,5 @@
 const Color = require('color')
+const { width, maxWidth } = require('tailwindcss/defaultTheme')
 const alpha = (clr, val) => Color(clr).alpha(val).rgb().string()
 const lighten = (clr, val) => Color(clr).lighten(val).rgb().string()
 const darken = (clr, val) => Color(clr).darken(val).rgb().string()
@@ -33,11 +34,38 @@ module.exports = {
         'dark-gradient-from': '#98DFD9 0%',
         'gradient-via': '#0B6B64 50%',
         'dark-gradient-via': '#98DFD9 50%',
-        'gradient-to': '#00000000 50%'
+        'gradient-to': '#00000000 50%',
       },
       fontSize: {
         'xxs': '.6rem',
+      },
+      backgroundSize: {
+        'auto': 'auto',
+        'cover': 'cover',
+        'contain': 'contain',
+        '64': '100% 16rem'
+      },
+      inset:{
+        '26': '6.5rem'
       }
+    },
+    maxWidth: {
+      '1/1':'100vw',
+      '3xl': '48rem',
+      '4xl': '56rem',
+      '6xl': '72rem',
+      'md': '28rem',
+      'screen-xl': '1280px',
+      'screen-sm': '640px',
+
+    },
+    minWidth: {
+      '1/3':'33%'
+    }
+  },
+  variants: {
+    extend: {
+      display: ['dark', 'hover', 'group-hover']
     }
   }
 }

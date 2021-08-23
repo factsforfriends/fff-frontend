@@ -1,45 +1,139 @@
-<div class="flex items-center justify-center text-center pt-8 mx-4">
-    <div class="flex max-w-3xl w-full overflow-auto no-scrollbar">
-        <div class="bg-white dark:bg-dark-cards mx-2 px-3 py-2 rounded-full text-sm dark:text-dark-primary cursor-pointer"
+<!-- Mobile version -->
+<div class="flex flex-row flex-nowrap overflow-x-auto items-start justify-start text-center mx-4 xl:hidden">
+    <div class="min-w-min bg-white dark:bg-dark-cards mx-2 px-3 py-2 rounded-full text-sm font-thin dark:text-dark-primary-font cursor-pointer"
+    [class.text-secondary]="!selectedCategory || selectedCategory == ''" 
+    [class.font-medium]="!selectedCategory || selectedCategory == ''"
+    [class.font-thin]="selectedCategory != ''"
+    (click)="selectCategory('')">
+        <span class="select-none">
+            Alle
+        </span>
+    </div>
+    <div class="min-w-min bg-white dark:bg-dark-cards mx-2 px-3 py-2 rounded-full text-sm font-thin dark:text-dark-primary-font cursor-pointer"
+    [ngClass]="{'text-secondary font-medium dark:text-dark-primary': selectedCategory == 'COVID-19'}"
+    [ngClass]="{'font-thin dark:text-dark-primary-font': selectedCategory != 'COVID-19'}"
+    (click)="selectCategory('COVID-19')">
+        <span class="select-none">
+            COVID&#8209;19
+        </span>
+    </div>
+    <div class="min-w-min bg-white dark:bg-dark-cards mx-2 px-3 py-2 rounded-full text-sm font-thin dark:text-dark-primary-font cursor-pointer"
+    [ngClass]="{'text-secondary font-medium dark:text-dark-primary': selectedCategory == 'Gesellschaft'}"
+    [ngClass]="{'font-thin dark:text-dark-primary-font': selectedCategory != 'Gesellschaft'}"
+    (click)="selectCategory('Gesellschaft')">
+        <span class="select-none">
+            Gesellschaft
+        </span>
+    </div>
+    <div class="min-w-min bg-white dark:bg-dark-cards mx-2 px-3 py-2 rounded-full text-sm font-thin dark:text-dark-primary-font cursor-pointer"
+    [ngClass]="{'text-secondary font-medium dark:text-dark-primary': selectedCategory == 'Politik'}"
+    [ngClass]="{'font-thin dark:text-dark-primary-font': selectedCategory != 'Politik'}"
+    (click)="selectCategory('Politik')">
+        <span class="select-none">
+            Politik
+        </span>
+    </div>
+    <div class="min-w-min bg-white dark:bg-dark-cards mx-2 px-3 py-2 rounded-full text-sm font-thin dark:text-dark-primary-font cursor-pointer"
+    [ngClass]="{'text-secondary font-medium dark:text-dark-primary': selectedCategory == 'Wirtschaft'}"
+    [ngClass]="{'font-thin dark:text-dark-primary-font': selectedCategory != 'Wirtschaft'}"
+    (click)="selectCategory('Wirtschaft')">
+        <span class="select-none">
+            Wirtschaft
+        </span>
+    </div>
+    <div class="min-w-min bg-white dark:bg-dark-cards mx-2 px-3 py-2 rounded-full text-sm font-thin dark:text-dark-primary-font cursor-pointer"
+    [ngClass]="{'text-secondary font-medium dark:text-dark-primary': selectedCategory == 'Umwelt'}"
+    [ngClass]="{'font-thin dark:text-dark-primary-font': selectedCategory != 'Umwelt'}"
+    (click)="selectCategory('Umwelt')">
+        <span class="select-none">
+            Umwelt
+        </span>
+    </div>
+    <div class="min-w-min bg-white dark:bg-dark-cards mx-2 px-3 py-2 rounded-full text-sm font-thin dark:text-dark-primary-font cursor-pointer"
+    [ngClass]="{'text-secondary font-medium dark:text-dark-primary': selectedCategory == 'Wahljahr 2021'}"
+    [ngClass]="{'font-thin dark:text-dark-primary-font': selectedCategory != 'Wahljahr 2021'}"
+    (click)="selectCategory('Wahljahr 2021')">
+        <span class="select-none whitespace-nowrap">
+            Wahljahr 2021
+        </span>
+    </div>
+</div>
+<!-- Desktop version  -->
+<div class="hidden xl:flex flex-col w-48 p-4 rounded-lg relative flex-1 bg-white dark:bg-dark-cards dark:text-dark-primary-font">
+    <h2 class="px-1 mb-2 text-l lg:text-lg font-semibold leading-relaxed dark:text-dark-primary-font">Kategorien</h2>
+    <div class="flex flex-row items-center my-2 cursor-pointer"
         [class.text-secondary]="!selectedCategory || selectedCategory == ''" 
         [class.font-medium]="!selectedCategory || selectedCategory == ''"
         [class.font-thin]="selectedCategory != ''"
         (click)="selectCategory('')">
-            <span class="select-none">
-                Alle
-            </span>
-        </div>
-        <div class="bg-white dark:bg-dark-cards mx-2 px-3 py-2 rounded-full text-sm cursor-pointer"
-        [ngClass]="{'text-secondary font-medium dark:text-dark-primary': selectedCategory == 'COVID-19'}"
-        [ngClass]="{'font-thin dark:text-dark-primary-font': selectedCategory != 'COVID-19'}"
-        (click)="selectCategory('COVID-19')">
-            <span class="select-none">
-                COVID-19
-            </span>
-        </div>
-        <div class="bg-white dark:bg-dark-cards mx-2 px-3 py-2 rounded-full text-sm font-thin dark:text-dark-primary-font cursor-pointer"
-        [ngClass]="{'text-secondary font-medium dark:text-dark-primary': selectedCategory == 'Gesellschaft'}"
-        [ngClass]="{'font-thin dark:text-dark-primary-font': selectedCategory != 'Gesellschaft'}"
-        (click)="selectCategory('Gesellschaft')">
-            <span class="select-none">
-                Gesellschaft
-            </span>
-        </div>
-        <div class="bg-white dark:bg-dark-cards mx-2 px-3 py-2 rounded-full text-sm font-thin dark:text-dark-primary-font cursor-pointer"
-        [ngClass]="{'text-secondary font-medium dark:text-dark-primary': selectedCategory == 'Politik'}"
-        [ngClass]="{'font-thin dark:text-dark-primary-font': selectedCategory != 'Politik'}"
-        (click)="selectCategory('Politik')">
-            <span class="select-none">
-                Politik
-            </span>
-        </div>
-        <div class="bg-white dark:bg-dark-cards mx-2 px-3 py-2 rounded-full text-sm font-thin dark:text-dark-primary-font cursor-pointer"
-        [ngClass]="{'text-secondary font-medium dark:text-dark-primary': selectedCategory == 'Wirtschaft'}"
-        [ngClass]="{'font-thin dark:text-dark-primary-font': selectedCategory != 'Wirtschaft'}"
-        (click)="selectCategory('Wirtschaft')">
-            <span class="select-none">
-                Wirtschaft
-            </span>
-        </div>
+        <img src="assets/menu_elements/categories_all_grey.svg" [class.hidden]="!selectedCategory || selectedCategory == ''">
+        <img src="assets/menu_elements/categories_all_green.svg" [class.hidden]="selectedCategory != '' && selectedCategory">
+        <p class="pl-4">Alle</p>
+    </div>
+
+    <div class="flex flex-row items-center my-2 cursor-pointer"
+    [class.text-secondary]="selectedCategory == 'COVID-19'" 
+    [class.font-medium]="selectedCategory == 'COVID-19'"
+    [class.font-thin]="selectedCategory != 'COVID-19'"
+    (click)="selectCategory('COVID-19')">
+        <img src="assets/menu_elements/categories_covid_grey.svg" [class.hidden]="selectedCategory=='COVID-19'">
+        <img src="assets/menu_elements/categories_covid_green.svg" [class.hidden]="selectedCategory!='COVID-19'">
+        <p class="pl-4">COVID-19</p>
+    </div>
+
+    <div class="flex flex-row items-center my-2 cursor-pointer"
+    [class.text-secondary]="selectedCategory == 'Gesellschaft'" 
+    [class.font-medium]="selectedCategory == 'Gesellschaft'"
+    [class.font-thin]="selectedCategory != 'Gesellschaft'"
+    (click)="selectCategory('Gesellschaft')">
+    <img src="assets/menu_elements/categories_society_grey.svg" [class.hidden]="selectedCategory=='Gesellschaft'">
+    <img src="assets/menu_elements/categories_society_green.svg" [class.hidden]="selectedCategory!='Gesellschaft'">
+    <p class="pl-4">Gesellschaft</p>
+    </div>
+
+    <div class="flex flex-row items-center my-2 cursor-pointer"
+    [class.text-secondary]="selectedCategory == 'Politik'" 
+    [class.font-medium]="selectedCategory == 'Politik'"
+    [class.font-thin]="selectedCategory != 'Politik'"
+    (click)="selectCategory('Politik')">
+    <img src="assets/menu_elements/categories_politics_grey.svg" [class.hidden]="selectedCategory=='Politik'">
+    <img src="assets/menu_elements/categories_politics_green.svg" [class.hidden]="selectedCategory!='Politik'">
+        <p class="pl-4">Politik</p>
+    </div>
+
+    <div class="flex flex-row items-center my-2 cursor-pointer"
+    [class.text-secondary]="selectedCategory == 'Wirtschaft'" 
+    [class.font-medium]="selectedCategory == 'Wirtschaft'"
+    [class.font-thin]="selectedCategory != 'Wirtschaft'"
+    (click)="selectCategory('Wirtschaft')">
+    <img src="assets/menu_elements/categories_economy_grey.svg" [class.hidden]="selectedCategory=='Wirtschaft'">
+    <img src="assets/menu_elements/categories_economy_green.svg" [class.hidden]="selectedCategory!='Wirtschaft'">
+        <p class="pl-4">Wirtschaft</p>
+    </div>
+
+    <div class="flex flex-row items-center my-2 cursor-pointer"
+    [class.text-secondary]="selectedCategory == 'Umwelt'" 
+    [class.font-medium]="selectedCategory == 'Umwelt'"
+    [class.font-thin]="selectedCategory != 'Umwelt'"
+    (click)="selectCategory('Umwelt')">
+    <img src="assets/menu_elements/categories_nature_grey.svg" [class.hidden]="selectedCategory=='Umwelt'">
+    <img src="assets/menu_elements/categories_nature_green.svg" [class.hidden]="selectedCategory!='Umwelt'">
+        <p class="pl-4">Umwelt</p>
+    </div>
+
+    <div class="flex flex-row items-center my-2 cursor-pointer"
+    [class.text-secondary]="selectedCategory == 'Wahljahr 2021'" 
+    [class.font-medium]="selectedCategory == 'Wahljahr 2021'"
+    [class.font-thin]="selectedCategory != 'Wahljahr 2021'"
+    (click)="selectCategory('Wahljahr 2021')">
+    <img src="assets/menu_elements/categories_elections_grey.svg" [class.hidden]="selectedCategory=='Wahljahr 2021'">
+    <img src="assets/menu_elements/categories_elections_green.svg" [class.hidden]="selectedCategory!='Wahljahr 2021'">
+        <p class="pl-4">Wahljahr 2021</p>
+    </div>
+
+
+    <h2 class="px-1 mb-2 mt-4 text-l lg:text-lg font-semibold leading-relaxed dark:text-dark-primary-font">Unterstützt von</h2>
+    <div class="flex flex-col">
+        <img class="w-36 py-2" src="assets/logos/sidebar/steiger.svg">
     </div>
 </div>

@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, Input, SimpleChanges, ChangeDetectorRef } from '@angular/core';
 import { DataService } from '../data.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
@@ -10,9 +10,19 @@ import { AnalyticsService } from '../analytics.service';
   styleUrls: ['./searchbar.component.scss']
 })
 export class SearchbarComponent implements OnInit {
+
   @ViewChild('searchbar') searchbar: ElementRef
   @ViewChild('searchinput') searchinput: ElementRef
+
+  searchinputMobile: ElementRef
+  @ViewChild('searchinputMobile') set content(content:ElementRef){
+    if(content){
+      this.searchinputMobile = content;
+    }
+  } 
   @ViewChild('backgroundOverlay') backgroundOverlay: ElementRef
+  @Input() isOpen: boolean = false;
+  
   suggestions = []
   searchterm = ""
   searchTimeout
@@ -20,7 +30,7 @@ export class SearchbarComponent implements OnInit {
   selectedCategory = ""
   searchCount: number
 
-  constructor(private dataService: DataService, private analytics: AnalyticsService, private route: ActivatedRoute, private router: Router) { }
+  constructor(private dataService: DataService, private analytics: AnalyticsService, private route: ActivatedRoute, private router: Router, private cdRef:ChangeDetectorRef) { }
 
   ngOnInit(): void {
     this.route.queryParamMap.subscribe(
@@ -37,6 +47,12 @@ export class SearchbarComponent implements OnInit {
     )
   }
 
+  ngOnChanges(changes: SimpleChanges) {
+    if(changes['isOpen'].currentValue === true){
+      setTimeout(() => this.focusSearchBar(),0)
+    }
+  }
+
   onKey(evt) {
     if (evt.code === "Enter") {
       this.goToSearchResults()
@@ -50,7 +66,6 @@ export class SearchbarComponent implements OnInit {
         500
       )
     }
-
   }
 
   goToSearchResults() {
@@ -78,8 +93,12 @@ export class SearchbarComponent implements OnInit {
 
   clear() {
     this.searchterm = ""
-    this.searchinput.nativeElement.value = ""
-
+    if (this.searchinput){
+      this.searchinput.nativeElement.value = ""
+    }
+    if (this.searchinputMobile){
+      this.searchinputMobile.nativeElement.value = ""
+    }    
     this.router.navigate(
       [], 
       {
@@ -87,7 +106,6 @@ export class SearchbarComponent implements OnInit {
         queryParams: {"q": ""}, 
         queryParamsHandling: 'merge',
       })
-
     this.hideSuggestions()
   }
 
@@ -101,7 +119,19 @@ export class SearchbarComponent implements OnInit {
 
   hideSuggestions(): void {
     this.searchbarHasFocus = false
-    this.searchinput.nativeElement.blur()
+    if(this.searchinput){
+      this.searchinput.nativeElement.blur()
+    }
+    if(this.searchinputMobile){
+      this.searchinputMobile.nativeElement.blur()
+    }
   }
- 
+
+  focusSearchBar(): void{
+    this.searchbarHasFocus = true
+    this.cdRef.detectChanges()
+    setTimeout( () => {
+      this.searchinputMobile.nativeElement.focus()
+    }, 0);
+  }
 }

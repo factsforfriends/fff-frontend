@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-tag',
@@ -7,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TagComponent implements OnInit {
 
+  @Input() category: string;
+  link: string
+
   constructor() { }
 
   ngOnInit(): void {
+    this.link = '/?c=' + this.category;
   }
 
 }

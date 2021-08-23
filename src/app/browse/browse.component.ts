@@ -13,11 +13,13 @@ export class BrowseComponent implements OnInit {
   facts: Array < Fact >
   selectedCategory: string
   searchterm: string
-  perPage: number = 10
+  perPage: number = 11
   hits: number
   currentPage: number = 1
   totalCount: number
   data = new Date()
+  recommendedSnacks: Array<any>
+
 
   constructor(private dataService: DataService, private route: ActivatedRoute, private router: Router) { }
 
@@ -38,6 +40,7 @@ export class BrowseComponent implements OnInit {
     const q = this.route.snapshot.queryParamMap.get("q")
     const c = this.route.snapshot.queryParamMap.get("c")
     this.fetch(q, c)
+    this.dataService.getData(null, 3).subscribe(response => this.recommendedSnacks = response.facts)
   }
 
   async fetch(q: string, c: string) {
