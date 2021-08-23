@@ -18,7 +18,7 @@ module.exports = {
         'highlight-lighter': lighten('#0B6B64', 0.25),
         secondary: '#0E8980',
         tertiary: '#00BCAD',
-        fffred: '#b91349',
+        fffred: '#FF6E6E',
         'tag-background': '#EDF9F8',
         'dark-background': '#151717',
         'dark-navi': '#232424',
@@ -29,7 +29,6 @@ module.exports = {
         'dark-cards': '#2F3333',
         'dark-hover': '#2A2B2B',
         'dark-category-background': '#7F8584',
-
         'gradient-from': '#0B6B64 0%',
         'dark-gradient-from': '#98DFD9 0%',
         'gradient-via': '#0B6B64 50%',
@@ -38,6 +37,8 @@ module.exports = {
       },
       fontSize: {
         'xxs': '.6rem',
+        'header-large': ['2rem', '3rem'],
+        'header-medium': ['1.5rem', '2.25rem'],
       },
       backgroundSize: {
         'auto': 'auto',
