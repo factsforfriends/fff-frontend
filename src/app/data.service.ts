@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { Fact } from './model/fact.model';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -38,14 +39,14 @@ export class DataService {
 
   public getFactCount(category?: string) {
     if (!category) category = '';
-    return this.httpClient.get(
+    return this.httpClient.get<number>(
       `https://cms.factsforfriends.de/facts/count?category_contains=${category.toLowerCase()}`
     );
   }
 
   public getSearchCount(query: string, category?: string) {
     if (!category) category = '';
-    return this.httpClient.get(
+    return this.httpClient.get<number>(
       `https://cms.factsforfriends.de/facts/count?_q=${query}&category_contains=${category.toLowerCase()}`
     );
   }
@@ -174,10 +175,9 @@ export class DataService {
       let validThrough = Date.parse(col['valid_through']);
       let processedFacts: Array<Fact> = [];
       let facts = col['facts'];
-      // TODO: Uncomment, once collection dates have been updated
-      // if (validThrough <= Date.now()) {
-      //   continue;
-      // }
+      if (validThrough <= Date.now()) {
+        continue;
+      }
       facts.forEach((f) => {
         var fact = this.parseSnack(f);
         processedFacts.push(fact);
