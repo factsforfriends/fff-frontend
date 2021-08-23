@@ -2,8 +2,6 @@ import { Component, OnInit, Input, ViewChild, ElementRef, AfterViewInit, AfterCo
 import { ShareMenuComponent } from '../share-menu/share-menu.component';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 
-import { AnalyticsService } from '../analytics.service';
-
 @Component({
   selector: 'app-article-card',
   templateUrl: './article-card.component.html',
@@ -29,9 +27,6 @@ export class ArticleCardComponent implements OnInit, AfterViewInit {
   @Input() compact: boolean = false;
 
   isOverflown: boolean = false;
-
-  constructor(private analytics: AnalyticsService) { }
-
 
   ngOnInit(): void { }
 

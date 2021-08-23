@@ -42,7 +42,7 @@
                 <h2 class="text-xl text-gray-800 text-center dark:text-white">Teile via:</h2>
                 <div class="flex my-4 text-gray-600 dark:text-white justify-center">
 
-                    <a (click)="emitShareEvent('facebook')"
+                    <a 
                         class="md:p-4 rounded focus:outline-none focus:shadow-outline" [href]="getFacebookUrl()"
                         target="_blank">
                         <div class="hidden md:block group">
@@ -52,7 +52,7 @@
                         <img src="assets/menu_elements/facebook_icon.svg" class="md:hidden">
                     </a>
 
-                    <a (click)="emitShareEvent('twitter')"
+                    <a 
                         class="md:p-4 ml-2 md:ml-4 rounded focus:outline-none focus:shadow-outline"
                         [href]="getTwitterUrl()" target="_blank">
                         <div class="hidden md:block group">
@@ -62,7 +62,7 @@
                         <img src="assets/menu_elements/twitter_icon.svg" class="md:hidden">
                     </a>
 
-                    <a (click)="emitShareEvent('whatsapp')"
+                    <a 
                         class="md:p-4 ml-2 md:ml-4 rounded focus:outline-none focus:shadow-outline"
                         [href]="getWhatsAppUrl()" target="_blank">
                         <div class="hidden md:block group">
@@ -72,7 +72,7 @@
                         <img src="assets/menu_elements/whatsapp_icon.svg" class="md:hidden">
                     </a>
 
-                    <a (click)="emitShareEvent('mail')"
+                    <a 
                         class="md:p-4 ml-2 md:ml-4 rounded focus:outline-none focus:shadow-outline"
                         [href]="getMailUrl()" target="_blank">
                         <div class="hidden md:block group">
@@ -82,7 +82,7 @@
                         <img src="assets/menu_elements/mail.svg" class="md:hidden">
                     </a>
 
-                    <a (click)="emitShareEvent('telegram')"
+                    <a 
                         class="md:p-4 ml-2 md:ml-4 rounded focus:outline-none focus:shadow-outline"
                         [href]="getTelegramUrl()" target="_blank">
                         <div class="hidden md:block group">
