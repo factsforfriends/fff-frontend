@@ -105,6 +105,10 @@ export class ShareMenuComponent implements OnInit {
   }
 
   select(selection: 'article' | 'sharepic'): void {
+    // Track the click
+    let paq = window["_paq"];
+    paq.push(['trackEvent', 'Fact Sharing Menu', 'Select ' + selection, this.title]);
+
     if (this.isMobile) {
       if (selection == 'article') {
         this.shareText();
@@ -114,6 +118,12 @@ export class ShareMenuComponent implements OnInit {
     } else {
       this.current_selection = selection;
     }
+  }
+
+  track(selection: string): void {
+    // Track the click
+    let paq = window["_paq"];
+    paq.push(['trackEvent', 'Fact Sharing Menu', 'Click ' + selection, this.title]);
   }
 
   truncateChar(text: string, limit: number = 280): string {
@@ -207,6 +217,10 @@ export class ShareMenuComponent implements OnInit {
   }
 
   copyTextToClipboard(text) {
+    // Track the click
+    let paq = window["_paq"];
+    paq.push(['trackEvent', 'Fact Sharing Menu', 'Copy link', this.title]);
+
     if (!navigator.clipboard) {
       this.fallbackCopyTextToClipboard(text);
       return;
@@ -217,6 +231,10 @@ export class ShareMenuComponent implements OnInit {
   }
 
   close() {
+    // Track the click
+    let paq = window["_paq"];
+    paq.push(['trackEvent', 'Fact Sharing Menu', 'Close Menu', this.title]);
+    
     this.dialogRef.close();
   }
 

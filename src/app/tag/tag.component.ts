@@ -16,4 +16,9 @@ export class TagComponent implements OnInit {
     this.link = '/?c=' + this.category;
   }
 
+  track() {
+    let paq = window["_paq"];
+    paq.push(['trackEvent', 'Fact Preview', 'Click Tag', this.category]);
+  }
+
 }

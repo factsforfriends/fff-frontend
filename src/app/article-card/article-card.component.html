@@ -18,7 +18,7 @@
     <a href="/fact/{{id}}" [innerHTML]="this.titleFormatted"></a>
     <div class="mt-2">
       <div class="text-xs metadata">{{date | date:'dd.MM.YYYY'}} |
-        <a class="text-highlight dark:text-dark-primary" href="{{url}}" target="_blank">
+        <a class="text-highlight dark:text-dark-primary" href="{{url}}" target="_blank" onclick="_paq.push(['trackEvent', 'Fact Preview', 'Click Source'])">
           <svg class="h-5 w-5 inline" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 426.667 426.667" style="margin-top: -1px;">
             <g>

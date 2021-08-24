@@ -21,6 +21,15 @@ export class CategoryBarComponent implements OnInit {
   }
 
   selectCategory(category): void {
+    // Track the click
+    let paq = window["_paq"];
+    if (category != '') {
+      paq.push(['trackEvent', 'Category Menu', 'Select category', 'Kategorie: ' + category]);
+    } else {
+      paq.push(['trackEvent', 'Category Menu', 'Select category', 'Kategorie: Alle']);
+    }
+    
+
     const queryParams: Params = { c: category };
 
     this.router.navigate(

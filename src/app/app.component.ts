@@ -1,8 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, NavigationEnd } from '@angular/router';
 import { Meta } from '@angular/platform-browser';
-
-declare let gtag: Function;
 
 @Component({
   selector: 'app-root',
