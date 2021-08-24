@@ -74,6 +74,10 @@ export class SearchbarComponent implements OnInit {
         queryParamsHandling: 'merge', // remove to replace all query params by provided
       })
     this.hideSuggestions()
+
+    // Manually track the search
+    let paq = window["_paq"]
+    paq.trackSiteSearch(this.searchterm, this.selectedCategory, this.searchCount)
   }
 
   triggerSearch() {

@@ -21,4 +21,8 @@ export class FeaturedSnacksComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+
+  getTitle(): string {
+    return this.title;
+  }
 }

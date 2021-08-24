@@ -53,4 +53,7 @@ export class ArticleCardComponent implements OnInit, AfterViewInit {
     return element.scrollHeight > element.clientHeight || element.scrollWidth > element.clientWidth
   }
 
+  getTitle(): string {
+    return this.title;
+  }
 }

@@ -1,5 +1,6 @@
 <div class="flex flex-col bg-white dark:bg-dark-cards rounded-lg h-full" 
-  [ngClass]="{'lg:flex-row-reverse': index == 0 && firstBlock==true}">
+  [ngClass]="{'lg:flex-row-reverse': index == 0 && firstBlock==true}" 
+  data-track-content data-content-name="Fact Preview" [attr.data-content-piece]="getTitle()">
 
   <!-- <div [routerLink]="['fact', id]" 
     class="-mb-2 article-image bg-auto bg-no-repeat bg-center rounded-t-lg cursor-pointer"

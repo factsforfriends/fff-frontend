@@ -1,10 +1,11 @@
 <div class="max-w-screen-xl">
     <h2 class="px-1 text-3xl text-center lg:text-4xl font-semibold leading-relaxed dark:text-dark-primary-font">Über uns
     </h2>
-    <div class="flex justify-center">
+    <div class="flex justify-center" data-track-content data-content-name="Video">
         <video class="pt-4 w-11/12 md:w-8/12" controls>
             <source src="https://fff-content-items.s3.eu-central-1.amazonaws.com/FactsforFriends_Imagefilm.mp4"
-                type="video/mp4">
+                type="video/mp4"
+                data-content-piece="Facts for Friends Imagefilm">
             Your browser does not support the video tag.
         </video>
     </div>
@@ -48,7 +49,7 @@
                     </div>
                     <div class="pt-8">
                         <a class="bg-highlight dark:bg-dark-primary flex px-2 py-1.5 rounded-full text-white dark:text-dark-background cursor-pointer"
-                            (click)="expand_collapse('whyfff')" onclick="_paq.push(['trackEvent', 'Content box', 'Expand', 'Warum Facts for Friends']);">
+                            (click)="expand_collapse('whyfff')">
                             <span class="ml-2">
                                 <div *ngIf="!whyFFFexpanded" class="flex flex-row items-center">
                                     <p class="pb-1 font-semibold">Mehr lesen</p>
@@ -108,7 +109,7 @@
                 </div>
                 <div class="pt-8" [ngClass]="{'md:pl-40': !advantageFFFexpanded}">
                     <a class="bg-highlight dark:bg-dark-primary flex px-2 py-1.5 rounded-full text-white dark:text-dark-background cursor-pointer"
-                        (click)="expand_collapse('fffAdvantage')" onclick="_paq.push(['trackEvent', 'Content box', 'Expand', 'Die Vorteile von Facts for Friends']);">
+                        (click)="expand_collapse('fffAdvantage')">
                         <span class="ml-2">
                             <div *ngIf="!advantageFFFexpanded" class="flex flex-row items-center">
                                 <p class="pb-1 font-semibold">Mehr lesen</p>
@@ -178,7 +179,7 @@
                     </div>
                     <div class="pt-8">
                         <a class="bg-highlight dark:bg-dark-primary flex px-2 py-1.5 rounded-full text-white dark:text-dark-background cursor-pointer"
-                            (click)="expand_collapse('fffProcesses')" onclick="_paq.push(['trackEvent', 'Content box', 'Expand', 'Unsere Arbeit und Prozesse']);">
+                            (click)="expand_collapse('fffProcesses')">
                             <span class="ml-2">
                                 <div *ngIf="!processesFFFexpanded" class="flex flex-row items-center">
                                     <p class="pb-1 font-semibold">Mehr lesen</p>
@@ -238,7 +239,7 @@
                 </div>
                 <div class="pt-8" [ngClass]="{'md:pl-52': !teamFFFexpanded}">
                     <a class="bg-highlight dark:bg-dark-primary flex px-2 py-1.5 rounded-full text-white dark:text-dark-background cursor-pointer"
-                        (click)="expand_collapse('fffTeam')" onclick="_paq.push(['trackEvent', 'Content box', 'Expand', 'Die Vorteile von Facts for Friends']);">
+                        (click)="expand_collapse('fffTeam')">
                         <span class="ml-2">
                             <div *ngIf="!teamFFFexpanded" class="flex flex-row items-center">
                                 <p class="pb-1 font-semibold">Mehr lesen</p>
@@ -294,7 +295,7 @@
                         </div>
                         <div class="pt-8">
                             <a class="bg-highlight dark:bg-dark-primary flex px-2 py-1.5 rounded-full text-white dark:text-dark-background cursor-pointer"
-                                (click)="expand_collapse('steiger')" onclick="_paq.push(['trackEvent', 'Content box', 'Expand', 'Steiger Stiftung']);">
+                                (click)="expand_collapse('steiger')">
                                 <span class="ml-2">
                                     <div *ngIf="!steigerExpanded" class="flex flex-row items-center">
                                         <p class="pb-1 font-semibold">Mehr lesen</p>
@@ -345,7 +346,7 @@
                         </div>
                         <div class="pt-8">
                             <a class="bg-highlight dark:bg-dark-primary flex px-2 py-1.5 rounded-full text-white dark:text-dark-background cursor-pointer"
-                                (click)="expand_collapse('holistic')" onclick="_paq.push(['trackEvent', 'Content box', 'Expand', 'Holistic foundation']);">
+                                (click)="expand_collapse('holistic')">
                                 <span class="ml-2">
                                     <div *ngIf="!holisticExpanded" class="flex flex-row items-center">
                                         <p class="pb-1 font-semibold">Mehr lesen</p>
@@ -399,7 +400,7 @@
                         </div>
                         <div class="pt-8">
                             <a class="bg-highlight dark:bg-dark-primary flex px-2 py-1.5 rounded-full text-white dark:text-dark-background cursor-pointer"
-                                (click)="expand_collapse('wvv')" onclick="_paq.push(['trackEvent', 'Content box', 'Expand', 'Wir vs. Virus']);">
+                                (click)="expand_collapse('wvv')">
                                 <span class="ml-2">
                                     <div *ngIf="!wvvExpanded" class="flex flex-row items-center">
                                         <p class="pb-1 font-semibold">Mehr lesen</p>
@@ -448,7 +449,7 @@
                         </div>
                         <div class="pt-8">
                             <a class="bg-highlight dark:bg-dark-primary flex px-2 py-1.5 rounded-full text-white dark:text-dark-background cursor-pointer"
-                                (click)="expand_collapse('send')" onclick="_paq.push(['trackEvent', 'Content box', 'Expand', 'Send e.V.']);">
+                                (click)="expand_collapse('send')">
                                 <span class="ml-2">
                                     <div *ngIf="!sendExpanded" class="flex flex-row items-center">
                                         <p class="pb-1 font-semibold">Mehr lesen</p>
@@ -498,7 +499,7 @@
                     </div>
                     <div class="pt-8">
                         <a class="bg-highlight dark:bg-dark-primary flex px-2 py-1.5 rounded-full text-white dark:text-dark-background cursor-pointer"
-                            (click)="expand_collapse('pt')" onclick="_paq.push(['trackEvent', 'Content box', 'Expand', 'Project Together']);">
+                            (click)="expand_collapse('pt')">
                             <span class="ml-2">
                                 <div *ngIf="!ptExpanded" class="flex flex-row items-center">
                                     <p class="pb-1 font-semibold">Mehr lesen</p>

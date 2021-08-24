@@ -20,19 +20,26 @@ export class PressComponent implements OnInit {
   ngOnInit(): void {
   }
   expand_collapse(section: string): void{
+    // Track the click
+    let paq = window["_paq"];
+
     if (section === 'facts'){
+      paq.push(['trackEvent', 'Content box', 'Expand', 'Die Fakten zu Facts for Friends']);
       this.factsExpanded = !this.factsExpanded;
       return;
     }
     if (section === 'vision'){
+      paq.push(['trackEvent', 'Content box', 'Expand', 'Mission und Vision']);
       this.visionExpanded = !this.visionExpanded;
       return;
     }
     if (section === 'project'){
+      paq.push(['trackEvent', 'Content box', 'Expand', 'Vom Projekt zum Startup']);
       this.projectExpanded = !this.projectExpanded;
       return;
     }
     if (section === 'founders'){
+      paq.push(['trackEvent', 'Content box', 'Expand', 'Von Schulfreundinnen zum Gründer-Duo']);
       this.foundersExpanded = !this.foundersExpanded;
       return;
     }
