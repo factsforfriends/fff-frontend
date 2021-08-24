@@ -62,6 +62,11 @@ export class BrowseComponent implements OnInit {
   }
 
   async loadMore() {
+    // Track the click
+    let paq = window["_paq"];
+    paq.push(['trackEvent', 'Click button', 'Mehr lesen']);
+    paq.push(['trackAllContentImpressions']);
+
     let newFacts: Array<Fact>;
     console.log(this.currentPage);
     console.log(this.hits);
