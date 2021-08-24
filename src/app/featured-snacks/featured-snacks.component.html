@@ -2,7 +2,7 @@
     <h2 class="ml-4 text-4xl text-white dark:text-dark-background">{{title}}</h2>
     <div class="flex flex-row justify-start overflow-x-auto">
         <a *ngFor="let card of cards" href="/fact/{{card.id}}"  class="p-4 cursor-pointer w-10/12 md:w-4/12 flex-none">
-            <div class="h-32 rounded-lg bg-auto bg-no-repeat bg-center" style="background-image: url({{card.image_url}})"></div>
+            <div class="h-32 rounded-lg bg-cover bg-no-repeat bg-center" style="background-image: url({{card.image_url}})"></div>
             <h4 class="mt-2 dark:text-white" [innerHTML]="card.titleFormatted" data-track-content data-content-name="Fact Recommendation" [attr.data-content-piece]="card.title"></h4>
             <div class="mt-2 text-xs text-gray-400">
                 {{card.date | date:'dd.MM.YYYY'}} | #{{card.category}}
