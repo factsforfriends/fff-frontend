@@ -27,8 +27,14 @@ export class ArticleCardComponent implements OnInit, AfterViewInit {
   @Input() compact: boolean = false;
 
   isOverflown: boolean = false;
+  categories: string[]
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    this.categories = this.category.split(',')
+    for(let c in this.categories){
+      c = c.trim()
+    }
+  }
 
   ngAfterViewInit(): void {
     // set timeout to circumvent error: Expression has changed after it was checked

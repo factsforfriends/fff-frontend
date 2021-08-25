@@ -15,12 +15,33 @@ export class FeaturedSnacksComponent implements OnInit {
   cards: Array<any> = undefined;
   @Input() title: string;
   @Input() set facts(facts: Array<any>) {
-    facts ? (this.cards = facts.slice(0, 3)) : false;
+    if (facts){
+      this.cards = facts.slice(0, 3)    
+      for(let card of this.cards){
+        card.categories = card.category.split(',')
+        for(let c in card.categories){
+          c = c.trim()
+        }  
+      }
+    console.log(this.cards);
+    }
+    else{
+      false;
+    }
   }
 
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    console.log(this.cards);
+    
+    // for(let card of this.cards){
+    //   card.categories = card.category.split(',')
+    //   for(let c in card.categories){
+    //     c = c.trim()
+    //   }  
+    // }
+  }
 
   getTitle(): string {
     return this.title;

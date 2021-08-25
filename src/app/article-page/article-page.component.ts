@@ -14,6 +14,7 @@ export class ArticlePageComponent implements OnInit, OnDestroy {
   subscription: Subscription;
   recommendedSnacks: Array<any>;
   factcheckingOrganisation: string = 'Quelle';
+  categories: string[]
 
   constructor(
     private titleService: Title,
@@ -26,6 +27,10 @@ export class ArticlePageComponent implements OnInit, OnDestroy {
     this.route.params.subscribe((params) => {
       this.dataService.getFact(params['id']).subscribe((fact) => {
         this.fact = fact;
+        this.categories = this.fact.category.split(',')
+        for(let c in this.categories){
+          c = c.trim()
+        }
         
         //Track the page view
         let paq = window["_paq"];

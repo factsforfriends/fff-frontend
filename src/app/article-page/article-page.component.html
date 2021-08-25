@@ -38,8 +38,10 @@
                     </div>
                     </div>
                     <div class="flex items-center justify-between mt-4 text-xs">
-                    <app-tag category="{{fact.category}}"></app-tag>
-                    <app-sharebutton title="{{fact.title}}" text="{{fact.text}}" date="{{fact.date}}" category="{{fact.category}}" url="{{fact.url}}" id="{{fact.id}}" image_url="{{fact.image_url}}" sharepic_url="{{fact.sharepic_url}}">Teilen</app-sharebutton>
+                        <div class="flex flex-wrap gap-y-6">
+                            <app-tag *ngFor="let cat of categories" category={{cat}}></app-tag>
+                          </div>
+                                        <app-sharebutton title="{{fact.title}}" text="{{fact.text}}" date="{{fact.date}}" category="{{fact.category}}" url="{{fact.url}}" id="{{fact.id}}" image_url="{{fact.image_url}}" sharepic_url="{{fact.sharepic_url}}">Teilen</app-sharebutton>
                     </div>
                 </div>
             </div>

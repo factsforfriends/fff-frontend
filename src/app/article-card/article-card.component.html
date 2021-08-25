@@ -1,25 +1,24 @@
-<div class="flex flex-col bg-white dark:bg-dark-cards rounded-lg h-full" 
-  [ngClass]="{'lg:flex-row-reverse': index == 0 && firstBlock==true}" 
-  data-track-content data-content-name="Fact Preview" [attr.data-content-piece]="getTitle()">
+<div class="flex flex-col bg-white dark:bg-dark-cards rounded-lg h-full"
+  [ngClass]="{'lg:flex-row-reverse': index == 0 && firstBlock==true}" data-track-content
+  data-content-name="Fact Preview" [attr.data-content-piece]="getTitle()">
 
   <!-- <div [routerLink]="['fact', id]" 
     class="-mb-2 article-image bg-auto bg-no-repeat bg-center rounded-t-lg cursor-pointer"
     [ngClass]="{'lg:rounded-t-none lg:rounded-r-lg lg:-mb-0 lg:-ml-2': index == 0 && firstBlock==true}"
     style="background-image: url({{image_url}})"></div> -->
-<a href="/fact/{{id}}">
-    <div 
-    class="-mb-2 article-image bg-cover bg-no-repeat bg-center rounded-t-lg cursor-pointer h-full"
-    [ngClass]="{'lg:rounded-t-none lg:rounded-r-lg lg:-mb-0 lg:-ml-2': index == 0 && firstBlock==true}"
-    style="background-image: url({{image_url}})"></div>
+  <a href="/fact/{{id}}">
+    <div class="-mb-2 article-image bg-cover bg-no-repeat bg-center rounded-t-lg cursor-pointer h-full"
+      [ngClass]="{'lg:rounded-t-none lg:rounded-r-lg lg:-mb-0 lg:-ml-2': index == 0 && firstBlock==true}"
+      style="background-image: url({{image_url}})"></div>
   </a>
-  <div
-    class="p-4 rounded-lg flex flex-col flex-1 bg-white dark:bg-dark-cards dark:text-dark-primary-font">
-    
-    
+  <div class="p-4 rounded-lg flex flex-col flex-1 bg-white dark:bg-dark-cards dark:text-dark-primary-font">
+
+
     <a href="/fact/{{id}}" [innerHTML]="this.titleFormatted"></a>
     <div class="mt-2">
       <div class="text-xs metadata">{{date | date:'dd.MM.YYYY'}} |
-        <a class="text-highlight dark:text-dark-primary" href="{{url}}" target="_blank" onclick="_paq.push(['trackEvent', 'Fact Preview', 'Click Source'])">
+        <a class="text-highlight dark:text-dark-primary" href="{{url}}" target="_blank"
+          onclick="_paq.push(['trackEvent', 'Fact Preview', 'Click Source'])">
           <svg class="h-5 w-5 inline" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 426.667 426.667" style="margin-top: -1px;">
             <g>
@@ -43,7 +42,9 @@
       <div [innerHTML]="this.textFormatted" class="" [ngClass]="{'truncateText': compact}"></div>
     </a>
     <div class="flex items-center justify-between mt-4 text-xs">
-      <app-tag category={{category}}></app-tag>
+      <div class="flex flex-wrap gap-y-6">
+        <app-tag *ngFor="let cat of categories" category={{cat}}></app-tag>
+      </div>
       <app-sharebutton title="{{title}}" text="{{text}}" date="{{date}}" category="{{category}}" url="{{url}}"
         id="{{id}}" image_url="{{image_url}}" sharepic_url="{{sharepic_url}}">Teilen</app-sharebutton>
     </div>
