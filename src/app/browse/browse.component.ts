@@ -83,7 +83,7 @@ export class BrowseComponent implements OnInit {
         .toPromise();
     } else {
       newFacts = await this.dataService
-        .getData(this.selectedCategory, this.perPage, this.currentPage + 1)
+        .getData(this.selectedCategory, this.perPage, this.currentPage * this.perPage)
         .pipe(map((res) => res['facts']))
         .toPromise();
     }

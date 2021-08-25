@@ -1,27 +1,39 @@
 <!-- Desktop version -->
-<div class="hidden lg:flex flex-col">
-  <div #searchbar class="flex w-full relative z-20 inset-x-0 max-w-screen-sm m-auto top-0.5 dark:bg-dark-navi" [ngClass]="{'isInFocus': searchbarHasFocus}">
+<div class="hidden lg:flex flex-col text-base">
+  <div #searchbar class="flex w-full relative z-20 inset-x-0 max-w-screen-sm m-auto top-0.5 dark:bg-dark-navi"
+    [ngClass]="{'isInFocus': searchbarHasFocus}">
     <div class="relative rounded-lg shadow-sm w-full">
       <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-        <svg class="w-5 h-5 fill-current text-highlight dark:text-dark-primary" fill="currentColor" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-          <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"/>
-          <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
+        <svg class="w-5 h-5 fill-current text-highlight dark:text-dark-primary" fill="currentColor" viewBox="0 0 16 16"
+          xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd"
+            d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z" />
+          <path fill-rule="evenodd"
+            d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z" />
         </svg>
       </div>
-      <input #searchinput (focus)="onFocus()" (keyup)="onKey($event)" class="rounded-lg border-2 border-highlight dark:border-dark-primary dark:bg-transparent block w-full pl-7 pr-12 sm:leading-5 focus:ring-transparent focus:border-highlight" type="text" name="q" placeholder="Suchen" autocomplete="off"
-      [ngClass]="{'searchBarNotEmpty': searchterm}">
+      <input #searchinput (focus)="onFocus()" (keyup)="onKey($event)"
+        class="rounded-lg border-2 border-highlight dark:border-dark-primary dark:bg-transparent block w-full pl-7 pr-12 sm:leading-5 focus:ring-transparent focus:border-highlight"
+        type="text" name="q" placeholder="Suchen" autocomplete="off" value="{{searchterm}}">
       <div class="absolute inset-y-0 right-0 flex items-center">
-        <a [hidden]="!searchterm" (click)="clear()" class="clearbutton hover:bg-gray-200 dark:hover:bg-dark-hover rounded-tr-lg cursor-pointer">
-          <svg class="h-6 w-6 fill-current text-highlight dark:text-dark-primary" fill="currentColor" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd" d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+        <a [hidden]="!searchterm" (click)="clear()"
+          class="clearbutton hover:bg-gray-200 dark:hover:bg-dark-hover rounded-tr-lg cursor-pointer">
+          <svg class="h-6 w-6 fill-current text-highlight dark:text-dark-primary" fill="currentColor"
+            viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd"
+              d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
           </svg>
         </a>
       </div>
     </div>
   </div>
 
-  <div *ngIf="searchterm" [hidden]="!searchbarHasFocus" class="m-auto inset-x-0 max-w-screen-sm absolute bg-white dark:bg-dark-navi w-full rounded-b-lg z-20 border-2 border-t-0 border-highlight dark:border-dark-primary" style="top:64px;">
-    <a routerLink="/fact/{{suggestion.id}}" (click)="hideSuggestions()" class="p-4 flex flex-row suggestion hover:bg-gray-200 dark:hover:bg-dark-hover" *ngFor="let suggestion of suggestions">
+  <div *ngIf="searchterm" [hidden]="!searchbarHasFocus"
+    class="m-auto inset-x-0 max-w-screen-sm absolute bg-white dark:bg-dark-navi w-full rounded-b-lg z-20 border-2 border-t-0 border-highlight dark:border-dark-primary"
+    style="top:74px;">
+    <a routerLink="/fact/{{suggestion.id}}" (click)="hideSuggestions()"
+      class="p-4 flex flex-row suggestion hover:bg-gray-200 dark:hover:bg-dark-hover"
+      *ngFor="let suggestion of suggestions">
       <img class="hidden md:block w-24 h-16 md:w-24 md:h-16 rounded-lg" src="{{ suggestion.image_url }}" />
       <div class="pl-2 md:pl-4 flex flex-col">
         <span>
@@ -32,11 +44,14 @@
         </span>
       </div>
     </a>
-    <div class="flex flex-row justify-center text-highlight dark:text-dark-primary" [ngClass]="{'suggestion': searchCount > 0}">
+    <div class="flex flex-row justify-center text-highlight dark:text-dark-primary"
+      [ngClass]="{'suggestion': searchCount > 0}">
       <span *ngIf="searchCount == 0; else elseBlock">Keine Suchergebnisse gefunden.</span>
       <ng-template #elseBlock>
-        <a (click)="goToSearchResults()" class="text-center p-4 w-full cursor-pointer hover:bg-gray-200 dark:hover:bg-dark-hover rounded-b-lg">
-          {searchCount, plural, =0 {Keine Suchergebnisse gefunden} =1 {Ein Suchergebnis anzeigen} =2 {Zwei Suchergebnisse anzeigen} other {Alle {{searchCount}} Suchergebnisse anzeigen}}
+        <a (click)="goToSearchResults()"
+          class="text-center p-4 w-full cursor-pointer hover:bg-gray-200 dark:hover:bg-dark-hover rounded-b-lg">
+          {searchCount, plural, =0 {Keine Suchergebnisse gefunden} =1 {Ein Suchergebnis anzeigen} =2 {Zwei
+          Suchergebnisse anzeigen} other {Alle {{searchCount}} Suchergebnisse anzeigen}}
         </a>
       </ng-template>
     </div>
@@ -44,34 +59,49 @@
 </div>
 
 <!-- Mobile version -->
-<div class="flex flex-col lg:hidden">
-  <svg (click)="focusSearchBar()" class="w-4 h-4 fill-current text-highlight" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-    <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"/>
-    <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
+<div class="flex flex-col lg:hidden text-base">
+  <svg (click)="focusSearchBar()" class="w-4 h-4 fill-current text-highlight" viewBox="0 0 16 16"
+    xmlns="http://www.w3.org/2000/svg">
+    <path fill-rule="evenodd"
+      d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z" />
+    <path fill-rule="evenodd"
+      d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z" />
   </svg>
 
-  <div #searchbar class="flex w-full absolute top-0 left-0 z-30 inset-x-0 max-w-screen-sm m-auto dark:bg-dark-navi" [ngClass]="{'isInFocus': searchbarHasFocus}" *ngIf="this.searchbarHasFocus">
+  <div #searchbar class="flex w-full absolute top-0 left-0 z-30 inset-x-0 max-w-screen-sm m-auto dark:bg-dark-navi"
+    [ngClass]="{'isInFocus': searchbarHasFocus}" *ngIf="this.searchbarHasFocus">
     <div class="relative rounded-lg shadow-sm w-full">
       <div class="absolute inset-y-0 left-0 pl-3 top-0 flex items-center pointer-events-none">
-        <svg class="w-5 h-5 fill-current text-highlight dark:text-dark-primary" fill="currentColor" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-          <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"/>
-          <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
+        <svg class="w-5 h-5 fill-current text-highlight dark:text-dark-primary" fill="currentColor" viewBox="0 0 16 16"
+          xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd"
+            d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z" />
+          <path fill-rule="evenodd"
+            d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z" />
         </svg>
       </div>
-      <input #searchinputMobile (focus)="onFocus()" (keyup)="onKey($event)" class="rounded-none border-2 border-highlight dark:border-dark-primary dark:bg-transparent block w-full pl-7 pr-12 sm:leading-5 focus:ring-transparent focus:border-highlight" type="text" name="q" placeholder="Suchen" autocomplete="off"
-      [ngClass]="{'searchBarNotEmpty': searchterm}">
+      <input #searchinputMobile (focus)="onFocus()" (keyup)="onKey($event)"
+        class="rounded-none border-2 border-highlight dark:border-dark-primary dark:bg-transparent block w-full pl-7 pr-12 sm:leading-5 focus:ring-transparent focus:border-highlight"
+        type="text" name="q" placeholder="Suchen" autocomplete="off" [ngClass]="{'searchBarNotEmpty': searchterm}" value="{{searchterm}}">
       <div class="absolute inset-y-0 right-0 flex items-center">
-        <a [hidden]="!searchterm" (click)="clear()" class="clearbutton hover:bg-gray-200 dark:hover:bg-dark-hover rounded-tr-lg cursor-pointer">
-          <svg class="h-6 w-6 fill-current text-highlight dark:text-dark-primary" fill="currentColor" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd" d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+        <a [hidden]="!searchterm" (click)="clear()"
+          class="clearbutton hover:bg-gray-200 dark:hover:bg-dark-hover rounded-tr-lg cursor-pointer">
+          <svg class="h-6 w-6 fill-current text-highlight dark:text-dark-primary" fill="currentColor"
+            viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd"
+              d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
           </svg>
         </a>
       </div>
     </div>
   </div>
 
-  <div *ngIf="searchterm" [hidden]="!searchbarHasFocus" class="m-auto inset-x-0 max-w-screen-sm absolute bg-white dark:bg-dark-navi w-full rounded-none z-20 border-2 border-t-0 border-highlight dark:border-dark-primary" style="top: 4rem;">
-    <a routerLink="/fact/{{suggestion.id}}" (click)="hideSuggestions()" class="p-4 flex flex-row suggestion hover:bg-gray-200 dark:hover:bg-dark-hover" *ngFor="let suggestion of suggestions">
+  <div *ngIf="searchterm" [hidden]="!searchbarHasFocus"
+    class="m-auto inset-x-0 max-w-screen-sm absolute bg-white dark:bg-dark-navi w-full rounded-none z-20 border-2 border-t-0 border-highlight dark:border-dark-primary"
+    style="top: 4rem;">
+    <a routerLink="/fact/{{suggestion.id}}" (click)="hideSuggestions()"
+      class="p-4 flex flex-row suggestion hover:bg-gray-200 dark:hover:bg-dark-hover"
+      *ngFor="let suggestion of suggestions">
       <img class="hidden md:block w-24 h-16 md:w-24 md:h-16" src="{{ suggestion.image_url }}" />
       <div class="pl-2 md:pl-4 flex flex-col">
         <span>
@@ -82,15 +112,19 @@
         </span>
       </div>
     </a>
-    <div class="flex flex-row justify-center text-highlight dark:text-dark-primary" [ngClass]="{'suggestion': searchCount > 0}">
+    <div class="flex flex-row justify-center text-highlight dark:text-dark-primary"
+      [ngClass]="{'suggestion': searchCount > 0}">
       <span *ngIf="searchCount == 0; else elseBlock">Keine Suchergebnisse gefunden.</span>
       <ng-template #elseBlock>
-        <a (click)="goToSearchResults()" class="text-center p-4 w-full cursor-pointer hover:bg-gray-200 dark:hover:bg-dark-hover rounded-b-lg">
-          {searchCount, plural, =0 {Keine Suchergebnisse gefunden} =1 {Ein Suchergebnis anzeigen} =2 {Zwei Suchergebnisse anzeigen} other {Alle {{searchCount}} Suchergebnisse anzeigen}}
+        <a (click)="goToSearchResults()"
+          class="text-center p-4 w-full cursor-pointer hover:bg-gray-200 dark:hover:bg-dark-hover rounded-b-lg">
+          {searchCount, plural, =0 {Keine Suchergebnisse gefunden} =1 {Ein Suchergebnis anzeigen} =2 {Zwei
+          Suchergebnisse anzeigen} other {Alle {{searchCount}} Suchergebnisse anzeigen}}
         </a>
       </ng-template>
     </div>
   </div>
 </div>
 
-<div #backgroundOverlay [hidden]="!searchbarHasFocus" (click)="clear()" class="absolute w-full h-screen background-overlay z-10"></div>
+<div #backgroundOverlay [hidden]="!searchbarHasFocus" (click)="clear()"
+  class="absolute w-full h-screen background-overlay z-10"></div>
