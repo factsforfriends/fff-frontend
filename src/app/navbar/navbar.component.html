@@ -1,21 +1,7 @@
 <div *ngIf="!this.MenuOpen"
     class="flex items-center justify-between fixed top-0 w-full px-6 py-4 lg:px-12 bg-white dark:bg-dark-navi dark:text-dark-primary-font text-2xl">
     <a href="/">
-        <svg class="h-8 w-8 stroke-current fill-current inline text-highlight dark:text-dark-primary"
-            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 179 245">
-            <g data-name="Layer 2">
-                <g data-name="Layer 1">
-                    <path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="8.2"
-                        d="M82 130c1-5 4-24-4-30-4-3-13-3-16 2-7 8-3 25 4 35 8 12 16 13 22 13s16 1 25-11c8-12 10-32 2-39-5-4-13-3-16 1l-1 1c-6 9 0 28 0 28 3 11 6 14 5 17s-13 4-15 3c-3 0-4 0-7-2s-1-9 1-18z" />
-                    <circle cx="110.7" cy="73.8" r="11.2" stroke-width="8.2" fill="none" />
-                    <circle cx="68.5" cy="73.8" r="11.2" stroke-width="8.2" fill="none" />
-                    <path d="M79 241a2 2 0 011-3h22c3 1 1 3 1 4 0 2-3 3-8 3h-8c-5 0-8-1-8-3z" />
-                    <path fill="none" stroke-miterlimit="10" stroke-width="8.2"
-                        d="M175 80s0 0 0 0c0-33-37-76-85-76h0C42 4 4 47 4 80c0 0 0 0 0 0 0 22 15 46 20 54l1 2c10 18 24 36 27 52l4 24h0l2 8c2 5 9 8 10 8 4 2 8 2 12 2h20a27 27 0 005 0 21 21 0 009-2c1-1 5-4 7-8l2-8s0 0 0 0l4-24c3-16 17-34 27-52l1-2c5-8 20-32 20-54z" />
-                </g>
-            </g>
-        </svg>
-        <span class="ml-1 font-thin text-highlight dark:text-dark-primary"><strong>Facts</strong> for Friends</span>
+        <img class="h-12" src="assets/illustrations/fff_visual.png">
     </a>
     <div class="hidden lg:flex items-center justify-between w-7/12">
         <a href="/about-us" [ngClass]="{'text-secondary font-medium dark:text-dark-primary': this.location.path() == '/about-us',

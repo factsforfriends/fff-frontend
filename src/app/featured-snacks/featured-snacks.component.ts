@@ -14,6 +14,7 @@ import {
 export class FeaturedSnacksComponent implements OnInit {
   cards: Array<any> = undefined;
   @Input() title: string;
+  @Input() browse_page: boolean = false;
   @Input() set facts(facts: Array<any>) {
     if (facts){
       this.cards = facts.slice(0, 3)    

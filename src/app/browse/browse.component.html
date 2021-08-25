@@ -12,8 +12,7 @@
                     url="{{fact.url}}" id="{{fact.id}}" index="{{i}}" image_url="{{fact.image_url}}"
                     sharepic_url="{{fact.sharepic_url}}" factcheckingOrganisation="{{fact.factcheckingOrganisation}}"
                     compact="true" [ngClass]="{'lg:col-span-2': i == 0}"></app-article-card>
-                <h2 class="px-1 pb-0 text-3xl lg:text-4xl font-semibold leading-relaxed dark:text-dark-primary-font">Themenfokus</h2>
-                    <app-featured-snacks [facts]="recommendedSnacks" title="{{recommendationHeadline}}"
+                    <app-featured-snacks [facts]="recommendedSnacks" title="{{recommendationHeadline}}" browse_page=True
                     class="lg:col-span-2"></app-featured-snacks>
                 <app-article-card *ngFor="let fact of facts | slice:5; let i = index" [attr.data-index]="i"
                     title="{{fact.title}}" titleFormatted="{{fact.titleFormatted}}" text="{{fact.text}}"
