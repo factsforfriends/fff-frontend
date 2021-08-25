@@ -1,8 +1,9 @@
 <div class="flex flex-col justify-center lg:justify-start max-w-1/1" [ngClass]="{'pt-24':searchterm}">
     <app-intro *ngIf="!searchterm" class="mb-6"></app-intro>
     <div class="flex flex-col xl:grid xl:grid-cols-4">
-        <app-category-bar class="hidden xl:block xl:relative xl:left-10 xl:mt-4"></app-category-bar>
+        <app-category-bar class="hidden xl:block" [ngClass]="searchterm ? 'absolute top-28 left-8' : 'xl:relative xl:left-10 xl:mt-4'"></app-category-bar>
         <app-category-bar class="flex justify-center pt-4 xl:hidden"></app-category-bar>
+        <div *ngIf="searchterm"></div>
         <div class="flex justify-center w-full xl:col-span-2">
             <app-no-results-page class="w-full" searchterm="{{searchterm}}" *ngIf="totalCount==0"></app-no-results-page>
             <div class="m-4 max-w-3xl grid gap-8 grid-cols-1 lg:grid-cols-2 pb-4">
