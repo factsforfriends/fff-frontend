@@ -13,7 +13,6 @@ import { CategoryBarComponent } from './category-bar/category-bar.component';
 import { ArticleCardComponent } from './article-card/article-card.component';
 import { SearchbarComponent } from './searchbar/searchbar.component';
 import { DataService } from './data.service';
-import { AnalyticsService } from './analytics.service';
 import { ArticlePageComponent } from './article-page/article-page.component';
 import { ShareMenuComponent } from './share-menu/share-menu.component';
 import { PrivacyPolicyPageComponent } from './privacy-policy-page/privacy-policy-page.component';
@@ -79,8 +78,7 @@ registerLocaleData(localeDe, localeDeExtra);
   ],
   providers: [
     { provide: LOCALE_ID, useValue: "de" },
-    DataService,
-    AnalyticsService
+    DataService
   ],
   bootstrap: [AppComponent]
 })

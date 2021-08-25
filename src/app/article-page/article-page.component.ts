@@ -26,6 +26,12 @@ export class ArticlePageComponent implements OnInit, OnDestroy {
     this.route.params.subscribe((params) => {
       this.dataService.getFact(params['id']).subscribe((fact) => {
         this.fact = fact;
+        
+        //Track the page view
+        let paq = window["_paq"];
+        paq.push(['setDocumentTitle', this.fact.title]);
+        //paq.push(['trackPageView']);
+
         this.titleService.setTitle(this.fact.title + ' | Facts for Friends');
         this.metaService.updateTag({
           name: 'description',

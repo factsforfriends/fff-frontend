@@ -3,7 +3,6 @@ import { MatDialogRef } from '@angular/material/dialog';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Inject } from '@angular/core';
 
-import { AnalyticsService } from '../analytics.service';
 import { HttpClient } from '@angular/common/http';
 import { S3 } from '@aws-sdk/client-s3';
 
@@ -31,7 +30,6 @@ export class ShareMenuComponent implements OnInit {
   current_selection: 'article' | 'sharepic' = 'article';
 
   constructor(
-    private analytics: AnalyticsService,
     public dialogRef: MatDialogRef<ShareMenuComponent>,
     private http: HttpClient,
     @Inject(MAT_DIALOG_DATA) public data: any
@@ -107,6 +105,10 @@ export class ShareMenuComponent implements OnInit {
   }
 
   select(selection: 'article' | 'sharepic'): void {
+    // Track the click
+    let paq = window["_paq"];
+    paq.push(['trackEvent', 'Fact Sharing Menu', 'Select ' + selection, this.title]);
+
     if (this.isMobile) {
       if (selection == 'article') {
         this.shareText();
@@ -116,6 +118,12 @@ export class ShareMenuComponent implements OnInit {
     } else {
       this.current_selection = selection;
     }
+  }
+
+  track(selection: string): void {
+    // Track the click
+    let paq = window["_paq"];
+    paq.push(['trackEvent', 'Fact Sharing Menu', 'Click ' + selection, this.title]);
   }
 
   truncateChar(text: string, limit: number = 280): string {
@@ -184,14 +192,6 @@ export class ShareMenuComponent implements OnInit {
     );
   }
 
-  emitShareEvent(method) {
-    this.analytics.eventEmitter('share', {
-      method: method,
-      content_type: 'FactSnack',
-      content_id: this.url,
-    });
-  }
-
   fallbackCopyTextToClipboard(text) {
     var textArea = document.createElement('textarea');
     textArea.value = text;
@@ -216,7 +216,10 @@ export class ShareMenuComponent implements OnInit {
   }
 
   copyTextToClipboard(text) {
-    this.emitShareEvent('clipboard');
+    // Track the click
+    let paq = window["_paq"];
+    paq.push(['trackEvent', 'Fact Sharing Menu', 'Copy link', this.title]);
+
     if (!navigator.clipboard) {
       this.fallbackCopyTextToClipboard(text);
       return;
@@ -227,6 +230,10 @@ export class ShareMenuComponent implements OnInit {
   }
 
   close() {
+    // Track the click
+    let paq = window["_paq"];
+    paq.push(['trackEvent', 'Fact Sharing Menu', 'Close Menu', this.title]);
+    
     this.dialogRef.close();
   }
 

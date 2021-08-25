@@ -2,8 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { Title } from '@angular/platform-browser';
 
-import { AnalyticsService } from '../analytics.service';
-
 @Component({
   selector: 'app-category-bar',
   templateUrl: './category-bar.component.html',
@@ -12,7 +10,7 @@ import { AnalyticsService } from '../analytics.service';
 export class CategoryBarComponent implements OnInit {
   selectedCategory = ""
 
-  constructor(private titleService: Title, private analyticsService: AnalyticsService, private router: Router, private route: ActivatedRoute) { }
+  constructor(private titleService: Title, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.route.queryParamMap.subscribe(
@@ -23,10 +21,16 @@ export class CategoryBarComponent implements OnInit {
   }
 
   selectCategory(category): void {
-    const queryParams: Params = { c: category };
+    // Track the click
+    let paq = window["_paq"];
+    if (category != '') {
+      paq.push(['trackEvent', 'Category Menu', 'Select category', 'Kategorie: ' + category]);
+    } else {
+      paq.push(['trackEvent', 'Category Menu', 'Select category', 'Kategorie: Alle']);
+    }
+    
 
-    // track click / change of categories
-    this.analyticsService.eventEmitter('select_content', {content_type: 'category', item_id: category})
+    const queryParams: Params = { c: category };
 
     this.router.navigate(
       [], {
