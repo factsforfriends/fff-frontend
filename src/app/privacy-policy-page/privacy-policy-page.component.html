@@ -6,7 +6,7 @@
             </div>
             <div class="flex justify-end">
                 <p class="text-xs">
-                    Stand: Juni 2021
+                    Stand: August 2021
                 </p>
             </div>
             <p class="text-xs mt-2">
@@ -92,13 +92,11 @@
                     gewährleisten. IP-Adresse, Datum und Uhrzeit der Anfrage, Inhalt der Anforderung (konkrete Seite),
                     Zugriffsstatus/HTTP-Statuscode, jeweils übertragene Datenmenge, Website, von der die Anforderung
                     kommt, Browser, Betriebssystem, und dessen Oberfläche, Sprache und Version der Browsersoftware.
-
                 </p>
                 <p class="mt-2">
                     Die Erhebung dieser Daten ist technisch erforderlich, um Ihnen unsere Website anzuzeigen und
                     Stabilität und Sicherheit zu gewährleisten. Uns ist regelmäßig nicht bekannt, wer sich hinter einer
                     IP-Adresse verbirgt. Wir führen die oben aufgeführten Daten nicht mit anderen Daten zusammen.
-
                 </p>
                 <p class="mt-2">
                     Rechtsgrundlage ist Art. 6 Abs. 1 S. 1 lit. f DSGVO. Da die Erhebung der Daten zur Bereitstellung
@@ -122,8 +120,7 @@
                 <p class="mt-2">
                     Ihre Daten, die wir im Rahmen der Kontaktaufnahme erhalten haben, werden gelöscht, sobald sie für
                     die Erreichung des Zwecks ihrer Erhebung nicht mehr benötigt werden, Ihr Anliegen vollständig
-                    bearbeitet und keine weitere Kommunikation mit Ihnen erforderlich oder von Ihnen gewünscht ist.
-                </p>
+                    bearbeitet und keine weitere Kommunikation mit Ihnen erforderlich oder von Ihnen gewünscht ist. </p>
             </div>
             <div class="mt-4 text-xs">
                 <h4 class="text-sm font-bold">Einsatz von Cookies</h4>
@@ -133,6 +130,26 @@
                     Angaben finden Sie unter “Datenverarbeitung bei Webseitenaufruf”.
                 </p>
             </div>
+            <div class="mt-4 text-xs">
+                <h4 class="text-sm font-bold">Ablehnung des Website-Tracking</h4>
+                <p>
+                    Sie haben die Möglichkeit, das Tracking durch unsere Matomo Analytics Instanz unten zu deaktivieren:
+                    Sie können diese Website daran hindern, die von Ihnen durchgeführten Aktionen zu erfassen und zu
+                    analysieren. Dadurch wird Ihre Privatsphäre geschützt, aber auch verhindert, dass der Betreiber aus
+                    Ihren Aktionen lernt und eine bessere Erfahrung für Sie und andere BenutzerInnen schafft.
+                </p>
+                <div class="flex flex-row justify-center items-center py-4">
+                    <a (click)="toggle_tracking()"
+                        class="cursor-pointer flex items-center rounded-full px-4 py-2 mr-4 font-thin text-highlight dark:text-dark-primary-font bg-tag-background dark:bg-transparent border border-tag-background dark:border-dark-primary">
+                        {{tracking ? 'Tracking aktiv' : 'Tracking nicht aktiv'}}
+                    </a>
+                    <p *ngIf="tracking"> Sie haben nicht abgelehnt. <br> Klicken Sie diesen Button, um
+                        abzulehnen. </p>
+                    <p *ngIf="!tracking"> Sie haben abgelehnt. <br> Klicken Sie diesen Button, um einzuwilligen.
+                    </p>
+                </div>
+            </div>
+
             <div class="mt-4 text-xs">
                 <h4 class="text-sm font-bold">Soziale Netzwerke / Social Media Präsenzen</h4>
                 <p>
