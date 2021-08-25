@@ -34,13 +34,6 @@ export class FeaturedSnacksComponent implements OnInit {
 
   ngOnInit(): void {
     console.log(this.cards);
-    
-    // for(let card of this.cards){
-    //   card.categories = card.category.split(',')
-    //   for(let c in card.categories){
-    //     c = c.trim()
-    //   }  
-    // }
   }
 
   getTitle(): string {
