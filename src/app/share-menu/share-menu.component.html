@@ -15,7 +15,7 @@
                 <div (click)="select('article')"
                     class="flex flex-col justify-center p-4 rounded-lg hover:bg-gray-200 dark:hover:bg-dark-hover cursor-pointer dark:text-gray-200"
                     [ngClass]="{'font-semibold text-highlight dark:text-dark-primary': current_selection == 'article' || this.isMobile }">
-                    <div class="h-32 md:h-40 w-48 md:w-60 bg-auto bg-no-repeat bg-center rounded-lg self-center"
+                    <div class="h-32 md:h-40 w-48 md:w-60 bg-no-repeat bg-center rounded-lg self-center bg-cover"
                         style="background-image: url({{this.image_url}})"
                         [ngClass]="{'opacity-70': current_selection != 'article'  && !this.isMobile }"></div>
                     <span class="text-center mt-2">
