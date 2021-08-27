@@ -42,8 +42,8 @@
       <div [innerHTML]="this.textFormatted" class="" [ngClass]="{'truncateText': compact}"></div>
     </a>
     <div class="flex items-center justify-between mt-4 text-xs">
-      <div class="flex flex-wrap gap-y-6">
-        <app-tag *ngFor="let cat of categories" category={{cat}}></app-tag>
+      <div class="flex flex-wrap">
+        <app-tag *ngFor="let cat of categories" category={{cat}} class="py-3"></app-tag>
       </div>
       <app-sharebutton title="{{title}}" text="{{text}}" date="{{date}}" category="{{category}}" url="{{url}}"
         id="{{id}}" image_url="{{image_url}}" sharepic_url="{{sharepic_url}}">Teilen</app-sharebutton>

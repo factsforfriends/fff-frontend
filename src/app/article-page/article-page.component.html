@@ -4,50 +4,58 @@
         <div class="m-4 max-w-3xl mt-4 md:mx-4 pb-4 w-full">
             <app-back-button class="flex mb-4"></app-back-button>
 
-            <div *ngIf="fact && fact.image_url" class="mb-4 article-image bg-auto bg-no-repeat bg-center rounded-border-right w-full h-80 rounded-lg bg-cover" style="background-image: url({{fact.image_url}})"></div>
+            <div *ngIf="fact && fact.image_url"
+                class="mb-4 article-image bg-auto bg-no-repeat bg-center rounded-border-right w-full h-80 rounded-lg bg-cover"
+                style="background-image: url({{fact.image_url}})"></div>
 
-            <div *ngIf="fact" class="flex flex-row-reverse bg-white rounded-lg dark:bg-dark-cards dark:text-dark-primary-font">
+            <div *ngIf="fact"
+                class="flex flex-row-reverse bg-white rounded-lg dark:bg-dark-cards dark:text-dark-primary-font">
                 <!-- <div>
                         <img class="md:w-48 md:h-32 object-cover" src="{{image_url}}" />
                     </div> -->
                 <div class="p-4 rounded-lg flex flex-col flex-1">
                     <div class="text-lg" [innerHTML]="fact.titleFormatted"></div>
                     <div class="mt-2">
-                    <div class="text-xs metadata">{{fact.date | date:'dd.MM.YYYY'}} |
-                        <a class="text-highlight dark:text-dark-primary" href="{{fact.url}}" target="_blank">
-                        <svg class="h-4 w-4 inline" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 426.667 426.667" style="margin-top: -1px;">
+                        <div class="text-xs metadata">{{fact.date | date:'dd.MM.YYYY'}} |
+                            <a class="text-highlight dark:text-dark-primary" href="{{fact.url}}" target="_blank">
+                                <svg class="h-4 w-4 inline" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 426.667 426.667" style="margin-top: -1px;">
 
-                            <path
-                            d="M40.533,213.333c0-36.48,29.653-66.133,66.133-66.133H192v-40.533h-85.333C47.787,106.667,0,154.453,0,213.333
+                                    <path
+                                        d="M40.533,213.333c0-36.48,29.653-66.133,66.133-66.133H192v-40.533h-85.333C47.787,106.667,0,154.453,0,213.333
                                                         S47.787,320,106.667,320H192v-40.533h-85.333C70.187,279.467,40.533,249.813,40.533,213.333z" />
-                            <rect x="128" y="192" width="170.667" height="42.667" />
-                            <path d="M320,106.667h-85.333V147.2H320c36.48,0,66.133,29.653,66.133,66.133S356.48,279.467,320,279.467h-85.333V320H320
+                                    <rect x="128" y="192" width="170.667" height="42.667" />
+                                    <path
+                                        d="M320,106.667h-85.333V147.2H320c36.48,0,66.133,29.653,66.133,66.133S356.48,279.467,320,279.467h-85.333V320H320
                                                         c58.88,0,106.667-47.787,106.667-106.667S378.88,106.667,320,106.667z" />
 
-                        </svg>
-                        {{ fact.factcheckingOrganisation }}
-                    </a>
-                    </div>
+                                </svg>
+                                {{ fact.factcheckingOrganisation }}
+                            </a>
+                        </div>
                     </div>
                     <div class="flex-1 mt-2">
-                    <div [ngClass]="{'truncateText': compact}" *ngIf="!fact.claim" [innerHTML]="fact.textFormatted"></div>
-                    <div class="flex flex-col md:flex-row" *ngIf="fact.claim">
-                        <p class="md:pr -2 py-2 md:py-0 md:min-w-1/3" [innerHTML]="fact.claimFormatted"></p>
-                        <p class="md:px-2" [innerHTML]="fact.textFormatted"></p>
-                    </div>
+                        <div [ngClass]="{'truncateText': compact}" *ngIf="!fact.claim" [innerHTML]="fact.textFormatted">
+                        </div>
+                        <div class="flex flex-col md:flex-row" *ngIf="fact.claim">
+                            <p class="md:pr -2 py-2 md:py-0 md:min-w-1/3" [innerHTML]="fact.claimFormatted"></p>
+                            <p class="md:px-2" [innerHTML]="fact.textFormatted"></p>
+                        </div>
                     </div>
                     <div class="flex items-center justify-between mt-4 text-xs">
-                        <div class="flex flex-wrap gap-y-6">
-                            <app-tag *ngFor="let cat of categories" category={{cat}}></app-tag>
-                          </div>
-                                        <app-sharebutton title="{{fact.title}}" text="{{fact.text}}" date="{{fact.date}}" category="{{fact.category}}" url="{{fact.url}}" id="{{fact.id}}" image_url="{{fact.image_url}}" sharepic_url="{{fact.sharepic_url}}">Teilen</app-sharebutton>
+                        <div class="flex flex-wrap">
+                            <app-tag *ngFor="let cat of categories" category={{cat}} class="py-3"></app-tag>
+                        </div>
+                        <app-sharebutton title="{{fact.title}}" text="{{fact.text}}" date="{{fact.date}}"
+                            category="{{fact.category}}" url="{{fact.url}}" id="{{fact.id}}"
+                            image_url="{{fact.image_url}}" sharepic_url="{{fact.sharepic_url}}">Teilen</app-sharebutton>
                     </div>
                 </div>
             </div>
 
             <div class="w-full mt-12 mb-4">
-                <app-featured-snacks [facts]="recommendedSnacks" title="Weitere FactSnacks für Dich"></app-featured-snacks>
+                <app-featured-snacks [facts]="recommendedSnacks" title="Weitere FactSnacks für Dich">
+                </app-featured-snacks>
             </div>
         </div>
         <!--<app-border-button
@@ -55,10 +63,10 @@
             label="Texte bewerten"
             form="TPTFOIYa"
             ></app-border-button>-->
-        </div>
     </div>
-    
-    <!-- <app-article-card
+</div>
+
+<!-- <app-article-card
         title="{{fact.headline}}" 
         text="{{fact.snack}}"
         date="{{fact.date}}"
