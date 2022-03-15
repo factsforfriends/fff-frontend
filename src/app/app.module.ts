@@ -42,6 +42,7 @@ import { PressComponent } from './press/press.component';
 import { BlogOverviewComponent } from './blog-overview/blog-overview.component';
 import { BlogCardComponent } from './blog-card/blog-card.component';
 import { BlogArticleComponent } from './blog-article/blog-article.component';
+import { RouterModule } from '@angular/router';
 
 registerLocaleData(localeDe, localeDeExtra);
 
@@ -82,6 +83,7 @@ registerLocaleData(localeDe, localeDeExtra);
     HttpClientModule,
     MatDialogModule,
     BrowserAnimationsModule,
+    RouterModule
   ],
   entryComponents: [ShareMenuComponent],
   providers: [{ provide: LOCALE_ID, useValue: 'de' }, DataService],

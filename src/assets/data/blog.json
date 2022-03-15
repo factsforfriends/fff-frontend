@@ -1,17 +1,21 @@
 [
     {
+        "id": 1,
         "title": "Title 1",
         "date": "15.03.2022",
         "author": "Valerie Scholz",
-        "preview-text": "Lorem ipsum",
-        "extended-text": "Dolor sit amet"
+        "preview_text": "Lorem ipsum",
+        "extended_text": "Dolor sit amet",
+        "image_link": "https://picsum.photos/600/300"
     },
     {
+        "id": 2,
         "title": "Title 2",
         "date": "15.03.2022",
         "author": "Valerie Scholz",
-        "preview-text": "Lorem ipsum",
-        "extended-text": "Dolor sit amet"
+        "preview_text": "Lorem ipsum",
+        "extended_text": "Dolor sit amet",
+        "image_link": "https://picsum.photos/600/300"
     }
 
 ]

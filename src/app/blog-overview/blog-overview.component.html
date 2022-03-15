@@ -1,9 +1,11 @@
-<div class="pt-24">
-    <h2 class="px-1 text-3xl text-center lg:text-4xl font-semibold leading-relaxed dark:text-dark-primary-font">
-        Aktuelles
-    </h2>
-    <h3 class="text-xl lg:text-2xl font-semibold dark:text-dark-primary-font">Themen, Kontext und Hintergründe</h3>
-    <div *ngFor="let entry of BlogEntries">
-        <h3 class="text-xl lg:text-2xl font-semibold dark:text-dark-primary-font">{{entry.title}}</h3>
+<div class="flex flex-col pt-24 w-screen items-center">
+    <div class="text-center leading-relaxed dark:text-dark-primary-font">
+        <h2 class="px-1 text-3xl lg:text-4xl font-semibold ">
+            Aktuelles
+        </h2>
+        <h3 class="text-xl lg:text-2xl font-semibold">Themen, Kontext und Hintergründe</h3>
+    </div>
+    <div class="flex flex-col w-full xl:w-1/2 gap-4 p-4">
+        <app-blog-card *ngFor="let entry of blogEntries" [blog]="entry"></app-blog-card>
     </div>
 </div>
