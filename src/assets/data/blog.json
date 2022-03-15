@@ -1,0 +1,17 @@
+[
+    {
+        "title": "Title 1",
+        "date": "15.03.2022",
+        "author": "Valerie Scholz",
+        "preview-text": "Lorem ipsum",
+        "extended-text": "Dolor sit amet"
+    },
+    {
+        "title": "Title 2",
+        "date": "15.03.2022",
+        "author": "Valerie Scholz",
+        "preview-text": "Lorem ipsum",
+        "extended-text": "Dolor sit amet"
+    }
+
+]
