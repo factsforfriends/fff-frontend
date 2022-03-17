@@ -4,6 +4,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Fact } from '../model/fact.model';
 import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
+import { BlogService } from '../services/blog-service.service';
+import { Blog } from '../model/blog.model';
 
 @Component({
   selector: 'app-browse',
@@ -19,13 +21,15 @@ export class BrowseComponent implements OnInit {
   currentPage: number = 1;
   totalCount: number;
   data = new Date();
-  recommendedSnacks: Array<any>;
+  recommendedSnacks: Array<Fact>;
   recommendationHeadline: string;
+  latestBlogs: Array<Blog>;
 
   constructor(
     private dataService: DataService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private blogService: BlogService
   ) {}
 
   ngOnInit(): void {
@@ -44,9 +48,10 @@ export class BrowseComponent implements OnInit {
     const c = this.route.snapshot.queryParamMap.get('c');
     this.fetch(q, c);
     this.dataService.getFeaturedSnacks().subscribe((response) => {
-      this.recommendedSnacks = response.facts;
+      this.recommendedSnacks = response.facts;      
       this.recommendationHeadline = response.name;
     });
+    this.latestBlogs = this.blogService.getLatestBlogs()
   }
 
   async fetch(q: string, c: string) {

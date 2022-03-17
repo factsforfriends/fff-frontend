@@ -35,7 +35,6 @@ import { SharebuttonComponent } from './sharebutton/sharebutton.component';
 import { DarkmodetoggleComponent } from './darkmodetoggle/darkmodetoggle.component';
 import { SnackRecommendationComponent } from './snack-recommendation/snack-recommendation.component';
 import { IntroComponent } from './intro/intro.component';
-import { FeaturedSnacksComponent } from './featured-snacks/featured-snacks.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { AboutFakeNewsComponent } from './about-fake-news/about-fake-news.component';
 import { PressComponent } from './press/press.component';
@@ -43,6 +42,7 @@ import { BlogOverviewComponent } from './blog-overview/blog-overview.component';
 import { BlogCardComponent } from './blog-card/blog-card.component';
 import { BlogArticleComponent } from './blog-article/blog-article.component';
 import { RouterModule } from '@angular/router';
+import { FeaturedContentComponent } from './featured-content/featured-content.component';
 
 registerLocaleData(localeDe, localeDeExtra);
 
@@ -69,13 +69,13 @@ registerLocaleData(localeDe, localeDeExtra);
     DarkmodetoggleComponent,
     SnackRecommendationComponent,
     IntroComponent,
-    FeaturedSnacksComponent,
     AboutUsComponent,
     AboutFakeNewsComponent,
     PressComponent,
     BlogOverviewComponent,
     BlogCardComponent,
-    BlogArticleComponent
+    BlogArticleComponent,
+    FeaturedContentComponent
   ],
   imports: [
     BrowserModule,

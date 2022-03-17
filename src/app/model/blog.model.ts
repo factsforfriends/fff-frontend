@@ -6,4 +6,5 @@ export interface Blog{
     "preview_text": string,
     "extended_text": string,
     "image_link": string
+    "parsed_date": Date
 }

@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Title, Meta } from '@angular/platform-browser';
 import { DataService } from '../data.service';
 import { Subscription } from 'rxjs';
+import { Fact } from '../model/fact.model';
 
 @Component({
   selector: 'app-article-page',
@@ -10,9 +11,9 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./article-page.component.scss'],
 })
 export class ArticlePageComponent implements OnInit, OnDestroy {
-  fact;
+  fact: Fact;
   subscription: Subscription;
-  recommendedSnacks: Array<any>;
+  recommendedSnacks: Array<Fact>;
   factcheckingOrganisation: string = 'Quelle';
   categories: string[]
 
@@ -61,9 +62,11 @@ export class ArticlePageComponent implements OnInit, OnDestroy {
           },
           (_error) => {
             // Fallback, if recommended snacks can't be loaded
-            this.dataService.getFeaturedSnacks().subscribe((response) => {
-              this.recommendedSnacks = response.facts;
-            })
+            this.dataService.getData(null, 4).subscribe((response) => {
+              this.recommendedSnacks = response.facts.filter(fact => fact.id != this.fact.id)
+            }
+            )
+            console.log(this.recommendedSnacks);
           }
         );
       });
