@@ -14,8 +14,6 @@
                     url="{{fact.url}}" id="{{fact.id}}" index="{{i}}" image_url="{{fact.image_url}}"
                     sharepic_url="{{fact.sharepic_url}}" factcheckingOrganisation="{{fact.factcheckingOrganisation}}"
                     compact="true" [ngClass]="{'lg:col-span-2': i == 0}"></app-article-card>
-                <app-featured-content [facts]="recommendedSnacks" title="Factsnacks für dich"
-                    subtitle="{{recommendationHeadline}}" showTitle="true" class="lg:col-span-2"></app-featured-content>
                 <app-featured-content [blogs]="latestBlogs" title="Aktuelles"
                 subtitle="Unsere neuesten Blogbeiträge" showTitle="true" class="lg:col-span-2"></app-featured-content>
                     <app-article-card *ngFor="let fact of facts | slice:5; let i = index" [attr.data-index]="i"
