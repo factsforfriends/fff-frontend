@@ -15,7 +15,7 @@ export class ArticlePageComponent implements OnInit, OnDestroy {
   subscription: Subscription;
   recommendedSnacks: Array<Fact>;
   factcheckingOrganisation: string = 'Quelle';
-  categories: string[]
+  categories: string[];
 
   constructor(
     private titleService: Title,
@@ -28,13 +28,13 @@ export class ArticlePageComponent implements OnInit, OnDestroy {
     this.route.params.subscribe((params) => {
       this.dataService.getFact(params['id']).subscribe((fact) => {
         this.fact = fact;
-        this.categories = this.fact.category.split(',')
-        for(let c in this.categories){
-          c = c.trim()
+        this.categories = this.fact.category.split(',');
+        for (let c in this.categories) {
+          c = c.trim();
         }
-        
+
         //Track the page view
-        let paq = window["_paq"];
+        let paq = window['_paq'];
         paq.push(['setDocumentTitle', this.fact.title]);
         //paq.push(['trackPageView']);
 
@@ -63,10 +63,10 @@ export class ArticlePageComponent implements OnInit, OnDestroy {
           (_error) => {
             // Fallback, if recommended snacks can't be loaded
             this.dataService.getData(null, 4).subscribe((response) => {
-              this.recommendedSnacks = response.facts.filter(fact => fact.id != this.fact.id)
-            }
-            )
-            console.log(this.recommendedSnacks);
+              this.recommendedSnacks = response.facts
+                .filter((fact) => fact.id != this.fact.id)
+                .slice(0, 3);
+            });
           }
         );
       });

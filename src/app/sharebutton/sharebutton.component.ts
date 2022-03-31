@@ -32,7 +32,6 @@ export class SharebuttonComponent implements OnInit {
     // Tracking of click
     let paq = window["_paq"];
     paq.push(['trackEvent', 'Fact Preview', 'Open Share Menu', this.title]);
-    console.log('Tracked click')
 
     const dialogConfig = new MatDialogConfig();
     dialogConfig["data"] = {

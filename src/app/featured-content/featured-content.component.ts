@@ -27,8 +27,7 @@ export class FeaturedContentComponent implements OnInit {
   }
   @Input() set blogs(blogs: Array<Blog>) {
     if (blogs) {
-      console.log(blogs);
-      
+     
       blogs.forEach((blog) => {
         this.content.push({
           link: '/blog/' + blog.id,

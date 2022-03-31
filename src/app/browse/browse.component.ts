@@ -73,8 +73,6 @@ export class BrowseComponent implements OnInit {
     paq.push(['trackAllContentImpressions']);
 
     let newFacts: Array<Fact>;
-    console.log(this.currentPage);
-    console.log(this.hits);
 
     if (this.searchterm && this.searchterm != '') {
       newFacts = await this.dataService
