@@ -34,6 +34,7 @@ module.exports = {
         'gradient-via': '#0B6B64 50%',
         'dark-gradient-via': '#98DFD9 50%',
         'gradient-to': '#00000000 50%',
+        'metadata': '#9EADB7'
       },
       fontSize: {
         'xxs': '.6rem',

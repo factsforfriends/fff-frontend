@@ -5,4 +5,6 @@ export interface Fact {
     date: string;
     category: string;
     id: string;
+    image_url?: string;
+    titleFormatted?: string;
 }

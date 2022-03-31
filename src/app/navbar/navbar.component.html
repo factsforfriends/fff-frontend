@@ -1,5 +1,5 @@
 <div *ngIf="!this.MenuOpen"
-    class="flex items-center justify-between fixed top-0 w-full px-6 py-4 lg:px-12 bg-white dark:bg-dark-navi dark:text-dark-primary-font text-2xl">
+    class="flex items-center justify-between fixed top-0 w-full px-6 py-4 lg:px-12 bg-white dark:bg-dark-navi dark:text-dark-primary-font text-xl text-center">
     <a href="/">
         <img class="h-12" src="assets/illustrations/fff_visual.png">
     </a>
@@ -14,6 +14,11 @@
         'font-thin dark:text-dark-primary-font': this.location.path() != '/about-desinfo'}">
             <span>Über Desinformationen</span>
         </a>
+        <a href="/blog" [ngClass]="{'text-secondary font-medium dark:text-dark-primary': this.location.path() == '/blog',
+        'font-thin dark:text-dark-primary-font': this.location.path() != '/blog'}">
+            <span>Aktuelles</span>
+        </a>
+
         <app-searchbar></app-searchbar>
     </div>
     <div class="flex-row items-center hidden lg:flex">
@@ -113,6 +118,10 @@
             <a href="/about-us">
                 <p class="text-xl font-semibold py-2">Über Uns</p>
             </a>
+            <a href="/blog">
+                <p class="text-xl font-semibold py-2">Aktuelles</p>
+            </a>
+
             <a href="/press">
                 <p class="text-xl font-semibold py-2">Presse & Kontakt</p>
             </a>

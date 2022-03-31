@@ -1,0 +1,15 @@
+<div class="flex flex-col">
+    <a href="/blog/{{blog.id}}">
+        <div class="-mb-2 article-image bg-cover bg-no-repeat bg-center rounded-t-lg cursor-pointer h-full"
+            style="background-image: url({{blog.image_link}})"></div>
+    </a>
+    <div class="flex flex-col bg-white dark:bg-dark-cards dark:text-dark-primary-font p-4 rounded-lg">
+        <h3 class="text-xl lg:text-2xl font-semibold ">{{blog.title}}</h3>
+        <p class="text-xs text-metadata">{{blog.author}} | {{blog.date | date:'dd.MM.YYYY'}}</p>
+        <p class="text-lg font-bold">{{blog.preview_text}}</p>
+        <a *ngIf="!detailedView" class="self-center bg-highlight dark:bg-dark-primary flex px-4 py-1.5 rounded-full text-sm text-white dark:text-dark-background cursor-pointer mt-2" href="/blog/{{blog.id}}">
+            <p>Mehr lesen</p>
+        </a>
+        <p *ngIf="detailedView" innerHTML="{{blog.extended_text}}"></p>
+    </div>
+</div>

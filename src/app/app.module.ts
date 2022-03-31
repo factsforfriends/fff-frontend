@@ -1,6 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { MatDialogModule, MAT_DIALOG_DEFAULT_OPTIONS} from '@angular/material/dialog';
+import {
+  MatDialogModule,
+  MAT_DIALOG_DEFAULT_OPTIONS,
+} from '@angular/material/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -32,10 +35,15 @@ import { SharebuttonComponent } from './sharebutton/sharebutton.component';
 import { DarkmodetoggleComponent } from './darkmodetoggle/darkmodetoggle.component';
 import { SnackRecommendationComponent } from './snack-recommendation/snack-recommendation.component';
 import { IntroComponent } from './intro/intro.component';
-import { FeaturedSnacksComponent } from './featured-snacks/featured-snacks.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { AboutFakeNewsComponent } from './about-fake-news/about-fake-news.component';
 import { PressComponent } from './press/press.component';
+import { BlogOverviewComponent } from './blog-overview/blog-overview.component';
+import { BlogCardComponent } from './blog-card/blog-card.component';
+import { BlogArticleComponent } from './blog-article/blog-article.component';
+import { RouterModule } from '@angular/router';
+import { FeaturedContentComponent } from './featured-content/featured-content.component';
+
 registerLocaleData(localeDe, localeDeExtra);
 
 @NgModule({
@@ -61,25 +69,24 @@ registerLocaleData(localeDe, localeDeExtra);
     DarkmodetoggleComponent,
     SnackRecommendationComponent,
     IntroComponent,
-    FeaturedSnacksComponent,
     AboutUsComponent,
     AboutFakeNewsComponent,
     PressComponent,
+    BlogOverviewComponent,
+    BlogCardComponent,
+    BlogArticleComponent,
+    FeaturedContentComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     MatDialogModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    RouterModule
   ],
-  entryComponents: [
-    ShareMenuComponent
-  ],
-  providers: [
-    { provide: LOCALE_ID, useValue: "de" },
-    DataService
-  ],
-  bootstrap: [AppComponent]
+  entryComponents: [ShareMenuComponent],
+  providers: [{ provide: LOCALE_ID, useValue: 'de' }, DataService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

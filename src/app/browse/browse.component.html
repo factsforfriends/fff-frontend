@@ -1,7 +1,8 @@
 <div class="flex flex-col justify-center lg:justify-start max-w-1/1" [ngClass]="{'pt-24':searchterm}">
     <app-intro *ngIf="!searchterm" class="mb-6"></app-intro>
     <div class="flex flex-col xl:grid xl:grid-cols-4">
-        <app-category-bar class="hidden xl:block" [ngClass]="searchterm ? 'absolute top-28 left-8' : 'xl:relative xl:left-10 xl:mt-4'"></app-category-bar>
+        <app-category-bar class="hidden xl:block"
+            [ngClass]="searchterm ? 'absolute top-28 left-8' : 'xl:relative xl:left-10 xl:mt-4'"></app-category-bar>
         <app-category-bar class="flex justify-center pt-4 xl:hidden"></app-category-bar>
         <div *ngIf="searchterm"></div>
         <div class="flex justify-center w-full xl:col-span-2">
@@ -13,9 +14,9 @@
                     url="{{fact.url}}" id="{{fact.id}}" index="{{i}}" image_url="{{fact.image_url}}"
                     sharepic_url="{{fact.sharepic_url}}" factcheckingOrganisation="{{fact.factcheckingOrganisation}}"
                     compact="true" [ngClass]="{'lg:col-span-2': i == 0}"></app-article-card>
-                    <app-featured-snacks [facts]="recommendedSnacks" title="{{recommendationHeadline}}" browse_page=True
-                    class="lg:col-span-2"></app-featured-snacks>
-                <app-article-card *ngFor="let fact of facts | slice:5; let i = index" [attr.data-index]="i"
+                <app-featured-content [blogs]="latestBlogs" title="Aktuelles"
+                subtitle="Unsere neuesten Blogbeiträge" showTitle="true" class="lg:col-span-2"></app-featured-content>
+                    <app-article-card *ngFor="let fact of facts | slice:5; let i = index" [attr.data-index]="i"
                     title="{{fact.title}}" titleFormatted="{{fact.titleFormatted}}" text="{{fact.text}}"
                     textFormatted="{{fact.textFormatted}}" date="{{fact.date}}" category="{{fact.category}}"
                     url="{{fact.url}}" id="{{fact.id}}" index="{{i}}" image_url="{{fact.image_url}}"
@@ -23,7 +24,7 @@
                 </app-article-card>
                 <div class="lg:col-span-2">
                     <div *ngIf="perPage * currentPage < hits"
-                    class="text-xs flex justify-center w-full text-highlight m-4">
+                        class="text-xs flex justify-center w-full text-highlight m-4">
                         <a (click)="loadMore()"
                             class="bg-highlight dark:bg-dark-primary flex px-4 py-2 rounded-full items-center text-white dark:text-dark-background cursor-pointer">
                             <!-- <svg class="h-5 w-5 fill-current" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
