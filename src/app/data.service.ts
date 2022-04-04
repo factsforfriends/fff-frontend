@@ -103,21 +103,35 @@ export class DataService {
       // Fallback to random image
       fact['image_url'] = 'https://picsum.photos/400/300';
     }
-    if (fact['text'].startsWith('Fakt:')) {
-      fact['textFormatted'] = fact['text'].replace('Fakt:', '<b>Fakt:</b>');
+
+    let factwords = [
+      'Fakt:',
+      'Fact:'
+    ];
+    for (let fw of factwords) {
+      if (fact['text'].startsWith(fw)) {
+        fact['textFormatted'] = fact['text'].replace(fw, '<b>' + fw + '</b>');
+      }
     }
+    
     if (el.hasOwnProperty('sharepic_url')) {
       fact['sharepic_url'] = el['sharepic_url'];
     }
+
     if (el.hasOwnProperty('claim')) {
       fact['claim'] = el['claim'];
-      if (fact['claim'].startsWith('Behauptung:')) {
-        fact['claimFormatted'] = fact['claim'].replace(
-          'Behauptung:',
-          '<b>Behauptung:</b>'
+      let claimwords = [
+        'Behauptung:',
+        'Claim:'
+      ];
+      for (let cw of claimwords) {
+        if (fact['claim'].startsWith(cw)) {
+          fact['claimFormatted'] = fact['claim'].replace(cw, '<b>' + cw + '</b>'
         );
       }
+      }
     }
+
     fact['factcheckingOrganisation'] = 'Quelle';
     let factcheckers = [
       ['correctiv', 'Correctiv'],
@@ -125,6 +139,7 @@ export class DataService {
       ['logically.ai', 'Logically'],
       ['fullfact.org', 'Fullfact'],
       ['checkyourfact.com', 'CheckYourFact'],
+      ['stopfake.org', 'StopFake']
     ];
     for (let fc of factcheckers) {
       if (fact['url'].includes(fc[0])) {
@@ -138,6 +153,7 @@ export class DataService {
       'Irreführend:',
       'Widerlegt:',
       'Bestätigt:',
+      'Disproven:'
     ];
     for (let kw of keywords) {
       if (fact['title'].startsWith(kw)) {
